@@ -4,9 +4,189 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
-</head>
-<body>
+    <title>Portfolio</title>
+ <link rel="stylesheet" href="index.css">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Open+Sans&display=swap" rel="stylesheet">
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<script src="https://kit.fontawesome.com/43e64fab81.js" crossorigin="anonymous"></script>
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Open+Sans&display=swap" rel="stylesheet"><header><meta charset="UTF-8">
+
+
+
+    <body>
+
+        <!-- Page wrapper -->
+        <div id="page-wrapper">
     
-</body>
-</html>
+            <!-- Header -->
+            
+            <header id="header" class="header container-fluid">
+                <div class="header-inner">
+                    <nav class="navbar navbar-expand-md navbar-light" >
+                        
+                        <!-- Top-Left Name/Logo -->
+                        <a class="navbar-name" href="#"></a>
+    
+                        <!-- Toggler/collapsibe Button -->
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarMenu" >
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+    
+                          <!-- Navbar links -->
+                        <div class="collapse navbar-collapse" id="navbarMenu">
+                            <ul class="navbar-nav">
+                              <li class="nav-item active">
+                                <a class="nav-link" href="#home">Home</a>
+                              </li>
+                              <li class="nav-item">
+                                <a class="nav-link" href="#about">About</a>
+                              </li>
+                              <li class="nav-item">
+                                  <a class="nav-link" href="#portfolio">Portfolio</a>
+                              </li>
+                              <li class="nav-item">
+                                <a class="nav-link" href="#contact">Contact</a>
+                              </li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+            </header>
+            <!-- End Header -->
+    
+            <!-- Scroll Up -->
+            <div class="scrollUp">
+                <i id="iconScroll" class="far fa-arrow-alt-circle-up" onClick="scrollToTop()"></i>
+            </div>
+            <!-- End Scroll Up -->
+    
+            <!-- Home Page -->
+            <section id="home" class="home">
+                <!-- bg image******************* -->
+                <div class="jumbotron background d-flex align-items-center ">
+                    <div class="home-name container ml-2"> 
+                        <span class="myName">Amy Melangton</span>
+                        <span class="myTitle">Web Developer</span>
+                    </div>
+                </div>
+                
+            </section>
+            <!-- End Home Page -->
+    
+    
+            <!-- About Page -->
+            <section id="about" class="section-wrapper">
+                <div class="container text-center">
+                    <h1 id="section-title" class="mb-60 fancy"><span>About Me</span></h1>
+                </div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-1"></div>
+                        <div class="col-md-3">
+                            <div class="card text-center">
+                                <img src="./assets/amy.jpg" id="idPic" class="card-img-top ">
+                                <div class="card-body">
+                                    <p class="card-text">Hello</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-1"></div>
+                        <div class="col-md-6">
+                        <p>My name is Amy Melangton, and I'm currently a web developer student at Eleven Fifty Academy. I started my career in sales and marketing providing design support. I’m also a front-end developer and a creative designer with a keen eye for creating engaging UI that brings products to life.</p>
+                        </div></p>
+                                </div></p></section></p>
+
+                    
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- End About Page -->
+
+
+        <!-- Portfolio Page -->
+        <section id="portfolio" class="section-wrapper">
+            <div class="container text-center">
+                <h1 id="section-title" class="mb-60 fancy"><span>My projects</span></h1>
+            </div>
+            <div class="container">
+                <div class="row" id="gallery">
+                   <figure class="col-md-4 col-sm-6 col-xs-12">
+                       <a href="https://codepen.io/amelangton/full/xxgeKzZ" target="_blank">
+                           <img class="projectPic" src="./assets/Sus.JPG">
+                           <h5 style="margin-top: 5px; margin-bottom: 10px">Sus</h5>
+                           <p style="color: #7b6d78">Webpage using HTML and CSS</p>
+                           <p style="font-style: normal; margin-top: -12px">Creature creation</p>
+                       </a>
+                   </figure>
+                   <figure class="col-md-4 col-sm-6 col-xs-12">
+                        <a href="https://armelangton.github.io/staticLayout/" target="_blank">
+                            <img class="projectPic" src="./assets/kast.jpg">
+                            <h5 style="margin-top: 5px; margin-bottom: 10px">Static Layout </h5>
+                            <p style="color: #7b6d78">Webpage using HTML, CSS, JS</p>
+                            <p style="font-style: normal; margin-top: -12px">Reproduction of a Kast Website</p>
+                        </a>
+                    </figure>
+                    <figure class="col-md-4 col-sm-6 col-xs-12">
+                        <a href="https://armelangton.github.io/myapi/" target="_blank">
+                            <img class="projectPic" src="./assets/covid app.jpg">
+                            <h5 style="margin-top: 5px; margin-bottom: 10px">Covid App</h5>
+                            <p style="color: #7b6d78">API application using JS, Bootstrap, HTML, CSS and DOM manipulation</p>
+                            <p style="font-style: normal; margin-top: -12px">Application to find covid stats</p>
+                        </a>
+                    </figure>
+                   </div>
+               </div>
+            </div>   
+        </section>
+        <!-- End Portfolio Page -->
+
+     
+<section><section class = "Contact"><h2>Contact Me</h2>
+<form action="https://formspree.io/armelangton@gmail.com" method="POST">
+<div class="form-group">
+<input type="text" class="form-control" placeholder="Your Name" id="name" required="" data-validation-required-message="Please enter your name" name="name"> 
+<p class="help-block text-danger"></p>
+</div>
+<div class="form-group">
+<input type="email" class="form-control" placeholder="Your Email" id="email" required="" data-validation-required-message="Please enter your email" name="_replyto"> 
+<p class="help-block text-danger"></p>
+</div>
+<div class="form-group">
+<textarea class="form-control" rows="7" placeholder="Your Message" id="message" required="" data-validation-required-message="Please leave a message" name="message"></textarea>
+<p class="help-block text-danger"></p>
+</div>
+<div class="text-center">
+<div id="success"></div>
+<button type="submit" class="btn btn-lg btn-black"><i class="fab fa-paper-plane-o" aria-hidden="true"></i>Submit</button>
+</section></div>
+<div class="section">
+
+<div class="p-5 text-center bg-light">
+<a class="btn btn-primary" href="https://drive.google.com/file/d/1UWqp4LD6LVe7QtswD0m1MOUM0ucVtEdv/view?usp=sharing" role="button">Download My Resume</a>
+</div>
+
+
+<footer><section>    <!-- *****************  CONTACT INFO / SOCIAL MEDIA  ***************** -->
+<div class="container text-center">
+<ul class="social mb-60 wow fadeInUp" data-wow-duration="1.5s">
+                   
+<a target="_blank" href="https://www.facebook.com/are.daily"><i class="fa fa-facebook"></i></a>
+                    
+<a target="_blank" href="https://www.twitter.com/amesdaily/"><i class="fa fa-twitter"></i></a>
+                      
+<a target="_blank" href="https://www.linkedin.com/in/armelangton"><i class="fab fa-linkedin"></i></a>
+                     
+<a target="_blank" href="https://www.github.com/armelangton"><i class="fab fa-github"></i></a>
+                 
+<p class="copyright">
+<a class="copy-link scroll-top" href="">&copy; Amy Melangton 2020</a><br />
+ </a>
+</p>
+</div>
+</footer>
+</main>
+</body></div>
+</html> 
