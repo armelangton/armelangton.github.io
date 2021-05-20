@@ -213,7 +213,7 @@ html{
     filter:grayscale(100%);
     transform: rotate(10deg);
     transition-duration: .95s;
-    color:lightgrey;
+    color:#f0e4d7;
     border-radius: 15px;
   }
   .card:hover{
@@ -276,14 +276,14 @@ html{
     position: relative;
     perspective: 1000px; 
   }
-  
+/*   
   .carousel {
     height: 100%;
     width: 100%;
     position: absolute;
     transform-style: preserve-3d;
     transition: transform 1s;
-  }
+  } */
   
   .item {
     display: block;
@@ -297,11 +297,7 @@ html{
     opacity: 0.95;
     border-radius: 10px;
   }
-  
-  .a {
-    transform: rotateY(0deg) translateZ(180px);
-    background: #7b6d78;
-  }
+
   .b {
     transform: rotateY(90deg) translateZ(180px);
     background: #7b6d78;
@@ -358,6 +354,56 @@ html{
   }
   
   
+.flip-box {
+  background-color: transparent;
+  width: 400px;
+  height: 300px;
+  perspective: 1000px; 
+}
+
+/* This container is needed to position the front and back side */
+.flip-box-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+/* Do an horizontal flip when you move the mouse over the flip box container */
+.flip-box:hover .flip-box-inner {
+  transform: rotateY(180deg);
+}
+
+/* Position the front and back side */
+.flip-box-front,
+.flip-box-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden; /* Safari */
+  backface-visibility: hidden;
+}
+
+/* Style the front side (fallback if image is missing) */
+.flip-box-front {
+  background-color: #bbb;
+  color: black;
+}
+
+/* Style the back side */
+.flip-box-back {
+  background-color: rgb(0, 153, 255);
+  color: white;
+  transform: rotateY(180deg);
+  padding: 50px;
+}
+
+.flip-box-back p{
+  padding: 20px;
+  font-size: 20px;
+}
   /*--- CONTACT ---*/
   .label-form {
     font-family: 'Montserrat', sans-serif;
@@ -365,10 +411,10 @@ html{
   }
   
   .btnSubmit{
-    background: #ece8e9;
+    background: white;
     border-radius: 8px;
-    border: 1px solid #d745ae;
-    color: #d745ae;
+    border: 1px solid #ff7171;
+    color: ##9fd8df;
     font: 100 18px/1 "Pacifico", Helvetica, sans-serif;
     padding: 13px 32px;
     box-shadow: 6px 7px 21px -7px #7b6d78;
@@ -391,12 +437,12 @@ html{
   /*--- FOOTER ---*/
   .footer {
     text-align: center;
-    background: #ffe8f8;
+    background: #9fd8df;
   }
   .footer a {
     font: 100 18px/1 "Pacifico", Helvetica, sans-serif;
     text-shadow: 4px 4px 3px rgba(0, 0, 0, 0.1);
-    color: #d745ae;
+    color: #ff7171;
     text-decoration: none;
   }
   .footer li{
@@ -405,7 +451,7 @@ html{
     margin: 0 8px;
   }
   .footer .icon-extLinks{
-    color: #d745ae;
+    color: #9fd;
     font-size: 30px;
   }
   
