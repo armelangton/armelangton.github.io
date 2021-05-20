@@ -151,49 +151,106 @@
         <!-- End Portfolio Page -->
 
      
-<section><section class = "Contact"><h2>Contact Me</h2>
-<form action="https://formspree.io/armelangton@gmail.com" method="POST">
-<div class="form-group">
-<input type="text" class="form-control" placeholder="Your Name" id="name" required="" data-validation-required-message="Please enter your name" name="name"> 
-<p class="help-block text-danger"></p>
-</div>
-<div class="form-group">
-<input type="email" class="form-control" placeholder="Your Email" id="email" required="" data-validation-required-message="Please enter your email" name="_replyto"> 
-<p class="help-block text-danger"></p>
-</div>
-<div class="form-group">
-<textarea class="form-control" rows="7" placeholder="Your Message" id="message" required="" data-validation-required-message="Please leave a message" name="message"></textarea>
-<p class="help-block text-danger"></p>
-</div>
-<div class="text-center">
-<div id="success"></div>
-<button type="submit" class="btn btn-lg btn-black"><i class="fab fa-paper-plane-o" aria-hidden="true"></i>Submit</button>
-</section></div>
-<div class="section">
+ <!-- Contact Page -->
+        <section id="contact" class="section-wrapper">
+            <div class="container text-center">
+                <h1 id="section-title" class="mb-60 fancy"><span>Get in Touch</span></h1>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <form id="form" action="https://formspree.io/f/xbjqdzlz" method="POST">
+                            <!-- client-side messages -->
+                            <div class="status my-3"></div>
+                            <div class="row">
+                                <!-- name -->
+                                <div class="col-md-6">
+                                    <div class="md-form mb-3">
+                                        <label class="label-form">Your name*</label>
+                                        <input type="text" id="name" name="name" class="form-control">
+                                    </div>
+                                </div>
 
-<div class="p-5 text-center bg-light">
-<a class="btn btn-primary" href="https://drive.google.com/file/d/1UWqp4LD6LVe7QtswD0m1MOUM0ucVtEdv/view?usp=sharing" role="button">Download My Resume</a>
-</div>
+                                <!-- email -->
+                                <div class="col-md-6">
+                                    <div class="md-form mb-3">
+                                        <label class="label-form">Your email*</label>
+                                        <input type="text" id="email" name="email" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <!-- subject -->
+                                <div class="col-md-12">
+                                    <div class="md-form mb-3">
+                                        <label class="label-form">Subject</label>
+                                        <input type="text" id="subject" name="subject" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!--Grid row-->
+                            <div class="row">
+                                <!--Grid column-->
+                                <div class="col-md-12">
+                                    <div class="md-form">
+                                        <label class="label-form" >Your message*</label>
+                                        <textarea type="text" id="message" name="message" rows="4" class="form-control md-textarea"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--Grid row-->
+                            <div class="row"></div>
+                            <div class="text-center  mt-4">
+                                <button class="btnSubmit" type="submit" value="Submit" onClick="validateForm()" >Send</button>
+                            </div>
+                            
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- End Contact Page -->
 
 
-<footer><section>    <!-- *****************  CONTACT INFO / SOCIAL MEDIA  ***************** -->
-<div class="container text-center">
-<ul class="social mb-60 wow fadeInUp" data-wow-duration="1.5s">
-                   
-<a target="_blank" href="https://www.facebook.com/are.daily"><i class="fa fa-facebook"></i></a>
+        <!-- Footer -->
+        <footer id="footer" class="footer">
+            <div class="container text-center">
+                <!-- <ul class="mb-60">
+                    <li>
+                    <!- LinkedIn ->
+                        <a class="icon-extLinks" target="_blank" href="https://www.linkedin.com/in/are.daily/"><i class="fab fa-linkedin"></i></a>
+                    </li>
+                    <li>
+                    <!- GitHub ->
+                    <a class="icon-extLinks" target="_blank" href="https://github.com/armelangton"><i class="fab fa-github-square"></i></a>
+                </li>
+                </ul> -->
+                <p class="copyright">
+                    <a class="copy-link scroll-top" href="">&copy; 2020 -  Amy Melangton</a>
+                    <div class="container text-center">
+                        <ul class="social mb-60 wow fadeInUp" data-wow-duration="1.5s">
+                                           
+                        <a target="_blank" href="https://www.facebook.com/are.daily"><i class="fa fa-facebook"></i></a>
+                                            
+                        <a target="_blank" href="https://www.twitter.com/amesdaily/"><i class="fa fa-twitter"></i></a>
+                                              
+                        <a target="_blank" href="https://www.linkedin.com/in/armelangton"><i class="fab fa-linkedin"></i></a>
+                                             
+                        <a target="_blank" href="https://www.github.com/armelangton"><i class="fab fa-github"></i></a>
                     
-<a target="_blank" href="https://www.twitter.com/amesdaily/"><i class="fa fa-twitter"></i></a>
-                      
-<a target="_blank" href="https://www.linkedin.com/in/armelangton"><i class="fab fa-linkedin"></i></a>
-                     
-<a target="_blank" href="https://www.github.com/armelangton"><i class="fab fa-github"></i></a>
-                 
-<p class="copyright">
-<a class="copy-link scroll-top" href="">&copy; Amy Melangton 2020</a><br />
- </a>
-</p>
-</div>
-</footer>
-</main>
-</body></div>
+    <a class="btn btn-light" href="https://drive.google.com/file/d/1UWqp4LD6LVe7QtswD0m1MOUM0ucVtEdv/view?usp=sharing" role="button">Download My Resume</a>
+    </div>                     
+                </p>
+            </div>
+        </footer>
+        <!-- End Footer -->
+</body>
+<!-- Optional JavaScript -->
+      <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://kit.fontawesome.com/994d0823f7.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+    
 </html> 
