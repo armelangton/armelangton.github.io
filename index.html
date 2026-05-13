@@ -1,255 +1,202 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Amy Melangton Portfolio</title>
-    <!-- default favicon -->
-    <link rel="shortcut icon" href="./assets/diego-gutierrez-NRn5rrBnH8w-unsplash.jpg" type="image/x-icon">
-    <!-- wideley used favicon -->
-    <link rel="icon" href="./assets/logo.png" size="64x64" type="image/png">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Amy Melangton | Sales Operations & GTM Enablement</title>
 
+  <link rel="shortcut icon" href="./assets/logo.png" type="image/png" />
+  <link rel="icon" href="./assets/logo.png" size="64x64" type="image/png" />
 
-    <!--Bootstrap reference-->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
-    integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
-    <!--CSS file link-->
-    <link rel="stylesheet" href="./index.css">
-    <!--Font family-->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Homemade+Apple&display=swap" rel="stylesheet">
-
-
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="./index.css" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet" />
 </head>
+
 <body>
+  <div id="page-wrapper">
 
-    <!-- Page wrapper -->
-    <div id="page-wrapper">
+    <header id="header" class="header container-fluid">
+      <nav class="navbar navbar-expand-md navbar-light">
+        <a class="navbar-name" href="#home">Amy Melangton</a>
 
-        <!-- Header -->
-        
-        <header id="header" class="header container-fluid">
-            <div class="header-inner">
-                <nav class="navbar navbar-expand-md navbar-light" >
-                    
-                    <!-- Top-Left Name/Logo -->
-                    <a class="navbar-name" href="#"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarMenu">
+          <span class="navbar-toggler-icon"></span>
+        </button>
 
-                    <!-- Toggler/collapsibe Button -->
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarMenu" >
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-
-                      <!-- Navbar links -->
-                    <div class="collapse navbar-collapse" id="navbarMenu">
-                        <ul class="navbar-nav">
-                          <li class="nav-item active">
-                            <a class="nav-link" href="#home">Home</a>
-                          </li>
-                          <li class="nav-item">
-                            <a class="nav-link" href="#about">About</a>
-                          </li>
-                          <li class="nav-item">
-                              <a class="nav-link" href="#portfolio">Portfolio</a>
-                          </li>
-                              <li class="nav-item">
-                            <a class="nav-link" href="#contact">Contact</a>
-                          </li>
-                        </ul>
-                    </div>
-                </nav>
-            </div>
-        </header>
-        <!-- End Header -->
-
-        <!-- Scroll Up -->
-        <div class="scrollUp">
-            <i id="iconScroll" class="far fa-arrow-alt-circle-up" onClick="scrollToTop()"></i>
+        <div class="collapse navbar-collapse" id="navbarMenu">
+          <ul class="navbar-nav">
+            <li class="nav-item active"><a class="nav-link" href="#home">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+            <li class="nav-item"><a class="nav-link" href="#focus">Focus</a></li>
+            <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+            <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+          </ul>
         </div>
-        <!-- End Scroll Up -->
+      </nav>
+    </header>
 
-        <!-- Home Page -->
-        <section id="home" class="home">
-            <!-- bg image******************* -->
-            <div class="jumbotron background d-flex align-items-center ">
-                <div class="home-name container ml-2"> 
-                    <span class="myName">Amy Melangton</span>
-                    <span class="myTitle">Web Developer</span>
-                </div>
+    <section id="home" class="home">
+      <div class="jumbotron background d-flex align-items-center">
+        <div class="home-name container">
+          <span class="myName">Amy Melangton</span>
+          <span class="myTitle">Sales Operations | GTM Enablement | Workflow Optimization</span>
+          <p class="hero-copy">
+            I help teams create clearer, more scalable ways of working through CRM process improvement,
+            onboarding resources, workflow development, and operational problem solving.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="section-wrapper">
+      <div class="container text-center">
+        <h1 class="section-title fancy"><span>About</span></h1>
+      </div>
+
+      <div class="container about-container">
+        <div class="row align-items-center">
+          <div class="col-md-4 text-center mb-4 mb-md-0">
+            <img src="./assets/amy.jpg" id="idPic" class="profile-img" alt="Amy Melangton" />
+          </div>
+
+          <div class="col-md-8">
+            <h2>Sales background. Systems brain. Creative problem solver.</h2>
+
+            <p>
+              My background is in sales, however I’ve consistently been the person improving workflows,
+              testing new tools, building resources, and helping teams work more efficiently.
+            </p>
+
+            <p>
+              Alongside my sales responsibilities, I’ve supported onboarding, CRM optimization,
+              sales collateral creation, workflow development, process improvement initiatives,
+              reporting visibility, and GTM support.
+            </p>
+
+            <p>
+              I enjoy solving operational puzzles, reducing unnecessary steps, and translating
+              messy information into something more organized, visual, and easier for teams to use.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="focus" class="section-wrapper light-section">
+      <div class="container text-center">
+        <h1 class="section-title fancy"><span>What I Focus On</span></h1>
+      </div>
+
+      <div class="container">
+        <div class="row focus-grid">
+          <div class="col-md-4">
+            <div class="focus-card">
+              <h3>Sales Operations</h3>
+              <p>CRM workflows, pipeline visibility, reporting organization, process consistency, and sales support systems.</p>
             </div>
-            
-        </section>
-        <!-- End Home Page -->
+          </div>
 
-
-        <!-- About Page -->
-        <section id="about" class="section-wrapper">
-            <div class="container text-center">
-                <h1 id="section-title" class="mb-60 fancy"><span>About Me</span></h1>
+          <div class="col-md-4">
+            <div class="focus-card">
+              <h3>GTM Enablement</h3>
+              <p>Messaging frameworks, onboarding resources, outreach systems, sales plays, and repeatable team resources.</p>
             </div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-1"></div>
-                    <div class="col-md-3">
-                        <div class="card text-center">
-                                <img src="./assets/amy.jpg" id="idPic" class="card-img-top ">
-                                <div class="card-body">
-                                    <p class="card-text"></p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-1"></div>
-                        <div class="col-md-6">
-                       <h2> <p>My name is Amy Melangton, and I am currently a web developer student at Eleven Fifty Academy.<br>
-                        </p><p>
-                        I started my career in sales and marketing before moving into operations as a way to shift into technology; my true passion. </p>
-                        <p>Today, I’m a front-end developer and a creative designer who has a keen eye for creating engaging UI that brings products to life and I'm ready for a challenge!</p></h2>
-                        </div></div></div>
-                     </section>
+          </div>
 
-        <!-- End About Page -->
-
-
-        <!-- Portfolio Page -->
-        <section id="portfolio" class="section-wrapper">
-            <div class="container text-center">
-                <h1 id="section-title" class="mb-60 fancy"><span>My projects</span></h1>
+          <div class="col-md-4">
+            <div class="focus-card">
+              <h3>Workflow Optimization</h3>
+              <p>Reducing extra steps, organizing information, simplifying handoffs, and creating clearer ways to execute.</p>
             </div>
-            <div class="container">
-                <div class="row" id="gallery">
-                   <figure class="col-md-4 col-sm-6 col-xs-12">
-                       <a href="https://codepen.io/amelangton/full/xxgeKzZ" target="_blank">
-                           <img class="projectPic" src="./assets/Sus.JPG">
-                           <h5 style="margin-top: 5px; margin-bottom: 10px">Sus</h5>
-                           <p style="color: #7b6d78">Webpage using HTML and CSS</p>
-                           <p style="font-style: normal; margin-top: -12px">Creature creation</p>
-                       </a>
-                   </figure>
-                   <figure class="col-md-4 col-sm-6 col-xs-12">
-                        <a href="https://armelangton.github.io/staticLayout/" target="_blank">
-                            <img class="projectPic" src="./assets/kast.jpg">
-                            <h5 style="margin-top: 5px; margin-bottom: 10px">Static Layout </h5>
-                            <p style="color: #7b6d78">Webpage using HTML, CSS, JS</p>
-                            <p style="font-style: normal; margin-top: -12px">Reproduction of a Kast Website</p>
-                        </a>
-                    </figure>
-                    <figure class="col-md-4 col-sm-6 col-xs-12">
-                        <a href="https://armelangton.github.io/myapi/" target="_blank">
-                            <img class="projectPic" src="./assets/covid app.jpg">
-                            <h5 style="margin-top: 5px; margin-bottom: 10px">Covid App</h5>
-                            <p style="color: #7b6d78">API application using JS, Bootstrap, HTML, CSS and DOM manipulation</p>
-                            <p style="font-style: normal; margin-top: -12px">Application to find covid stats</p>
-                        </a>
-                    </figure>
-                   </div>
-               </div>
-            </div>   
-        </section>
-        <!-- End Portfolio Page -->
+          </div>
+        </div>
+      </div>
+    </section>
 
-     
- <!-- Contact Page -->
-        <section id="contact" class="section-wrapper">
-            <div class="container text-center">
-                <h1 id="section-title" class="mb-60 fancy"><span>Get in Touch</span></h1>
-            </div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                        <form id="form" action="https://formspree.io/f/xbjqdzlz" method="POST">
-                            <!-- client-side messages -->
-                            <div class="status my-3"></div>
-                            <div class="row">
-                                <!-- name -->
-                                <div class="col-md-6">
-                                    <div class="md-form mb-3">
-                                        <label class="label-form">Your name*</label>
-                                        <input type="text" id="name" name="name" class="form-control">
-                                    </div>
-                                </div>
+    <section id="projects" class="section-wrapper">
+      <div class="container text-center">
+        <h1 class="section-title fancy"><span>Technical Projects</span></h1>
+        <p class="section-intro">
+          These projects started as technical learning projects, but they also show how I think:
+          organize information, learn systems, solve problems, and create usable experiences.
+        </p>
+      </div>
 
-                                <!-- email -->
-                                <div class="col-md-6">
-                                    <div class="md-form mb-3">
-                                        <label class="label-form">Your email*</label>
-                                        <input type="text" id="email" name="email" class="form-control">
-                                    </div>
-                                </div>
-                            </div>
+      <div class="container">
+        <div class="row" id="gallery">
 
-                            <div class="row">
-                                <!-- subject -->
-                                <div class="col-md-12">
-                                    <div class="md-form mb-3">
-                                        <label class="label-form">Subject</label>
-                                        <input type="text" id="subject" name="subject" class="form-control">
-                                    </div>
-                                </div>
-                            </div>
+          <figure class="col-md-4 col-sm-6 col-xs-12">
+            <a href="https://armelangton.github.io/myapi/" target="_blank">
+              <img class="projectPic" src="./assets/covid app.jpg" alt="COVID-19 data app" />
+              <h5>COVID-19 Data Search App</h5>
+              <p>JavaScript | API | Bootstrap | HTML/CSS</p>
+              <p>
+                Built a searchable app that organized public COVID-19 data into a more usable interface.
+                This reflects my interest in making complex information easier to access and understand.
+              </p>
+            </a>
+          </figure>
 
-                            <!--Grid row-->
-                            <div class="row">
-                                <!--Grid column-->
-                                <div class="col-md-12">
-                                    <div class="md-form">
-                                        <label class="label-form" >Your message*</label>
-                                        <textarea type="text" id="message" name="message" rows="4" class="form-control md-textarea"></textarea>
-                                    </div>
-                                </div>
-                            </div>
-                            <!--Grid row-->
-                            <div class="row"></div>
-                            <div class="text-center  mt-4">
-                                <button class="btnSubmit" type="submit" value="Submit" onClick="validateForm()" >Send</button>
-                            </div>
-                            
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- End Contact Page -->
+          <figure class="col-md-4 col-sm-6 col-xs-12">
+            <a href="https://armelangton.github.io/staticLayout/" target="_blank">
+              <img class="projectPic" src="./assets/kast.jpg" alt="Static layout project" />
+              <h5>Static Layout Recreation</h5>
+              <p>HTML | CSS | Bootstrap | JavaScript</p>
+              <p>
+                Recreated a responsive website layout to practice translating structure, design,
+                and requirements into repeatable front-end execution.
+              </p>
+            </a>
+          </figure>
 
+          <figure class="col-md-4 col-sm-6 col-xs-12">
+            <a href="https://codepen.io/amelangton/full/xxgeKzZ" target="_blank">
+              <img class="projectPic" src="./assets/Sus.JPG" alt="CSS creature project" />
+              <h5>CSS Creature</h5>
+              <p>HTML | CSS</p>
+              <p>
+                Early creative coding project focused on visual problem solving, design fundamentals,
+                and working within constraints.
+              </p>
+            </a>
+          </figure>
 
-        <!-- Footer -->
-        <footer id="footer" class="footer">
-            <div class="container text-center">
-                <!-- <ul class="mb-60">
-                    <li>
-                    <!- LinkedIn ->
-                        <a class="icon-extLinks" target="_blank" href="https://www.linkedin.com/in/are.daily/"><i class="fab fa-linkedin"></i></a>
-                    </li>
-                    <li>
-                    <!- GitHub ->
-                    <a class="icon-extLinks" target="_blank" href="https://github.com/armelangton"><i class="fab fa-github-square"></i></a>
-                </li>
-                </ul> -->
-                <p class="copyright">
-                    <a class="copy-link scroll-top" href="">&copy; 2020 -  Amy Melangton</a>
-                    <div class="container text-center">
-                        <ul class="social mb-60 wow fadeInUp" data-wow-duration="1.5s">
-                                           
-                        <a target="_blank" href="https://www.facebook.com/are.daily"><i class="fa fa-facebook"></i></a>
-                                            
-                        <a target="_blank" href="https://www.twitter.com/amesdaily/"><i class="fa fa-twitter"></i></a>
-                                              
-                        <a target="_blank" href="https://www.linkedin.com/in/armelangton"><i class="fab fa-linkedin"></i></a>
-                                             
-                        <a target="_blank" href="https://www.github.com/armelangton"><i class="fab fa-github"></i></a>
-                    
-    <a class="btn btn-light" href="https://drive.google.com/file/d/1OQr556FsSG1uDfLB6r_ijONthHhYQtJM/view?usp=sharing" role="button">Download My Resume</a>
-    </div>                     
-                </p>
-            </div>
-        </footer>
-        <!-- End Footer -->
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section-wrapper light-section">
+      <div class="container text-center">
+        <h1 class="section-title fancy"><span>Contact</span></h1>
+        <p class="section-intro">
+          Interested in sales operations, GTM enablement, workflow optimization, CRM systems,
+          process improvement, and roles where communication and operational thinking intersect.
+        </p>
+
+        <div class="contact-links">
+          <a href="mailto:armelangton@gmail.com">armelangton@gmail.com</a>
+          <a target="_blank" href="https://www.linkedin.com/in/armelangton">LinkedIn</a>
+          <a target="_blank" href="https://www.github.com/armelangton">GitHub</a>
+        </div>
+
+        <a class="btn resume-btn" href="https://drive.google.com/file/d/1OQr556FsSG1uDfLB6r_ijONthHhYQtJM/view?usp=sharing" target="_blank">
+          View Resume
+        </a>
+      </div>
+    </section>
+
+    <footer id="footer" class="footer">
+      <div class="container text-center">
+        <p>&copy; 2026 Amy Melangton</p>
+      </div>
+    </footer>
+
+  </div>
+
+  <script src="https://kit.fontawesome.com/994d0823f7.js" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
-<!-- Optional JavaScript -->
-      <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://kit.fontawesome.com/994d0823f7.js" crossorigin="anonymous"></script>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
-
+</html>
