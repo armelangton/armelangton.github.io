@@ -10,13 +10,6 @@ body {
   color: #2d3748;
   line-height: 1.7;
 }
-.navbar-collapse {
-  justify-content: center;
-}
-
-.navbar-nav {
-  gap: 2.5rem;
-}
 
 .container-fluid {
   padding-left: 0;
@@ -40,22 +33,21 @@ body {
   background: rgba(255, 255, 255, 0.96);
   padding: 1rem 2rem;
   box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+
+  display: flex;
+  justify-content: center;
 }
 
-.navbar-name {
-  color: #1f2937;
-  font-weight: 700;
-  font-size: 1.2rem;
-  text-decoration: none;
-}
-
-.navbar-name:hover {
-  text-decoration: none;
-  color: #2563eb;
+.navbar-collapse {
+  flex-grow: 0;
+  justify-content: center;
 }
 
 .navbar-nav {
-  gap: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2.5rem;
 }
 
 .nav-link {
@@ -77,9 +69,11 @@ body {
       rgba(15, 23, 42, 0.72)
     ),
     url(./assets/diego-gutierrez-NRn5rrBnH8w-unsplash.jpg);
+
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
+
   min-height: 100vh;
   padding: 6rem 2rem;
   margin-bottom: 0;
@@ -110,6 +104,8 @@ body {
   font-size: 1.1rem;
   max-width: 760px;
 }
+
+/* HERO BUTTONS */
 
 .hero-buttons {
   display: flex;
@@ -495,6 +491,16 @@ body {
 
   .navbar {
     padding: 1rem;
+  }
+
+  .navbar-collapse {
+    width: 100%;
+    flex-grow: 1;
+  }
+
+  .navbar-nav {
+    gap: 0.5rem;
+    align-items: center;
   }
 
   .nav-link {
