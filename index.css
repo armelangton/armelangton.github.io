@@ -206,6 +206,121 @@ body {
   color: #4b5563;
 }
 
+/* CASE STUDY */
+
+.case-study-card {
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 3rem;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.07);
+}
+
+.case-study-header {
+  max-width: 900px;
+  margin-bottom: 2.5rem;
+}
+
+.eyebrow {
+  color: #2563eb;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.8rem;
+  margin-bottom: 0.75rem;
+}
+
+.case-study-header h2 {
+  color: #1f2937;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.case-study-header p,
+.case-study-grid p,
+.tier-card p,
+.impact-section li {
+  color: #4b5563;
+}
+
+.case-study-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  margin-bottom: 2.5rem;
+}
+
+.case-study-grid h3,
+.impact-section h3 {
+  color: #1f2937;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.process-flow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  background: #f8fafc;
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+  padding: 1.5rem;
+  margin-bottom: 2.5rem;
+  flex-wrap: wrap;
+}
+
+.flow-step {
+  background: #ffffff;
+  border: 1px solid #dbeafe;
+  color: #1f2937;
+  font-weight: 600;
+  padding: 0.85rem 1rem;
+  border-radius: 12px;
+  text-align: center;
+  flex: 1;
+  min-width: 150px;
+}
+
+.flow-arrow {
+  color: #2563eb;
+  font-weight: 700;
+}
+
+.tier-matrix {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-bottom: 2.5rem;
+}
+
+.tier-card {
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+  padding: 1.5rem;
+  background: #ffffff;
+}
+
+.tier-card h4 {
+  color: #2563eb;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.impact-section {
+  background: #f8fafc;
+  border-radius: 16px;
+  padding: 2rem;
+}
+
+.impact-section ul {
+  margin-bottom: 0;
+  padding-left: 1.25rem;
+}
+
+.impact-section li {
+  margin-bottom: 0.75rem;
+}
+
 /* PROJECTS */
 
 #gallery figure {
@@ -296,6 +411,7 @@ body {
 /* MOBILE */
 
 @media (max-width: 768px) {
+
   .myName {
     font-size: 2.5rem;
   }
@@ -315,5 +431,24 @@ body {
   .fancy span:before,
   .fancy span:after {
     display: none;
+  }
+
+  .case-study-card {
+    padding: 2rem;
+  }
+
+  .case-study-grid,
+  .tier-matrix {
+    grid-template-columns: 1fr;
+  }
+
+  .process-flow {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .flow-arrow {
+    transform: rotate(90deg);
+    text-align: center;
   }
 }
