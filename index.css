@@ -47,11 +47,15 @@ body {
   color: #2563eb;
 }
 
+.navbar-nav {
+  gap: 2rem;
+}
+
 .nav-link {
   color: #4b5563 !important;
   font-weight: 600;
-  margin-left: 1rem;
   transition: 0.2s ease;
+  padding: 0.5rem 0;
 }
 
 .nav-link:hover {
