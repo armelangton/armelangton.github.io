@@ -33,21 +33,15 @@ body {
   background: rgba(255, 255, 255, 0.96);
   padding: 1rem 3rem;
   box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-
-  display: flex;
-  justify-content: center;
 }
 
-.navbar-collapse {
+.nav-custom {
   width: 100%;
   max-width: 1000px;
-}
-
-.navbar-nav {
-  width: 100%;
 
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
+
   align-items: center;
 }
 
