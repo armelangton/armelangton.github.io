@@ -10,6 +10,13 @@ body {
   color: #2d3748;
   line-height: 1.7;
 }
+.navbar-collapse {
+  justify-content: center;
+}
+
+.navbar-nav {
+  gap: 2.5rem;
+}
 
 .container-fluid {
   padding-left: 0;
