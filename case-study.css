@@ -1,18 +1,18 @@
-/* DARK CASE STUDY VISUAL OVERRIDES */
+/* DARK CASE STUDY + INFOGRAPHIC VISUAL OVERRIDES */
 
 #case-study .case-study-card {
-  background: radial-gradient(circle at 50% 36%, rgba(37, 99, 235, 0.22), transparent 34%), linear-gradient(135deg, #071827 0%, #0b2033 48%, #071421 100%);
-  border: 1px solid rgba(147, 197, 253, 0.18);
-  border-radius: 22px;
+  background: radial-gradient(circle at 50% 18%, rgba(37, 99, 235, 0.22), transparent 34%), linear-gradient(135deg, #071827 0%, #0b2033 48%, #071421 100%);
+  border: 1px solid rgba(147, 197, 253, 0.2);
+  border-radius: 26px;
   padding: 3rem;
-  box-shadow: 0 26px 60px rgba(15, 23, 42, 0.28);
+  box-shadow: 0 28px 70px rgba(15, 23, 42, 0.34);
   overflow: hidden;
 }
 
 #case-study .eyebrow {
-  color: #60a5fa;
-  font-size: 0.82rem;
-  letter-spacing: 0.13em;
+  color: #67e8f9;
+  font-size: 0.8rem;
+  letter-spacing: 0.16em;
 }
 
 #case-study .case-study-header h2,
@@ -26,29 +26,60 @@
 #case-study .case-study-grid p,
 #case-study .case-meta,
 #case-study .visual-panel-header p,
-#case-study .impact-section li {
+#case-study .impact-section li,
+#case-study .scaling-context {
   color: #dbeafe;
+}
+
+#case-study .case-panel,
+#case-study .case-detail-panel,
+#case-study .scaling-context {
+  background: rgba(8, 24, 41, 0.84);
+  border: 1px solid rgba(147, 197, 253, 0.2);
+  border-radius: 18px;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.06), 0 18px 36px rgba(0,0,0,0.18);
+}
+
+#case-study .case-panel {
+  max-width: none;
+  padding: 1.65rem;
+  margin-bottom: 1.5rem;
+}
+
+#case-study .case-detail-panel {
+  padding: 1.45rem;
 }
 
 #case-study .case-study-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 2.5rem;
-  background: rgba(15, 23, 42, 0.26);
-  border-top: 1px solid rgba(148, 163, 184, 0.14);
-  border-bottom: 1px solid rgba(148, 163, 184, 0.14);
-  padding: 2rem 0;
-  margin-bottom: 2.5rem;
+  gap: 1.25rem;
+  background: transparent;
+  border: 0;
+  padding: 0;
+  margin-bottom: 1.25rem;
+}
+
+#case-study .scaling-context {
+  display: block;
+  padding: 1.35rem 1.5rem;
+  margin: 1.25rem 0 2rem 0;
+  font-size: 0.95rem;
+  line-height: 1.65;
 }
 
 .visual-panel {
-  margin: 2.5rem 0;
+  margin: 2.5rem 0 0 0;
 }
 
 .visual-panel-header {
   text-align: center;
-  max-width: 760px;
+  max-width: 820px;
   margin: 0 auto 1.5rem auto;
+  background: rgba(15, 35, 56, 0.55);
+  border: 1px solid rgba(147, 197, 253, 0.15);
+  border-radius: 18px;
+  padding: 1.4rem;
 }
 
 .visual-panel-header h3 {
@@ -58,6 +89,63 @@
   margin-bottom: 0.5rem;
 }
 
+/* Impact metric cards */
+#case-study .impact-section {
+  background: linear-gradient(135deg, rgba(14, 165, 233, 0.14), rgba(124, 58, 237, 0.12));
+  border: 1px solid rgba(147, 197, 253, 0.22);
+  border-radius: 22px;
+  margin: 2rem 0;
+  padding: 1.65rem;
+  box-shadow: 0 18px 40px rgba(0,0,0,0.22);
+}
+
+#case-study .impact-section h3 {
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-size: 0.95rem;
+  margin-bottom: 1.25rem;
+}
+
+#case-study .impact-section ul {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+#case-study .impact-section li {
+  background: rgba(4, 18, 32, 0.82);
+  border: 1px solid rgba(125, 211, 252, 0.18);
+  border-radius: 18px;
+  padding: 1.1rem;
+  margin: 0;
+  min-height: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.05), 0 10px 22px rgba(0,0,0,0.18);
+}
+
+#case-study .impact-section li strong {
+  display: block;
+  color: #67e8f9;
+  font-size: 1.35rem;
+  line-height: 1.2;
+  font-weight: 800;
+  margin-bottom: 0.6rem;
+}
+
+#case-study .impact-section li span {
+  display: block;
+  color: #dbeafe;
+  font-size: 0.86rem;
+  line-height: 1.45;
+}
+
+/* Tier + workflow visual */
 .tier-arc {
   position: relative;
   display: flex;
@@ -137,7 +225,7 @@
   min-height: 170px;
   background: rgba(15, 35, 56, 0.84);
   border: 1px solid rgba(147, 197, 253, 0.16);
-  border-radius: 10px;
+  border-radius: 14px;
   padding: 1rem;
   color: #e0f2fe;
   box-shadow: inset 0 1px 0 rgba(255,255,255,0.05), 0 10px 20px rgba(0,0,0,0.14);
@@ -173,40 +261,188 @@
 .bar-5 span, .bar-5 strong { color: #c084fc; }
 .bar-6 span, .bar-6 strong { color: #60a5fa; }
 
-#case-study .impact-section {
-  background: rgba(15, 23, 42, 0.36);
-  border-top: 1px solid rgba(148, 163, 184, 0.18);
-  border-radius: 0;
-  margin-top: 2rem;
-  padding: 2rem 0 0 0;
+/* Operational Workflow Architecture infographic */
+.infrastructure-section {
+  background: #071421;
+  color: #e5e7eb;
 }
 
-#case-study .impact-section ul {
+.infrastructure-section .section-title,
+.infrastructure-section .section-title span,
+.infrastructure-section .section-intro {
+  color: #f8fafc;
+}
+
+.infrastructure-section .section-intro {
+  color: #cbd5e1;
+}
+
+.blueprint-panel {
+  position: relative;
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 2rem;
+  border-radius: 28px;
+  background: radial-gradient(circle at 50% 0%, rgba(14, 165, 233, 0.18), transparent 35%), linear-gradient(135deg, #06111f 0%, #0a1c31 48%, #071421 100%);
+  border: 1px solid rgba(125, 211, 252, 0.18);
+  box-shadow: 0 30px 70px rgba(0,0,0,0.34);
+}
+
+.blueprint-card {
+  position: relative;
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 1rem;
-  list-style: none;
-  padding-left: 0;
+  grid-template-columns: 84px 1fr;
+  align-items: center;
+  gap: 1.25rem;
+  background: rgba(8, 24, 41, 0.86);
+  border: 1px solid rgba(147, 197, 253, 0.18);
+  border-left: 6px solid #38bdf8;
+  border-radius: 22px;
+  padding: 1.15rem 1.25rem;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.05), 0 16px 32px rgba(0,0,0,0.2);
 }
 
-#case-study .impact-section li {
-  background: rgba(15, 35, 56, 0.72);
-  border: 1px solid rgba(147, 197, 253, 0.13);
-  border-radius: 12px;
-  padding: 1rem;
-  margin: 0;
+.blueprint-card:nth-of-type(3) { border-left-color: #2dd4bf; }
+.blueprint-card:nth-of-type(5) { border-left-color: #a78bfa; }
+.blueprint-card:nth-of-type(7) { border-left-color: #fbbf24; }
+.blueprint-card:nth-of-type(9) { border-left-color: #22c55e; }
+
+.blueprint-icon {
+  width: 72px;
+  height: 72px;
+  border-radius: 20px;
+  display: grid;
+  place-items: center;
+  color: #ffffff;
+  background: linear-gradient(145deg, #2563eb, #06b6d4);
+  font-size: 1.55rem;
+  box-shadow: 0 14px 26px rgba(14, 165, 233, 0.22);
+}
+
+.knowledge-card .blueprint-icon { background: linear-gradient(145deg, #7c3aed, #a855f7); }
+.execution-card .blueprint-icon { background: linear-gradient(145deg, #f59e0b, #ef4444); }
+.visibility-card .blueprint-icon { background: linear-gradient(145deg, #16a34a, #14b8a6); }
+
+.blueprint-step {
+  color: #67e8f9;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  font-size: 0.78rem;
+  margin-bottom: 0.2rem;
+}
+
+.blueprint-content h3 {
+  color: #f8fafc;
+  font-weight: 800;
+  font-size: 1.12rem;
+  margin-bottom: 0.45rem;
+}
+
+.blueprint-content p {
+  color: #cbd5e1;
   font-size: 0.9rem;
+  line-height: 1.45;
+  margin-bottom: 0.75rem;
+}
+
+.blueprint-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+
+.blueprint-tags span {
+  display: inline-block;
+  color: #dbeafe;
+  background: rgba(37, 99, 235, 0.18);
+  border: 1px solid rgba(125, 211, 252, 0.18);
+  border-radius: 999px;
+  padding: 0.28rem 0.62rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+}
+
+.blueprint-connector {
+  width: 2px;
+  height: 36px;
+  background: linear-gradient(#38bdf8, transparent);
+  margin: 0.15rem auto;
+  position: relative;
+}
+
+.blueprint-connector span {
+  position: absolute;
+  top: 8px;
+  left: 14px;
+  white-space: nowrap;
+  color: #93c5fd;
+  font-size: 0.68rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+
+.blueprint-loop {
+  margin-top: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  background: linear-gradient(135deg, rgba(14, 165, 233, 0.14), rgba(168, 85, 247, 0.16));
+  border: 1px dashed rgba(125, 211, 252, 0.35);
+  border-radius: 18px;
+  padding: 1rem 1.15rem;
+  color: #dbeafe;
+  font-weight: 700;
+  font-size: 0.88rem;
+}
+
+.blueprint-loop i {
+  color: #67e8f9;
+  font-size: 1.15rem;
+}
+
+/* Strength cards: less award-like, more capability tile */
+.award-card {
+  border: 1px solid rgba(37, 99, 235, 0.16);
+  border-top: 5px solid #2563eb;
+  position: relative;
+  overflow: hidden;
+}
+
+.award-card::after {
+  content: "";
+  position: absolute;
+  right: -30px;
+  top: -30px;
+  width: 100px;
+  height: 100px;
+  border-radius: 999px;
+  background: rgba(37, 99, 235, 0.08);
+}
+
+.award-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 16px;
+  display: grid;
+  place-items: center;
+  background: #eff6ff;
+  color: #2563eb;
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
 }
 
 @media (max-width: 992px) {
   .workflow-bars { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .tier-arc { gap: 2rem; }
-  #case-study .impact-section ul { grid-template-columns: 1fr; }
+  #case-study .impact-section ul { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 
 @media (max-width: 768px) {
-  #case-study .case-study-card { padding: 2rem; }
+  #case-study .case-study-card { padding: 1.5rem; }
   #case-study .case-study-grid { grid-template-columns: 1fr; }
+  #case-study .impact-section ul { grid-template-columns: 1fr; }
+  #case-study .impact-section li { min-height: auto; }
   .tier-arc { gap: 0.75rem; min-height: auto; align-items: center; flex-wrap: wrap; }
   .tier-arc::before { display: none; }
   .tier-circle, .tier-circle-one, .tier-circle-two, .tier-circle-three {
@@ -216,4 +452,9 @@
   }
   .workflow-bars { grid-template-columns: 1fr; }
   .workflow-bar { min-height: auto; }
+  .blueprint-panel { padding: 1.25rem; }
+  .blueprint-card { grid-template-columns: 1fr; text-align: left; }
+  .blueprint-icon { width: 58px; height: 58px; border-radius: 16px; }
+  .blueprint-connector span { display: none; }
+  .blueprint-loop { align-items: flex-start; }
 }
