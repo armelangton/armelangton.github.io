@@ -9,27 +9,19 @@
   overflow: hidden;
 }
 
-#case-study .eyebrow {
-  color: #67e8f9;
-  font-size: 0.8rem;
-  letter-spacing: 0.16em;
-}
+#case-study .eyebrow { color: #67e8f9; font-size: 0.8rem; letter-spacing: 0.16em; }
 
 #case-study .case-study-header h2,
 #case-study .case-study-grid h3,
 #case-study .impact-section h3,
-#case-study .visual-panel-header h3 {
-  color: #f8fafc;
-}
+#case-study .visual-panel-header h3 { color: #f8fafc; }
 
 #case-study .case-study-header p,
 #case-study .case-study-grid p,
 #case-study .case-meta,
 #case-study .visual-panel-header p,
 #case-study .impact-section li,
-#case-study .scaling-context {
-  color: #dbeafe;
-}
+#case-study .scaling-context { color: #dbeafe; }
 
 #case-study .case-panel,
 #case-study .case-detail-panel,
@@ -40,15 +32,8 @@
   box-shadow: inset 0 1px 0 rgba(255,255,255,0.06), 0 18px 36px rgba(0,0,0,0.18);
 }
 
-#case-study .case-panel {
-  max-width: none;
-  padding: 1.65rem;
-  margin-bottom: 1.5rem;
-}
-
-#case-study .case-detail-panel {
-  padding: 1.45rem;
-}
+#case-study .case-panel { max-width: none; padding: 1.65rem; margin-bottom: 1.5rem; }
+#case-study .case-detail-panel { padding: 1.45rem; }
 
 #case-study .case-study-grid {
   display: grid;
@@ -68,9 +53,7 @@
   line-height: 1.65;
 }
 
-.visual-panel {
-  margin: 2.5rem 0 0 0;
-}
+.visual-panel { margin: 2.5rem 0 0 0; }
 
 .visual-panel-header {
   text-align: center;
@@ -89,7 +72,6 @@
   margin-bottom: 0.5rem;
 }
 
-/* Impact metric cards */
 #case-study .impact-section {
   background: linear-gradient(135deg, rgba(14, 165, 233, 0.14), rgba(124, 58, 237, 0.12));
   border: 1px solid rgba(147, 197, 253, 0.22);
@@ -145,7 +127,6 @@
   line-height: 1.45;
 }
 
-/* Tier + workflow visual */
 .tier-arc {
   position: relative;
   display: flex;
@@ -184,43 +165,13 @@
   box-shadow: 0 18px 28px rgba(0, 0, 0, 0.28);
 }
 
-.tier-circle strong {
-  color: #ffffff;
-  font-size: 0.95rem;
-  line-height: 1;
-  text-transform: uppercase;
-  margin-bottom: 0.45rem;
-}
+.tier-circle strong { color: #ffffff; font-size: 0.95rem; line-height: 1; text-transform: uppercase; margin-bottom: 0.45rem; }
+.tier-circle span { color: #ffffff; font-size: 0.68rem; line-height: 1.25; font-weight: 600; }
+.tier-circle-three { background: linear-gradient(145deg, #14b8a6, #0f766e); transform: translateY(42px); }
+.tier-circle-two { background: linear-gradient(145deg, #f59e0b, #b45309); transform: translateY(-10px); }
+.tier-circle-one { background: linear-gradient(145deg, #8b5cf6, #5b21b6); transform: translateY(42px); }
 
-.tier-circle span {
-  color: #ffffff;
-  font-size: 0.68rem;
-  line-height: 1.25;
-  font-weight: 600;
-}
-
-.tier-circle-three {
-  background: linear-gradient(145deg, #14b8a6, #0f766e);
-  transform: translateY(42px);
-}
-
-.tier-circle-two {
-  background: linear-gradient(145deg, #f59e0b, #b45309);
-  transform: translateY(-10px);
-}
-
-.tier-circle-one {
-  background: linear-gradient(145deg, #8b5cf6, #5b21b6);
-  transform: translateY(42px);
-}
-
-.workflow-bars {
-  display: grid;
-  grid-template-columns: repeat(6, minmax(0, 1fr));
-  gap: 1rem;
-  margin-top: 1.75rem;
-}
-
+.workflow-bars { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 1rem; margin-top: 1.75rem; }
 .workflow-bar {
   min-height: 170px;
   background: rgba(15, 35, 56, 0.84);
@@ -230,212 +181,139 @@
   color: #e0f2fe;
   box-shadow: inset 0 1px 0 rgba(255,255,255,0.05), 0 10px 20px rgba(0,0,0,0.14);
 }
-
-.workflow-bar span {
-  display: block;
-  color: #60a5fa;
-  font-weight: 800;
-  font-size: 0.95rem;
-  margin-bottom: 0.35rem;
-}
-
-.workflow-bar strong {
-  display: block;
-  color: #bfdbfe;
-  font-size: 0.98rem;
-  line-height: 1.25;
-  margin-bottom: 0.7rem;
-}
-
-.workflow-bar em {
-  display: block;
-  color: #e5e7eb;
-  font-size: 0.82rem;
-  line-height: 1.45;
-  font-style: normal;
-}
-
+.workflow-bar span { display: block; color: #60a5fa; font-weight: 800; font-size: 0.95rem; margin-bottom: 0.35rem; }
+.workflow-bar strong { display: block; color: #bfdbfe; font-size: 0.98rem; line-height: 1.25; margin-bottom: 0.7rem; }
+.workflow-bar em { display: block; color: #e5e7eb; font-size: 0.82rem; line-height: 1.45; font-style: normal; }
 .bar-2 span, .bar-2 strong { color: #2dd4bf; }
 .bar-3 span, .bar-3 strong { color: #86efac; }
 .bar-4 span, .bar-4 strong { color: #fbbf24; }
 .bar-5 span, .bar-5 strong { color: #c084fc; }
 .bar-6 span, .bar-6 strong { color: #60a5fa; }
 
-/* Operational Workflow Architecture infographic */
-.infrastructure-section {
+/* Capabilities & Systems dashboard */
+#tools.light-section {
   background: #071421;
   color: #e5e7eb;
 }
 
-.infrastructure-section .section-title,
-.infrastructure-section .section-title span,
-.infrastructure-section .section-intro {
+#tools .section-title,
+#tools .section-title span {
   color: #f8fafc;
 }
 
-.infrastructure-section .section-intro {
-  color: #cbd5e1;
+.tools-panel {
+  max-width: 1100px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.15rem;
+  background: radial-gradient(circle at 50% 0%, rgba(14, 165, 233, 0.2), transparent 34%), linear-gradient(135deg, #06111f 0%, #0a1c31 48%, #071421 100%);
 }
 
+.tools-panel .tools-chip-group {
+  position: relative;
+  min-height: 285px;
+  padding: 1.45rem;
+  border-radius: 24px;
+  border: 1px solid rgba(125, 211, 252, 0.2);
+  background: linear-gradient(145deg, rgba(8, 24, 41, 0.95), rgba(15, 35, 56, 0.82));
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.06), 0 18px 36px rgba(0,0,0,0.22);
+  overflow: hidden;
+}
+
+.tools-panel .tools-chip-group::before {
+  content: "";
+  position: absolute;
+  right: -42px;
+  top: -42px;
+  width: 150px;
+  height: 150px;
+  border-radius: 999px;
+  background: rgba(56, 189, 248, 0.12);
+}
+
+.tools-panel .tools-chip-group::after {
+  content: "";
+  position: absolute;
+  left: 18px;
+  right: 18px;
+  bottom: 18px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(125, 211, 252, 0.35), transparent);
+}
+
+.tools-panel .tools-chip-group:nth-child(2) {
+  border-color: rgba(168, 85, 247, 0.26);
+}
+.tools-panel .tools-chip-group:nth-child(2)::before { background: rgba(168, 85, 247, 0.14); }
+.tools-panel .tools-chip-group:nth-child(3) {
+  border-color: rgba(251, 191, 36, 0.25);
+}
+.tools-panel .tools-chip-group:nth-child(3)::before { background: rgba(251, 191, 36, 0.14); }
+.tools-panel .tools-chip-group:nth-child(4) {
+  border-color: rgba(45, 212, 191, 0.24);
+}
+.tools-panel .tools-chip-group:nth-child(4)::before { background: rgba(45, 212, 191, 0.13); }
+
+.tools-panel .tools-chip-group h3 {
+  position: relative;
+  z-index: 1;
+  color: #f8fafc;
+  font-size: 1.1rem;
+  font-weight: 800;
+  margin-bottom: 0.6rem;
+}
+
+.tools-panel .tools-chip-group p {
+  position: relative;
+  z-index: 1;
+  color: #cbd5e1;
+  font-size: 0.88rem;
+  line-height: 1.5;
+  max-width: 92%;
+  margin-bottom: 1.2rem;
+}
+
+.logo-grid {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: repeat(3, 64px);
+  gap: 0.85rem;
+  align-items: center;
+}
+
+.logo-grid i {
+  width: 64px;
+  height: 64px;
+  border-radius: 18px;
+  display: grid;
+  place-items: center;
+  font-size: 1.45rem;
+  color: #ffffff;
+  background: linear-gradient(145deg, #2563eb, #06b6d4);
+  box-shadow: 0 12px 24px rgba(14, 165, 233, 0.22);
+}
+
+.tools-panel .tools-chip-group:nth-child(2) .logo-grid i { background: linear-gradient(145deg, #7c3aed, #a855f7); box-shadow: 0 12px 24px rgba(168,85,247,0.24); }
+.tools-panel .tools-chip-group:nth-child(3) .logo-grid i { background: linear-gradient(145deg, #f59e0b, #ef4444); box-shadow: 0 12px 24px rgba(245,158,11,0.22); }
+.tools-panel .tools-chip-group:nth-child(4) .logo-grid i { background: linear-gradient(145deg, #14b8a6, #22c55e); box-shadow: 0 12px 24px rgba(20,184,166,0.22); }
+
+/* Legacy blueprint classes still used by workflow sections */
 .blueprint-panel {
   position: relative;
   max-width: 980px;
   margin: 0 auto;
   padding: 2rem;
   border-radius: 28px;
-  background: radial-gradient(circle at 50% 0%, rgba(14, 165, 233, 0.18), transparent 35%), linear-gradient(135deg, #06111f 0%, #0a1c31 48%, #071421 100%);
   border: 1px solid rgba(125, 211, 252, 0.18);
   box-shadow: 0 30px 70px rgba(0,0,0,0.34);
-}
-
-.blueprint-card {
-  position: relative;
-  display: grid;
-  grid-template-columns: 84px 1fr;
-  align-items: center;
-  gap: 1.25rem;
-  background: rgba(8, 24, 41, 0.86);
-  border: 1px solid rgba(147, 197, 253, 0.18);
-  border-left: 6px solid #38bdf8;
-  border-radius: 22px;
-  padding: 1.15rem 1.25rem;
-  box-shadow: inset 0 1px 0 rgba(255,255,255,0.05), 0 16px 32px rgba(0,0,0,0.2);
-}
-
-.blueprint-card:nth-of-type(3) { border-left-color: #2dd4bf; }
-.blueprint-card:nth-of-type(5) { border-left-color: #a78bfa; }
-.blueprint-card:nth-of-type(7) { border-left-color: #fbbf24; }
-.blueprint-card:nth-of-type(9) { border-left-color: #22c55e; }
-
-.blueprint-icon {
-  width: 72px;
-  height: 72px;
-  border-radius: 20px;
-  display: grid;
-  place-items: center;
-  color: #ffffff;
-  background: linear-gradient(145deg, #2563eb, #06b6d4);
-  font-size: 1.55rem;
-  box-shadow: 0 14px 26px rgba(14, 165, 233, 0.22);
-}
-
-.knowledge-card .blueprint-icon { background: linear-gradient(145deg, #7c3aed, #a855f7); }
-.execution-card .blueprint-icon { background: linear-gradient(145deg, #f59e0b, #ef4444); }
-.visibility-card .blueprint-icon { background: linear-gradient(145deg, #16a34a, #14b8a6); }
-
-.blueprint-step {
-  color: #67e8f9;
-  font-weight: 800;
-  letter-spacing: 0.16em;
-  font-size: 0.78rem;
-  margin-bottom: 0.2rem;
-}
-
-.blueprint-content h3 {
-  color: #f8fafc;
-  font-weight: 800;
-  font-size: 1.12rem;
-  margin-bottom: 0.45rem;
-}
-
-.blueprint-content p {
-  color: #cbd5e1;
-  font-size: 0.9rem;
-  line-height: 1.45;
-  margin-bottom: 0.75rem;
-}
-
-.blueprint-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.45rem;
-}
-
-.blueprint-tags span {
-  display: inline-block;
-  color: #dbeafe;
-  background: rgba(37, 99, 235, 0.18);
-  border: 1px solid rgba(125, 211, 252, 0.18);
-  border-radius: 999px;
-  padding: 0.28rem 0.62rem;
-  font-size: 0.72rem;
-  font-weight: 700;
-}
-
-.blueprint-connector {
-  width: 2px;
-  height: 36px;
-  background: linear-gradient(#38bdf8, transparent);
-  margin: 0.15rem auto;
-  position: relative;
-}
-
-.blueprint-connector span {
-  position: absolute;
-  top: 8px;
-  left: 14px;
-  white-space: nowrap;
-  color: #93c5fd;
-  font-size: 0.68rem;
-  font-weight: 800;
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
-}
-
-.blueprint-loop {
-  margin-top: 1.5rem;
-  display: flex;
-  align-items: center;
-  gap: 0.85rem;
-  background: linear-gradient(135deg, rgba(14, 165, 233, 0.14), rgba(168, 85, 247, 0.16));
-  border: 1px dashed rgba(125, 211, 252, 0.35);
-  border-radius: 18px;
-  padding: 1rem 1.15rem;
-  color: #dbeafe;
-  font-weight: 700;
-  font-size: 0.88rem;
-}
-
-.blueprint-loop i {
-  color: #67e8f9;
-  font-size: 1.15rem;
-}
-
-/* Strength cards: less award-like, more capability tile */
-.award-card {
-  border: 1px solid rgba(37, 99, 235, 0.16);
-  border-top: 5px solid #2563eb;
-  position: relative;
-  overflow: hidden;
-}
-
-.award-card::after {
-  content: "";
-  position: absolute;
-  right: -30px;
-  top: -30px;
-  width: 100px;
-  height: 100px;
-  border-radius: 999px;
-  background: rgba(37, 99, 235, 0.08);
-}
-
-.award-icon {
-  width: 52px;
-  height: 52px;
-  border-radius: 16px;
-  display: grid;
-  place-items: center;
-  background: #eff6ff;
-  color: #2563eb;
-  font-size: 1.3rem;
-  margin-bottom: 1rem;
 }
 
 @media (max-width: 992px) {
   .workflow-bars { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .tier-arc { gap: 2rem; }
   #case-study .impact-section ul { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .tools-panel { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 768px) {
@@ -445,16 +323,11 @@
   #case-study .impact-section li { min-height: auto; }
   .tier-arc { gap: 0.75rem; min-height: auto; align-items: center; flex-wrap: wrap; }
   .tier-arc::before { display: none; }
-  .tier-circle, .tier-circle-one, .tier-circle-two, .tier-circle-three {
-    width: 96px;
-    height: 96px;
-    transform: none;
-  }
+  .tier-circle, .tier-circle-one, .tier-circle-two, .tier-circle-three { width: 96px; height: 96px; transform: none; }
   .workflow-bars { grid-template-columns: 1fr; }
   .workflow-bar { min-height: auto; }
   .blueprint-panel { padding: 1.25rem; }
-  .blueprint-card { grid-template-columns: 1fr; text-align: left; }
-  .blueprint-icon { width: 58px; height: 58px; border-radius: 16px; }
-  .blueprint-connector span { display: none; }
-  .blueprint-loop { align-items: flex-start; }
+  .tools-panel .tools-chip-group { min-height: auto; }
+  .logo-grid { grid-template-columns: repeat(3, 54px); gap: 0.65rem; }
+  .logo-grid i { width: 54px; height: 54px; border-radius: 16px; font-size: 1.2rem; }
 }
