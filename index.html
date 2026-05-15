@@ -7,24 +7,22 @@
 <link rel="shortcut icon" href="./assets/logo.png" type="image/png" />
 <link rel="icon" href="./assets/logo.png" size="64x64" type="image/png" />
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
-<link rel="stylesheet" href="./index.css?v=20" />
-<link rel="stylesheet" href="./case-study.css?v=20" />
-<link rel="stylesheet" href="./about-infographic.css?v=20" />
+<link rel="stylesheet" href="./index.css?v=21" />
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&display=swap" rel="stylesheet" />
+<style>.story-band{padding:88px 24px}.story-wrap{max-width:1180px;margin:0 auto}.dark-band{background:linear-gradient(135deg,#07111f,#09294a 60%,#0b1726);color:white}.light-band{background:#f8fafc}.white-band{background:white}.section-kicker{color:#38bdf8;text-transform:uppercase;letter-spacing:.18em;font-size:.78rem;font-weight:900;margin-bottom:1rem}.story-title{font-size:clamp(2.2rem,5vw,4.5rem);line-height:.95;font-weight:900;letter-spacing:-.05em;max-width:920px;margin-bottom:1rem}.story-copy{max-width:820px;font-size:1.05rem;line-height:1.7;color:#cbd5e1}.light-band .story-copy,.white-band .story-copy{color:#475569}.sticky-story-nav{position:sticky;top:0;z-index:1000;background:rgba(255,255,255,.95);backdrop-filter:blur(12px);border-bottom:1px solid #dbe3ee}.sticky-story-nav .nav-custom{justify-content:center;gap:1.25rem;padding:.85rem 0}.impact-grid,.challenge-grid,.systems-grid,.principle-grid,.route-flow{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:2rem}.impact-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);border-radius:24px;padding:28px}.impact-card strong{display:block;font-size:2.8rem;font-weight:900;margin-bottom:.4rem}.impact-card span{font-weight:800}.impact-card:nth-child(1) strong,.impact-card:nth-child(1) span{color:#38bdf8}.impact-card:nth-child(2) strong,.impact-card:nth-child(2) span{color:#a855f7}.impact-card:nth-child(3) strong,.impact-card:nth-child(3) span{color:#f59e0b}.impact-card:nth-child(4) strong,.impact-card:nth-child(4) span{color:#14b8a6}.impact-card:nth-child(5) strong,.impact-card:nth-child(5) span{color:#ec4899}.impact-card:nth-child(6) strong,.impact-card:nth-child(6) span{color:#8b5cf6}.challenge-card,.system-card{background:white;border:1px solid #dbe3ee;border-radius:22px;padding:24px;box-shadow:0 12px 30px rgba(15,23,42,.05)}.challenge-card h3,.system-card h3,.principle-card h3{font-size:1rem;font-weight:900;margin-bottom:12px}.challenge-card p,.system-card p,.principle-card p{margin:0;color:#475569}.route-flow{grid-template-columns:repeat(4,1fr)}.route-node{background:white;border-radius:24px;padding:24px;border-top:6px solid #38bdf8;box-shadow:0 16px 40px rgba(15,23,42,.08)}.route-node:nth-child(2){border-top-color:#a855f7}.route-node:nth-child(3){border-top-color:#f59e0b}.route-node:nth-child(4){border-top-color:#14b8a6}.route-node strong{display:block;font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;margin-bottom:1rem;color:#64748b}.route-node h3{font-size:1.2rem;font-weight:900;margin-bottom:1rem}.route-node ul{padding-left:1rem;margin:0}.route-node li{margin:.45rem 0;color:#475569}.principle-grid{grid-template-columns:repeat(4,1fr)}.principle-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);border-radius:22px;padding:24px}.principle-card p{color:#dbeafe}.cta-panel{margin-top:2rem;background:linear-gradient(135deg,#07111f,#0b1726);border-radius:28px;padding:42px;color:white;text-align:center}.cta-panel a{display:inline-flex;margin-top:1rem;padding:14px 22px;border-radius:12px;background:#2563eb;color:white!important;font-weight:800;text-decoration:none}@media(max-width:900px){.impact-grid,.challenge-grid,.systems-grid,.principle-grid,.route-flow{grid-template-columns:1fr}}</style>
 </head>
 <body>
 <div id="page-wrapper">
-<header id="header" class="header">
+<header class="sticky-story-nav">
 <nav class="navbar navbar-expand-md navbar-light">
-<button class="navbar-toggler mx-auto" type="button" data-toggle="collapse" data-target="#navbarMenu"><span class="navbar-toggler-icon"></span></button>
-<div class="collapse navbar-collapse justify-content-center" id="navbarMenu">
 <ul class="navbar-nav nav-custom">
-<li class="nav-item active"><a class="nav-link" href="./index.html">Home</a></li>
-<li class="nav-item"><a class="nav-link" href="./systems.html">Workflow Systems</a></li>
-<li class="nav-item"><a class="nav-link" href="./capabilities.html">Operational Capabilities</a></li>
-<li class="nav-item"><a class="nav-link" href="./gtm-case-study.html">Case Study</a></li>
+<li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+<li class="nav-item"><a class="nav-link" href="#impact">Impact</a></li>
+<li class="nav-item"><a class="nav-link" href="#challenges">Challenges</a></li>
+<li class="nav-item"><a class="nav-link" href="#architecture">Architecture</a></li>
+<li class="nav-item"><a class="nav-link" href="#systems">Systems</a></li>
+<li class="nav-item"><a class="nav-link" href="#case-study">Case Study</a></li>
 </ul>
-</div>
 </nav>
 </header>
 <section id="home" class="linkedin-home-hero">
@@ -37,57 +35,95 @@
 <h1>Amy Melangton</h1>
 <h2>GTM Operations • Workflow Architecture • Enablement Systems</h2>
 <p>I design operational systems that improve lifecycle execution, onboarding consistency, workflow visibility, and scalable enablement adoption across revenue teams.</p>
-<div class="linkedin-actions"><a class="linkedin-primary" href="./gtm-case-study.html">View Case Study</a><a href="./systems.html">Workflow Systems</a><a href="./capabilities.html">Capabilities</a><a href="https://www.linkedin.com/in/amymelangton" target="_blank">LinkedIn</a></div>
+<div class="linkedin-actions"><a class="linkedin-primary" href="#case-study">Featured Case Study</a><a href="https://www.linkedin.com/in/amymelangton" target="_blank">LinkedIn</a></div>
 <div class="linkedin-tags"><span>Lifecycle Architecture</span><span>Workflow Automation</span><span>CRM Operations</span><span>Operational Enablement</span></div>
 </div>
 </div>
 </div>
 </div>
 </section>
-<section class="section-wrapper" style="padding-top:42px;padding-bottom:42px;background:white;">
-<div class="container">
-<div class="impact-section priority-impact" style="border:1px solid #dbe3ee;box-shadow:0 16px 45px rgba(15,23,42,.07);">
-<h3 style="margin-bottom:1.5rem;">Systems Impact Snapshot</h3>
-<ul>
-<li><strong style="color:#38bdf8;">25,000+</strong><span style="color:#38bdf8;font-weight:800;">Contacts structured through CRM segmentation logic</span></li>
-<li><strong style="color:#a855f7;">40+</strong><span style="color:#a855f7;font-weight:800;">Lifecycle workflows and outreach paths developed</span></li>
-<li><strong style="color:#f59e0b;">200+</strong><span style="color:#f59e0b;font-weight:800;">Enablement and messaging assets created</span></li>
-<li><strong style="color:#14b8a6;">75%</strong><span style="color:#14b8a6;font-weight:800;">Reduction in SDR ramp time from one month to one week</span></li>
-</ul>
+<section id="impact" class="story-band dark-band">
+<div class="story-wrap">
+<div class="section-kicker">Systems Impact</div>
+<h2 class="story-title">Operational infrastructure designed for scalable execution.</h2>
+<p class="story-copy">The work focused on lifecycle routing, onboarding systems, workflow automation logic, segmentation architecture, enablement infrastructure, and operational adoption.</p>
+<div class="impact-grid">
+<div class="impact-card"><strong>25K+</strong><span>Structured Contacts</span></div>
+<div class="impact-card"><strong>40+</strong><span>Lifecycle Workflows</span></div>
+<div class="impact-card"><strong>200+</strong><span>Enablement Assets</span></div>
+<div class="impact-card"><strong>75%</strong><span>Reduced SDR Ramp Time</span></div>
+<div class="impact-card"><strong>15+</strong><span>Persona Systems</span></div>
+<div class="impact-card"><strong>10+</strong><span>Operational Frameworks</span></div>
 </div>
 </div>
 </section>
-<section class="systems-showcase homepage-launchpad">
-<div class="systems-showcase-wrap">
-<div class="systems-showcase-header"><p>Operational Focus Areas</p><h2>Workflow automation, lifecycle routing, and enablement infrastructure built for scalable execution.</h2><span>The work centers around routing logic, trigger-based workflow paths, queue prioritization, CRM segmentation, onboarding systems, embedded guidance, workflow visibility, and operational adoption.</span></div>
-<div class="systems-showcase-grid"><a class="systems-showcase-card cyan" href="./systems.html"><strong>01</strong><h3>Lifecycle Routing</h3><p>Cold, warm, renewal, reactivation, direct mail, and sales-ready paths structured into clearer operating lanes.</p></a><a class="systems-showcase-card purple" href="./capabilities.html"><strong>02</strong><h3>Workflow Automation Logic</h3><p>Queue prioritization, trigger-based task paths, routing rules, cleanup workflows, and operational escalation logic.</p></a><a class="systems-showcase-card amber" href="./gtm-case-study.html"><strong>03</strong><h3>Enablement Infrastructure</h3><p>Onboarding systems, objection libraries, reusable messaging, embedded guidance, and roleplay/training structures.</p></a><div class="systems-showcase-card teal"><strong>04</strong><h3>Operational Outcomes</h3><p>Better prioritization, less tribal knowledge, faster ramping, clearer execution, and scalable workflow adoption.</p></div></div>
+<section id="challenges" class="story-band light-band">
+<div class="story-wrap">
+<div class="section-kicker">Operational Challenges Solved</div>
+<h2 class="story-title" style="color:#0f172a;">The problem was not content. It was operational consistency.</h2>
+<p class="story-copy">The environment included fragmented onboarding, workflow ambiguity, manual coaching dependency, lifecycle complexity, and scattered operational guidance.</p>
+<div class="challenge-grid">
+<div class="challenge-card"><h3>Workflow Ambiguity</h3><p>Teams lacked clearer routing, prioritization, and lifecycle visibility.</p></div>
+<div class="challenge-card"><h3>Manual Coaching Dependency</h3><p>Execution quality depended heavily on repeated live support.</p></div>
+<div class="challenge-card"><h3>Fragmented Enablement</h3><p>Knowledge and operational guidance lived across disconnected systems.</p></div>
+<div class="challenge-card"><h3>Lifecycle Complexity</h3><p>Outbound, inbound, renewals, nurture, and reactivation required different paths.</p></div>
+<div class="challenge-card"><h3>Segmentation Scale</h3><p>25K+ contacts required clearer classification and prioritization logic.</p></div>
+<div class="challenge-card"><h3>Adoption Friction</h3><p>Systems needed to be usable enough for consistent day-to-day execution.</p></div>
+</div>
 </div>
 </section>
-<section id="case-study" class="section-wrapper">
-<div class="container">
-<div class="case-study-card">
-<div class="case-study-header case-panel">
-<p class="eyebrow">Featured Case Study</p>
-<h2>Account Prioritization & Enablement Framework</h2>
-<p class="case-meta">HubSpot CRM · ZoomInfo · LinkedIn Sales Navigator</p>
-<p>Built scalable lifecycle routing, segmentation frameworks, onboarding systems, operational workflows, and enablement infrastructure supporting execution across a 25,000+ contact environment.</p>
+<section id="architecture" class="story-band white-band">
+<div class="story-wrap">
+<div class="section-kicker">Workflow & Automation Architecture</div>
+<h2 class="story-title" style="color:#0f172a;">Structured lifecycle routing and workflow automation logic.</h2>
+<p class="story-copy">The operating model connected intake, segmentation, prioritization, onboarding, enablement, and escalation into a clearer execution framework.</p>
+<div class="route-flow">
+<div class="route-node"><strong>01</strong><h3>Lead Intake</h3><ul><li>Website activity</li><li>Inbound responses</li><li>Direct mail</li><li>Referrals</li></ul></div>
+<div class="route-node"><strong>02</strong><h3>Segmentation</h3><ul><li>ICP tiering</li><li>Compliance overlays</li><li>Persona classification</li><li>Vertical routing</li></ul></div>
+<div class="route-node"><strong>03</strong><h3>Workflow Automation</h3><ul><li>Queue prioritization</li><li>Lifecycle paths</li><li>Escalation logic</li><li>Task routing</li></ul></div>
+<div class="route-node"><strong>04</strong><h3>Enablement Support</h3><ul><li>Embedded guidance</li><li>Objection systems</li><li>Onboarding resources</li><li>Operational consistency</li></ul></div>
 </div>
-<div class="impact-section priority-impact">
-<h3>Operational Systems Built</h3>
-<ul>
-<li><strong style="color:#38bdf8;">Routing</strong><span style="color:#38bdf8;font-weight:800;">Lifecycle, queue, and prioritization architecture</span></li>
-<li><strong style="color:#a855f7;">Governance</strong><span style="color:#a855f7;font-weight:800;">Messaging, segmentation, and workflow consistency</span></li>
-<li><strong style="color:#f59e0b;">Enablement</strong><span style="color:#f59e0b;font-weight:800;">Onboarding, objection handling, and training systems</span></li>
-<li><strong style="color:#14b8a6;">Adoption</strong><span style="color:#14b8a6;font-weight:800;">Usable systems designed for day-to-day execution</span></li>
-</ul>
 </div>
-<div class="hero-buttons"><a class="hero-btn primary-btn" href="./gtm-case-study.html" style="color:white!important;font-weight:800;">View Full Case Study</a></div>
+</section>
+<section id="systems" class="story-band dark-band">
+<div class="story-wrap">
+<div class="section-kicker">Operational Systems Built</div>
+<h2 class="story-title">Systems designed to reduce friction and standardize execution.</h2>
+<div class="systems-grid">
+<div class="system-card"><h3>Lifecycle Routing Systems</h3><p>Defined operational paths for outbound, inbound, renewals, nurture, and reactivation.</p></div>
+<div class="system-card"><h3>Workflow Automation Logic</h3><p>Queue prioritization, escalation paths, trigger-based workflows, and CRM operating logic.</p></div>
+<div class="system-card"><h3>Enablement Infrastructure</h3><p>Onboarding systems, objection libraries, training resources, and embedded guidance.</p></div>
+<div class="system-card"><h3>Segmentation Architecture</h3><p>Tiering frameworks, persona structures, compliance overlays, and vertical targeting logic.</p></div>
+<div class="system-card"><h3>Operational Governance</h3><p>Messaging consistency, workflow standards, lifecycle structure, and operational visibility.</p></div>
+<div class="system-card"><h3>AI-Assisted Operations</h3><p>AI-supported workflow scaling, research support, drafting systems, and operational efficiency.</p></div>
+</div>
+</div>
+</section>
+<section class="story-band dark-band">
+<div class="story-wrap">
+<div class="section-kicker">Design Principles</div>
+<h2 class="story-title">Operational systems people can actually adopt and use.</h2>
+<div class="principle-grid">
+<div class="principle-card"><h3>Design For Adoption</h3><p>Reduce operational friction and simplify day-to-day execution.</p></div>
+<div class="principle-card"><h3>Centralize Knowledge</h3><p>Move guidance into structured operational systems instead of tribal knowledge.</p></div>
+<div class="principle-card"><h3>Standardize Execution</h3><p>Create repeatable processes that scale more consistently across teams.</p></div>
+<div class="principle-card"><h3>Improve Visibility</h3><p>Clarify routing, prioritization, lifecycle progression, and workflow ownership.</p></div>
+</div>
+</div>
+</section>
+<section id="case-study" class="story-band white-band">
+<div class="story-wrap">
+<div class="section-kicker">Featured Case Study</div>
+<h2 class="story-title" style="color:#0f172a;">Account Prioritization & Enablement Framework</h2>
+<p class="story-copy">Built scalable lifecycle routing, onboarding systems, segmentation frameworks, workflow governance, and enablement infrastructure supporting execution across a 25,000+ contact environment.</p>
+<div class="cta-panel">
+<h3 style="font-size:2rem;font-weight:900;">View the full operational breakdown.</h3>
+<p style="max-width:700px;margin:1rem auto 0;color:#cbd5e1;">Includes lifecycle routing architecture, workflow systems, onboarding infrastructure, operational challenges, and measurable outcomes.</p>
+<a href="./gtm-case-study.html">Open Full Case Study</a>
 </div>
 </div>
 </section>
 <footer id="footer" class="footer"><div class="container text-center"><p>&copy; 2026 Amy Melangton</p></div></footer>
 </div>
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
