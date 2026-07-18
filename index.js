@@ -18,8 +18,6 @@ document.querySelectorAll(".navbar-toggler").forEach((button) => {
   });
 });
 
-document.documentElement.classList.add("js-enabled");
-
 const serviceTabs = Array.from(document.querySelectorAll(".service-tab"));
 
 function activateServiceTab(activeTab, moveFocus = false) {
@@ -59,28 +57,3 @@ serviceTabs.forEach((tab, index) => {
     activateServiceTab(serviceTabs[nextIndex], true);
   });
 });
-
-if (serviceTabs.length) {
-  const initiallySelected = serviceTabs.find((tab) => tab.getAttribute("aria-selected") === "true") || serviceTabs[0];
-  activateServiceTab(initiallySelected);
-}
-
-const revealItems = Array.from(document.querySelectorAll("[data-reveal]"));
-const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-
-if (!reduceMotion && "IntersectionObserver" in window) {
-  revealItems.forEach((item) => item.classList.add("reveal-ready"));
-
-  const revealObserver = new IntersectionObserver(
-    (entries, observer) => {
-      entries.forEach((entry) => {
-        if (!entry.isIntersecting) return;
-        entry.target.classList.add("is-visible");
-        observer.unobserve(entry.target);
-      });
-    },
-    { threshold: 0.12 }
-  );
-
-  revealItems.forEach((item) => revealObserver.observe(item));
-}

@@ -20,7 +20,7 @@
             <li><a class="nav-link" href="#services">Services</a></li>
             <li><a class="nav-link" href="#case-studies">Selected Systems</a></li>
             <li><a class="nav-link" href="#process">How I Work</a></li>
-            <li><a class="nav-link nav-link-cta" href="#contact">Start a Conversation</a></li>
+            <li><a class="nav-link" href="#contact">Start a Conversation</a></li>
           </ul>
         </div>
       </nav>
@@ -29,7 +29,7 @@
     <main>
       <section id="home" class="home">
         <div class="hero-shell container">
-          <div class="hero-content" data-reveal>
+          <div class="hero-content">
             <p class="hero-name">Amy Melangton</p>
             <h1>Building the Processes and Systems Behind High-Performing Sales Teams.</h1>
             <p class="hero-summary">I help small businesses assess, design, and improve the processes, technology, automation, and reporting that support their sales operations.</p>
@@ -38,8 +38,8 @@
               <a class="button button-secondary" href="#contact">Start a Conversation</a>
             </div>
           </div>
-          <figure class="hero-photo" data-reveal>
-            <div class="hero-photo-frame"><img src="./assets/amy.jpg" alt="Portrait of Amy Melangton" /></div>
+          <figure class="hero-photo">
+            <img src="./assets/amy.jpg" alt="Portrait of Amy Melangton" />
             <figcaption>I believe the right processes, technology, tools, training, and support give people what they need to work effectively, adapt confidently, and grow with the business.</figcaption>
           </figure>
         </div>
@@ -48,7 +48,7 @@
       <section id="services" class="section-wrapper services-section">
         <div class="container">
           <!-- Working copy from the approved blueprint. Review before merge. -->
-          <div class="section-heading" data-copy-status="working" data-reveal><h2>Consulting Services</h2><p>Practical support for improving how your sales operation works—from the processes your team follows to the systems, applications, automation, data, and reporting that support them.</p></div>
+          <div class="section-heading" data-copy-status="working"><h2>Consulting Services</h2><p>Practical support for improving how your sales operation works—from the processes your team follows to the systems, applications, automation, data, and reporting that support them.</p></div>
           <div class="service-explorer">
             <div class="service-tabs" role="tablist" aria-label="Service areas">
               <button class="service-tab is-active" id="tab-sales-operations" type="button" role="tab" aria-selected="true" aria-controls="panel-sales-operations">Sales Operations</button>
@@ -59,10 +59,10 @@
               <article class="service-panel" id="panel-sales-operations" role="tabpanel" aria-labelledby="tab-sales-operations">
                 <div class="service-editorial"><span class="service-number" aria-hidden="true">01</span><div class="service-content"><div class="service-heading"><span class="service-icon" aria-hidden="true">↻</span><h3>Sales Operations</h3></div><p class="service-intro">Assess, design, and document the processes that guide how your sales team works.</p><div class="service-capabilities"><h4>Core expertise</h4><ul class="capability-list"><li>Sales Process Design</li><li>Process Mapping</li><li>Lead Management</li><li>Pipeline Design</li><li>Workflow Design</li><li>SOPs and Documentation</li><li>Handoffs</li><li>Change Support</li></ul></div></div></div>
               </article>
-              <article class="service-panel" id="panel-systems-automation" role="tabpanel" aria-labelledby="tab-systems-automation">
+              <article class="service-panel" id="panel-systems-automation" role="tabpanel" aria-labelledby="tab-systems-automation" hidden>
                 <div class="service-editorial"><span class="service-number" aria-hidden="true">02</span><div class="service-content"><div class="service-heading"><span class="service-icon" aria-hidden="true">▣</span><h3>CRM, Systems &amp; Automation</h3></div><p class="service-intro">Implement, improve, and connect the technology that supports your sales operation, including custom application development.</p><div class="service-capabilities"><h4>Core expertise</h4><ul class="capability-list"><li>CRM Strategy and Configuration</li><li>CRM Optimization</li><li>Workflow Automation</li><li>Systems Integration</li><li>Internal Applications</li><li>CRM Extensions</li><li>Portals and Workflow Tools</li><li>User Adoption</li></ul></div></div></div>
               </article>
-              <article class="service-panel" id="panel-data-analytics" role="tabpanel" aria-labelledby="tab-data-analytics">
+              <article class="service-panel" id="panel-data-analytics" role="tabpanel" aria-labelledby="tab-data-analytics" hidden>
                 <div class="service-editorial"><span class="service-number" aria-hidden="true">03</span><div class="service-content"><div class="service-heading"><span class="service-icon" aria-hidden="true">◎</span><h3>Data &amp; Analytics</h3></div><p class="service-intro">Improve data quality and build the dashboards, reports, and measurements needed to understand performance.</p><div class="service-capabilities"><h4>Core expertise</h4><ul class="capability-list"><li>Data Quality</li><li>Dashboards and Reporting</li><li>Pipeline Analytics</li><li>KPI Design</li><li>Forecast Visibility</li><li>Operational Reporting</li><li>Data Governance</li><li>Decision Support</li></ul></div></div></div>
               </article>
             </div>
@@ -72,79 +72,64 @@
 
       <section id="principles" class="section-wrapper principles-section">
         <div class="container">
-          <div class="section-heading" data-copy-status="working" data-reveal>
+          <div class="section-heading" data-copy-status="working">
             <h2>Strategic Principles</h2>
             <!-- Working copy from the approved blueprint. Review before merge. -->
             <p>The process, technology, data, documentation, and training should work together so the team can operate effectively and continue improving without permanent dependence on the consultant.</p>
           </div>
-          <div class="principles-grid">
-            <article data-reveal><span aria-hidden="true">01</span><h3>Build systems people can own.</h3></article>
-            <article data-reveal><span aria-hidden="true">02</span><h3>Improve the process before automating it.</h3></article>
-            <article data-reveal><span aria-hidden="true">03</span><h3>Technology should support the workflow, not dictate it.</h3></article>
-            <article data-reveal><span aria-hidden="true">04</span><h3>AI is a capability, not the product.</h3></article>
-          </div>
+          <ol class="process-list principles-list">
+            <li><strong>Build systems people can own.</strong></li>
+            <li><strong>Improve the process before automating it.</strong></li>
+            <li><strong>Technology should support the workflow, not dictate it.</strong></li>
+            <li><strong>AI is a capability, not the product.</strong></li>
+          </ol>
         </div>
       </section>
 
       <section id="case-studies" class="section-wrapper case-studies-section">
         <div class="container">
-          <div class="section-heading" data-reveal><h2>Selected Systems</h2><p>Examples of the processes, systems, and tools I design to support sales operations.</p></div>
-          <div class="systems-list">
-            <article class="system-row" data-reveal>
-              <a class="system-image" href="sales-enablement-platform.html"><img src="./assets/project-screenshots/sales-my-work.png" alt="Sales Enablement Platform organizing prioritized work and account context" /></a>
-              <div class="system-copy"><p class="system-type" data-copy-status="working">Sales operations workspace</p><h3>Sales Enablement Platform</h3><p>A sales operations workspace connecting priorities, customer context, playbooks, learning, coaching, and AI guidance.</p><ul class="system-tags" aria-label="Capabilities"><li>CRM Support</li><li>Workflow Design</li><li>Enablement</li><li>AI-Assisted Workflow</li></ul><a class="system-link" href="sales-enablement-platform.html" aria-label="View Sales Enablement Platform system">View System <span aria-hidden="true">→</span></a></div>
-            </article>
-            <article class="system-row" data-reveal>
-              <a class="system-image" href="fire-protection-platform.html"><img src="./assets/project-screenshots/fire-my-engagements.png" alt="Fire Protection Field Assistant showing an annual sprinkler inspection engagement" /></a>
-              <div class="system-copy"><p class="system-type" data-copy-status="working">Field workflow application</p><h3>Fire Protection Field Assistant</h3><p>A mobile operations workflow connecting preparation, system checks, documentation, resources, and field guidance.</p><ul class="system-tags" aria-label="Capabilities"><li>Workflow Design</li><li>Internal Application</li><li>Documentation</li><li>AI-Assisted Workflow</li></ul><a class="system-link" href="fire-protection-platform.html" aria-label="View Fire Protection Field Assistant system">View System <span aria-hidden="true">→</span></a></div>
-            </article>
-            <article class="system-row" data-reveal>
-              <a class="system-image" href="commercial-lighting-platform.html"><img src="./assets/project-screenshots/commercial-lighting-workspace-branded.png" alt="Commercial Lighting Intelligence Platform displaying a retrofit quote and bill of materials" /></a>
-              <div class="system-copy"><p class="system-type" data-copy-status="working">Quoting and decision-support application</p><h3>Commercial Lighting Intelligence Platform</h3><p>A quoting system for RFQ readiness, supplier pricing, product decisions, margin visibility, and proposals.</p><ul class="system-tags" aria-label="Capabilities"><li>Workflow Design</li><li>Data Structure</li><li>Reporting</li><li>AI-Assisted Workflow</li></ul><a class="system-link" href="commercial-lighting-platform.html" aria-label="View Commercial Lighting Intelligence Platform system">View System <span aria-hidden="true">→</span></a></div>
-            </article>
-            <article class="system-row" data-reveal>
-              <a class="system-image" href="learning-experience-platform.html"><img src="./assets/project-screenshots/learning-playbook-browser.png" alt="Learning Experience Platform displaying a discovery and qualification playbook" /></a>
-              <div class="system-copy"><p class="system-type" data-copy-status="working">Learning and enablement application</p><h3>Learning Experience Platform</h3><p>An enablement system connecting onboarding, knowledge reinforcement, practice, and progress to daily work.</p><ul class="system-tags" aria-label="Capabilities"><li>Enablement</li><li>Workflow Design</li><li>Internal Application</li></ul><a class="system-link" href="learning-experience-platform.html" aria-label="View Learning Experience Platform system">View System <span aria-hidden="true">→</span></a></div>
-            </article>
-            <article class="system-row" data-reveal>
-              <a class="system-image" href="ai-objection-handling-assistant.html"><img src="./assets/project-screenshots/ai-objection-coach.png" alt="AI Objection Handling Coach with guided live-assist scenarios" /></a>
-              <div class="system-copy"><p class="system-type" data-copy-status="working">AI-assisted sales workflow tool</p><h3>AI Objection Handling Assistant</h3><p>A sales support tool for practicing and responding to objections with context, discovery guidance, and next steps.</p><ul class="system-tags" aria-label="Capabilities"><li>AI-Assisted Workflow</li><li>Enablement</li><li>Process Design</li></ul><a class="system-link" href="ai-objection-handling-assistant.html" aria-label="View AI Objection Handling Assistant system">View System <span aria-hidden="true">→</span></a></div>
-            </article>
+          <div class="section-heading"><h2>Selected Systems</h2><p>Examples of the processes, systems, and tools I design to support sales operations.</p></div>
+          <div class="case-study-grid">
+            <article class="case-study-card"><a href="sales-enablement-platform.html"><img src="./assets/project-screenshots/sales-my-work.png" alt="Sales Enablement Platform organizing prioritized work and account context" /><div><p class="system-type" data-copy-status="working">Sales operations workspace</p><h3>Sales Enablement Platform</h3><p>A sales operations workspace connecting priorities, customer context, playbooks, learning, coaching, and AI guidance.</p><ul class="capability-list system-tags" aria-label="Capabilities"><li>CRM Support</li><li>Workflow Design</li><li>Enablement</li><li>AI-Assisted Workflow</li></ul><span>View System <span aria-hidden="true">→</span></span></div></a></article>
+            <article class="case-study-card"><a href="fire-protection-platform.html"><img src="./assets/project-screenshots/fire-my-engagements.png" alt="Fire Protection Field Assistant showing an annual sprinkler inspection engagement" /><div><p class="system-type" data-copy-status="working">Field workflow application</p><h3>Fire Protection Field Assistant</h3><p>A mobile operations workflow connecting preparation, system checks, documentation, resources, and field guidance.</p><ul class="capability-list system-tags" aria-label="Capabilities"><li>Workflow Design</li><li>Internal Application</li><li>Documentation</li><li>AI-Assisted Workflow</li></ul><span>View System <span aria-hidden="true">→</span></span></div></a></article>
+            <article class="case-study-card"><a href="commercial-lighting-platform.html"><img src="./assets/project-screenshots/commercial-lighting-workspace-branded.png" alt="Commercial Lighting Intelligence Platform displaying a retrofit quote and bill of materials" /><div><p class="system-type" data-copy-status="working">Quoting and decision-support application</p><h3>Commercial Lighting Intelligence Platform</h3><p>A quoting system for RFQ readiness, supplier pricing, product decisions, margin visibility, and proposals.</p><ul class="capability-list system-tags" aria-label="Capabilities"><li>Workflow Design</li><li>Data Structure</li><li>Reporting</li><li>AI-Assisted Workflow</li></ul><span>View System <span aria-hidden="true">→</span></span></div></a></article>
+            <article class="case-study-card"><a href="learning-experience-platform.html"><img src="./assets/project-screenshots/learning-playbook-browser.png" alt="Learning Experience Platform displaying a discovery and qualification playbook" /><div><p class="system-type" data-copy-status="working">Learning and enablement application</p><h3>Learning Experience Platform</h3><p>An enablement system connecting onboarding, knowledge reinforcement, practice, and progress to daily work.</p><ul class="capability-list system-tags" aria-label="Capabilities"><li>Enablement</li><li>Workflow Design</li><li>Internal Application</li></ul><span>View System <span aria-hidden="true">→</span></span></div></a></article>
+            <article class="case-study-card"><a href="ai-objection-handling-assistant.html"><img src="./assets/project-screenshots/ai-objection-coach.png" alt="AI Objection Handling Coach with guided live-assist scenarios" /><div><p class="system-type" data-copy-status="working">AI-assisted sales workflow tool</p><h3>AI Objection Handling Assistant</h3><p>A sales support tool for practicing and responding to objections with context, discovery guidance, and next steps.</p><ul class="capability-list system-tags" aria-label="Capabilities"><li>AI-Assisted Workflow</li><li>Enablement</li><li>Process Design</li></ul><span>View System <span aria-hidden="true">→</span></span></div></a></article>
           </div>
         </div>
       </section>
 
       <section id="process" class="section-wrapper process-section">
         <div class="container">
-          <div class="section-heading" data-reveal><h2>How I Work</h2><p>A practical path from understanding the current operation to supporting a useful solution.</p></div>
+          <div class="section-heading"><h2>How I Work</h2><p>A practical path from understanding the current operation to supporting a useful solution.</p></div>
           <ol class="process-list">
-            <li data-reveal><strong>Assess</strong><span>Understand the business, the people, the current processes, the technology, the data, and the underlying problem.</span></li>
-            <li data-reveal><strong>Design</strong><span>Define the future process, system requirements, workflow, information structure, and practical approach.</span></li>
-            <li data-reveal><strong>Build</strong><span>Configure, develop, automate, document, and connect the required systems, tools, applications, or resources.</span></li>
-            <li data-reveal><strong>Validate</strong><span>Test the solution with real workflows and users, confirm that it works as intended, and refine where needed.</span></li>
-            <li data-reveal><strong>Support</strong><span>Prepare people for adoption, provide documentation and guidance, and support future improvement when appropriate.</span></li>
+            <li><strong>Assess</strong><span>Understand the business, the people, the current processes, the technology, the data, and the underlying problem.</span></li>
+            <li><strong>Design</strong><span>Define the future process, system requirements, workflow, information structure, and practical approach.</span></li>
+            <li><strong>Build</strong><span>Configure, develop, automate, document, and connect the required systems, tools, applications, or resources.</span></li>
+            <li><strong>Validate</strong><span>Test the solution with real workflows and users, confirm that it works as intended, and refine where needed.</span></li>
+            <li><strong>Support</strong><span>Prepare people for adoption, provide documentation and guidance, and support future improvement when appropriate.</span></li>
           </ol>
           <!-- Working copy from the approved blueprint. Review before merge. -->
-          <div class="process-closing" data-copy-status="working" data-reveal><p>The client should be prepared to take ownership.</p><p>Ongoing support is available when useful, but permanent dependence is not the goal.</p></div>
+          <div class="process-closing" data-copy-status="working"><p>The client should be prepared to take ownership.</p><p>Ongoing support is available when useful, but permanent dependence is not the goal.</p></div>
         </div>
       </section>
 
       <section id="engagement" class="section-wrapper engagement-section">
         <div class="container">
           <!-- Working section title and copy from the approved blueprint. Review before merge. -->
-          <div class="section-heading" data-copy-status="working" data-reveal><h2>A Practical Engagement Model</h2><p>Support can begin with assessment, continue through implementation, and include reusable resources or optional guidance based on what the business needs.</p></div>
-          <div class="engagement-grid" data-copy-status="working">
-            <article data-reveal><span aria-hidden="true">01</span><h3>Assessment and Strategy</h3><p>Understand the current operation, identify gaps, define priorities, and create a practical roadmap.</p></article>
-            <article data-reveal><span aria-hidden="true">02</span><h3>Implementation and Custom Solutions</h3><p>Redesign processes, configure systems, build workflows, connect tools, and develop the required business solution.</p></article>
-            <article data-reveal><span aria-hidden="true">03</span><h3>Enablement Resources</h3><p>Provide reusable documentation, workflows, templates, playbooks, training content, reporting tools, AI assistance, and adoption resources where they support the engagement.</p></article>
-            <article data-reveal><span aria-hidden="true">04</span><h3>Optional Advisory and Coaching</h3><p>Provide continued help with adoption, governance, reporting, process refinement, planning, and ongoing improvement. This remains optional and should not be framed as an automatic retainer.</p></article>
+          <div class="section-heading" data-copy-status="working"><h2>A Practical Engagement Model</h2><p>Support can begin with assessment, continue through implementation, and include reusable resources or optional guidance based on what the business needs.</p></div>
+          <div class="case-study-grid engagement-grid" data-copy-status="working">
+            <article class="case-study-card engagement-card"><div><p class="system-type">01</p><h3>Assessment and Strategy</h3><p>Understand the current operation, identify gaps, define priorities, and create a practical roadmap.</p></div></article>
+            <article class="case-study-card engagement-card"><div><p class="system-type">02</p><h3>Implementation and Custom Solutions</h3><p>Redesign processes, configure systems, build workflows, connect tools, and develop the required business solution.</p></div></article>
+            <article class="case-study-card engagement-card"><div><p class="system-type">03</p><h3>Enablement Resources</h3><p>Provide reusable documentation, workflows, templates, playbooks, training content, reporting tools, AI assistance, and adoption resources where they support the engagement.</p></div></article>
+            <article class="case-study-card engagement-card"><div><p class="system-type">04</p><h3>Optional Advisory and Coaching</h3><p>Provide continued help with adoption, governance, reporting, process refinement, planning, and ongoing improvement. This remains optional and should not be framed as an automatic retainer.</p></div></article>
           </div>
         </div>
       </section>
 
       <section id="contact" class="section-wrapper contact-section">
         <div class="container">
-          <div class="contact-cta-card" data-reveal><h2>Ready to Improve Your Sales Operations?</h2><p>Whether you’re refining an existing CRM, building better sales processes, or developing the systems that support your team, let’s discuss where you’re trying to go.</p><a class="contact-primary" href="mailto:armelangton@gmail.com">Start a Conversation</a></div>
+          <div class="contact-cta-card"><h2>Ready to Improve Your Sales Operations?</h2><p>Whether you’re refining an existing CRM, building better sales processes, or developing the systems that support your team, let’s discuss where you’re trying to go.</p><div class="contact-links"><a href="mailto:armelangton@gmail.com">Start a Conversation</a></div></div>
         </div>
       </section>
     </main>
