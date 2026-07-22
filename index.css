@@ -109,6 +109,7 @@ h1::before, h2::before, .ghost-text { display: none !important; }
 
 .about-section { background: transparent; color: var(--ink); }
 .about-content { display: grid; grid-template-columns: minmax(260px,.8fr) minmax(0,1.2fr); gap: clamp(3rem,8vw,7rem); }
+.about-content-single { grid-template-columns: minmax(0,720px); justify-content: end; }
 .about-content p { max-width: 720px; color: var(--ink-soft); }
 .about-content p:last-child { margin-bottom: 0; font-weight: 600; }
 .contact-section { background: transparent; }
