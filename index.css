@@ -21,7 +21,7 @@ a:focus-visible, button:focus-visible, summary:focus-visible { outline: 3px soli
 h1, h2, h3, p, figure { margin-top: 0; }
 h1, h2 { font-family: "Lora", serif; font-weight: 600; line-height: 1.12; }
 h3 { font-family: "Inter", sans-serif; font-weight: 700; line-height: 1.18; }
-h1::before, h2::before, .ghost-text { display: none !important; }
+h1::before, h2::before, .section-heading::before, .ghost-text { display: none !important; content: none !important; }
 .container { width: min(calc(100% - 48px), var(--container)); margin-inline: auto; }
 
 .header { position: sticky; top: 0; z-index: 20; background: rgba(244,248,246,.96); border: 0; }
@@ -88,10 +88,12 @@ h1::before, h2::before, .ghost-text { display: none !important; }
 .pricing-card li { position: relative; padding-left: 1.15rem; color: var(--ink-soft); font-size: .82rem; }
 .pricing-card li::before { position: absolute; left: 0; color: var(--teal); content: "✓"; font-weight: 700; }
 
-.faq-list { border-top: 1px solid var(--line); }
+.faq-content { width: min(calc(100% - 48px),960px); }
+.faq-content .section-heading { margin-bottom: 2rem; }
+.faq-list { width: 100%; border-top: 1px solid var(--line); }
 .faq-list details { border-bottom: 1px solid var(--line); }
-.faq-list summary { padding: 1.15rem 2rem 1.15rem 0; color: var(--teal-dark); font-size: .92rem; font-weight: 700; cursor: pointer; }
-.faq-list details p { max-width: 800px; margin: -.15rem 0 1.25rem; color: var(--ink-soft); font-size: .9rem; }
+.faq-list summary { padding: 1.2rem 2rem 1.2rem 0; color: var(--teal-dark); font-size: .96rem; font-weight: 700; cursor: pointer; }
+.faq-list details p { max-width: 860px; margin: 0 0 1.4rem; padding-right: 1.5rem; color: var(--ink-soft); font-size: .92rem; line-height: 1.7; }
 
 .case-studies-section { background: transparent; }
 .case-study-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 3.5rem 2rem; }
@@ -166,6 +168,7 @@ h1::before, h2::before, .ghost-text { display: none !important; }
 @media (max-width: 767px) {
   html { scroll-padding-top: 64px; }
   .container { width: min(calc(100% - 32px), var(--container)); }
+  .faq-content { width: min(calc(100% - 32px),960px); }
   .header { position: relative; }
   .navbar { min-height: 62px; }
   .navbar-toggler { display: block; margin-left: auto; }
