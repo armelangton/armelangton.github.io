@@ -61,14 +61,13 @@ h1::before, h2::before, .ghost-text { display: none !important; }
 .service-tab { min-height: 58px; padding: .85rem 1.25rem .85rem 0; border: 0; border-bottom: 1px solid var(--line); background: transparent; color: var(--ink-soft); font: 600 .82rem/1.4 "Inter", sans-serif; text-align: left; cursor: pointer; }
 .service-tab:last-child { border-bottom: 0; }
 .service-tab:hover, .service-tab:focus-visible, .service-tab.is-active { color: var(--teal-dark); }
-.service-tab.is-active { box-shadow: inset 3px 0 var(--teal); padding-left: 1rem; }
+.service-tab.is-active { padding-left: 1rem; background: var(--teal-dark); box-shadow: none; color: var(--white); }
 .service-panels { min-width: 0; }
-.service-panel { min-height: 340px; padding: clamp(2rem,5vw,3.5rem); }
+.service-panel { min-height: 340px; padding: clamp(2rem,5vw,3.5rem); background: linear-gradient(135deg,#e5f4ef 0%,#f4f8f6 72%); }
 .service-panel[hidden] { display: none; }
 .service-panel:not([hidden]) { animation: service-panel-in 180ms ease-out; }
 .service-editorial { display: grid; grid-template-columns: 1fr; }
-.service-heading { display: flex; gap: .75rem; margin-bottom: .8rem; align-items: center; }
-.service-icon { display: inline-flex; width: 38px; height: 38px; border-radius: 10px; background: var(--teal-light); align-items: center; justify-content: center; color: var(--teal-dark); font-size: 1rem; font-weight: 700; }
+.service-heading { display: flex; margin-bottom: .8rem; align-items: center; }
 .service-content h3 { margin: 0; color: var(--teal-dark); font-size: clamp(1.35rem,2.5vw,1.9rem); }
 .service-intro { max-width: 650px; margin-bottom: 1.4rem; color: #2a4d46; font-size: clamp(.96rem,1.5vw,1.08rem); line-height: 1.65; }
 .service-capabilities h4 { margin: 0 0 .6rem; color: var(--teal); font-size: .68rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
@@ -77,12 +76,17 @@ h1::before, h2::before, .ghost-text { display: none !important; }
 @keyframes service-panel-in { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: translateY(0); } }
 
 .pricing-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 1.25rem; }
+.pricing-block { padding-top: clamp(4rem,7vw,6rem); }
 .pricing-card { display: flex; padding: clamp(1.5rem,3vw,2rem); border: 1px solid var(--line); border-radius: 12px; background: var(--white); box-shadow: 0 5px 24px rgba(11,79,67,.05); flex-direction: column; transition: border-color 180ms ease,transform 180ms ease,box-shadow 180ms ease; }
 .pricing-card:hover { border-color: #9fc9bc; box-shadow: 0 14px 34px rgba(11,79,67,.1); transform: translateY(-4px); }
 .pricing-number { display: block; margin-bottom: 1rem; color: var(--teal); font: 600 1rem/1 "Lora", serif; }
 .pricing-card h3 { margin-bottom: .75rem; color: var(--teal-dark); font-size: 1.25rem; }
 .pricing-price { margin-bottom: .25rem; color: var(--teal); font-size: 1.1rem; font-weight: 700; }
-.pricing-card > p:last-child { margin: .8rem 0 0; color: var(--ink-soft); font-size: .88rem; }
+.pricing-timeline { margin-bottom: 1rem; color: var(--muted); font-size: .78rem; font-weight: 600; }
+.pricing-card > p:not(.pricing-price):not(.pricing-timeline) { margin: 0 0 1.15rem; color: var(--ink-soft); font-size: .88rem; }
+.pricing-card ul { display: grid; gap: .55rem; padding: 1rem 0 0; margin: auto 0 0; border-top: 1px solid var(--line); list-style: none; }
+.pricing-card li { position: relative; padding-left: 1.15rem; color: var(--ink-soft); font-size: .82rem; }
+.pricing-card li::before { position: absolute; left: 0; color: var(--teal); content: "✓"; font-weight: 700; }
 
 .faq-list { border-top: 1px solid var(--line); }
 .faq-list details { border-bottom: 1px solid var(--line); }
@@ -101,7 +105,7 @@ h1::before, h2::before, .ghost-text { display: none !important; }
 .case-study-card a:hover h3, .case-study-card a:focus h3 { color: var(--teal); }
 .case-study-card:hover { box-shadow: 0 8px 30px rgba(11,79,67,.09); transform: translateY(-4px); }
 
-.process-section { background: transparent; }
+.engagement-section { background: transparent; }
 .process-list { display: grid; grid-template-columns: repeat(5,minmax(0,1fr)); margin: 0; padding: 0; counter-reset: stage; list-style: none; }
 .process-list li { padding: 1.4rem 1.3rem 0 0; border-top: 3px solid var(--teal); counter-increment: stage; }
 .process-list li + li { padding-left: 1.3rem; border-left: 1px solid var(--line); }
