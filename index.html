@@ -19,7 +19,6 @@
             <li><a class="nav-link active" href="#home" aria-current="page">Home</a></li>
             <li><a class="nav-link" href="#services">Services</a></li>
             <li><a class="nav-link" href="#case-studies">Case Studies</a></li>
-            <li><a class="nav-link" href="#about">About</a></li>
             <li><a class="nav-link" href="#contact">Contact</a></li>
           </ul>
         </div>
@@ -44,7 +43,7 @@
 
       <section id="services" class="section-wrapper services-section">
         <div class="container">
-          <div class="section-heading"><h2>Services</h2><p>Practical support for the systems, workflows, and experiences that help people do their work.</p></div>
+          <div class="section-heading section-heading-single"><h2>Services</h2></div>
           <div class="service-explorer">
             <div class="service-tabs" role="tablist" aria-label="Service areas">
               <button class="service-tab is-active" id="tab-ai" type="button" role="tab" aria-selected="true" aria-controls="panel-ai">AI Implementation</button>
@@ -76,20 +75,40 @@
 
       <section id="pricing" class="section-wrapper pricing-section">
         <div class="container">
-          <div class="section-heading"><h2>Fixed-fee services</h2><p>Every engagement begins with a defined outcome, scope, schedule, and price, so you know what is included before work begins.</p></div>
+          <div class="section-heading"><h2>Fixed-fee engagements</h2><p>Every engagement has an agreed scope and price before work begins. Custom projects are scoped first, then delivered for a fixed fee.</p></div>
           <div class="pricing-grid">
-            <article class="pricing-card"><span class="pricing-number">01</span><h3>Sales Operations Assessment</h3><p class="pricing-price">$2,500</p><p>A focused review of the current process, systems, data, and workflow, with prioritized recommendations and a practical action plan.</p></article>
-            <article class="pricing-card"><span class="pricing-number">02</span><h3>Sales Operations Foundation</h3><p class="pricing-price">$5,000</p><p>A defined foundation for the process, CRM structure, workflows, reporting, documentation, and adoption resources the team needs.</p></article>
-            <article class="pricing-card"><span class="pricing-number">03</span><h3>CRM &amp; AI Implementation</h3><p class="pricing-price">$7,500</p><p>A scoped implementation that improves an existing CRM or workflow and adds practical automation or AI where it supports the work.</p></article>
-            <article class="pricing-card"><span class="pricing-number">04</span><h3>Custom Business Application</h3><p class="pricing-price">From $10,000</p><p>A workflow-centered application, assistant, or operational system designed around an approved set of users, requirements, and integrations.</p></article>
+            <article class="pricing-card">
+              <span class="pricing-number">01</span>
+              <h3>Business Systems Assessment</h3>
+              <p class="pricing-price">$995 fixed fee</p>
+              <p class="pricing-timeline">Typically 1–2 weeks</p>
+              <p>Clarify what is slowing the work down, which systems or workflows need attention, and what should happen first.</p>
+              <ul><li>Current workflow and system review</li><li>Priority problems and opportunities</li><li>Recommended solution path</li><li>Written findings and next steps</li></ul>
+            </article>
+            <article class="pricing-card">
+              <span class="pricing-number">02</span>
+              <h3>Focused System Improvement</h3>
+              <p class="pricing-price">Fixed fee from $2,500</p>
+              <p class="pricing-timeline">Typically 2–4 weeks</p>
+              <p>Improve one clearly defined workflow, CRM process, automation, reporting need, or team experience.</p>
+              <ul><li>Defined users and business outcome</li><li>Configuration or focused build</li><li>Testing and documentation</li><li>Training and handoff</li></ul>
+            </article>
+            <article class="pricing-card">
+              <span class="pricing-number">03</span>
+              <h3>Custom System or Application</h3>
+              <p class="pricing-price">Fixed fee from $5,000</p>
+              <p class="pricing-timeline">Schedule confirmed after scoping</p>
+              <p>Design and implement a connected business system, custom application, AI-enabled workflow, or multi-step operational solution.</p>
+              <ul><li>Requirements and solution design</li><li>Approved integrations and workflows</li><li>Implementation and user testing</li><li>Launch, documentation, and handoff</li></ul>
+            </article>
           </div>
-          <p class="pricing-note">Each project includes the deliverables, documentation, training, and acceptance criteria listed in its scope. New requests are priced separately as fixed-fee additions rather than billed by the hour.</p>
+          <p class="pricing-note">Current introductory pricing applies to focused scopes. Requirements, integrations, deliverables, and acceptance criteria are defined before a custom fixed fee is quoted. If a request changes the approved scope, it is documented and priced as a fixed-fee addition or a later phase before the work is added.</p>
         </div>
       </section>
 
       <section id="case-studies" class="section-wrapper case-studies-section">
         <div class="container">
-          <div class="section-heading"><h2>Selected case studies</h2><p>Applications and AI experiences designed around real business problems.</p></div>
+          <div class="section-heading section-heading-emphasis"><h2>Selected case studies</h2><p>Applications and AI experiences designed around real business problems.</p></div>
           <div class="case-study-grid">
             <article class="case-study-card"><a href="sales-enablement-platform.html"><img src="./assets/project-screenshots/sales-my-work-current.webp" alt="Sales Enablement Platform organizing prioritized work and account context" /><div><h3>Sales Enablement Platform</h3><p>One workspace for priorities, customer context, playbooks, learning, coaching, and AI guidance.</p><span>View case study <span aria-hidden="true">→</span></span></div></a></article>
             <article class="case-study-card"><a href="fire-protection-platform.html"><img src="./assets/project-screenshots/fire-engagements-current.webp" alt="Fire Protection Field Assistant showing scheduled field engagements" /><div><h3>Fire Protection Field Assistant</h3><p>A mobile field workflow for preparation, system checks, documentation, resources, and AI guidance.</p><span>View case study <span aria-hidden="true">→</span></span></div></a></article>
@@ -102,7 +121,7 @@
 
       <section id="process" class="section-wrapper process-section">
         <div class="container">
-          <div class="section-heading"><h2>Process</h2><p>A clear path from an unclear problem to a useful solution.</p></div>
+          <div class="section-heading section-heading-single"><h2>Process</h2></div>
           <ol class="process-list">
             <li><strong>Discover</strong><span>Begin with conversations to understand the business, the people, the needs, and the problem.</span></li>
             <li><strong>Strategize</strong><span>Analyze what was learned, connect the relevant information, and define the right approach.</span></li>
@@ -113,29 +132,28 @@
         </div>
       </section>
 
-      <section id="about" class="section-wrapper about-section">
-        <div class="container about-content about-content-single">
-          <div><p>I begin by understanding people and their work. I combine analytical thinking, communication, creativity, and technology to give complex or abstract information useful structure and build practical solutions with a clear business purpose.</p><p>Understanding creates better solutions. Better solutions create better experiences. And there's always another opportunity to improve.</p></div>
-        </div>
-      </section>
-
       <section id="faq" class="section-wrapper faq-section">
         <div class="container faq-content">
           <div class="section-heading"><h2>Frequently asked questions</h2><p>Clear answers about scope, pricing, ownership, and what happens after launch.</p></div>
           <div class="faq-list">
-            <details><summary>Are all projects fixed fee?</summary><p>Yes. The outcome, scope, deliverables, schedule, and price are agreed before work begins. If a new request falls outside that scope, it is presented as a separate fixed-fee addition.</p></details>
-            <details><summary>Where should we start?</summary><p>If the problem or requirements are not yet clear, the Sales Operations Assessment establishes the current state, priorities, and recommended path. A well-defined project may be scoped directly.</p></details>
-            <details><summary>Do you work with the software we already use?</summary><p>Yes. A solution may improve or connect existing systems rather than replace them. The approved scope identifies the platforms, data sources, and integrations involved.</p></details>
-            <details><summary>Can the solution be expanded later?</summary><p>Yes. Applications, assistants, workflows, and supporting documentation are designed so that approved capabilities can be added without unnecessarily rebuilding the original foundation.</p></details>
-            <details><summary>Who owns the completed work?</summary><p>You receive the agreed deliverables, documentation, and training included in the project scope. Third-party software, hosting, AI usage, and licenses remain subject to their providers' terms and charges.</p></details>
-            <details><summary>Is ongoing support required?</summary><p>No. Projects include a defined handoff. If ongoing maintenance, updates, or additional improvements are needed, they can be scoped separately at a fixed price.</p></details>
+            <details><summary>What kinds of business problems do you help solve?</summary><p>I work on the systems behind day-to-day operations: disconnected workflows, underused CRM platforms, manual handoffs, scattered information, inconsistent sales execution, reporting gaps, and repeatable work that may benefit from automation or AI. The starting point is the business process and the people using it, not a predetermined technology.</p></details>
+            <details><summary>Where should we start?</summary><p>If the problem, priorities, or requirements are still unclear, begin with a focused business systems and workflow assessment. It documents the current process, identifies the highest-value opportunities, surfaces technical or data constraints, and recommends a practical sequence for implementation. A clearly defined project may move directly into scoping.</p></details>
+            <details><summary>Are engagements fixed fee?</summary><p>Yes. A standardized assessment has a published fixed fee. Custom implementations are scoped around the approved users, workflows, systems, integrations, assumptions, deliverables, and acceptance criteria, then quoted as a fixed-fee engagement. You approve the full project investment before implementation begins, with no open-ended hourly billing.</p></details>
+            <details><summary>What happens if the scope changes?</summary><p>Small clarifications that remain within the agreed outcome are handled as part of delivery. A request that changes the approved users, workflow, integration, deliverable, or acceptance criteria is documented before work continues. You can approve it as a fixed-fee addition, place it in a later fixed-fee phase, or leave it out of the project.</p></details>
+            <details><summary>What is included in an implementation?</summary><p>The proposal identifies the exact deliverables for that project. Depending on the work, this may include workflow and requirements documentation, system configuration, application or automation development, integrations, testing, launch preparation, user guidance, training, and a defined post-launch support period. Third-party software and usage charges are shown separately when they apply.</p></details>
+            <details><summary>Do you work with the software we already use?</summary><p>Yes. The best answer may be to improve the tools you already own, connect systems that are not working together, replace one weak part of the process, or add a focused application around an existing platform. Discovery includes reviewing the current stack before recommending new software.</p></details>
+            <details><summary>Does every solution need AI?</summary><p>No. AI is useful when it can interpret information, support a decision, retrieve knowledge, generate a structured result, or coordinate repeatable work with appropriate review. A conventional workflow, CRM improvement, automation, or better interface is often the more reliable answer. I recommend AI only where it improves the business system.</p></details>
+            <details><summary>How do you handle testing, accuracy, and human review?</summary><p>Testing is based on realistic examples and the acceptance criteria agreed for the project. For AI-enabled work, the design defines what the system may do, what information it may use, when a person must review the result, and how exceptions are handled. Higher-risk decisions remain with an authorized person.</p></details>
+            <details><summary>Can the solution expand as our needs change?</summary><p>Yes. The initial version is intentionally scoped around a useful outcome, while the underlying workflows, data structures, integrations, and documentation are organized so future capabilities can build on the same foundation. Expansion is planned as an additional phase rather than quietly added to the original scope.</p></details>
+            <details><summary>Who owns the completed work and what costs continue after launch?</summary><p>You receive the project deliverables, documentation, and training identified in the agreement. Any ownership terms specific to custom code or reusable components are stated before work begins. Hosting, software subscriptions, AI model usage, messaging, data storage, and other third-party services remain subject to their providers' terms and are identified separately from the consulting fee.</p></details>
+            <details><summary>Is ongoing support required?</summary><p>No. Each project includes a defined handoff and support period. If you want continued monitoring, optimization, content updates, user support, or additional improvements, those services can be arranged as a separate project or a clearly defined monthly support plan.</p></details>
           </div>
         </div>
       </section>
 
       <section id="contact" class="section-wrapper contact-section">
         <div class="container">
-          <div class="contact-cta-card"><span class="contact-label">Get in touch</span><h2>Let's build something great.</h2><p>Have a workflow to improve or an AI idea to shape? Let's talk.</p><div class="contact-links"><a href="mailto:armelangton@gmail.com">Email Amy</a><a href="https://www.linkedin.com/in/amymelangton" target="_blank" rel="noopener noreferrer">LinkedIn</a><a href="./assets/Amy-Melangton-Resume.docx" download>Résumé</a></div></div>
+          <div class="contact-cta-card"><h2>Let's build something great.</h2><p>Have a workflow to improve or an AI idea to shape? Let's talk.</p><div class="contact-links"><a href="mailto:armelangton@gmail.com">Email Amy</a><a href="https://www.linkedin.com/in/amymelangton" target="_blank" rel="noopener noreferrer">LinkedIn</a><a href="./assets/Amy-Melangton-Resume.docx" download>Résumé</a></div></div>
         </div>
       </section>
     </main>
