@@ -57,3 +57,11 @@ serviceTabs.forEach((tab, index) => {
     activateServiceTab(serviceTabs[nextIndex], true);
   });
 });
+
+const serviceInterest = document.getElementById("service-interest");
+
+document.querySelectorAll(".pricing-interest[data-service]").forEach((link) => {
+  link.addEventListener("click", () => {
+    if (serviceInterest) serviceInterest.value = link.dataset.service || "";
+  });
+});
