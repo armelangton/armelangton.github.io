@@ -24,7 +24,7 @@ h3 { font-family: "Inter", sans-serif; font-weight: 700; line-height: 1.18; }
 h1::before, h2::before, .section-heading::before, .ghost-text { display: none !important; content: none !important; }
 .container { width: min(calc(100% - 48px), var(--container)); margin-inline: auto; }
 
-.header { position: sticky; top: 0; z-index: 20; background: rgba(244,248,246,.96); border: 0; }
+.header { position: relative; z-index: 20; background: var(--sand); border: 0; }
 .navbar { display: flex; min-height: 70px; align-items: center; justify-content: flex-end; }
 .navbar-collapse { display: flex; }
 .navbar-nav { display: flex; gap: clamp(1rem, 3vw, 2rem); margin: 0; padding: 0; list-style: none; }
@@ -46,7 +46,7 @@ h1::before, h2::before, .section-heading::before, .ghost-text { display: none !i
 .button:hover, .button:focus { background: var(--teal); color: var(--white); }
 
 .section-wrapper { padding-block: clamp(4rem,7vw,6rem); }
-.section-wrapper { border-bottom: 1px solid var(--line); background: transparent; }
+.section-wrapper { background: transparent; }
 .section-heading { display: grid; grid-template-columns: minmax(220px,.7fr) minmax(0,1.3fr); gap: 3rem; margin-bottom: 3rem; align-items: end; }
 .section-heading h2, .about-content h2, .contact-cta-card h2 { margin-bottom: 0; font-size: clamp(2.1rem,4vw,3.35rem); letter-spacing: -.025em; }
 .section-heading p { max-width: 650px; margin: 0; color: var(--ink-soft); }
@@ -83,6 +83,8 @@ h1::before, h2::before, .section-heading::before, .ghost-text { display: none !i
 .pricing-card h3 { margin-bottom: .75rem; color: var(--teal-dark); font-size: 1.25rem; }
 .pricing-price { margin-bottom: .25rem; color: var(--teal); font-size: 1.1rem; font-weight: 700; }
 .pricing-timeline { margin-bottom: 1rem; color: var(--muted); font-size: .78rem; font-weight: 600; }
+.pricing-interest { display: inline-flex; width: fit-content; min-height: 42px; padding: .55rem .9rem; margin-top: .65rem; border-radius: 6px; background: var(--teal-dark); align-items: center; color: var(--white); font-size: .78rem; font-weight: 700; }
+.pricing-interest:hover, .pricing-interest:focus { background: var(--teal); color: var(--white); }
 
 .faq-content { width: min(calc(100% - 48px),960px); }
 .faq-content .section-heading { margin-bottom: 2rem; }
@@ -116,17 +118,16 @@ h1::before, h2::before, .section-heading::before, .ghost-text { display: none !i
 .about-content-single { grid-template-columns: minmax(0,720px); justify-content: end; }
 .about-content p { max-width: 720px; color: var(--ink-soft); }
 .about-content p:last-child { margin-bottom: 0; font-weight: 600; }
-.contact-section { background: transparent; }
-.contact-cta-card { padding: clamp(2.5rem,6vw,4rem); border-radius: 16px; background: var(--teal-dark); box-shadow: 0 12px 40px rgba(11,79,67,.16); color: var(--white); text-align: center; }
+.contact-section { padding-top: clamp(4rem,7vw,6rem); background: var(--teal-dark); color: var(--white); }
+.contact-cta-card { padding: clamp(1rem,3vw,2rem) 0 clamp(3rem,6vw,4.5rem); background: transparent; color: var(--white); text-align: left; }
 .contact-cta-card h2 { margin-bottom: .8rem; color: var(--white); }
-.contact-cta-card p { max-width: 560px; margin: 0 auto 1.6rem; color: #b9d9d2; }
+.contact-cta-card p { max-width: 640px; margin: 0 0 1.6rem; color: #b9d9d2; }
 .contact-label { display: block; margin-bottom: .6rem; color: #6fd0bc; font-size: .7rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; }
-.contact-links { display: flex; gap: .8rem; justify-content: center; flex-wrap: wrap; }
+.contact-links { display: flex; gap: .8rem; justify-content: flex-start; flex-wrap: wrap; }
 .contact-links a { display: inline-flex; min-height: 48px; padding: .7rem 1.1rem; border: 1px solid rgba(255,255,255,.36); border-radius: 8px; align-items: center; color: var(--white); font-size: .78rem; font-weight: 700; }
 .contact-links a:first-child { border-color: var(--teal); background: var(--teal); }
-.footer { background: var(--ink); color: var(--white); }
-.footer .container { display: flex; min-height: 78px; align-items: center; }
-.footer p { margin: 0; color: #d7e2e2; font-size: .74rem; }
+.footer { padding: 1.25rem 0 1.5rem; border-top: 1px solid rgba(255,255,255,.18); color: var(--white); }
+.footer p { margin: 0; color: #b9d9d2; font-size: .74rem; }
 
 /* Case studies */
 .project-page { padding: clamp(3rem,7vw,5rem) 0; background: var(--sand); }
