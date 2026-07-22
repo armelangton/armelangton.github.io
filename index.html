@@ -85,38 +85,28 @@
         </div>
       </section>
 
-      <section id="process" class="section-wrapper engagement-section">
+      <section id="pricing" class="section-wrapper pricing-section">
         <div class="container">
-          <div class="section-heading section-heading-stacked"><h2>How engagements work</h2><p>A clear path from the first conversation to a working solution.</p></div>
-          <ol class="process-list">
-            <li><strong>Discover</strong><span>Begin with conversations to understand the business, the people, the needs, and the problem.</span></li>
-            <li><strong>Strategize</strong><span>Analyze what was learned, connect the relevant information, and define the right approach.</span></li>
-            <li><strong>Design</strong><span>Translate the strategy into workflows, messaging, interfaces, content, or solution requirements.</span></li>
-            <li><strong>Build</strong><span>Create the business system, application, AI implementation, CRM experience, automation, workflow, or enablement resource.</span></li>
-            <li><strong>Deploy</strong><span>Test, prepare for real-world use, launch, gather feedback, and support future iteration when appropriate.</span></li>
-          </ol>
-          <div id="pricing" class="pricing-block">
-          <div class="section-heading"><h2>Fixed-fee engagements</h2><p>Custom projects are scoped first, then delivered for an agreed fixed fee.</p></div>
+          <div class="section-heading section-heading-stacked"><h2>Fixed-Fee Pricing</h2></div>
           <div class="pricing-grid">
             <article class="pricing-card">
               <h3>Business Systems Assessment</h3>
               <p class="pricing-price">$995 fixed fee</p>
               <p class="pricing-timeline">Typically 1–2 weeks</p>
-              <a class="pricing-interest" href="mailto:armelangton@gmail.com?subject=Interest%20in%20Business%20Systems%20Assessment">I'm interested</a>
+              <a class="pricing-interest" href="#contact" data-service="Business Systems Assessment">I'm interested</a>
             </article>
             <article class="pricing-card">
               <h3>Focused System Improvement</h3>
               <p class="pricing-price">Fixed fee from $2,500</p>
               <p class="pricing-timeline">Typically 2–4 weeks</p>
-              <a class="pricing-interest" href="mailto:armelangton@gmail.com?subject=Interest%20in%20Focused%20System%20Improvement">I'm interested</a>
+              <a class="pricing-interest" href="#contact" data-service="Focused System Improvement">I'm interested</a>
             </article>
             <article class="pricing-card">
               <h3>Custom System or Application</h3>
               <p class="pricing-price">Fixed fee from $5,000</p>
               <p class="pricing-timeline">Schedule confirmed after scoping</p>
-              <a class="pricing-interest" href="mailto:armelangton@gmail.com?subject=Interest%20in%20Custom%20System%20or%20Application">I'm interested</a>
+              <a class="pricing-interest" href="#contact" data-service="Custom System or Application">I'm interested</a>
             </article>
-          </div>
           </div>
         </div>
       </section>
@@ -141,8 +131,28 @@
       </section>
 
       <section id="contact" class="contact-section">
-        <div class="container">
-          <div class="contact-cta-card"><h2>Let's build something useful.</h2><p>Tell me what you want to improve, and we'll determine the right starting point.</p><div class="contact-links"><a href="mailto:armelangton@gmail.com?subject=Project%20inquiry">Start a conversation</a><a href="https://www.linkedin.com/in/amymelangton" target="_blank" rel="noopener noreferrer">LinkedIn</a><a href="./assets/Amy-Melangton-Resume.docx" download>Résumé</a></div></div>
+        <div class="container contact-content">
+          <div class="section-heading section-heading-stacked"><h2>Tell me what you want to improve</h2><p>Choose a service or describe the problem. I’ll respond with the best starting point.</p></div>
+          <form id="interest-form" class="interest-form" action="https://formspree.io/f/xbjqdzlz" method="POST">
+            <label for="name">Name</label>
+            <input id="name" name="name" type="text" autocomplete="name" required />
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" autocomplete="email" required />
+            <label for="company">Company</label>
+            <input id="company" name="company" type="text" autocomplete="organization" />
+            <label for="service-interest">Service of interest</label>
+            <select id="service-interest" name="service">
+              <option value="">Select a service</option>
+              <option>Business Systems Assessment</option>
+              <option>Focused System Improvement</option>
+              <option>Custom System or Application</option>
+              <option>Not sure yet</option>
+            </select>
+            <label for="message">What would you like to improve?</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+            <button type="submit">Send inquiry</button>
+          </form>
+          <div class="contact-links"><a href="mailto:armelangton@gmail.com">Email Amy</a><a href="https://www.linkedin.com/in/amymelangton" target="_blank" rel="noopener noreferrer">LinkedIn</a><a href="./assets/Amy-Melangton-Resume.docx" download>Résumé</a></div>
           <footer class="footer"><p>© 2026 Amy Melangton</p></footer>
         </div>
       </section>
