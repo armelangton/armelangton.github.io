@@ -68,9 +68,20 @@ document.querySelectorAll(".pricing-interest[data-service]").forEach((link) => {
 
 const hero = document.querySelector(".palomma-hero");
 const heroHeadline = hero?.querySelector(".hero-content h1");
+const heroConstellation = hero?.querySelector(".hero-constellation");
 
 if (heroHeadline) {
   heroHeadline.textContent = "Accelerating revenue operations with AI-powered solutions and automation.";
+}
+
+if (heroConstellation) {
+  heroConstellation.style.left = "auto";
+  heroConstellation.style.right = "32%";
+  heroConstellation.style.top = "14%";
+  heroConstellation.style.width = "25%";
+  heroConstellation.style.opacity = "0.16";
+  heroConstellation.style.transform = "rotate(-5deg)";
+  heroConstellation.style.pointerEvents = "none";
 }
 
 if (hero && !document.querySelector(".platforms-strip")) {
