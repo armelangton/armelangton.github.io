@@ -1,3 +1,11 @@
+const approvedHeroStyles = document.createElement("link");
+approvedHeroStyles.rel = "stylesheet";
+approvedHeroStyles.href = "./palomma-approved-hero.css?v=20260730-2";
+approvedHeroStyles.dataset.palommaApprovedHero = "true";
+if (!document.querySelector('link[data-palomma-approved-hero="true"]')) {
+  document.head.appendChild(approvedHeroStyles);
+}
+
 document.querySelectorAll(".navbar-toggler").forEach((button) => {
   const selector = button.getAttribute("data-target");
   const menu = selector ? document.querySelector(selector) : null;
@@ -205,7 +213,7 @@ if (hero && !document.querySelector(".platforms-strip")) {
       item.className = "platform-logo";
       if (hidden) item.setAttribute("aria-hidden", "true");
       const image = document.createElement("img");
-      image.src = `https://cdn.simpleicons.org/${slug}/536775`;
+      image.src = `https://cdn.simpleicons.org/${slug}`;
       image.alt = hidden ? "" : `${name} logo`;
       image.loading = "lazy";
       image.decoding = "async";
