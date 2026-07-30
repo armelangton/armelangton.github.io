@@ -65,3 +65,64 @@ document.querySelectorAll(".pricing-interest[data-service]").forEach((link) => {
     if (serviceInterest) serviceInterest.value = link.dataset.service || "";
   });
 });
+
+const hero = document.querySelector(".palomma-hero");
+
+if (hero && !document.querySelector(".platforms-strip")) {
+  const platforms = [
+    ["Salesforce", "salesforce"],
+    ["HubSpot", "hubspot"],
+    ["Zoho", "zoho"],
+    ["Microsoft 365", "microsoft365"],
+    ["Google Workspace", "googleworkspace"],
+    ["ChatGPT", "openai"],
+    ["Claude", "anthropic"],
+    ["Gemini", "googlegemini"],
+    ["Zapier", "zapier"],
+    ["Slack", "slack"],
+    ["LinkedIn", "linkedin"],
+    ["Asana", "asana"]
+  ];
+
+  const strip = document.createElement("section");
+  strip.className = "platforms-strip";
+  strip.setAttribute("aria-labelledby", "platforms-strip-title");
+
+  const label = document.createElement("p");
+  label.id = "platforms-strip-title";
+  label.className = "platforms-strip-label";
+  label.textContent = "PLATFORMS WE WORK WITH";
+
+  const viewport = document.createElement("div");
+  viewport.className = "platforms-marquee";
+
+  const track = document.createElement("div");
+  track.className = "platforms-track";
+
+  const addPlatformSet = (hidden = false) => {
+    platforms.forEach(([name, slug]) => {
+      const item = document.createElement("div");
+      item.className = "platform-logo";
+      if (hidden) item.setAttribute("aria-hidden", "true");
+
+      const image = document.createElement("img");
+      image.src = `https://cdn.simpleicons.org/${slug}/536775`;
+      image.alt = hidden ? "" : `${name} logo`;
+      image.loading = "lazy";
+      image.decoding = "async";
+      image.addEventListener("error", () => image.remove());
+
+      const nameLabel = document.createElement("span");
+      nameLabel.textContent = name;
+
+      item.append(image, nameLabel);
+      track.appendChild(item);
+    });
+  };
+
+  addPlatformSet(false);
+  addPlatformSet(true);
+  viewport.appendChild(track);
+  strip.append(label, viewport);
+  hero.insertAdjacentElement("afterend", strip);
+}
