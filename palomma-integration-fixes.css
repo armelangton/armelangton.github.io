@@ -29,15 +29,10 @@
   background: #fff;
 }
 
-.platforms-strip-label {
-  color: #168e8c;
-}
+.platforms-strip-label { color: #168e8c; }
+.platform-logo { color: #17344c; }
 
-.platform-logo {
-  color: #17344c;
-}
-
-/* Services heading, process, and service explorer now form one continuous section. */
+/* Services heading, process, and service explorer form one continuous section. */
 .home-page .services-process-section {
   background:
     radial-gradient(circle at 88% 7%, rgba(117,216,210,.24), transparent 26%),
@@ -55,47 +50,122 @@
 }
 
 .home-page .services-process-heading {
-  margin-bottom: clamp(2rem,4vw,3rem);
+  display: block;
+  margin-bottom: clamp(2.8rem,5vw,4.25rem);
 }
 
-.home-page .services-process-section .process-list {
-  margin-bottom: clamp(2.5rem,5vw,4rem);
+.home-page .process-flow {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(5,minmax(0,1fr));
+  gap: clamp(1.5rem,3vw,3rem);
+  margin: 0 0 clamp(3.5rem,6vw,5rem);
+  padding: 0;
+  list-style: none;
 }
 
-.home-page .services-process-section .process-list li {
-  min-height: 220px;
-  border: 1px solid rgba(7,42,69,.14);
-  border-top: 3px solid var(--palomma-teal);
-  background: linear-gradient(145deg, #0d2a45, #123a58);
-  box-shadow: 0 14px 32px rgba(7,26,45,.08);
+.home-page .process-flow li {
+  position: relative;
+  display: grid;
+  min-width: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+  justify-items: center;
+  text-align: center;
 }
 
-.home-page .services-process-section .process-list li::before {
+.home-page .process-flow li:hover {
+  background: transparent;
+  transform: none;
+}
+
+.home-page .process-flow li::before {
   display: none;
   content: none;
 }
 
-.home-page .services-process-section .process-list strong {
-  margin-top: .2rem;
-  color: #fff;
+.home-page .process-flow li:not(:last-child)::after {
+  position: absolute;
+  top: 43px;
+  left: calc(50% + 58px);
+  width: calc(100% - 82px);
+  height: 1px;
+  background: repeating-linear-gradient(90deg, var(--palomma-teal) 0 8px, transparent 8px 14px);
+  content: "";
+  opacity: .65;
 }
 
-.home-page .services-process-section .process-list span {
-  color: #c8d7df;
+.home-page .process-icon {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  width: 86px;
+  height: 86px;
+  margin-bottom: 1rem;
+  border: 1px solid rgba(18,165,161,.28);
+  border-radius: 50%;
+  place-items: center;
+  background: rgba(255,255,255,.72);
+  box-shadow: 0 12px 30px rgba(7,26,45,.07);
+  color: var(--palomma-teal);
 }
 
-.home-page .services-process-section .service-explorer {
-  margin-top: 0;
+.home-page .process-icon svg {
+  width: 42px;
+  height: 42px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
 }
+
+.home-page .process-flow strong {
+  display: block;
+  margin: 0;
+  color: var(--palomma-navy);
+  font-family: "Lora", serif;
+  font-size: clamp(1.05rem,1.5vw,1.3rem);
+  font-weight: 600;
+}
+
+.home-page .services-process-section .service-explorer { margin-top: 0; }
+
+/* Contact should be clean and direct without extra label, copy, or decorative ring. */
+.home-page .contact-cta-card::after { display: none; content: none; }
+.home-page .contact-copy { align-self: center; }
+.home-page .contact-cta-card h2 { margin-bottom: 0; }
 
 @media (max-width: 900px) {
-  .palomma-hero .hero-photo::before {
-    filter: blur(36px) saturate(.78) brightness(.56);
+  .palomma-hero .hero-photo::before { filter: blur(36px) saturate(.78) brightness(.56); }
+  .home-page .process-flow {
+    grid-template-columns: repeat(3,minmax(0,1fr));
+    row-gap: 2.75rem;
   }
+  .home-page .process-flow li:not(:last-child)::after { display: none; }
 }
 
 @media (max-width: 767px) {
-  .home-page .services-process-section .process-list li {
-    min-height: 0;
+  .home-page .process-flow {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  .home-page .process-flow li {
+    grid-template-columns: 72px 1fr;
+    gap: 1rem;
+    align-items: center;
+    justify-items: start;
+    text-align: left;
+  }
+  .home-page .process-icon {
+    width: 66px;
+    height: 66px;
+    margin: 0;
+  }
+  .home-page .process-icon svg {
+    width: 32px;
+    height: 32px;
   }
 }
