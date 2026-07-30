@@ -1,0 +1,101 @@
+/* Final integration fixes for hero, platform ticker, and unified services area. */
+
+/* Soften the hero image edges and restore the more atmospheric blend. */
+.palomma-hero .hero-photo::before {
+  inset: -16%;
+  filter: blur(42px) saturate(.78) brightness(.54);
+  opacity: .92;
+  transform: scale(1.16);
+}
+
+.palomma-hero .hero-photo::after {
+  background:
+    linear-gradient(90deg, #0b2239 0%, rgba(11,34,57,.99) 10%, rgba(11,34,57,.78) 23%, rgba(11,34,57,.36) 39%, transparent 58%),
+    linear-gradient(270deg, #0b2239 0%, rgba(11,34,57,.94) 9%, rgba(11,34,57,.58) 21%, transparent 36%),
+    linear-gradient(180deg, #071c31 0%, rgba(7,28,49,.90) 10%, rgba(7,28,49,.46) 23%, transparent 39%),
+    linear-gradient(0deg, #071c31 0%, rgba(7,28,49,.97) 12%, rgba(7,28,49,.58) 27%, transparent 45%);
+}
+
+.palomma-hero .hero-photo img {
+  filter: saturate(.9) contrast(.98) brightness(.84);
+  -webkit-mask-image: radial-gradient(ellipse 68% 62% at 58% 49%, #000 28%, rgba(0,0,0,.96) 41%, rgba(0,0,0,.72) 55%, rgba(0,0,0,.38) 69%, rgba(0,0,0,.12) 82%, transparent 96%);
+  mask-image: radial-gradient(ellipse 68% 62% at 58% 49%, #000 28%, rgba(0,0,0,.96) 41%, rgba(0,0,0,.72) 55%, rgba(0,0,0,.38) 69%, rgba(0,0,0,.12) 82%, transparent 96%);
+}
+
+/* The ticker is a separate band, so the dividers read more clearly on white. */
+.platforms-strip {
+  border-top: 1px solid rgba(7,26,45,.08);
+  border-bottom: 1px solid rgba(7,26,45,.12);
+  background: #fff;
+}
+
+.platforms-strip-label {
+  color: #168e8c;
+}
+
+.platform-logo {
+  color: #17344c;
+}
+
+/* Services heading, process, and service explorer now form one continuous section. */
+.home-page .services-process-section {
+  background:
+    radial-gradient(circle at 88% 7%, rgba(117,216,210,.24), transparent 26%),
+    linear-gradient(180deg, #f8fcfd 0%, #eef7fa 100%);
+}
+
+.home-page .services-process-section::before {
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(rgba(45,111,183,.045) 1px, transparent 1px), linear-gradient(90deg, rgba(45,111,183,.045) 1px, transparent 1px);
+  background-size: 48px 48px;
+  mask-image: linear-gradient(to bottom, rgba(0,0,0,.5), transparent 82%);
+  content: "";
+  pointer-events: none;
+}
+
+.home-page .services-process-heading {
+  margin-bottom: clamp(2rem,4vw,3rem);
+}
+
+.home-page .services-process-section .process-list {
+  margin-bottom: clamp(2.5rem,5vw,4rem);
+}
+
+.home-page .services-process-section .process-list li {
+  min-height: 220px;
+  border: 1px solid rgba(7,42,69,.14);
+  border-top: 3px solid var(--palomma-teal);
+  background: linear-gradient(145deg, #0d2a45, #123a58);
+  box-shadow: 0 14px 32px rgba(7,26,45,.08);
+}
+
+.home-page .services-process-section .process-list li::before {
+  display: none;
+  content: none;
+}
+
+.home-page .services-process-section .process-list strong {
+  margin-top: .2rem;
+  color: #fff;
+}
+
+.home-page .services-process-section .process-list span {
+  color: #c8d7df;
+}
+
+.home-page .services-process-section .service-explorer {
+  margin-top: 0;
+}
+
+@media (max-width: 900px) {
+  .palomma-hero .hero-photo::before {
+    filter: blur(36px) saturate(.78) brightness(.56);
+  }
+}
+
+@media (max-width: 767px) {
+  .home-page .services-process-section .process-list li {
+    min-height: 0;
+  }
+}
