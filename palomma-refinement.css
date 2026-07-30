@@ -22,16 +22,25 @@
 }
 
 /* Brand and hero */
-.navbar { justify-content: space-between; }
+.home-page .header { background: transparent; }
+.navbar {
+  min-height: 62px;
+  justify-content: space-between;
+}
 .navbar::before {
   content: "PALOMMA\A CONSULTING";
   white-space: pre;
-  color: var(--ink);
+  color: #fff;
   font-size: .78rem;
   font-weight: 800;
   line-height: 1.05;
   letter-spacing: .16em;
 }
+.home-page .nav-link { color: rgba(255,255,255,.82); }
+.home-page .nav-link:hover,
+.home-page .nav-link:focus,
+.home-page .nav-link.active { color: var(--aqua-400); }
+
 .palomma-hero {
   position: relative;
   overflow: hidden;
@@ -40,6 +49,7 @@
     linear-gradient(110deg, var(--navy-950) 0%, var(--navy-950) 49%, var(--navy-800) 100%);
   color: #fff;
 }
+.palomma-hero::after { display: none; }
 .hero-network {
   position: absolute;
   inset: 0;
@@ -51,6 +61,10 @@
 .hero-shell {
   position: relative;
   z-index: 2;
+  grid-template-columns: minmax(0,1.12fr) minmax(390px,.88fr);
+  gap: clamp(1rem,2vw,2rem);
+  min-height: 560px;
+  padding-block: 4.65rem 2.6rem;
 }
 .hero-content {
   max-width: 640px;
@@ -89,18 +103,21 @@
   position: relative;
   z-index: 3;
   isolation: isolate;
-  overflow: hidden;
-  -webkit-mask-image: linear-gradient(90deg, transparent 0%, rgba(0,0,0,.2) 8%, rgba(0,0,0,.68) 25%, #000 44%, #000 100%);
-  mask-image: linear-gradient(90deg, transparent 0%, rgba(0,0,0,.2) 8%, rgba(0,0,0,.68) 25%, #000 44%, #000 100%);
+  width: min(43vw,590px);
+  margin: 0;
+  justify-self: end;
+  overflow: visible;
+  -webkit-mask-image: radial-gradient(ellipse 86% 82% at 57% 50%, #000 52%, rgba(0,0,0,.92) 66%, rgba(0,0,0,.48) 82%, transparent 100%);
+  mask-image: radial-gradient(ellipse 86% 82% at 57% 50%, #000 52%, rgba(0,0,0,.92) 66%, rgba(0,0,0,.48) 82%, transparent 100%);
 }
 .hero-photo::before {
-  width: 58%;
+  width: 54%;
   background: linear-gradient(
     90deg,
     var(--navy-950) 0%,
-    rgba(11,34,57,.90) 22%,
-    rgba(11,34,57,.56) 50%,
-    rgba(18,58,82,.18) 78%,
+    rgba(11,34,57,.84) 24%,
+    rgba(11,34,57,.46) 54%,
+    rgba(18,58,82,.14) 80%,
     transparent 100%
   );
 }
@@ -109,17 +126,18 @@
   inset: 0;
   z-index: 1;
   background:
-    linear-gradient(180deg, rgba(11,34,57,.03), rgba(11,34,57,.13)),
-    linear-gradient(90deg, rgba(11,34,57,.10), transparent 46%);
+    linear-gradient(180deg, rgba(11,34,57,.08), transparent 25%, transparent 72%, rgba(11,34,57,.22)),
+    linear-gradient(90deg, rgba(11,34,57,.10), transparent 48%);
   content: "";
   pointer-events: none;
 }
 .hero-photo img {
   display: block;
   width: 100%;
-  height: 100%;
+  min-height: 390px;
+  max-height: 470px;
   object-fit: cover;
-  object-position: center;
+  object-position: 56% center;
   filter: saturate(.98) contrast(1.01) brightness(.96);
 }
 
@@ -239,10 +257,14 @@
 .contact-links a { min-width: 138px; }
 
 @media (max-width: 1100px) {
+  .hero-shell { grid-template-columns: minmax(0,1fr) minmax(350px,.82fr); }
+  .hero-photo { width: min(42vw,520px); }
   .package-layout { grid-template-columns: repeat(2,minmax(0,1fr)); }
   .stage-understand,.stage-improve,.stage-transform,.support-card { grid-column: span 1; }
 }
 @media (max-width: 900px) {
+  .hero-shell { grid-template-columns: 1fr; padding-top: 5.25rem; }
+  .hero-photo { width: min(100%,620px); justify-self: center; }
   .service-grid { grid-template-columns: 1fr; grid-template-areas: "strategy" "technology" "custom"; }
   .systems-visual { grid-template-columns: 1fr; }
   .system-flow { grid-column: 1; grid-row: auto; }
@@ -254,13 +276,17 @@
   .contact-links { justify-content: flex-start; }
 }
 @media (max-width: 767px) {
+  .navbar { min-height: 58px; }
   .navbar::before { font-size: .66rem; }
+  .hero-shell { min-height: 0; padding-block: 4.8rem 2rem; }
   .hero-content h1 { font-size: clamp(2.25rem,11vw,3.4rem); }
   .hero-photo {
-    -webkit-mask-image: linear-gradient(180deg, transparent 0%, rgba(0,0,0,.78) 18%, #000 40%);
-    mask-image: linear-gradient(180deg, transparent 0%, rgba(0,0,0,.78) 18%, #000 40%);
+    width: 100%;
+    -webkit-mask-image: radial-gradient(ellipse 92% 86% at 50% 50%, #000 48%, rgba(0,0,0,.82) 70%, transparent 100%);
+    mask-image: radial-gradient(ellipse 92% 86% at 50% 50%, #000 48%, rgba(0,0,0,.82) 70%, transparent 100%);
   }
-  .hero-photo::before { width: 78%; }
+  .hero-photo::before { width: 62%; }
+  .hero-photo img { min-height: 300px; max-height: 380px; }
   .platforms-strip { padding-block: .95rem 1rem; }
   .platforms-strip-label { margin-bottom: .7rem; font-size: .64rem; }
   .platform-logo { padding-inline: 1rem; font-size: .84rem; }
