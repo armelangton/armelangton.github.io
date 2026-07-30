@@ -67,6 +67,11 @@ document.querySelectorAll(".pricing-interest[data-service]").forEach((link) => {
 });
 
 const hero = document.querySelector(".palomma-hero");
+const heroHeadline = hero?.querySelector(".hero-content h1");
+
+if (heroHeadline) {
+  heroHeadline.textContent = "Accelerating revenue operations with AI-powered solutions and automation.";
+}
 
 if (hero && !document.querySelector(".platforms-strip")) {
   const platforms = [
