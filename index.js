@@ -67,19 +67,21 @@ if (hero && canvas) {
   let animationFrame = null;
 
   const palette = [
-    "rgba(113, 203, 182, .95)",
-    "rgba(168, 196, 223, .9)",
-    "rgba(241, 201, 180, .9)"
+    "rgba(95, 211, 198, .98)",
+    "rgba(168, 200, 240, .96)",
+    "rgba(31, 143, 136, .96)",
+    "rgba(216, 154, 106, .96)",
+    "rgba(255, 255, 255, .96)"
   ];
 
   function makePoints() {
-    const count = Math.max(28, Math.min(56, Math.round(width / 34)));
+    const count = Math.max(42, Math.min(76, Math.round(width / 24)));
     points = Array.from({ length: count }, (_, index) => ({
-      x: Math.random() * width * .72,
+      x: Math.random() * width * .82,
       y: Math.random() * height,
-      vx: (Math.random() - .5) * .18,
-      vy: (Math.random() - .5) * .18,
-      radius: 1.6 + Math.random() * 2.5,
+      vx: (Math.random() - .5) * .42,
+      vy: (Math.random() - .5) * .42,
+      radius: 1.7 + Math.random() * 2.9,
       color: palette[index % palette.length]
     }));
   }
@@ -106,24 +108,24 @@ if (hero && canvas) {
         point.y += point.vy;
       }
 
-      if (point.x < 0 || point.x > width * .76) point.vx *= -1;
+      if (point.x < 0 || point.x > width * .86) point.vx *= -1;
       if (point.y < 0 || point.y > height) point.vy *= -1;
 
       if (pointer.active) {
         const dx = pointer.x - point.x;
         const dy = pointer.y - point.y;
         const distance = Math.hypot(dx, dy);
-        if (distance < 180 && distance > 1) {
-          const pull = (180 - distance) / 180 * .012;
-          point.vx += dx * pull * .008;
-          point.vy += dy * pull * .008;
+        if (distance < 220 && distance > 1) {
+          const pull = (220 - distance) / 220;
+          point.vx += dx * pull * .00012;
+          point.vy += dy * pull * .00012;
         }
       }
 
-      point.vx *= .994;
-      point.vy *= .994;
-      point.vx = Math.max(-.65, Math.min(.65, point.vx));
-      point.vy = Math.max(-.65, Math.min(.65, point.vy));
+      point.vx *= .998;
+      point.vy *= .998;
+      point.vx = Math.max(-1.05, Math.min(1.05, point.vx));
+      point.vy = Math.max(-1.05, Math.min(1.05, point.vy));
     });
 
     for (let i = 0; i < points.length; i += 1) {
@@ -131,24 +133,26 @@ if (hero && canvas) {
         const a = points[i];
         const b = points[j];
         const distance = Math.hypot(a.x - b.x, a.y - b.y);
-        if (distance < 118) {
+        if (distance < 158) {
+          const opacity = .42 * (1 - distance / 158);
           context.beginPath();
           context.moveTo(a.x, a.y);
           context.lineTo(b.x, b.y);
-          context.strokeStyle = `rgba(168, 196, 223, ${(.22 * (1 - distance / 118)).toFixed(3)})`;
-          context.lineWidth = .8;
+          context.strokeStyle = `rgba(168, 200, 240, ${opacity.toFixed(3)})`;
+          context.lineWidth = distance < 90 ? 1.15 : .8;
           context.stroke();
         }
       }
     }
 
     points.forEach((point) => {
-      const glow = pointer.active && Math.hypot(pointer.x - point.x, pointer.y - point.y) < 150;
+      const distanceToPointer = pointer.active ? Math.hypot(pointer.x - point.x, pointer.y - point.y) : Infinity;
+      const glow = distanceToPointer < 175;
       context.beginPath();
-      context.arc(point.x, point.y, glow ? point.radius * 1.65 : point.radius, 0, Math.PI * 2);
+      context.arc(point.x, point.y, glow ? point.radius * 1.75 : point.radius, 0, Math.PI * 2);
       context.fillStyle = point.color;
       context.shadowColor = point.color;
-      context.shadowBlur = glow ? 16 : 7;
+      context.shadowBlur = glow ? 20 : 10;
       context.fill();
       context.shadowBlur = 0;
     });
