@@ -1,0 +1,191 @@
+/* Palomma homepage refinement layer.
+   Sensation remains pending. These rules refine layout and visual hierarchy only. */
+
+:root {
+  --palomma-navy: #0f2d3d;
+  --palomma-cream: #fbf8f1;
+  --palomma-peach: #f1c9b4;
+  --palomma-blue: #a8c4df;
+}
+
+/* Brand and hero */
+.navbar { justify-content: space-between; }
+.navbar::before {
+  content: "PALOMMA\A CONSULTING";
+  white-space: pre;
+  color: var(--ink);
+  font-size: .78rem;
+  font-weight: 800;
+  line-height: 1.05;
+  letter-spacing: .16em;
+}
+.hero-content { max-width: 640px; }
+.hero-brand { display: none; }
+.hero-content h1 {
+  font-size: clamp(2.65rem, 4.2vw, 4rem);
+  line-height: 1.03;
+  letter-spacing: -.05em;
+}
+.hero-constellation { left: 42%; width: 21%; opacity: .08; }
+.hero-photo::before { width: 42%; }
+
+/* Section rhythm */
+.section-wrapper { padding-block: clamp(4.25rem, 7vw, 6.5rem); }
+.section-heading { margin-bottom: 3.4rem; }
+.section-heading h2 { max-width: 520px; }
+
+/* Services: editorial composition instead of three template cards */
+.services-section { background: var(--white); }
+.service-grid {
+  grid-template-columns: minmax(0, 1.08fr) minmax(0, .92fr);
+  grid-template-areas:
+    "strategy technology"
+    "strategy custom";
+  gap: 1.35rem;
+  align-items: stretch;
+}
+.service-strategy { grid-area: strategy; min-height: 100%; }
+.service-technology { grid-area: technology; }
+.service-custom { grid-area: custom; }
+.service-card {
+  min-height: 0;
+  padding: clamp(1.7rem, 3vw, 2.5rem);
+  border-top-width: 1px;
+  border-left: 5px solid var(--service-accent);
+  border-radius: 14px;
+  box-shadow: 0 18px 44px rgba(17,47,41,.07);
+}
+.service-strategy { background: linear-gradient(145deg,#fff 45%,#eaf6f1); }
+.service-technology { background: linear-gradient(145deg,#fff 45%,#fff1e9); }
+.service-custom { background: linear-gradient(145deg,#fff 45%,#edf3fb); }
+.service-card::after { width: 210px; height: 210px; opacity: .75; }
+.service-symbol { margin-bottom: 2rem; }
+.service-card h3 { max-width: 360px; }
+
+/* Systems visual: lighter dashboard treatment */
+.systems-section { background: var(--palomma-navy); color: var(--white); }
+.systems-section .section-heading h2 { color: var(--white); }
+.systems-section .section-heading p { color: rgba(255,255,255,.72); }
+.systems-visual {
+  grid-template-columns: minmax(240px,.8fr) minmax(420px,1.35fr) minmax(240px,.8fr);
+  padding: 1.5rem;
+  border-color: rgba(255,255,255,.16);
+  background: rgba(255,255,255,.08);
+  box-shadow: none;
+}
+.system-column { border-color: rgba(255,255,255,.18); box-shadow: 0 14px 34px rgba(0,0,0,.16); }
+.system-flow { position: relative; }
+.system-flow::before {
+  position: absolute;
+  inset: 50% 8% auto;
+  height: 1px;
+  background: linear-gradient(90deg,transparent,#70cbb6,#e6a884,#8eb4d8,transparent);
+  content: "";
+}
+.flow-node { position: relative; z-index: 1; border-radius: 50%; width: 92px; min-height: 92px; }
+
+/* Case studies stay light and become the visual reset after the dark systems band */
+.case-studies-section { background: #f8fbf9; }
+.case-study-card { border-radius: 14px; }
+
+/* Packages: stage columns inspired by the approved mockup */
+.pricing-section { background: var(--palomma-cream); }
+.stage-rail {
+  position: relative;
+  margin-bottom: 3rem;
+  padding: 0 1.25rem;
+}
+.stage-rail::before {
+  position: absolute;
+  top: 15px;
+  right: 7%;
+  left: 7%;
+  height: 1px;
+  background: linear-gradient(90deg,#148a74,#d47a58,#5079ae,#315f58);
+  content: "";
+}
+.stage-rail li { z-index: 1; }
+.stage-rail li::before,
+.stage-rail li::after { display: none; }
+.stage-rail span { background: var(--palomma-cream); }
+.package-layout {
+  grid-template-columns: repeat(4,minmax(0,1fr));
+  gap: 1rem;
+  align-items: start;
+}
+.discovery-callout {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: auto minmax(0,1fr) auto;
+  gap: 1.25rem;
+  align-items: center;
+  padding: 1.25rem 1.5rem;
+  border-left-width: 1px;
+  border-top: 4px solid var(--teal);
+}
+.discovery-callout .stage-icon { margin: 0; }
+.discovery-callout .stage-label { grid-column: 2; margin-bottom: -.85rem; }
+.discovery-callout h3 { grid-column: 2; margin: 0; }
+.discovery-callout > p:not(.stage-label) { grid-column: 2; margin: 0; }
+.discovery-callout a { grid-column: 3; grid-row: 1 / span 4; padding: .65rem 1rem; border: 1px solid var(--teal-dark); border-radius: 6px; }
+.package-stage,
+.support-card {
+  grid-column: auto;
+  margin-left: 0;
+  padding: 1.25rem;
+  border-radius: 14px;
+}
+.stage-understand { grid-column: span 1; }
+.stage-improve { grid-column: span 1; }
+.stage-transform { grid-column: span 1; }
+.support-card { grid-column: span 1; grid-row: auto; }
+.package-pair { grid-template-columns: 1fr; }
+.package-card,
+.package-card-tall,
+.package-feature { min-height: 0; }
+.package-card { border-radius: 10px; }
+.package-stage-heading { align-items: flex-start; }
+.package-stage-heading h3 { font-size: .95rem; }
+.package-card h4 { font-size: 1rem; }
+.trust-strip { margin-top: 3rem; border-radius: 14px; background: var(--white); }
+
+/* FAQ */
+.faq-section { background: var(--white); }
+.faq-intro h2 { max-width: 360px; font-size: clamp(2rem,3.2vw,3rem); }
+.faq-list > details { border-radius: 12px; box-shadow: 0 8px 24px rgba(17,47,41,.04); }
+.faq-more { border-style: solid !important; }
+
+/* Contact */
+.contact-section { background: var(--teal-dark); }
+.contact-cta {
+  grid-template-columns: minmax(0,1fr) auto;
+  padding: clamp(2rem,4vw,3.25rem);
+  border-radius: 16px;
+}
+.contact-links { display: flex; flex-wrap: wrap; justify-content: flex-end; }
+.contact-links a { min-width: 138px; }
+
+@media (max-width: 1100px) {
+  .package-layout { grid-template-columns: repeat(2,minmax(0,1fr)); }
+  .stage-understand, .stage-improve, .stage-transform, .support-card { grid-column: span 1; }
+}
+
+@media (max-width: 900px) {
+  .service-grid { grid-template-columns: 1fr; grid-template-areas: "strategy" "technology" "custom"; }
+  .systems-visual { grid-template-columns: 1fr; }
+  .system-flow { grid-column: 1; grid-row: auto; }
+  .package-layout { grid-template-columns: 1fr; }
+  .stage-understand, .stage-improve, .stage-transform, .support-card { grid-column: 1; }
+  .discovery-callout { grid-template-columns: auto 1fr; }
+  .discovery-callout a { grid-column: 2; grid-row: auto; width: fit-content; }
+  .contact-cta { grid-template-columns: 1fr; }
+  .contact-links { justify-content: flex-start; }
+}
+
+@media (max-width: 767px) {
+  .navbar::before { font-size: .66rem; }
+  .stage-rail { overflow-x: auto; grid-template-columns: repeat(5,minmax(88px,1fr)); padding-bottom: .5rem; }
+  .stage-rail::before { right: 45px; left: 45px; }
+  .contact-links { display: grid; grid-template-columns: 1fr; width: 100%; }
+  .contact-links a { width: 100%; }
+}
