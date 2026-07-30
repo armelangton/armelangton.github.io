@@ -89,16 +89,18 @@
   position: relative;
   z-index: 3;
   isolation: isolate;
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(90deg, transparent 0%, rgba(0,0,0,.2) 8%, rgba(0,0,0,.68) 25%, #000 44%, #000 100%);
+  mask-image: linear-gradient(90deg, transparent 0%, rgba(0,0,0,.2) 8%, rgba(0,0,0,.68) 25%, #000 44%, #000 100%);
 }
 .hero-photo::before {
-  width: 64%;
+  width: 58%;
   background: linear-gradient(
     90deg,
     var(--navy-950) 0%,
-    rgba(11,34,57,.98) 18%,
-    rgba(11,34,57,.90) 34%,
-    rgba(18,58,82,.66) 52%,
-    rgba(18,58,82,.30) 70%,
+    rgba(11,34,57,.90) 22%,
+    rgba(11,34,57,.56) 50%,
+    rgba(18,58,82,.18) 78%,
     transparent 100%
   );
 }
@@ -106,7 +108,9 @@
   position: absolute;
   inset: 0;
   z-index: 1;
-  background: linear-gradient(180deg, rgba(11,34,57,.12), rgba(11,34,57,.30));
+  background:
+    linear-gradient(180deg, rgba(11,34,57,.03), rgba(11,34,57,.13)),
+    linear-gradient(90deg, rgba(11,34,57,.10), transparent 46%);
   content: "";
   pointer-events: none;
 }
@@ -116,7 +120,7 @@
   height: 100%;
   object-fit: cover;
   object-position: center;
-  filter: saturate(.90) contrast(.98) brightness(.88) sepia(.04) hue-rotate(164deg);
+  filter: saturate(.98) contrast(1.01) brightness(.96);
 }
 
 /* Approved platforms marquee */
@@ -252,6 +256,10 @@
 @media (max-width: 767px) {
   .navbar::before { font-size: .66rem; }
   .hero-content h1 { font-size: clamp(2.25rem,11vw,3.4rem); }
+  .hero-photo {
+    -webkit-mask-image: linear-gradient(180deg, transparent 0%, rgba(0,0,0,.78) 18%, #000 40%);
+    mask-image: linear-gradient(180deg, transparent 0%, rgba(0,0,0,.78) 18%, #000 40%);
+  }
   .hero-photo::before { width: 78%; }
   .platforms-strip { padding-block: .95rem 1rem; }
   .platforms-strip-label { margin-bottom: .7rem; font-size: .64rem; }
