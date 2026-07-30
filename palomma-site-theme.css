@@ -1,0 +1,217 @@
+/* Homepage section theme. The approved hero is intentionally excluded. */
+:root {
+  --palomma-navy: #071a2d;
+  --palomma-navy-soft: #0d2944;
+  --palomma-blue: #2d6fb7;
+  --palomma-teal: #12a5a1;
+  --palomma-aqua: #75d8d2;
+  --palomma-copper: #d47a58;
+  --palomma-ice: #eef8f8;
+  --palomma-cloud: #f7fbfc;
+  --palomma-line: rgba(45,111,183,.18);
+  --palomma-text: #153047;
+  --palomma-muted: #5d7182;
+}
+
+body.home-page { background: var(--palomma-cloud); color: var(--palomma-text); }
+
+.home-page .section-wrapper { position: relative; overflow: hidden; padding-block: clamp(5rem,8vw,7.5rem); border-bottom: 1px solid var(--palomma-line); }
+.home-page .section-wrapper > .container { position: relative; z-index: 1; }
+.home-page .section-heading { margin-bottom: clamp(2.5rem,5vw,4rem); align-items: end; }
+.home-page .section-heading h2,
+.home-page .about-content h2,
+.home-page .contact-cta-card h2 { color: var(--palomma-navy); }
+.home-page .section-heading p,
+.home-page .about-content p { color: var(--palomma-muted); }
+
+/* Services */
+.home-page .services-section {
+  background:
+    radial-gradient(circle at 85% 12%, rgba(117,216,210,.28), transparent 28%),
+    linear-gradient(180deg, #f8fcfd 0%, #eef7fa 100%);
+}
+.home-page .services-section::before {
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(rgba(45,111,183,.05) 1px, transparent 1px), linear-gradient(90deg, rgba(45,111,183,.05) 1px, transparent 1px);
+  background-size: 48px 48px;
+  mask-image: linear-gradient(to bottom, rgba(0,0,0,.55), transparent 74%);
+  content: "";
+  pointer-events: none;
+}
+.home-page .service-explorer {
+  overflow: hidden;
+  border: 1px solid rgba(45,111,183,.2);
+  border-radius: 20px;
+  background: rgba(255,255,255,.8);
+  box-shadow: 0 24px 70px rgba(7,26,45,.09);
+  backdrop-filter: blur(12px);
+}
+.home-page .service-tabs { border-color: rgba(45,111,183,.16); background: rgba(7,26,45,.025); }
+.home-page .service-tab {
+  min-height: 68px;
+  padding-inline: 1.25rem;
+  border-color: rgba(45,111,183,.13);
+  color: #587083;
+  font-size: .84rem;
+  transition: color 180ms ease, background-color 180ms ease, box-shadow 180ms ease;
+}
+.home-page .service-tab:hover,
+.home-page .service-tab:focus-visible { color: var(--palomma-navy); background: rgba(117,216,210,.12); }
+.home-page .service-tab.is-active {
+  padding-left: 1.25rem;
+  box-shadow: inset 4px 0 var(--palomma-teal);
+  background: linear-gradient(90deg, rgba(18,165,161,.12), rgba(255,255,255,.55));
+  color: var(--palomma-navy);
+}
+.home-page .service-panel { min-height: 390px; padding: clamp(2.25rem,5vw,4rem); }
+.home-page .service-number { color: rgba(45,111,183,.28); }
+.home-page .service-icon {
+  border: 1px solid rgba(18,165,161,.22);
+  background: rgba(117,216,210,.18);
+  color: var(--palomma-teal);
+}
+.home-page .service-content h3 { color: var(--palomma-navy); }
+.home-page .service-intro { color: #405d70; }
+.home-page .service-capabilities h4 { color: var(--palomma-blue); }
+.home-page .capability-list li {
+  border-color: rgba(45,111,183,.18);
+  background: linear-gradient(180deg, #fff, #f4fafc);
+  color: #244a64;
+  box-shadow: 0 4px 12px rgba(7,26,45,.035);
+}
+
+/* Work */
+.home-page .case-studies-section {
+  background:
+    radial-gradient(circle at 8% 90%, rgba(212,122,88,.12), transparent 30%),
+    linear-gradient(180deg, #ffffff 0%, #f6fafc 100%);
+}
+.home-page .case-study-grid { gap: clamp(1.5rem,3vw,2.25rem); }
+.home-page .case-study-card {
+  overflow: hidden;
+  border: 1px solid rgba(45,111,183,.16);
+  border-radius: 18px;
+  background: rgba(255,255,255,.92);
+  box-shadow: 0 16px 42px rgba(7,26,45,.07);
+}
+.home-page .case-study-card img {
+  padding: 16px;
+  border-bottom-color: rgba(45,111,183,.12);
+  background: linear-gradient(145deg, #e8f4f7, #f5fafc);
+}
+.home-page .case-study-card div { padding: 1.4rem; }
+.home-page .case-study-card h3 { color: var(--palomma-navy); }
+.home-page .case-study-card p { color: var(--palomma-muted); }
+.home-page .case-study-card div > span { color: var(--palomma-blue); }
+.home-page .case-study-card:hover { box-shadow: 0 24px 58px rgba(7,26,45,.13); }
+
+/* Process */
+.home-page .process-section {
+  color: #fff;
+  background:
+    radial-gradient(circle at 78% 18%, rgba(18,165,161,.27), transparent 30%),
+    radial-gradient(circle at 18% 78%, rgba(45,111,183,.3), transparent 32%),
+    linear-gradient(135deg, var(--palomma-navy) 0%, var(--palomma-navy-soft) 100%);
+}
+.home-page .process-section::after {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle, rgba(117,216,210,.35) 1px, transparent 1.5px);
+  background-size: 34px 34px;
+  opacity: .18;
+  content: "";
+  pointer-events: none;
+}
+.home-page .process-section .section-heading h2 { color: #fff; }
+.home-page .process-section .section-heading p { color: #bcd0dc; }
+.home-page .process-list { gap: 0; }
+.home-page .process-list li {
+  position: relative;
+  min-height: 240px;
+  padding: 1.75rem 1.35rem 1.5rem;
+  border-top: 1px solid rgba(117,216,210,.42);
+  background: rgba(255,255,255,.025);
+  transition: background-color 180ms ease, transform 180ms ease;
+}
+.home-page .process-list li + li { border-left-color: rgba(117,216,210,.18); }
+.home-page .process-list li:hover { background: rgba(117,216,210,.075); transform: translateY(-5px); }
+.home-page .process-list li::before {
+  width: fit-content;
+  margin-bottom: 1.4rem;
+  padding: .28rem .55rem;
+  border: 1px solid rgba(117,216,210,.32);
+  border-radius: 999px;
+  background: rgba(117,216,210,.08);
+  color: var(--palomma-aqua);
+}
+.home-page .process-list strong { color: #fff; font-size: 1.05rem; }
+.home-page .process-list span { color: #bfd0db; line-height: 1.65; }
+
+/* About */
+.home-page .about-section {
+  background:
+    radial-gradient(circle at 90% 50%, rgba(117,216,210,.2), transparent 34%),
+    linear-gradient(180deg, #edf8f9 0%, #f8fbfc 100%);
+}
+.home-page .about-content { align-items: start; }
+.home-page .about-content h2 { max-width: 520px; }
+.home-page .about-content > div {
+  padding: clamp(1.5rem,3vw,2.25rem);
+  border-left: 3px solid var(--palomma-teal);
+  background: rgba(255,255,255,.6);
+  box-shadow: 0 18px 45px rgba(7,26,45,.055);
+}
+.home-page .about-content p:last-child { color: var(--palomma-navy); }
+
+/* Contact */
+.home-page .contact-section {
+  background:
+    radial-gradient(circle at 15% 20%, rgba(45,111,183,.12), transparent 26%),
+    #f8fbfc;
+}
+.home-page .contact-cta-card {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(117,216,210,.2);
+  border-radius: 24px;
+  background:
+    radial-gradient(circle at 82% 20%, rgba(18,165,161,.28), transparent 31%),
+    linear-gradient(135deg, var(--palomma-navy), #103756);
+  box-shadow: 0 28px 72px rgba(7,26,45,.18);
+}
+.home-page .contact-cta-card::after {
+  position: absolute;
+  right: -80px;
+  bottom: -95px;
+  width: 260px;
+  height: 260px;
+  border: 1px solid rgba(117,216,210,.25);
+  border-radius: 50%;
+  content: "";
+}
+.home-page .contact-label { color: var(--palomma-aqua); }
+.home-page .contact-cta-card p { color: #c5d8e2; }
+.home-page .contact-links a { border-color: rgba(255,255,255,.3); }
+.home-page .contact-links a:first-child { border-color: var(--palomma-teal); background: var(--palomma-teal); }
+.home-page .contact-links a:hover,
+.home-page .contact-links a:focus { border-color: var(--palomma-aqua); background: rgba(117,216,210,.12); }
+
+.home-page .footer { background: #061523; }
+
+@media (max-width: 900px) {
+  .home-page .service-tabs { background: rgba(7,26,45,.025); }
+  .home-page .service-tab.is-active { box-shadow: inset 0 -3px var(--palomma-teal); }
+  .home-page .process-list { gap: 1rem; }
+  .home-page .process-list li,
+  .home-page .process-list li + li { min-height: 0; border: 1px solid rgba(117,216,210,.18); border-top-color: rgba(117,216,210,.42); }
+}
+
+@media (max-width: 767px) {
+  .home-page .section-wrapper { padding-block: 4.5rem; }
+  .home-page .service-explorer { border-radius: 14px; }
+  .home-page .service-panel { min-height: 0; padding: 2rem 1.25rem 2.4rem; }
+  .home-page .process-list li { padding: 1.4rem; }
+  .home-page .about-content > div { padding: 1.35rem; }
+  .home-page .contact-cta-card { border-radius: 18px; }
+}
