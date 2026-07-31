@@ -1,6 +1,6 @@
 const approvedHeroStyles = document.createElement("link");
 approvedHeroStyles.rel = "stylesheet";
-approvedHeroStyles.href = "./palomma-approved-hero.css?v=20260730-2";
+approvedHeroStyles.href = "./palomma-approved-hero.css?v=20260731-1";
 approvedHeroStyles.dataset.palommaApprovedHero = "true";
 if (!document.querySelector('link[data-palomma-approved-hero="true"]')) {
   document.head.appendChild(approvedHeroStyles);
@@ -15,7 +15,7 @@ if (servicesSection) {
   servicesSection.innerHTML = `
     <div class="container">
       <div class="business-services-heading">
-        <h2>Designed to scale.</h2>
+        <h2>Designed to Scale</h2>
       </div>
       <div class="business-services-grid">
         <article class="business-service-card">
@@ -54,19 +54,13 @@ if (servicesSection) {
           <p>Remove bottlenecks, reduce manual work, and redesign workflows to improve efficiency, ROI, and your ability to scale.</p>
         </article>
       </div>
-      <div class="business-outcomes" aria-label="Business outcomes">
-        <span>Improve team performance</span>
-        <span>Increase efficiency</span>
-        <span>Strengthen ROI</span>
-        <span>Support revenue growth</span>
-      </div>
     </div>`;
 
   const serviceStyles = document.createElement("style");
   serviceStyles.textContent = `
     .home-page .business-services-section{background:linear-gradient(180deg,#f8fcfd 0%,#eef7fa 100%)}
     .home-page .business-services-heading{text-align:center;margin-bottom:clamp(2.5rem,5vw,4rem)}
-    .home-page .business-services-heading h2{margin:0;color:var(--palomma-navy,#071a2d);font-family:Lora,serif;font-size:clamp(2.5rem,5vw,4.8rem);line-height:1.02;letter-spacing:-.04em}
+    .home-page .business-services-heading h2{margin:0;color:var(--palomma-navy,#071a2d);font-family:Lora,serif;font-size:clamp(2.35rem,4vw,3.8rem);line-height:1.02;letter-spacing:-.035em}
     .home-page .business-services-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:1rem;align-items:stretch}
     .home-page .business-service-card{display:flex;min-width:0;min-height:430px;padding:1.15rem 1.15rem 1.35rem;border:1px solid rgba(45,111,183,.16);border-radius:18px;flex-direction:column;background:rgba(255,255,255,.94);box-shadow:0 16px 40px rgba(7,26,45,.07);transition:transform 180ms ease,box-shadow 180ms ease}
     .home-page .business-service-card:hover{transform:translateY(-5px);box-shadow:0 22px 50px rgba(7,26,45,.11)}
@@ -75,28 +69,43 @@ if (servicesSection) {
     .home-page .business-service-visual svg{width:82%;max-width:120px;fill:none;stroke:var(--palomma-navy,#071a2d);stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
     .home-page .business-service-card h3{margin:0 0 .75rem;color:var(--palomma-navy,#071a2d);font-size:clamp(1.05rem,1.5vw,1.32rem);line-height:1.2}
     .home-page .business-service-card p{margin:0;color:var(--palomma-muted,#5d7182);font-size:.94rem;line-height:1.65}
-    .home-page .business-outcomes{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;margin-top:2rem;border:1px solid rgba(45,111,183,.14);border-radius:14px;background:rgba(255,255,255,.72);box-shadow:0 10px 30px rgba(7,26,45,.04)}
-    .home-page .business-outcomes span{position:relative;padding:1.05rem .85rem;color:var(--palomma-navy,#071a2d);font-size:.86rem;font-weight:700;text-align:center}
-    .home-page .business-outcomes span+span{border-left:1px solid rgba(45,111,183,.14)}
-    .home-page .business-outcomes span::before{display:inline-block;width:8px;height:8px;margin-right:.55rem;border-radius:50%;background:var(--palomma-teal,#12a5a1);content:""}
-    @media(max-width:1100px){.home-page .business-services-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.home-page .business-service-card:last-child{grid-column:1/-1;min-height:0}.home-page .business-outcomes{grid-template-columns:repeat(2,minmax(0,1fr))}.home-page .business-outcomes span:nth-child(3){border-left:0;border-top:1px solid rgba(45,111,183,.14)}.home-page .business-outcomes span:nth-child(4){border-top:1px solid rgba(45,111,183,.14)}}
-    @media(max-width:680px){.home-page .business-services-grid{grid-template-columns:1fr}.home-page .business-service-card,.home-page .business-service-card:last-child{grid-column:auto;min-height:0}.home-page .business-service-visual{height:132px}.home-page .business-outcomes{grid-template-columns:1fr}.home-page .business-outcomes span+span,.home-page .business-outcomes span:nth-child(3),.home-page .business-outcomes span:nth-child(4){border-top:1px solid rgba(45,111,183,.14);border-left:0}}
+    .home-page .pricing-section .pricing-action{display:none}
+    .home-page .pricing-section .pricing-grid{margin-bottom:2rem}
+    .home-page .pricing-section .pricing-consultation{display:flex;gap:1rem;align-items:center;justify-content:center;flex-wrap:wrap;margin:0 auto 1.75rem;text-align:center}
+    .home-page .pricing-section .pricing-consultation p{margin:0;color:var(--palomma-navy,#071a2d);font-weight:700}
+    .home-page .pricing-section .pricing-consultation a{display:inline-flex;min-height:48px;padding:.75rem 1.2rem;border-radius:8px;align-items:center;justify-content:center;background:var(--palomma-teal,#12a5a1);color:#fff;font-weight:700}
+    @media(max-width:1100px){.home-page .business-services-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.home-page .business-service-card:last-child{grid-column:1/-1;min-height:0}}
+    @media(max-width:680px){.home-page .business-services-grid{grid-template-columns:1fr}.home-page .business-service-card,.home-page .business-service-card:last-child{grid-column:auto;min-height:0}.home-page .business-service-visual{height:132px}}
   `;
   document.head.appendChild(serviceStyles);
+}
+
+const pricingSection = document.getElementById("pricing");
+const caseStudiesSection = document.getElementById("case-studies");
+if (pricingSection && caseStudiesSection && pricingSection.nextElementSibling !== caseStudiesSection) {
+  caseStudiesSection.parentNode.insertBefore(pricingSection, caseStudiesSection);
+}
+
+if (pricingSection) {
+  pricingSection.querySelectorAll(".pricing-action").forEach((action) => action.remove());
+  const pricingGrid = pricingSection.querySelector(".pricing-grid");
+  if (pricingGrid && !pricingSection.querySelector(".pricing-consultation")) {
+    const consultation = document.createElement("div");
+    consultation.className = "pricing-consultation";
+    consultation.innerHTML = '<p>Not sure which package fits?</p><a href="#contact">Start a Conversation</a>';
+    pricingGrid.insertAdjacentElement("afterend", consultation);
+  }
 }
 
 document.querySelectorAll(".navbar-toggler").forEach((button) => {
   const selector = button.getAttribute("data-target");
   const menu = selector ? document.querySelector(selector) : null;
-
   if (!menu) return;
-
   button.addEventListener("click", () => {
     const expanded = button.getAttribute("aria-expanded") === "true";
     button.setAttribute("aria-expanded", String(!expanded));
     menu.classList.toggle("show", !expanded);
   });
-
   menu.querySelectorAll("a").forEach((link) => {
     link.addEventListener("click", () => {
       button.setAttribute("aria-expanded", "false");
@@ -106,7 +115,6 @@ document.querySelectorAll(".navbar-toggler").forEach((button) => {
 });
 
 const serviceTabs = Array.from(document.querySelectorAll(".service-tab"));
-
 function activateServiceTab(activeTab, moveFocus = false) {
   serviceTabs.forEach((tab) => {
     const isActive = tab === activeTab;
@@ -118,7 +126,6 @@ function activateServiceTab(activeTab, moveFocus = false) {
   });
   if (moveFocus) activeTab.focus();
 }
-
 serviceTabs.forEach((tab, index) => {
   tab.addEventListener("click", () => activateServiceTab(tab));
   tab.addEventListener("keydown", (event) => {
@@ -154,7 +161,6 @@ if (hero && canvas) {
   let animationMaxX = 0;
   let points = [];
   let animationFrame = null;
-
   const palette = [
     "rgba(95, 211, 198, .98)",
     "rgba(168, 200, 240, .96)",
@@ -162,7 +168,6 @@ if (hero && canvas) {
     "rgba(216, 154, 106, .96)",
     "rgba(255, 255, 255, .96)"
   ];
-
   function getAnimationBoundary() {
     if (!heroPhoto) return width * .5;
     const heroRect = hero.getBoundingClientRect();
@@ -170,7 +175,6 @@ if (hero && canvas) {
     const photoStart = photoRect.left - heroRect.left;
     return Math.max(0, Math.min(width, photoStart - 18));
   }
-
   function makePoints() {
     const count = Math.max(34, Math.min(62, Math.round(animationMaxX / 20)));
     const safeMaxX = Math.max(0, animationMaxX - 8);
@@ -183,7 +187,6 @@ if (hero && canvas) {
       color: palette[index % palette.length]
     }));
   }
-
   function resizeCanvas() {
     const rect = hero.getBoundingClientRect();
     width = rect.width;
@@ -197,16 +200,13 @@ if (hero && canvas) {
     context.setTransform(scale, 0, 0, scale, 0, 0);
     makePoints();
   }
-
   function draw() {
     context.clearRect(0, 0, width, height);
-
     points.forEach((point) => {
       if (!reduceMotion) {
         point.x += point.vx;
         point.y += point.vy;
       }
-
       if (point.x <= 0) {
         point.x = 0;
         point.vx = Math.abs(point.vx);
@@ -214,7 +214,6 @@ if (hero && canvas) {
         point.x = animationMaxX;
         point.vx = -Math.abs(point.vx);
       }
-
       if (point.y <= 0) {
         point.y = 0;
         point.vy = Math.abs(point.vy);
@@ -222,7 +221,6 @@ if (hero && canvas) {
         point.y = height;
         point.vy = -Math.abs(point.vy);
       }
-
       if (pointer.active) {
         const dx = pointer.x - point.x;
         const dy = pointer.y - point.y;
@@ -233,13 +231,11 @@ if (hero && canvas) {
           point.vy += dy * pull * .00012;
         }
       }
-
       point.vx *= .998;
       point.vy *= .998;
       point.vx = Math.max(-1.05, Math.min(1.05, point.vx));
       point.vy = Math.max(-1.05, Math.min(1.05, point.vy));
     });
-
     for (let i = 0; i < points.length; i += 1) {
       for (let j = i + 1; j < points.length; j += 1) {
         const a = points[i];
@@ -256,7 +252,6 @@ if (hero && canvas) {
         }
       }
     }
-
     points.forEach((point) => {
       const distanceToPointer = pointer.active ? Math.hypot(pointer.x - point.x, pointer.y - point.y) : Infinity;
       const glow = distanceToPointer < 175;
@@ -268,10 +263,8 @@ if (hero && canvas) {
       context.fill();
       context.shadowBlur = 0;
     });
-
     animationFrame = requestAnimationFrame(draw);
   }
-
   hero.addEventListener("pointermove", (event) => {
     const rect = hero.getBoundingClientRect();
     pointer.x = event.clientX - rect.left;
@@ -280,10 +273,8 @@ if (hero && canvas) {
   });
   hero.addEventListener("pointerleave", () => { pointer.active = false; });
   window.addEventListener("resize", resizeCanvas);
-
   resizeCanvas();
   draw();
-
   window.addEventListener("pagehide", () => {
     if (animationFrame) cancelAnimationFrame(animationFrame);
   }, { once: true });
@@ -296,21 +287,17 @@ if (hero && !document.querySelector(".platforms-strip")) {
     ["OpenAI", "openai"], ["Claude", "anthropic"], ["Gemini", "googlegemini"],
     ["Zapier", "zapier"], ["Slack", "slack"], ["LinkedIn", "linkedin"], ["Asana", "asana"]
   ];
-
   const strip = document.createElement("section");
   strip.className = "platforms-strip";
   strip.setAttribute("aria-labelledby", "platforms-strip-title");
-
   const label = document.createElement("p");
   label.id = "platforms-strip-title";
   label.className = "platforms-strip-label";
   label.textContent = "PLATFORMS WE WORK WITH";
-
   const viewport = document.createElement("div");
   viewport.className = "platforms-marquee";
   const track = document.createElement("div");
   track.className = "platforms-track";
-
   const addPlatformSet = (hidden = false) => {
     platforms.forEach(([name, slug]) => {
       const item = document.createElement("div");
@@ -328,7 +315,6 @@ if (hero && !document.querySelector(".platforms-strip")) {
       track.appendChild(item);
     });
   };
-
   addPlatformSet(false);
   addPlatformSet(true);
   viewport.appendChild(track);
