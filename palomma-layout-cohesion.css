@@ -1,0 +1,116 @@
+/* Cohesion pass: shared content edge, consistent vertical rhythm, and a seamless platforms-to-services transition. */
+
+:root {
+  --palomma-page-edge: min(calc(100% - 2rem), 1720px);
+}
+
+/* Treat Platforms + Designed to Scale as one visual band instead of two stacked boxes. */
+.home-page .platforms-strip {
+  margin: 0 !important;
+  padding: 1.1rem 0 1.25rem !important;
+  border-top: 0 !important;
+  border-bottom: 0 !important;
+  background: #f8fcfd !important;
+  box-shadow: none !important;
+}
+
+.home-page .business-services-section {
+  margin-top: 0 !important;
+  padding-top: 2.25rem !important;
+  padding-bottom: 2.75rem !important;
+  border-top: 0 !important;
+  background: linear-gradient(180deg, #f8fcfd 0%, #eef7fa 100%) !important;
+}
+
+.home-page .business-services-heading {
+  margin-bottom: 2rem !important;
+}
+
+/* Use one exact left/right edge for every major homepage section. */
+.home-page .business-services-section > .container,
+.home-page .pricing-section > .container,
+.home-page .case-studies-section > .container,
+.home-page #faq .homepage-faq-container,
+.home-page .contact-section > .container {
+  width: var(--palomma-page-edge) !important;
+  max-width: 1720px !important;
+  margin-inline: auto !important;
+  padding-inline: 0 !important;
+}
+
+.home-page .business-services-grid,
+.home-page .pricing-grid,
+.home-page .case-study-grid,
+.home-page #faq .homepage-faq-list,
+.home-page .contact-cta-card {
+  width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+/* Remove the extra inset that made pricing visibly narrower than services/projects. */
+.home-page .pricing-grid {
+  padding-inline: 0 !important;
+  gap: clamp(1rem, 1.6vw, 1.5rem) !important;
+}
+
+.home-page .pricing-support {
+  margin-inline: 0 !important;
+}
+
+/* Tighten the vertical rhythm between the major sections. */
+.home-page .pricing-section {
+  padding-top: 2.75rem !important;
+  padding-bottom: 2.75rem !important;
+}
+
+.home-page .case-studies-section {
+  padding-top: 2.75rem !important;
+  padding-bottom: 2.75rem !important;
+}
+
+.home-page #faq.homepage-faq-section {
+  padding-top: 2.5rem !important;
+  padding-bottom: 2.5rem !important;
+}
+
+.home-page .contact-section {
+  padding-top: 2.5rem !important;
+  padding-bottom: 2.5rem !important;
+}
+
+/* Keep headings on the same visual cadence. */
+.home-page .business-services-heading,
+.home-page .pricing-heading,
+.home-page .case-studies-section .section-heading,
+.home-page #faq .homepage-faq-heading {
+  margin-top: 0 !important;
+}
+
+.home-page .case-studies-section .section-heading,
+.home-page #faq .homepage-faq-heading {
+  margin-bottom: 2rem !important;
+}
+
+/* FAQ was previously constrained more narrowly. Force it onto the shared page edge. */
+.home-page #faq .homepage-faq-container {
+  width: var(--palomma-page-edge) !important;
+  max-width: 1720px !important;
+}
+
+/* Contact card follows the same vertical guides as every card row above it. */
+.home-page .contact-cta-card {
+  margin-inline: 0 !important;
+}
+
+@media (max-width: 767px) {
+  :root { --palomma-page-edge: min(calc(100% - 1.25rem), 1720px); }
+
+  .home-page .business-services-section,
+  .home-page .pricing-section,
+  .home-page .case-studies-section,
+  .home-page #faq.homepage-faq-section,
+  .home-page .contact-section {
+    padding-top: 2rem !important;
+    padding-bottom: 2rem !important;
+  }
+}
