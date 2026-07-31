@@ -31,7 +31,7 @@
 
 .home-page .case-studies-section {
   order: 4;
-  padding: 1.4rem 0 1.25rem;
+  padding: 1.1rem 0 .7rem;
 }
 
 /* The project cards already explain themselves, so no extra section label is needed. */
@@ -39,15 +39,102 @@
   display: none;
 }
 
-/* Ownership and management choices belong after the examples. */
+/* A quiet ownership note closes the package and project story. */
 .home-page .pricing-support {
   order: 5;
+  display: block;
   width: min(calc(100% - 48px), 1240px);
-  margin: .25rem auto 2rem;
+  margin: .35rem auto .75rem;
+  padding: 1rem 1.25rem;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  text-align: center;
+}
+
+.home-page .pricing-support-icon,
+.home-page .pricing-support > a,
+.home-page .pricing-support strong,
+.home-page .pricing-support p {
+  display: none;
+}
+
+.home-page .pricing-support > div::before {
+  display: block;
+  margin-bottom: .3rem;
+  color: #071a2d;
+  font-family: "Inter", sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  content: "Choose how your solution is managed after launch";
+}
+
+.home-page .pricing-support > div::after {
+  display: block;
+  max-width: 860px;
+  margin: 0 auto;
+  color: #536775;
+  font-family: "Inter", sans-serif;
+  font-size: .88rem;
+  line-height: 1.55;
+  content: "Continue with Palomma for hosting, monitoring, maintenance, and agreed improvements, or manage the solution internally with support available when needed.";
 }
 
 .home-page .contact-section {
   order: 6;
+  padding: 1rem 0 1.5rem;
+}
+
+.home-page .contact-cta-card {
+  min-height: 0;
+  padding: 2.25rem 3rem;
+  align-items: center;
+}
+
+.home-page .contact-copy h2 {
+  max-width: 560px;
+  margin: 0;
+  font-size: clamp(2rem, 3.5vw, 3.5rem);
+  line-height: 1.08;
+}
+
+.home-page .contact-links {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 1rem;
+}
+
+/* Keep one connect action and the requested phone number. */
+.home-page .contact-links a:first-child {
+  min-width: 170px;
+  font-size: 0;
+}
+
+.home-page .contact-links a:first-child::after {
+  font-size: 1rem;
+  content: "Connect";
+}
+
+.home-page .contact-links a:nth-child(2) {
+  min-width: 0;
+  padding: .8rem 0;
+  border: 0;
+  background: transparent;
+  color: #fff;
+  font-size: 0;
+  pointer-events: none;
+}
+
+.home-page .contact-links a:nth-child(2)::after {
+  font-size: 1rem;
+  font-weight: 700;
+  content: "317-970-6662";
+}
+
+.home-page .contact-links a:nth-child(3) {
+  display: none;
 }
 
 @media (max-width: 700px) {
@@ -55,5 +142,14 @@
   .home-page .pricing-grid,
   .home-page .pricing-support {
     width: min(calc(100% - 32px), 1240px);
+  }
+
+  .home-page .contact-cta-card {
+    padding: 1.75rem 1.5rem;
+  }
+
+  .home-page .contact-links {
+    justify-content: flex-start;
+    flex-wrap: wrap;
   }
 }
