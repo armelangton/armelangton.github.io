@@ -1,4 +1,4 @@
-/* Homepage layout corrections: unified hero chrome, compact process, proof before pricing. */
+/* Homepage layout corrections: unified hero chrome, compact process, proof after pricing. */
 
 .home-page .header {
   background: #f7fbfc !important;
@@ -27,9 +27,9 @@
 
 .home-page .palomma-hero { order: 0; }
 .home-page .platforms-strip { order: 1; }
-.home-page .case-studies-section { order: 2; }
-.home-page .services-process-section { order: 3; }
-.home-page .pricing-section { order: 4; }
+.home-page .services-process-section { order: 2; }
+.home-page .pricing-section { order: 3; }
+.home-page .case-studies-section { order: 4; }
 .home-page .contact-section { order: 5; }
 
 .home-page .platforms-strip {
@@ -52,7 +52,7 @@
   opacity: 1;
 }
 
-/* Work, delivery process, and packages share one continuous visual field. */
+/* Delivery process, packages, and examples share one continuous visual field. */
 .home-page .case-studies-section,
 .home-page .services-process-section,
 .home-page .pricing-section {
@@ -66,71 +66,9 @@
   max-width: 1240px;
 }
 
-/* Work examples are one centered five-card row on desktop. */
-.home-page .case-studies-section {
-  padding: 1.65rem 0 1rem;
-}
-.home-page .case-studies-section .section-heading {
-  display: block;
-  max-width: 900px;
-  margin: 0 auto .85rem;
-  padding: 0;
-  text-align: center;
-}
-.home-page .case-studies-section .section-heading h2 { display: none; }
-.home-page .case-studies-section .section-heading p {
-  max-width: 900px;
-  margin: 0 auto;
-  color: #071a2d;
-  font-family: "Inter", sans-serif;
-  font-size: clamp(1.45rem, 2vw, 1.85rem);
-  font-weight: 700;
-  line-height: 1.18;
-  letter-spacing: -.025em;
-  text-wrap: balance;
-}
-.home-page .case-studies-section .section-heading p::before { content: "Examples of "; }
-.home-page .case-study-grid {
-  display: grid;
-  grid-template-columns: repeat(5, minmax(0,1fr));
-  gap: .75rem;
-  align-items: stretch;
-}
-.home-page .case-study-card {
-  width: 100%;
-  max-width: none;
-  border: 0;
-  border-radius: 10px;
-  justify-self: stretch;
-  box-shadow: 0 10px 24px rgba(7,26,45,.07);
-}
-.home-page .case-study-card img {
-  aspect-ratio: 16 / 9;
-  height: 105px;
-  max-height: 105px;
-  padding: 5px;
-}
-.home-page .case-study-card div { padding: .65rem .7rem .75rem; }
-.home-page .case-study-card h3 {
-  margin-bottom: .28rem;
-  font-family: "Inter", sans-serif;
-  font-size: .76rem;
-  font-weight: 700;
-}
-.home-page .case-study-card p {
-  margin-bottom: .4rem;
-  font-family: "Inter", sans-serif;
-  font-size: .62rem;
-  line-height: 1.4;
-}
-.home-page .case-study-card div > span {
-  font-family: "Inter", sans-serif;
-  font-size: .61rem;
-}
-
-/* The process floats directly in the shared field with no panel, outline, or separate label. */
+/* The process begins the package story with no panel, outline, or separate label. */
 .home-page .services-process-section {
-  padding: .65rem 0 .35rem;
+  padding: 1rem 0 .25rem;
 }
 .home-page .services-process-section .container {
   padding: .45rem .8rem .55rem;
@@ -201,9 +139,10 @@
 .home-page .process-list.process-flow li:nth-child(4) strong::after { content: "Configure and test"; }
 .home-page .process-list.process-flow li:nth-child(5) strong::after { content: "Launch and support"; }
 
-/* Pricing continues the same field instead of appearing as a separate outlined panel. */
+/* Pricing follows immediately beneath the process. */
 .home-page .pricing-section {
-  padding-top: .25rem;
+  padding-top: .15rem;
+  padding-bottom: 1.25rem;
 }
 .home-page .pricing-section .pricing-shell {
   overflow: visible;
@@ -213,7 +152,7 @@
   box-shadow: none;
 }
 .home-page .pricing-heading {
-  padding-top: 1rem;
+  padding-top: .75rem;
 }
 .home-page .pricing-heading h2 {
   font-family: "Inter", sans-serif;
@@ -228,6 +167,69 @@
 .home-page .pricing-card li,
 .home-page .pricing-support {
   font-family: "Inter", sans-serif;
+}
+
+/* Work examples follow the packages with a single simple heading. */
+.home-page .case-studies-section {
+  padding: 1.25rem 0 1.65rem;
+}
+.home-page .case-studies-section .section-heading {
+  display: block;
+  margin: 0 auto .85rem;
+  padding: 0;
+  text-align: center;
+}
+.home-page .case-studies-section .section-heading h2 {
+  display: block;
+  margin: 0;
+  color: #071a2d;
+  font-family: "Inter", sans-serif;
+  font-size: 0;
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -.025em;
+}
+.home-page .case-studies-section .section-heading h2::after {
+  content: "Examples";
+  font-size: clamp(1.45rem, 2vw, 1.85rem);
+}
+.home-page .case-studies-section .section-heading p { display: none; }
+.home-page .case-study-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0,1fr));
+  gap: .75rem;
+  align-items: stretch;
+}
+.home-page .case-study-card {
+  width: 100%;
+  max-width: none;
+  border: 0;
+  border-radius: 10px;
+  justify-self: stretch;
+  box-shadow: 0 10px 24px rgba(7,26,45,.07);
+}
+.home-page .case-study-card img {
+  aspect-ratio: 16 / 9;
+  height: 105px;
+  max-height: 105px;
+  padding: 5px;
+}
+.home-page .case-study-card div { padding: .65rem .7rem .75rem; }
+.home-page .case-study-card h3 {
+  margin-bottom: .28rem;
+  font-family: "Inter", sans-serif;
+  font-size: .76rem;
+  font-weight: 700;
+}
+.home-page .case-study-card p {
+  margin-bottom: .4rem;
+  font-family: "Inter", sans-serif;
+  font-size: .62rem;
+  line-height: 1.4;
+}
+.home-page .case-study-card div > span {
+  font-family: "Inter", sans-serif;
+  font-size: .61rem;
 }
 
 @media (max-width: 1180px) {
