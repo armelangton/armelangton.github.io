@@ -1,8 +1,29 @@
-/* Homepage layout corrections: unified hero chrome, compact process, proof before pricing. */
+/* Homepage layout corrections: light navigation, compact process, proof before pricing. */
 
 .home-page .header {
-  background: linear-gradient(90deg, #071c31 0%, #0b2239 55%, #0e3048 100%) !important;
-  border-bottom: 0;
+  background: #f7fbfc !important;
+  border-bottom: 1px solid rgba(45,111,183,.16);
+  box-shadow: 0 2px 12px rgba(7,26,45,.05);
+}
+.home-page .navbar::before {
+  color: #071a2d !important;
+}
+.home-page .nav-link {
+  color: #2d6fb7 !important;
+}
+.home-page .nav-link:hover,
+.home-page .nav-link:focus,
+.home-page .nav-link.active {
+  color: #0f5b73 !important;
+}
+.home-page .navbar-toggler {
+  border-color: rgba(45,111,183,.2);
+  background: #ffffff;
+}
+.home-page .navbar-toggler-icon {
+  background: linear-gradient(#2d6fb7,#2d6fb7) top/100% 2px no-repeat,
+    linear-gradient(#2d6fb7,#2d6fb7) center/100% 2px no-repeat,
+    linear-gradient(#2d6fb7,#2d6fb7) bottom/100% 2px no-repeat;
 }
 
 .home-page main {
