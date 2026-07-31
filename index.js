@@ -82,8 +82,19 @@ if (servicesSection) {
 
 const pricingSection = document.getElementById("pricing");
 const caseStudiesSection = document.getElementById("case-studies");
-if (pricingSection && caseStudiesSection && pricingSection.nextElementSibling !== caseStudiesSection) {
-  caseStudiesSection.parentNode.insertBefore(pricingSection, caseStudiesSection);
+if (pricingSection && caseStudiesSection) {
+  const heading = caseStudiesSection.querySelector(".section-heading h2");
+  if (heading) heading.textContent = "Selected Work";
+  if (caseStudiesSection.nextElementSibling !== pricingSection) {
+    pricingSection.parentNode.insertBefore(caseStudiesSection, pricingSection);
+  }
+}
+
+const navList = document.querySelector(".navbar-nav");
+const projectsNavItem = document.querySelector('.navbar-nav li:has(a[href="#case-studies"])');
+const pricingNavItem = document.querySelector('.navbar-nav li:has(a[href="#pricing"])');
+if (navList && projectsNavItem && pricingNavItem && projectsNavItem.nextElementSibling !== pricingNavItem) {
+  navList.insertBefore(projectsNavItem, pricingNavItem);
 }
 
 if (pricingSection) {
