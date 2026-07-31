@@ -1,13 +1,35 @@
-/* Cohesion pass: shared content edge, consistent vertical rhythm, and a seamless platforms-to-services transition. */
+/* Cohesion pass: shared content edge, consistent vertical rhythm, and full-width page-like sections. */
 
 :root {
-  --palomma-page-edge: min(calc(100% - 2rem), 1720px);
+  --palomma-page-edge: calc(100% - 2rem);
+  --palomma-section-pad: clamp(2.25rem, 3vw, 3.25rem);
 }
 
-/* Treat Platforms + Designed to Scale as one visual band instead of two stacked boxes. */
+/* Each major homepage section behaves like its own full-width page band. */
+.home-page main {
+  display: flex !important;
+  flex-direction: column !important;
+}
+.home-page .palomma-hero { order: 1; }
+.home-page .platforms-strip { order: 2; }
+.home-page .business-services-section { order: 3; }
+.home-page .case-studies-section { order: 4; }
+.home-page .pricing-section { order: 5; }
+.home-page .homepage-faq-section { order: 6; }
+.home-page .contact-section { order: 7; }
+
+/* Match the navbar to the page order without changing the established labels. */
+.home-page .navbar-nav { display: flex; }
+.home-page .navbar-nav li:has(a[href="#services"]) { order: 1; }
+.home-page .navbar-nav li:has(a[href="#case-studies"]) { order: 2; }
+.home-page .navbar-nav li:has(a[href="#pricing"]) { order: 3; }
+.home-page .navbar-nav li:has(a[href="#faq"]) { order: 4; }
+.home-page .navbar-nav li:has(a[href="#contact"]) { order: 5; }
+
+/* Platforms + Designed to Scale read as one continuous visual band. */
 .home-page .platforms-strip {
   margin: 0 !important;
-  padding: 1.1rem 0 1.25rem !important;
+  padding: 1.05rem 0 1.15rem !important;
   border-top: 0 !important;
   border-bottom: 0 !important;
   background: #f8fcfd !important;
@@ -16,101 +38,139 @@
 
 .home-page .business-services-section {
   margin-top: 0 !important;
-  padding-top: 2.25rem !important;
-  padding-bottom: 2.75rem !important;
+  padding-top: 1.7rem !important;
+  padding-bottom: var(--palomma-section-pad) !important;
   border-top: 0 !important;
   background: linear-gradient(180deg, #f8fcfd 0%, #eef7fa 100%) !important;
 }
 
 .home-page .business-services-heading {
-  margin-bottom: 2rem !important;
+  margin: 0 0 1.75rem !important;
 }
 
-/* Use one exact left/right edge for every major homepage section. */
+/* One exact vertical guide for every page section. */
 .home-page .business-services-section > .container,
 .home-page .pricing-section > .container,
 .home-page .case-studies-section > .container,
 .home-page #faq .homepage-faq-container,
 .home-page .contact-section > .container {
   width: var(--palomma-page-edge) !important;
-  max-width: 1720px !important;
+  max-width: none !important;
   margin-inline: auto !important;
   padding-inline: 0 !important;
 }
 
 .home-page .business-services-grid,
+.home-page .pricing-shell,
 .home-page .pricing-grid,
 .home-page .case-study-grid,
 .home-page #faq .homepage-faq-list,
+.home-page #faq .homepage-faq-heading,
 .home-page .contact-cta-card {
   width: 100% !important;
+  max-width: none !important;
   box-sizing: border-box !important;
 }
 
-/* Remove the extra inset that made pricing visibly narrower than services/projects. */
-.home-page .pricing-grid {
-  padding-inline: 0 !important;
-  gap: clamp(1rem, 1.6vw, 1.5rem) !important;
+/* Selected Work should occupy the same page width as services and pricing. */
+.home-page .case-studies-section {
+  padding-top: var(--palomma-section-pad) !important;
+  padding-bottom: var(--palomma-section-pad) !important;
+}
+.home-page .case-studies-section .section-heading {
+  width: 100% !important;
+  max-width: none !important;
+  margin: 0 0 1.75rem !important;
+  text-align: center !important;
+}
+.home-page .case-studies-section .section-heading h2 {
+  font-size: 0 !important;
+}
+.home-page .case-studies-section .section-heading h2::after {
+  content: "Selected Work";
+  font-size: clamp(2rem, 3vw, 2.75rem);
+  line-height: 1.08;
+}
+.home-page .case-study-grid {
+  grid-template-columns: repeat(5, minmax(0, 1fr)) !important;
+  gap: clamp(1rem, 1.4vw, 1.4rem) !important;
+  margin: 0 !important;
+}
+.home-page .case-study-card {
+  width: 100% !important;
+  max-width: none !important;
 }
 
+/* Pricing follows Selected Work and uses the exact same guides. */
+.home-page .pricing-section {
+  padding-top: var(--palomma-section-pad) !important;
+  padding-bottom: var(--palomma-section-pad) !important;
+}
+.home-page .pricing-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+  gap: clamp(1rem, 1.4vw, 1.4rem) !important;
+  padding-inline: 0 !important;
+  margin-inline: 0 !important;
+}
 .home-page .pricing-support {
   margin-inline: 0 !important;
 }
-
-/* Tighten the vertical rhythm between the major sections. */
-.home-page .pricing-section {
-  padding-top: 2.75rem !important;
-  padding-bottom: 2.75rem !important;
+.home-page .pricing-consultation {
+  margin-top: .6rem !important;
+  margin-bottom: 0 !important;
 }
 
-.home-page .case-studies-section {
-  padding-top: 2.75rem !important;
-  padding-bottom: 2.75rem !important;
-}
-
+/* FAQ is its own page band and spans the same visible width. */
 .home-page #faq.homepage-faq-section {
-  padding-top: 2.5rem !important;
-  padding-bottom: 2.5rem !important;
+  padding-top: var(--palomma-section-pad) !important;
+  padding-bottom: var(--palomma-section-pad) !important;
 }
-
-.home-page .contact-section {
-  padding-top: 2.5rem !important;
-  padding-bottom: 2.5rem !important;
-}
-
-/* Keep headings on the same visual cadence. */
-.home-page .business-services-heading,
-.home-page .pricing-heading,
-.home-page .case-studies-section .section-heading,
-.home-page #faq .homepage-faq-heading {
-  margin-top: 0 !important;
-}
-
-.home-page .case-studies-section .section-heading,
-.home-page #faq .homepage-faq-heading {
-  margin-bottom: 2rem !important;
-}
-
-/* FAQ was previously constrained more narrowly. Force it onto the shared page edge. */
 .home-page #faq .homepage-faq-container {
   width: var(--palomma-page-edge) !important;
-  max-width: 1720px !important;
+  max-width: none !important;
+}
+.home-page #faq .homepage-faq-heading {
+  margin: 0 0 1.75rem !important;
+}
+.home-page #faq .homepage-faq-list {
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  gap: .8rem 1rem !important;
+}
+.home-page #faq .homepage-faq-list details {
+  width: 100% !important;
+  max-width: none !important;
 }
 
-/* Contact card follows the same vertical guides as every card row above it. */
+/* Contact is the final full-width page band, aligned with everything above it. */
+.home-page .contact-section {
+  padding-top: var(--palomma-section-pad) !important;
+  padding-bottom: var(--palomma-section-pad) !important;
+}
 .home-page .contact-cta-card {
-  margin-inline: 0 !important;
+  margin: 0 !important;
+}
+
+@media (max-width: 1100px) {
+  .home-page .case-study-grid,
+  .home-page .pricing-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+}
+
+@media (max-width: 800px) {
+  .home-page #faq .homepage-faq-list {
+    grid-template-columns: 1fr !important;
+  }
 }
 
 @media (max-width: 767px) {
-  :root { --palomma-page-edge: min(calc(100% - 1.25rem), 1720px); }
-
-  .home-page .business-services-section,
-  .home-page .pricing-section,
-  .home-page .case-studies-section,
-  .home-page #faq.homepage-faq-section,
-  .home-page .contact-section {
-    padding-top: 2rem !important;
-    padding-bottom: 2rem !important;
+  :root {
+    --palomma-page-edge: calc(100% - 1.25rem);
+    --palomma-section-pad: 2rem;
+  }
+  .home-page .navbar-nav { display: block; }
+  .home-page .case-study-grid,
+  .home-page .pricing-grid {
+    grid-template-columns: 1fr !important;
   }
 }
