@@ -1,3 +1,5 @@
+@import url("./palomma-hero-spotlight.css?v=20260730-1");
+
 /* Approved Palomma hero and platform-strip refinements. */
 
 .home-page .header {
@@ -52,7 +54,6 @@
 
 .palomma-hero .hero-photo {
   position: relative;
-  z-index: 3;
   width: 100%;
   height: 540px;
   margin: 0;
@@ -61,11 +62,8 @@
   overflow: hidden;
   isolation: isolate;
   background: #0b2239;
-  -webkit-mask-image: none;
-  mask-image: none;
 }
 
-/* A blurred duplicate extends beyond the sharp image so every edge dissolves instead of forming a box. */
 .palomma-hero .hero-photo::before {
   position: absolute;
   inset: -12%;
@@ -78,7 +76,6 @@
   pointer-events: none;
 }
 
-/* Wide navy gradients carry the blur into the surrounding hero on all four sides. */
 .palomma-hero .hero-photo::after {
   position: absolute;
   inset: 0;
