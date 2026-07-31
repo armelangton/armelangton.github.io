@@ -3,10 +3,11 @@
 :root {
   --palomma-page-gutter: clamp(16px, 2vw, 32px);
   --palomma-page-max: 1800px;
-  --palomma-section-pad: clamp(2rem, 2.6vw, 2.8rem);
+  --palomma-section-pad: clamp(2.4rem, 3vw, 3.4rem);
+  --palomma-heading-gap: clamp(1.5rem, 2vw, 2rem);
 }
 
-/* Keep the agreed homepage flow. JavaScript also enforces Selected Work before Pricing. */
+/* Locked homepage order. */
 .home-page main {
   display: flex !important;
   flex-direction: column !important;
@@ -19,7 +20,7 @@
 .home-page .homepage-faq-section { order: 6; }
 .home-page .contact-section { order: 7; }
 
-/* Navigation follows the same visible order. */
+/* Navigation mirrors the visible page order. */
 .home-page .navbar-nav { display: flex; }
 .home-page .navbar-nav li:has(a[href="#services"]) { order: 1; }
 .home-page .navbar-nav li:has(a[href="#case-studies"]) { order: 2; }
@@ -27,7 +28,7 @@
 .home-page .navbar-nav li:has(a[href="#faq"]) { order: 4; }
 .home-page .navbar-nav li:has(a[href="#contact"]) { order: 5; }
 
-/* Remove divider rules. Use spacing and background changes for separation. */
+/* Remove separator rules so section rhythm comes from spacing and background only. */
 .home-page .section-wrapper,
 .home-page .platforms-strip,
 .home-page .business-services-section,
@@ -39,7 +40,7 @@
   border-bottom: 0 !important;
 }
 
-/* Platforms + Designed to Scale read as one continuous band. */
+/* Platforms and Designed to Scale are one continuous visual band. */
 .home-page .platforms-strip {
   margin: 0 !important;
   padding: 1.05rem 0 1.1rem !important;
@@ -47,33 +48,35 @@
   box-shadow: none !important;
 }
 .home-page .business-services-section {
-  margin-top: 0 !important;
-  padding-top: 1.55rem !important;
+  margin: 0 !important;
+  padding-top: 1.7rem !important;
   padding-bottom: var(--palomma-section-pad) !important;
   background: linear-gradient(180deg, #f8fcfd 0%, #eef7fa 100%) !important;
 }
-.home-page .business-services-heading { margin: 0 0 1.6rem !important; }
 
-/* One responsive page frame for every major section. */
+/* One identical content frame for every major homepage section. */
 .home-page .business-services-section > .container,
-.home-page .pricing-section > .container,
 .home-page .case-studies-section > .container,
+.home-page .pricing-section > .container,
+.home-page #faq.homepage-faq-section > .homepage-faq-container,
 .home-page .contact-section > .container {
   position: static !important;
   left: auto !important;
   width: min(calc(100% - (2 * var(--palomma-page-gutter))), var(--palomma-page-max)) !important;
   max-width: var(--palomma-page-max) !important;
-  margin-left: auto !important;
-  margin-right: auto !important;
+  margin: 0 auto !important;
   padding-left: 0 !important;
   padding-right: 0 !important;
   transform: none !important;
+  box-sizing: border-box !important;
 }
 
 .home-page .business-services-grid,
+.home-page .case-study-grid,
 .home-page .pricing-shell,
 .home-page .pricing-grid,
-.home-page .case-study-grid,
+.home-page #faq .homepage-faq-heading,
+.home-page #faq .homepage-faq-list,
 .home-page .contact-cta-card {
   width: 100% !important;
   max-width: none !important;
@@ -82,17 +85,28 @@
   box-sizing: border-box !important;
 }
 
-/* Selected Work comes before Pricing and keeps the existing five-card layout. */
-.home-page .case-studies-section {
+/* Identical vertical rhythm for the page-like sections. */
+.home-page .case-studies-section,
+.home-page .pricing-section,
+.home-page #faq.homepage-faq-section,
+.home-page .contact-section {
+  margin: 0 !important;
   padding-top: var(--palomma-section-pad) !important;
   padding-bottom: var(--palomma-section-pad) !important;
 }
-.home-page .case-studies-section .section-heading {
-  width: 100% !important;
-  max-width: none !important;
-  margin: 0 0 1.6rem !important;
+
+.home-page .business-services-heading,
+.home-page .case-studies-section .section-heading,
+.home-page .pricing-heading,
+.home-page #faq .homepage-faq-heading {
+  margin-top: 0 !important;
+  margin-bottom: var(--palomma-heading-gap) !important;
+  padding-bottom: 0 !important;
+  border-bottom: 0 !important;
   text-align: center !important;
 }
+
+/* Selected Work. */
 .home-page .case-studies-section .section-heading h2 {
   font-family: "Inter", sans-serif !important;
   font-size: clamp(2rem, 3vw, 2.75rem) !important;
@@ -109,58 +123,24 @@
   max-width: none !important;
 }
 
-/* Pricing sits directly after Selected Work and before FAQ. */
-.home-page .pricing-section {
-  padding-top: var(--palomma-section-pad) !important;
-  padding-bottom: var(--palomma-section-pad) !important;
-}
+/* Pricing. */
 .home-page .pricing-grid {
   grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
   gap: clamp(1rem, 1.4vw, 1.4rem) !important;
   padding-inline: 0 !important;
 }
-.home-page .pricing-support { margin-inline: 0 !important; }
-
-/* The contact block below the page already handles the next action. */
+.home-page .pricing-support {
+  margin-inline: 0 !important;
+}
 .home-page .pricing-consultation {
   display: none !important;
 }
 
-/* FAQ uses the exact same visible left/right guides as Pricing and Selected Work. */
+/* FAQ fills the same frame as Selected Work and Pricing. */
 .home-page #faq.homepage-faq-section {
-  box-sizing: border-box !important;
   width: 100% !important;
-  padding-top: var(--palomma-section-pad) !important;
-  padding-right: 0 !important;
-  padding-bottom: var(--palomma-section-pad) !important;
-  padding-left: 0 !important;
-}
-.home-page #faq.homepage-faq-section > .homepage-faq-container,
-.home-page #faq.homepage-faq-section > .container.homepage-faq-container {
-  position: static !important;
-  left: auto !important;
-  width: min(calc(100vw - (2 * var(--palomma-page-gutter))), var(--palomma-page-max)) !important;
-  max-width: none !important;
-  margin-left: auto !important;
-  margin-right: auto !important;
   padding-left: 0 !important;
   padding-right: 0 !important;
-  transform: none !important;
-  box-sizing: border-box !important;
-}
-.home-page #faq .homepage-faq-heading,
-.home-page #faq .homepage-faq-list {
-  width: 100% !important;
-  max-width: none !important;
-  margin-left: 0 !important;
-  margin-right: 0 !important;
-  box-sizing: border-box !important;
-}
-.home-page #faq .homepage-faq-heading {
-  margin-top: 0 !important;
-  margin-bottom: 1.6rem !important;
-  padding-bottom: 0 !important;
-  border-bottom: 0 !important;
 }
 .home-page #faq .homepage-faq-list {
   display: grid !important;
@@ -172,33 +152,39 @@
   max-width: none !important;
 }
 
-/* Contact follows the same frame rather than a narrower centered card. */
-.home-page .contact-section {
-  padding-top: var(--palomma-section-pad) !important;
-  padding-bottom: var(--palomma-section-pad) !important;
+/* Contact follows the same frame. */
+.home-page .contact-cta-card {
+  margin: 0 !important;
 }
-.home-page .contact-cta-card { margin: 0 !important; }
 
-/* Responsive behavior. */
 @media (max-width: 1400px) {
-  .home-page .case-study-grid { grid-template-columns: repeat(3, minmax(0, 1fr)) !important; }
+  .home-page .case-study-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  }
 }
 
 @media (max-width: 1100px) {
-  .home-page .pricing-grid { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; }
-  .home-page .case-study-grid { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; }
+  .home-page .pricing-grid,
+  .home-page .case-study-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
 }
 
 @media (max-width: 800px) {
-  .home-page #faq .homepage-faq-list { grid-template-columns: 1fr !important; }
+  .home-page #faq .homepage-faq-list {
+    grid-template-columns: 1fr !important;
+  }
 }
 
 @media (max-width: 700px) {
   :root {
     --palomma-page-gutter: 12px;
-    --palomma-section-pad: 1.8rem;
+    --palomma-section-pad: 1.9rem;
+    --palomma-heading-gap: 1.25rem;
   }
   .home-page .navbar-nav { display: block; }
   .home-page .pricing-grid,
-  .home-page .case-study-grid { grid-template-columns: 1fr !important; }
+  .home-page .case-study-grid {
+    grid-template-columns: 1fr !important;
+  }
 }
