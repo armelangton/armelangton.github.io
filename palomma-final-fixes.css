@@ -48,28 +48,36 @@
   mask-image:radial-gradient(ellipse 66% 61% at 56% 49%,#000 24%,rgba(0,0,0,.97) 39%,rgba(0,0,0,.76) 54%,rgba(0,0,0,.43) 69%,rgba(0,0,0,.15) 83%,transparent 98%)!important;
 }
 
-/* Use one consistent wide content edge for services, pricing, and projects. */
+/* One vertical edge for every major homepage content section. */
 .home-page .business-services-section > .container,
 .home-page .pricing-section > .container,
-.home-page .case-studies-section > .container {
+.home-page .case-studies-section > .container,
+.home-page #faq .homepage-faq-container,
+.home-page .contact-section > .container {
   width:min(calc(100% - 2rem),1720px)!important;
   max-width:1720px!important;
   margin-inline:auto!important;
+  padding-inline:0!important;
 }
 .home-page .business-service-card { min-height:0!important; }
 
-/* Pricing cards fill the same horizontal footprint as the projects. */
-.home-page .pricing-shell { width:100%; }
+/* Pricing cards fill the same horizontal footprint as projects. Keep support below the package cards. */
+.home-page .pricing-shell { display:flex!important; width:100%; flex-direction:column; }
+.home-page .pricing-heading { order:1; }
 .home-page .pricing-grid {
+  order:2;
+  width:100%;
   grid-template-columns:repeat(4,minmax(0,1fr))!important;
   gap:clamp(1rem,1.6vw,1.5rem)!important;
   padding-inline:clamp(1rem,1.8vw,1.5rem)!important;
 }
 .home-page .pricing-card { min-height:0!important; }
 .home-page .pricing-support {
-  margin:1rem clamp(1rem,1.8vw,1.5rem) clamp(1rem,1.8vw,1.5rem)!important;
+  order:3;
+  width:auto;
+  margin:1rem clamp(1rem,1.8vw,1.5rem) .75rem!important;
 }
-.home-page .pricing-consultation { margin-top:.25rem!important; }
+.home-page .pricing-consultation { order:4; margin:.25rem auto 1.5rem!important; }
 
 /* Project cards spread across the same wide content edge with no unused side space. */
 .home-page .case-studies-section { background:linear-gradient(180deg,#fff 0%,#f2f8fa 100%); }
@@ -88,7 +96,12 @@
 .home-page .case-study-card p { margin:0 0 1rem; }
 .home-page .case-study-card div > span { margin-top:auto; }
 
-/* Standardize all contact buttons to the same dimensions and shape. */
+/* FAQ fills the same page width and aligns to the same left/right edges. */
+.home-page #faq .homepage-faq-list { width:100%!important; }
+.home-page #faq .homepage-faq-heading { width:100%!important; }
+
+/* Contact block aligns with the same edges as pricing, projects, and FAQ. */
+.home-page .contact-cta-card { width:100%!important; box-sizing:border-box; }
 .home-page .contact-links { display:flex!important; flex-wrap:wrap; justify-content:center; }
 .home-page .contact-links a,
 .home-page .contact-cta-card .button,
@@ -106,7 +119,9 @@
   .palomma-hero .hero-content::before{inset:-1.2rem;}
   .home-page .business-services-section > .container,
   .home-page .pricing-section > .container,
-  .home-page .case-studies-section > .container{width:min(calc(100% - 1.25rem),1720px)!important;}
+  .home-page .case-studies-section > .container,
+  .home-page #faq .homepage-faq-container,
+  .home-page .contact-section > .container{width:min(calc(100% - 1.25rem),1720px)!important;}
   .home-page .pricing-grid,.home-page .case-study-grid{grid-template-columns:1fr!important;}
   .home-page .case-study-card:last-child{grid-column:auto;}
   .home-page .contact-links{flex-direction:column;align-items:center;}
