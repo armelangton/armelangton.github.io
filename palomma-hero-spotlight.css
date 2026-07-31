@@ -1,5 +1,5 @@
 @import url("./palomma-layout-fixes.css?v=20260730-1");
-@import url("./palomma-section-order.css?v=20260730-1");
+@import url("./palomma-section-order.css?v=20260730-2");
 
 /* Final hero layering: the network sits over the photo, while the photo fades outward like a soft spotlight. */
 
@@ -18,17 +18,18 @@
   isolation: isolate;
 }
 
-/* A soft navy shield keeps moving network points from competing with the headline. */
+/* Keep the animated network completely clear of the headline and buttons. */
 .palomma-hero .hero-content::before {
   position: absolute;
-  inset: -8% -10% -10% -8%;
+  inset: -12% -16% -14% -12%;
   z-index: -1;
   background: radial-gradient(
-    ellipse 82% 76% at 42% 46%,
-    rgba(7,28,49,.98) 0%,
-    rgba(7,28,49,.96) 48%,
-    rgba(7,28,49,.82) 68%,
-    rgba(7,28,49,.36) 84%,
+    ellipse 94% 90% at 42% 48%,
+    rgba(7,28,49,1) 0%,
+    rgba(7,28,49,1) 66%,
+    rgba(7,28,49,.98) 76%,
+    rgba(7,28,49,.88) 84%,
+    rgba(7,28,49,.48) 93%,
     transparent 100%
   );
   content: "";
@@ -113,7 +114,7 @@
 
 @media (max-width: 900px) {
   .palomma-hero .hero-content::before {
-    inset: -6%;
+    inset: -9%;
   }
 
   .palomma-hero .hero-photo::before,
