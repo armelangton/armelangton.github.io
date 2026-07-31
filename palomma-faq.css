@@ -1,0 +1,120 @@
+/* Homepage FAQ: compact, readable answers between pricing and contact. */
+.home-page .homepage-faq-section {
+  order: 5;
+  padding: 2rem 0 1.35rem;
+  background: transparent;
+}
+
+.home-page .homepage-faq-container {
+  width: min(calc(100% - 48px), 1040px);
+  margin-inline: auto;
+}
+
+.home-page .homepage-faq-heading {
+  margin: 0 auto 1.25rem;
+  padding-bottom: .8rem;
+  border-bottom: 1px solid rgba(7,26,45,.14);
+  text-align: center;
+}
+
+.home-page .homepage-faq-heading h2 {
+  margin: 0;
+  color: #071a2d;
+  font-family: "Inter", sans-serif;
+  font-size: clamp(1.75rem, 2.7vw, 2.45rem);
+  font-weight: 700;
+  line-height: 1.12;
+  letter-spacing: -.025em;
+}
+
+.home-page .homepage-faq-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: .8rem 1rem;
+}
+
+.home-page .homepage-faq-list details {
+  overflow: hidden;
+  border: 1px solid rgba(45,111,183,.15);
+  border-radius: 12px;
+  background: rgba(255,255,255,.82);
+  box-shadow: 0 10px 28px rgba(7,26,45,.05);
+}
+
+.home-page .homepage-faq-list summary {
+  position: relative;
+  display: flex;
+  min-height: 64px;
+  padding: 1rem 3rem 1rem 1.15rem;
+  align-items: center;
+  color: #071a2d;
+  cursor: pointer;
+  font-family: "Inter", sans-serif;
+  font-size: .92rem;
+  font-weight: 700;
+  line-height: 1.35;
+  list-style: none;
+}
+
+.home-page .homepage-faq-list summary::-webkit-details-marker {
+  display: none;
+}
+
+.home-page .homepage-faq-list summary::after {
+  position: absolute;
+  top: 50%;
+  right: 1.15rem;
+  color: #12a5a1;
+  content: "+";
+  font-size: 1.35rem;
+  font-weight: 500;
+  line-height: 1;
+  transform: translateY(-50%);
+  transition: transform 180ms ease;
+}
+
+.home-page .homepage-faq-list details[open] summary::after {
+  transform: translateY(-50%) rotate(45deg);
+}
+
+.home-page .homepage-faq-list details[open] summary {
+  border-bottom: 1px solid rgba(45,111,183,.12);
+}
+
+.home-page .homepage-faq-list details p {
+  margin: 0;
+  padding: .95rem 1.15rem 1.1rem;
+  color: #536775;
+  font-family: "Inter", sans-serif;
+  font-size: .82rem;
+  line-height: 1.62;
+}
+
+.home-page .contact-section {
+  order: 6;
+}
+
+@media (max-width: 800px) {
+  .home-page .homepage-faq-list {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 700px) {
+  .home-page .homepage-faq-container {
+    width: min(calc(100% - 24px), 1040px);
+  }
+
+  .home-page .homepage-faq-section {
+    padding-top: 1.5rem;
+  }
+
+  .home-page .homepage-faq-list summary {
+    min-height: 58px;
+    padding: .9rem 2.75rem .9rem 1rem;
+  }
+
+  .home-page .homepage-faq-list details p {
+    padding: .85rem 1rem 1rem;
+  }
+}
