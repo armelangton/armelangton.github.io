@@ -52,6 +52,7 @@
 
 .palomma-hero .hero-photo {
   position: relative;
+  z-index: 3;
   width: 100%;
   height: 540px;
   margin: 0;
@@ -60,6 +61,8 @@
   overflow: hidden;
   isolation: isolate;
   background: #0b2239;
+  -webkit-mask-image: none;
+  mask-image: none;
 }
 
 /* A blurred duplicate extends beyond the sharp image so every edge dissolves instead of forming a box. */
