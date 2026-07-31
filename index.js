@@ -7,7 +7,83 @@ if (!document.querySelector('link[data-palomma-approved-hero="true"]')) {
 }
 
 const processNavLink = document.querySelector('.nav-link[href="#services"]');
-if (processNavLink) processNavLink.textContent = "Process";
+if (processNavLink) processNavLink.textContent = "Services";
+
+const servicesSection = document.getElementById("services");
+if (servicesSection) {
+  servicesSection.className = "section-wrapper business-services-section";
+  servicesSection.innerHTML = `
+    <div class="container">
+      <div class="business-services-heading">
+        <h2>Designed to scale.</h2>
+      </div>
+      <div class="business-services-grid">
+        <article class="business-service-card">
+          <div class="business-service-visual" aria-hidden="true">
+            <svg viewBox="0 0 120 88" role="img"><path d="M24 57c0-18 15-33 33-33h8c18 0 33 15 33 33"/><rect x="34" y="34" width="54" height="38" rx="12"/><circle cx="51" cy="52" r="3"/><circle cx="71" cy="52" r="3"/><path d="M53 62h16M61 34V22M54 22h14"/><path d="M29 48H18v18h12M93 48h11v18H93"/></svg>
+          </div>
+          <h3>AI Solutions</h3>
+          <p>Put AI agents and intelligent workflows to work on repetitive tasks, customer questions, research, analysis, and decisions.</p>
+        </article>
+        <article class="business-service-card">
+          <div class="business-service-visual" aria-hidden="true">
+            <svg viewBox="0 0 120 88" role="img"><rect x="18" y="18" width="84" height="56" rx="8"/><path d="M18 31h84M30 24h2M38 24h2M46 24h2"/><rect x="29" y="41" width="25" height="20" rx="3"/><path d="M64 43h25M64 51h20M64 59h15"/><path d="M91 67l8 8M99 67l-8 8"/></svg>
+          </div>
+          <h3>Business Applications</h3>
+          <p>Replace spreadsheets, disconnected tools, and manual handoffs with applications designed around how your business operates.</p>
+        </article>
+        <article class="business-service-card">
+          <div class="business-service-visual" aria-hidden="true">
+            <svg viewBox="0 0 120 88" role="img"><rect x="17" y="15" width="86" height="60" rx="8"/><path d="M17 29h86"/><circle cx="37" cy="47" r="9"/><path d="M25 65c3-7 8-10 12-10s9 3 12 10M58 62l10-11 9 6 13-17"/><path d="M84 40h7v7"/></svg>
+          </div>
+          <h3>CRM &amp; Revenue Operations</h3>
+          <p>Improve pipeline visibility, process consistency, forecasting, reporting, and revenue performance across your customer lifecycle.</p>
+        </article>
+        <article class="business-service-card">
+          <div class="business-service-visual" aria-hidden="true">
+            <svg viewBox="0 0 120 88" role="img"><rect x="19" y="22" width="82" height="48" rx="7"/><path d="M52 38l18 8-18 8z"/><path d="M33 70v7M87 70v7M42 77h36"/><circle cx="28" cy="31" r="8"/><circle cx="92" cy="31" r="8"/></svg>
+          </div>
+          <h3>Revenue Enablement</h3>
+          <p>Give teams the knowledge, training, tools, and guidance they need to adopt new processes and perform more consistently.</p>
+        </article>
+        <article class="business-service-card">
+          <div class="business-service-visual" aria-hidden="true">
+            <svg viewBox="0 0 120 88" role="img"><rect x="14" y="18" width="25" height="18" rx="4"/><rect x="47" y="18" width="25" height="18" rx="4"/><rect x="80" y="18" width="25" height="18" rx="4"/><rect x="47" y="54" width="25" height="18" rx="4"/><path d="M39 27h8M72 27h8M59 36v18"/><circle cx="98" cy="63" r="11"/><path d="m93 63 4 4 7-9"/></svg>
+          </div>
+          <h3>Business Process Improvement</h3>
+          <p>Remove bottlenecks, reduce manual work, and redesign workflows to improve efficiency, ROI, and your ability to scale.</p>
+        </article>
+      </div>
+      <div class="business-outcomes" aria-label="Business outcomes">
+        <span>Improve team performance</span>
+        <span>Increase efficiency</span>
+        <span>Strengthen ROI</span>
+        <span>Support revenue growth</span>
+      </div>
+    </div>`;
+
+  const serviceStyles = document.createElement("style");
+  serviceStyles.textContent = `
+    .home-page .business-services-section{background:linear-gradient(180deg,#f8fcfd 0%,#eef7fa 100%)}
+    .home-page .business-services-heading{text-align:center;margin-bottom:clamp(2.5rem,5vw,4rem)}
+    .home-page .business-services-heading h2{margin:0;color:var(--palomma-navy,#071a2d);font-family:Lora,serif;font-size:clamp(2.5rem,5vw,4.8rem);line-height:1.02;letter-spacing:-.04em}
+    .home-page .business-services-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:1rem;align-items:stretch}
+    .home-page .business-service-card{display:flex;min-width:0;min-height:430px;padding:1.15rem 1.15rem 1.35rem;border:1px solid rgba(45,111,183,.16);border-radius:18px;flex-direction:column;background:rgba(255,255,255,.94);box-shadow:0 16px 40px rgba(7,26,45,.07);transition:transform 180ms ease,box-shadow 180ms ease}
+    .home-page .business-service-card:hover{transform:translateY(-5px);box-shadow:0 22px 50px rgba(7,26,45,.11)}
+    .home-page .business-service-visual{display:grid;height:150px;margin-bottom:1.3rem;border-radius:14px;place-items:center;background:linear-gradient(145deg,rgba(117,216,210,.2),rgba(45,111,183,.08))}
+    .home-page .business-service-card:nth-child(even) .business-service-visual{background:linear-gradient(145deg,rgba(212,122,88,.12),rgba(117,216,210,.13))}
+    .home-page .business-service-visual svg{width:82%;max-width:120px;fill:none;stroke:var(--palomma-navy,#071a2d);stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+    .home-page .business-service-card h3{margin:0 0 .75rem;color:var(--palomma-navy,#071a2d);font-size:clamp(1.05rem,1.5vw,1.32rem);line-height:1.2}
+    .home-page .business-service-card p{margin:0;color:var(--palomma-muted,#5d7182);font-size:.94rem;line-height:1.65}
+    .home-page .business-outcomes{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;margin-top:2rem;border:1px solid rgba(45,111,183,.14);border-radius:14px;background:rgba(255,255,255,.72);box-shadow:0 10px 30px rgba(7,26,45,.04)}
+    .home-page .business-outcomes span{position:relative;padding:1.05rem .85rem;color:var(--palomma-navy,#071a2d);font-size:.86rem;font-weight:700;text-align:center}
+    .home-page .business-outcomes span+span{border-left:1px solid rgba(45,111,183,.14)}
+    .home-page .business-outcomes span::before{display:inline-block;width:8px;height:8px;margin-right:.55rem;border-radius:50%;background:var(--palomma-teal,#12a5a1);content:""}
+    @media(max-width:1100px){.home-page .business-services-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.home-page .business-service-card:last-child{grid-column:1/-1;min-height:0}.home-page .business-outcomes{grid-template-columns:repeat(2,minmax(0,1fr))}.home-page .business-outcomes span:nth-child(3){border-left:0;border-top:1px solid rgba(45,111,183,.14)}.home-page .business-outcomes span:nth-child(4){border-top:1px solid rgba(45,111,183,.14)}}
+    @media(max-width:680px){.home-page .business-services-grid{grid-template-columns:1fr}.home-page .business-service-card,.home-page .business-service-card:last-child{grid-column:auto;min-height:0}.home-page .business-service-visual{height:132px}.home-page .business-outcomes{grid-template-columns:1fr}.home-page .business-outcomes span+span,.home-page .business-outcomes span:nth-child(3),.home-page .business-outcomes span:nth-child(4){border-top:1px solid rgba(45,111,183,.14);border-left:0}}
+  `;
+  document.head.appendChild(serviceStyles);
+}
 
 document.querySelectorAll(".navbar-toggler").forEach((button) => {
   const selector = button.getAttribute("data-target");
