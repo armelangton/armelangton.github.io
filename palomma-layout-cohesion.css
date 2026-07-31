@@ -1,4 +1,4 @@
-/* Cohesion pass: one responsive page frame, consistent rhythm, and explicit section order. */
+/* Cohesion pass: one responsive page frame, consistent rhythm, and locked section order. */
 
 :root {
   --palomma-page-gutter: clamp(16px, 2vw, 32px);
@@ -6,20 +6,20 @@
   --palomma-section-pad: clamp(2rem, 2.6vw, 2.8rem);
 }
 
-/* Explicit homepage order: hero, platforms, services, selected work, pricing, FAQ, contact. */
+/* Lock the agreed homepage flow even if older JavaScript moves nodes in the DOM. */
 .home-page main {
   display: flex !important;
   flex-direction: column !important;
 }
-.home-page .palomma-hero { order: 1 !important; }
-.home-page .platforms-strip { order: 2 !important; }
-.home-page .business-services-section { order: 3 !important; }
-.home-page .case-studies-section { order: 4 !important; }
-.home-page .pricing-section { order: 5 !important; }
-.home-page .homepage-faq-section { order: 6 !important; }
-.home-page .contact-section { order: 7 !important; }
+.home-page .palomma-hero { order: 1; }
+.home-page .platforms-strip { order: 2; }
+.home-page .business-services-section { order: 3; }
+.home-page .case-studies-section { order: 4; }
+.home-page .pricing-section { order: 5; }
+.home-page .homepage-faq-section { order: 6; }
+.home-page .contact-section { order: 7; }
 
-/* Match the navbar to the same reading order. */
+/* Navigation follows the same visible order. */
 .home-page .navbar-nav { display: flex; }
 .home-page .navbar-nav li:has(a[href="#services"]) { order: 1; }
 .home-page .navbar-nav li:has(a[href="#case-studies"]) { order: 2; }
@@ -58,7 +58,7 @@
 .home-page .business-services-section > .container,
 .home-page .pricing-section > .container,
 .home-page .case-studies-section > .container,
-.home-page section#faq.homepage-faq-section > .homepage-faq-container.container,
+.home-page #faq .homepage-faq-container,
 .home-page .contact-section > .container {
   position: static !important;
   left: auto !important;
@@ -75,8 +75,8 @@
 .home-page .pricing-shell,
 .home-page .pricing-grid,
 .home-page .case-study-grid,
-.home-page section#faq.homepage-faq-section .homepage-faq-list,
-.home-page section#faq.homepage-faq-section .homepage-faq-heading,
+.home-page #faq .homepage-faq-list,
+.home-page #faq .homepage-faq-heading,
 .home-page .contact-cta-card {
   width: 100% !important;
   max-width: none !important;
@@ -85,7 +85,7 @@
   box-sizing: border-box !important;
 }
 
-/* Keep the existing five-card Selected Work layout. */
+/* Selected Work comes before Pricing and keeps the existing five-card layout. */
 .home-page .case-studies-section {
   padding-top: var(--palomma-section-pad) !important;
   padding-bottom: var(--palomma-section-pad) !important;
@@ -96,6 +96,17 @@
   margin: 0 0 1.6rem !important;
   text-align: center !important;
 }
+.home-page .case-studies-section .section-heading h2 {
+  font-size: 0 !important;
+}
+.home-page .case-studies-section .section-heading h2::after {
+  content: "Selected Work" !important;
+  font-family: "Inter", sans-serif !important;
+  font-size: clamp(2rem, 3vw, 2.75rem) !important;
+  font-weight: 700 !important;
+  line-height: 1.08 !important;
+  letter-spacing: -.025em !important;
+}
 .home-page .case-study-grid {
   grid-template-columns: repeat(5, minmax(0, 1fr)) !important;
   gap: clamp(1rem, 1.4vw, 1.4rem) !important;
@@ -105,7 +116,7 @@
   max-width: none !important;
 }
 
-/* Pricing comes after Selected Work and before FAQ. */
+/* Pricing sits directly after Selected Work and before FAQ. */
 .home-page .pricing-section {
   padding-top: var(--palomma-section-pad) !important;
   padding-bottom: var(--palomma-section-pad) !important;
@@ -121,33 +132,24 @@
   margin-bottom: 0 !important;
 }
 
-/* FAQ must occupy the same full visible frame as Selected Work and Pricing. */
-.home-page section#faq.homepage-faq-section {
+/* FAQ uses exactly the same frame as Selected Work and Pricing. */
+.home-page #faq.homepage-faq-section {
   padding-top: var(--palomma-section-pad) !important;
   padding-bottom: var(--palomma-section-pad) !important;
 }
-.home-page section#faq.homepage-faq-section > .homepage-faq-container.container {
-  width: min(calc(100% - (2 * var(--palomma-page-gutter))), var(--palomma-page-max)) !important;
-  max-width: var(--palomma-page-max) !important;
-}
-.home-page section#faq.homepage-faq-section .homepage-faq-heading {
-  width: 100% !important;
-  max-width: none !important;
+.home-page #faq .homepage-faq-heading {
   margin: 0 0 1.6rem !important;
-  padding: 0 !important;
-  border: 0 !important;
+  padding-bottom: 0 !important;
+  border-bottom: 0 !important;
 }
-.home-page section#faq.homepage-faq-section .homepage-faq-list {
+.home-page #faq .homepage-faq-list {
   display: grid !important;
-  width: 100% !important;
-  max-width: none !important;
   grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
   gap: .8rem 1rem !important;
 }
-.home-page section#faq.homepage-faq-section .homepage-faq-list details {
+.home-page #faq .homepage-faq-list details {
   width: 100% !important;
   max-width: none !important;
-  min-width: 0 !important;
 }
 
 /* Contact follows the same frame rather than a narrower centered card. */
@@ -168,7 +170,7 @@
 }
 
 @media (max-width: 800px) {
-  .home-page section#faq.homepage-faq-section .homepage-faq-list { grid-template-columns: 1fr !important; }
+  .home-page #faq .homepage-faq-list { grid-template-columns: 1fr !important; }
 }
 
 @media (max-width: 700px) {
