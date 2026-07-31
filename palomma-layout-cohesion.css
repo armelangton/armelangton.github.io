@@ -1,8 +1,8 @@
-/* Cohesion pass: shared content edge, consistent vertical rhythm, and full-width page-like sections. */
+/* Cohesion pass: shared page edge, consistent vertical rhythm, and full-width page-like sections. */
 
 :root {
-  --palomma-page-edge: calc(100% - 2rem);
-  --palomma-section-pad: clamp(2.25rem, 3vw, 3.25rem);
+  --palomma-page-edge: calc(100vw - 2rem);
+  --palomma-section-pad: clamp(2rem, 2.6vw, 2.8rem);
 }
 
 /* Each major homepage section behaves like its own full-width page band. */
@@ -18,7 +18,7 @@
 .home-page .homepage-faq-section { order: 6; }
 .home-page .contact-section { order: 7; }
 
-/* Match the navbar to the page order without changing the established labels. */
+/* Match the navbar to the page order. */
 .home-page .navbar-nav { display: flex; }
 .home-page .navbar-nav li:has(a[href="#services"]) { order: 1; }
 .home-page .navbar-nav li:has(a[href="#case-studies"]) { order: 2; }
@@ -26,38 +26,50 @@
 .home-page .navbar-nav li:has(a[href="#faq"]) { order: 4; }
 .home-page .navbar-nav li:has(a[href="#contact"]) { order: 5; }
 
+/* Remove divider rules between page bands. Spacing and background shifts do the separation. */
+.home-page .section-wrapper,
+.home-page .platforms-strip,
+.home-page .business-services-section,
+.home-page .case-studies-section,
+.home-page .pricing-section,
+.home-page #faq.homepage-faq-section,
+.home-page .contact-section {
+  border-top: 0 !important;
+  border-bottom: 0 !important;
+}
+
 /* Platforms + Designed to Scale read as one continuous visual band. */
 .home-page .platforms-strip {
   margin: 0 !important;
-  padding: 1.05rem 0 1.15rem !important;
-  border-top: 0 !important;
-  border-bottom: 0 !important;
+  padding: 1.05rem 0 1.1rem !important;
   background: #f8fcfd !important;
   box-shadow: none !important;
 }
-
 .home-page .business-services-section {
   margin-top: 0 !important;
-  padding-top: 1.7rem !important;
+  padding-top: 1.55rem !important;
   padding-bottom: var(--palomma-section-pad) !important;
-  border-top: 0 !important;
   background: linear-gradient(180deg, #f8fcfd 0%, #eef7fa 100%) !important;
 }
-
 .home-page .business-services-heading {
-  margin: 0 0 1.75rem !important;
+  margin: 0 0 1.6rem !important;
 }
 
-/* One exact vertical guide for every page section. */
+/* One exact visible left/right guide for every major page section. */
 .home-page .business-services-section > .container,
 .home-page .pricing-section > .container,
 .home-page .case-studies-section > .container,
 .home-page #faq .homepage-faq-container,
 .home-page .contact-section > .container {
+  position: relative !important;
+  left: 50% !important;
   width: var(--palomma-page-edge) !important;
   max-width: none !important;
-  margin-inline: auto !important;
-  padding-inline: 0 !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  transform: translateX(-50%) !important;
 }
 
 .home-page .business-services-grid,
@@ -69,10 +81,12 @@
 .home-page .contact-cta-card {
   width: 100% !important;
   max-width: none !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
   box-sizing: border-box !important;
 }
 
-/* Selected Work should occupy the same page width as services and pricing. */
+/* Keep the existing five-card Selected Work layout, just align it to the same page guides. */
 .home-page .case-studies-section {
   padding-top: var(--palomma-section-pad) !important;
   padding-bottom: var(--palomma-section-pad) !important;
@@ -80,7 +94,7 @@
 .home-page .case-studies-section .section-heading {
   width: 100% !important;
   max-width: none !important;
-  margin: 0 0 1.75rem !important;
+  margin: 0 0 1.6rem !important;
   text-align: center !important;
 }
 .home-page .case-studies-section .section-heading h2 {
@@ -94,14 +108,13 @@
 .home-page .case-study-grid {
   grid-template-columns: repeat(5, minmax(0, 1fr)) !important;
   gap: clamp(1rem, 1.4vw, 1.4rem) !important;
-  margin: 0 !important;
 }
 .home-page .case-study-card {
   width: 100% !important;
   max-width: none !important;
 }
 
-/* Pricing follows Selected Work and uses the exact same guides. */
+/* Pricing follows Selected Work and uses the same page guides. */
 .home-page .pricing-section {
   padding-top: var(--palomma-section-pad) !important;
   padding-bottom: var(--palomma-section-pad) !important;
@@ -110,7 +123,6 @@
   grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
   gap: clamp(1rem, 1.4vw, 1.4rem) !important;
   padding-inline: 0 !important;
-  margin-inline: 0 !important;
 }
 .home-page .pricing-support {
   margin-inline: 0 !important;
@@ -120,19 +132,18 @@
   margin-bottom: 0 !important;
 }
 
-/* FAQ is its own page band and spans the same visible width. */
+/* FAQ spans the same visible page width at 100% browser zoom. */
 .home-page #faq.homepage-faq-section {
   padding-top: var(--palomma-section-pad) !important;
   padding-bottom: var(--palomma-section-pad) !important;
 }
-.home-page #faq .homepage-faq-container {
-  width: var(--palomma-page-edge) !important;
-  max-width: none !important;
-}
 .home-page #faq .homepage-faq-heading {
-  margin: 0 0 1.75rem !important;
+  margin: 0 0 1.6rem !important;
+  padding-bottom: 0 !important;
+  border-bottom: 0 !important;
 }
 .home-page #faq .homepage-faq-list {
+  display: grid !important;
   grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
   gap: .8rem 1rem !important;
 }
@@ -141,7 +152,7 @@
   max-width: none !important;
 }
 
-/* Contact is the final full-width page band, aligned with everything above it. */
+/* Contact uses exactly the same visible width as the cards above it. */
 .home-page .contact-section {
   padding-top: var(--palomma-section-pad) !important;
   padding-bottom: var(--palomma-section-pad) !important;
@@ -165,8 +176,8 @@
 
 @media (max-width: 767px) {
   :root {
-    --palomma-page-edge: calc(100% - 1.25rem);
-    --palomma-section-pad: 2rem;
+    --palomma-page-edge: calc(100vw - 1.25rem);
+    --palomma-section-pad: 1.8rem;
   }
   .home-page .navbar-nav { display: block; }
   .home-page .case-study-grid,
