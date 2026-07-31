@@ -1,0 +1,141 @@
+/* Homepage layout corrections: unified hero chrome, compact process, proof before pricing. */
+
+.home-page .header {
+  background: linear-gradient(90deg, #071c31 0%, #0b2239 55%, #0e3048 100%) !important;
+  border-bottom: 0;
+}
+
+.home-page main {
+  display: flex;
+  flex-direction: column;
+}
+
+.home-page .palomma-hero { order: 0; }
+.home-page .platforms-strip { order: 1; }
+.home-page .services-process-section { order: 2; }
+.home-page .case-studies-section { order: 3; }
+.home-page .pricing-section { order: 4; }
+.home-page .contact-section { order: 5; }
+
+/* Platform marks sit on the same light surface used elsewhere on the page. */
+.home-page .platforms-strip {
+  padding: .9rem 0 1rem;
+  border-top: 1px solid rgba(45,111,183,.12);
+  border-bottom: 1px solid rgba(45,111,183,.16);
+  background: #ffffff;
+}
+.home-page .platforms-strip-label {
+  margin-bottom: .55rem;
+  color: #1f8f88;
+}
+.home-page .platform-logo {
+  padding: .25rem 1.25rem;
+  color: #153047;
+}
+.home-page .platform-logo img {
+  width: 24px;
+  height: 24px;
+  opacity: 1;
+}
+
+/* Process is a compact bridge into the proof and package sections. */
+.home-page .services-process-section {
+  padding-block: clamp(2rem, 3.5vw, 3rem);
+  background:
+    radial-gradient(circle at 88% 8%, rgba(117,216,210,.18), transparent 25%),
+    linear-gradient(180deg, #f8fcfd 0%, #eef7fa 100%);
+}
+.home-page .services-process-heading { display: none; }
+.home-page .services-process-section .container { max-width: 1240px; }
+.home-page .process-list.process-flow {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 0;
+  margin: 0;
+  padding: .65rem 0 .2rem;
+}
+.home-page .process-list.process-flow li,
+.home-page .process-list.process-flow li + li {
+  min-height: 138px;
+  padding: .45rem 1rem .35rem;
+  border: 0;
+  border-right: 1px solid rgba(45,111,183,.13);
+  border-radius: 0;
+  background: transparent;
+  text-align: center;
+  transform: none;
+}
+.home-page .process-list.process-flow li:last-child { border-right: 0; }
+.home-page .process-list.process-flow li::before { display: none; }
+.home-page .process-list.process-flow .process-icon {
+  display: inline-flex;
+  width: 70px;
+  height: 70px;
+  margin: 0 auto .75rem;
+  border: 1px solid rgba(18,165,161,.24);
+  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255,255,255,.84);
+  color: #2d6fb7;
+  box-shadow: 0 8px 24px rgba(7,26,45,.06);
+}
+.home-page .process-list.process-flow .process-icon svg {
+  width: 32px;
+  height: 32px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+}
+.home-page .process-list.process-flow strong {
+  margin: 0;
+  color: #071a2d;
+  font-family: "Lora", serif;
+  font-size: 1rem;
+}
+
+/* Case studies appear before pricing and use tighter proof cards. */
+.home-page .case-studies-section {
+  padding-block: clamp(3rem, 5vw, 4.25rem);
+}
+.home-page .case-studies-section .section-heading {
+  grid-template-columns: minmax(260px,.8fr) minmax(0,1.2fr);
+  gap: 2rem;
+  margin-bottom: 2rem;
+  align-items: center;
+}
+.home-page .case-studies-section .section-heading h2 {
+  max-width: 430px;
+  font-size: clamp(2.25rem, 3.6vw, 3.25rem);
+}
+.home-page .case-studies-section .section-heading p {
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+.home-page .case-study-grid {
+  grid-template-columns: repeat(3, minmax(0,1fr));
+  gap: 1.25rem;
+}
+.home-page .case-study-card img {
+  aspect-ratio: 16 / 10;
+  max-height: 190px;
+  padding: 10px;
+}
+.home-page .case-study-card div { padding: 1.05rem 1.1rem 1.15rem; }
+.home-page .case-study-card h3 { font-size: 1rem; }
+.home-page .case-study-card p { font-size: .8rem; line-height: 1.55; }
+
+.home-page .pricing-section { padding-top: clamp(3rem, 5vw, 4.5rem); }
+
+@media (max-width: 980px) {
+  .home-page .case-study-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
+  .home-page .process-list.process-flow { grid-template-columns: repeat(5, minmax(128px,1fr)); overflow-x: auto; }
+}
+
+@media (max-width: 700px) {
+  .home-page .case-studies-section .section-heading { grid-template-columns: 1fr; gap: .75rem; }
+  .home-page .case-study-grid { grid-template-columns: 1fr; }
+  .home-page .process-list.process-flow li,
+  .home-page .process-list.process-flow li + li { min-height: 122px; padding-inline: .7rem; }
+  .home-page .process-list.process-flow .process-icon { width: 60px; height: 60px; }
+}
