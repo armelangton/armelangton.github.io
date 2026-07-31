@@ -88,17 +88,18 @@ if (hero && canvas) {
   ];
 
   function getAnimationBoundary() {
-    if (!heroPhoto) return width * .58;
+    if (!heroPhoto) return width * .5;
     const heroRect = hero.getBoundingClientRect();
     const photoRect = heroPhoto.getBoundingClientRect();
     const photoStart = photoRect.left - heroRect.left;
-    return Math.max(width * .44, Math.min(width * .58, photoStart - 90));
+    return Math.max(0, Math.min(width, photoStart - 18));
   }
 
   function makePoints() {
-    const count = Math.max(38, Math.min(68, Math.round(animationMaxX / 18)));
+    const count = Math.max(34, Math.min(62, Math.round(animationMaxX / 20)));
+    const safeMaxX = Math.max(0, animationMaxX - 8);
     points = Array.from({ length: count }, (_, index) => ({
-      x: Math.random() * animationMaxX,
+      x: Math.random() * safeMaxX,
       y: Math.random() * height,
       vx: (Math.random() - .5) * .42,
       vy: (Math.random() - .5) * .42,
@@ -130,8 +131,21 @@ if (hero && canvas) {
         point.y += point.vy;
       }
 
-      if (point.x < 0 || point.x > animationMaxX) point.vx *= -1;
-      if (point.y < 0 || point.y > height) point.vy *= -1;
+      if (point.x <= 0) {
+        point.x = 0;
+        point.vx = Math.abs(point.vx);
+      } else if (point.x >= animationMaxX) {
+        point.x = animationMaxX;
+        point.vx = -Math.abs(point.vx);
+      }
+
+      if (point.y <= 0) {
+        point.y = 0;
+        point.vy = Math.abs(point.vy);
+      } else if (point.y >= height) {
+        point.y = height;
+        point.vy = -Math.abs(point.vy);
+      }
 
       if (pointer.active) {
         const dx = pointer.x - point.x;
