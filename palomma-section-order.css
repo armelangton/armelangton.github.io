@@ -36,7 +36,6 @@
   display: none;
 }
 
-/* Restore the management choice as a compact closing banner after the projects. */
 .home-page .pricing-support {
   order: 5;
   display: grid;
@@ -98,7 +97,6 @@
   content: none;
 }
 
-/* Center the final CTA as one composition rather than a two-column split. */
 .home-page .contact-section {
   order: 6;
   padding: .55rem 0 1.35rem;
@@ -170,7 +168,7 @@
   background: transparent;
   color: #fff;
   font-size: 0;
-  pointer-events: auto;
+  pointer-events: none;
 }
 
 .home-page .contact-links a:nth-child(2)::after {
