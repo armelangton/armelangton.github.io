@@ -94,7 +94,7 @@
 .home-page #case-studies .container > .section-heading h2::after {
   display: block;
   width: 100%;
-  content: "See What Palomma Builds";
+  content: "Selected Work";
   font-size: clamp(1.75rem, 2.7vw, 2.45rem);
   text-align: center;
 }
@@ -385,4 +385,17 @@
   .home-page .contact-links a:nth-child(2) {
     width: min(100%, 270px);
   }
+}
+
+/* Compatibility lock for older homepage bundles still loading this stylesheet. */
+.home-page .navbar-nav a[href="#case-studies"] {
+  font-size: 0 !important;
+}
+.home-page .navbar-nav a[href="#case-studies"]::after {
+  content: "Selected Work" !important;
+  font-size: .875rem !important;
+  font-weight: 650 !important;
+}
+.home-page #case-studies .container > .section-heading h2::after {
+  content: "Selected Work" !important;
 }
