@@ -1,4 +1,13 @@
 /* Homepage FAQ: compact, polished accordion between pricing and contact. */
+.home-page .nav-link[href="#case-studies"] {
+  font-size: 0;
+}
+
+.home-page .nav-link[href="#case-studies"]::after {
+  content: "Projects";
+  font-size: .86rem;
+}
+
 .home-page #faq.homepage-faq-section {
   order: 5;
   padding: 1.25rem 0 .75rem !important;
