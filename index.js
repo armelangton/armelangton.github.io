@@ -6,6 +6,9 @@ if (!document.querySelector('link[data-palomma-approved-hero="true"]')) {
   document.head.appendChild(approvedHeroStyles);
 }
 
+const processNavLink = document.querySelector('.nav-link[href="#services"]');
+if (processNavLink) processNavLink.textContent = "Process";
+
 document.querySelectorAll(".navbar-toggler").forEach((button) => {
   const selector = button.getAttribute("data-target");
   const menu = selector ? document.querySelector(selector) : null;
@@ -63,6 +66,7 @@ document.querySelectorAll(".pricing-interest[data-service]").forEach((link) => {
 
 const hero = document.querySelector(".palomma-hero");
 const canvas = hero?.querySelector(".hero-network");
+const heroPhoto = hero?.querySelector(".hero-photo");
 
 if (hero && canvas) {
   const context = canvas.getContext("2d");
@@ -71,6 +75,7 @@ if (hero && canvas) {
   let width = 0;
   let height = 0;
   let scale = 1;
+  let animationMaxX = 0;
   let points = [];
   let animationFrame = null;
 
@@ -82,10 +87,18 @@ if (hero && canvas) {
     "rgba(255, 255, 255, .96)"
   ];
 
+  function getAnimationBoundary() {
+    if (!heroPhoto) return width * .58;
+    const heroRect = hero.getBoundingClientRect();
+    const photoRect = heroPhoto.getBoundingClientRect();
+    const photoStart = photoRect.left - heroRect.left;
+    return Math.max(width * .44, Math.min(width * .58, photoStart - 90));
+  }
+
   function makePoints() {
-    const count = Math.max(42, Math.min(76, Math.round(width / 24)));
+    const count = Math.max(38, Math.min(68, Math.round(animationMaxX / 18)));
     points = Array.from({ length: count }, (_, index) => ({
-      x: Math.random() * width * .82,
+      x: Math.random() * animationMaxX,
       y: Math.random() * height,
       vx: (Math.random() - .5) * .42,
       vy: (Math.random() - .5) * .42,
@@ -98,6 +111,7 @@ if (hero && canvas) {
     const rect = hero.getBoundingClientRect();
     width = rect.width;
     height = rect.height;
+    animationMaxX = getAnimationBoundary();
     scale = Math.min(window.devicePixelRatio || 1, 2);
     canvas.width = Math.round(width * scale);
     canvas.height = Math.round(height * scale);
@@ -116,7 +130,7 @@ if (hero && canvas) {
         point.y += point.vy;
       }
 
-      if (point.x < 0 || point.x > width * .86) point.vx *= -1;
+      if (point.x < 0 || point.x > animationMaxX) point.vx *= -1;
       if (point.y < 0 || point.y > height) point.vy *= -1;
 
       if (pointer.active) {
@@ -172,7 +186,7 @@ if (hero && canvas) {
     const rect = hero.getBoundingClientRect();
     pointer.x = event.clientX - rect.left;
     pointer.y = event.clientY - rect.top;
-    pointer.active = true;
+    pointer.active = pointer.x <= animationMaxX;
   });
   hero.addEventListener("pointerleave", () => { pointer.active = false; });
   window.addEventListener("resize", resizeCanvas);
@@ -188,8 +202,8 @@ if (hero && canvas) {
 if (hero && !document.querySelector(".platforms-strip")) {
   const platforms = [
     ["Salesforce", "salesforce"], ["HubSpot", "hubspot"], ["Zoho", "zoho"],
-    ["Microsoft 365", "microsoft365"], ["Google Workspace", "googleworkspace"],
-    ["ChatGPT", "openai"], ["Claude", "anthropic"], ["Gemini", "googlegemini"],
+    ["Microsoft", "microsoft"], ["Google Workspace", "googleworkspace"],
+    ["OpenAI", "openai"], ["Claude", "anthropic"], ["Gemini", "googlegemini"],
     ["Zapier", "zapier"], ["Slack", "slack"], ["LinkedIn", "linkedin"], ["Asana", "asana"]
   ];
 
