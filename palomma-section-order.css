@@ -1,4 +1,4 @@
-/* Responsive homepage flow: framed hero, packages, work, ownership, and contact. */
+/* Responsive homepage flow: framed hero, packages, work, and contact. */
 
 .home-page {
   background: #f4fafb;
@@ -15,7 +15,6 @@
   display: none;
 }
 
-/* Header and hero now read as one responsive framed experience rather than full-width color bars. */
 .home-page .header {
   position: absolute;
   inset: 1rem 0 auto;
@@ -93,69 +92,12 @@
 }
 
 .home-page .pricing-support {
-  order: 4;
-  display: grid;
-  grid-template-columns: auto minmax(0, 1fr) auto;
-  width: min(calc(100% - 48px), 1240px);
-  margin: .65rem auto .45rem;
-  padding: .9rem 1.1rem;
-  border: 1px solid rgba(18,165,161,.22);
-  border-radius: 12px;
-  align-items: center;
-  gap: .9rem;
-  background: linear-gradient(90deg, rgba(224,247,247,.78), rgba(238,247,252,.86));
-  box-shadow: none;
-  text-align: left;
-}
-
-.home-page .pricing-support-icon {
-  display: inline-flex;
-  width: 38px;
-  height: 38px;
-  border: 1px solid rgba(18,165,161,.25);
-  border-radius: 50%;
-  align-items: center;
-  justify-content: center;
-  color: #12a5a1;
-}
-
-.home-page .pricing-support strong,
-.home-page .pricing-support p,
-.home-page .pricing-support > a {
-  display: revert;
-  font-family: "Inter", sans-serif;
-}
-
-.home-page .pricing-support strong {
-  display: block;
-  margin-bottom: .15rem;
-  color: #071a2d;
-  font-size: .88rem;
-}
-
-.home-page .pricing-support p {
-  margin: 0;
-  color: #536775;
-  font-size: .76rem;
-  line-height: 1.45;
-}
-
-.home-page .pricing-support > a {
-  color: #2d6fb7;
-  font-size: .75rem;
-  font-weight: 700;
-  white-space: nowrap;
-}
-
-.home-page .pricing-support > div::before,
-.home-page .pricing-support > div::after {
-  display: none;
-  content: none;
+  display: none !important;
 }
 
 .home-page .case-studies-section {
-  order: 5;
-  padding: 1.55rem 0 1rem;
+  order: 4;
+  padding: clamp(3rem, 5vw, 4.25rem) 0 1.25rem;
 }
 
 .home-page .case-studies-section .container {
@@ -166,8 +108,9 @@
 .home-page .case-studies-section .section-heading {
   display: block !important;
   width: 100%;
-  margin: 0 auto 1.15rem;
+  margin: 0 auto 1.5rem;
   padding: 0;
+  border: 0;
   text-align: center !important;
 }
 
@@ -245,8 +188,8 @@
 }
 
 .home-page .contact-section {
-  order: 6;
-  padding: .75rem 0 1rem;
+  order: 5;
+  padding: .85rem 0 1rem;
   background: transparent !important;
   color: #fff;
 }
@@ -339,7 +282,14 @@
   border-radius: 12px;
   background: transparent;
   color: #536775;
-  text-align: center;
+  text-align: center !important;
+}
+
+.home-page .footer .container,
+.home-page .footer p {
+  width: 100%;
+  margin: 0;
+  text-align: center !important;
 }
 
 @media (max-width: 900px) {
@@ -360,7 +310,6 @@
   .home-page .palomma-hero,
   .home-page .pricing-heading,
   .home-page .pricing-grid,
-  .home-page .pricing-support,
   .home-page .case-studies-section .container,
   .home-page .contact-section .container,
   .home-page .footer {
@@ -379,14 +328,6 @@
   .home-page .palomma-hero {
     margin-top: .75rem;
     border-radius: 18px;
-  }
-
-  .home-page .pricing-support {
-    grid-template-columns: auto minmax(0, 1fr);
-  }
-
-  .home-page .pricing-support > a {
-    grid-column: 2;
   }
 
   .home-page .case-study-card {
