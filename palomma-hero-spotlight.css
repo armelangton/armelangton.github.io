@@ -1,30 +1,8 @@
-/* Hero spotlight treatment and network fade near the photo. */
+/* Final hero layering: the network sits over the photo, while the photo fades outward like a soft spotlight. */
 
 .palomma-hero .hero-network {
   z-index: 5;
   pointer-events: none;
-  -webkit-mask-image: linear-gradient(
-    90deg,
-    #000 0%,
-    #000 43%,
-    rgba(0,0,0,.88) 49%,
-    rgba(0,0,0,.48) 55%,
-    rgba(0,0,0,.14) 60%,
-    transparent 65%
-  );
-  mask-image: linear-gradient(
-    90deg,
-    #000 0%,
-    #000 43%,
-    rgba(0,0,0,.88) 49%,
-    rgba(0,0,0,.48) 55%,
-    rgba(0,0,0,.14) 60%,
-    transparent 65%
-  );
-  -webkit-mask-repeat: no-repeat;
-  mask-repeat: no-repeat;
-  -webkit-mask-size: 100% 100%;
-  mask-size: 100% 100%;
 }
 
 .palomma-hero .hero-shell {
@@ -112,11 +90,6 @@
 }
 
 @media (max-width: 900px) {
-  .palomma-hero .hero-network {
-    -webkit-mask-image: linear-gradient(90deg, #000 0%, #000 58%, rgba(0,0,0,.5) 72%, transparent 88%);
-    mask-image: linear-gradient(90deg, #000 0%, #000 58%, rgba(0,0,0,.5) 72%, transparent 88%);
-  }
-
   .palomma-hero .hero-photo::before,
   .palomma-hero .hero-photo::after,
   .palomma-hero .hero-photo img {
