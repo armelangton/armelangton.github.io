@@ -1,0 +1,171 @@
+/* Final integration fixes for hero, platform ticker, and unified services area. */
+
+/* Soften the hero image edges and restore the more atmospheric blend. */
+.palomma-hero .hero-photo::before {
+  inset: -16%;
+  filter: blur(42px) saturate(.78) brightness(.54);
+  opacity: .92;
+  transform: scale(1.16);
+}
+
+.palomma-hero .hero-photo::after {
+  background:
+    linear-gradient(90deg, #0b2239 0%, rgba(11,34,57,.99) 10%, rgba(11,34,57,.78) 23%, rgba(11,34,57,.36) 39%, transparent 58%),
+    linear-gradient(270deg, #0b2239 0%, rgba(11,34,57,.94) 9%, rgba(11,34,57,.58) 21%, transparent 36%),
+    linear-gradient(180deg, #071c31 0%, rgba(7,28,49,.90) 10%, rgba(7,28,49,.46) 23%, transparent 39%),
+    linear-gradient(0deg, #071c31 0%, rgba(7,28,49,.97) 12%, rgba(7,28,49,.58) 27%, transparent 45%);
+}
+
+.palomma-hero .hero-photo img {
+  filter: saturate(.9) contrast(.98) brightness(.84);
+  -webkit-mask-image: radial-gradient(ellipse 68% 62% at 58% 49%, #000 28%, rgba(0,0,0,.96) 41%, rgba(0,0,0,.72) 55%, rgba(0,0,0,.38) 69%, rgba(0,0,0,.12) 82%, transparent 96%);
+  mask-image: radial-gradient(ellipse 68% 62% at 58% 49%, #000 28%, rgba(0,0,0,.96) 41%, rgba(0,0,0,.72) 55%, rgba(0,0,0,.38) 69%, rgba(0,0,0,.12) 82%, transparent 96%);
+}
+
+/* The ticker is a separate band, so the dividers read more clearly on white. */
+.platforms-strip {
+  border-top: 1px solid rgba(7,26,45,.08);
+  border-bottom: 1px solid rgba(7,26,45,.12);
+  background: #fff;
+}
+
+.platforms-strip-label { color: #168e8c; }
+.platform-logo { color: #17344c; }
+
+/* Services heading, process, and service explorer form one continuous section. */
+.home-page .services-process-section {
+  background:
+    radial-gradient(circle at 88% 7%, rgba(117,216,210,.24), transparent 26%),
+    linear-gradient(180deg, #f8fcfd 0%, #eef7fa 100%);
+}
+
+.home-page .services-process-section::before {
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(rgba(45,111,183,.045) 1px, transparent 1px), linear-gradient(90deg, rgba(45,111,183,.045) 1px, transparent 1px);
+  background-size: 48px 48px;
+  mask-image: linear-gradient(to bottom, rgba(0,0,0,.5), transparent 82%);
+  content: "";
+  pointer-events: none;
+}
+
+.home-page .services-process-heading {
+  display: block;
+  margin-bottom: clamp(2.8rem,5vw,4.25rem);
+}
+
+.home-page .process-flow {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(5,minmax(0,1fr));
+  gap: clamp(1.5rem,3vw,3rem);
+  margin: 0 0 clamp(3.5rem,6vw,5rem);
+  padding: 0;
+  list-style: none;
+}
+
+.home-page .process-flow li {
+  position: relative;
+  display: grid;
+  min-width: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+  justify-items: center;
+  text-align: center;
+}
+
+.home-page .process-flow li:hover {
+  background: transparent;
+  transform: none;
+}
+
+.home-page .process-flow li::before {
+  display: none;
+  content: none;
+}
+
+.home-page .process-flow li:not(:last-child)::after {
+  position: absolute;
+  top: 43px;
+  left: calc(50% + 58px);
+  width: calc(100% - 82px);
+  height: 1px;
+  background: repeating-linear-gradient(90deg, var(--palomma-teal) 0 8px, transparent 8px 14px);
+  content: "";
+  opacity: .65;
+}
+
+.home-page .process-icon {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  width: 86px;
+  height: 86px;
+  margin-bottom: 1rem;
+  border: 1px solid rgba(18,165,161,.28);
+  border-radius: 50%;
+  place-items: center;
+  background: rgba(255,255,255,.72);
+  box-shadow: 0 12px 30px rgba(7,26,45,.07);
+  color: var(--palomma-teal);
+}
+
+.home-page .process-icon svg {
+  width: 42px;
+  height: 42px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.home-page .process-flow strong {
+  display: block;
+  margin: 0;
+  color: var(--palomma-navy);
+  font-family: "Lora", serif;
+  font-size: clamp(1.05rem,1.5vw,1.3rem);
+  font-weight: 600;
+}
+
+.home-page .services-process-section .service-explorer { margin-top: 0; }
+
+/* Contact should be clean and direct without extra label, copy, or decorative ring. */
+.home-page .contact-cta-card::after { display: none; content: none; }
+.home-page .contact-copy { align-self: center; }
+.home-page .contact-cta-card h2 { margin-bottom: 0; }
+
+@media (max-width: 900px) {
+  .palomma-hero .hero-photo::before { filter: blur(36px) saturate(.78) brightness(.56); }
+  .home-page .process-flow {
+    grid-template-columns: repeat(3,minmax(0,1fr));
+    row-gap: 2.75rem;
+  }
+  .home-page .process-flow li:not(:last-child)::after { display: none; }
+}
+
+@media (max-width: 767px) {
+  .home-page .process-flow {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  .home-page .process-flow li {
+    grid-template-columns: 72px 1fr;
+    gap: 1rem;
+    align-items: center;
+    justify-items: start;
+    text-align: left;
+  }
+  .home-page .process-icon {
+    width: 66px;
+    height: 66px;
+    margin: 0;
+  }
+  .home-page .process-icon svg {
+    width: 32px;
+    height: 32px;
+  }
+}

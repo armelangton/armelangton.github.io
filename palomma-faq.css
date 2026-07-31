@@ -1,0 +1,142 @@
+/* Homepage FAQ: compact, polished accordion between pricing and contact. */
+.home-page .nav-link[href="#case-studies"] {
+  font-size: 0;
+}
+
+.home-page .nav-link[href="#case-studies"]::after {
+  content: "Projects";
+  font-size: .86rem;
+}
+
+.home-page #faq.homepage-faq-section {
+  order: 5;
+  padding: 1.25rem 0 .75rem !important;
+  background: transparent !important;
+}
+
+.home-page #faq .homepage-faq-container {
+  width: min(calc(100% - 48px), 1120px) !important;
+  margin: 0 auto !important;
+  padding: 0 !important;
+}
+
+.home-page #faq .homepage-faq-heading {
+  width: 100% !important;
+  margin: 0 auto .9rem !important;
+  padding: 0 0 .7rem !important;
+  border-bottom: 1px solid rgba(7,26,45,.14);
+  text-align: center !important;
+}
+
+.home-page #faq .homepage-faq-heading h2 {
+  width: 100% !important;
+  margin: 0 !important;
+  color: #071a2d;
+  font-family: "Inter", sans-serif !important;
+  font-size: clamp(1.75rem, 2.7vw, 2.45rem) !important;
+  font-weight: 700 !important;
+  line-height: 1.12 !important;
+  letter-spacing: -.025em;
+  text-align: center !important;
+}
+
+.home-page #faq .homepage-faq-list {
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  gap: .7rem .85rem !important;
+  width: 100% !important;
+}
+
+.home-page #faq .homepage-faq-list details {
+  align-self: start;
+  overflow: hidden;
+  margin: 0 !important;
+  border: 1px solid rgba(45,111,183,.14) !important;
+  border-radius: 12px !important;
+  background: rgba(255,255,255,.9) !important;
+  box-shadow: 0 8px 22px rgba(7,26,45,.045) !important;
+}
+
+.home-page #faq .homepage-faq-list summary {
+  position: relative;
+  display: flex !important;
+  min-height: 54px !important;
+  margin: 0 !important;
+  padding: .82rem 2.8rem .82rem 1rem !important;
+  align-items: center;
+  color: #071a2d !important;
+  cursor: pointer;
+  font-family: "Inter", sans-serif !important;
+  font-size: .88rem !important;
+  font-weight: 700 !important;
+  line-height: 1.35 !important;
+  list-style: none !important;
+}
+
+.home-page #faq .homepage-faq-list summary::-webkit-details-marker {
+  display: none;
+}
+
+.home-page #faq .homepage-faq-list summary::marker {
+  content: "";
+}
+
+.home-page #faq .homepage-faq-list summary::after {
+  position: absolute;
+  top: 50%;
+  right: 1rem;
+  color: #12a5a1;
+  content: "+";
+  font-size: 1.25rem;
+  font-weight: 500;
+  line-height: 1;
+  transform: translateY(-50%);
+  transition: transform 180ms ease;
+}
+
+.home-page #faq .homepage-faq-list details[open] summary::after {
+  transform: translateY(-50%) rotate(45deg);
+}
+
+.home-page #faq .homepage-faq-list details[open] summary {
+  border-bottom: 1px solid rgba(45,111,183,.11);
+}
+
+.home-page #faq .homepage-faq-list details p {
+  max-width: none !important;
+  margin: 0 !important;
+  padding: .75rem 1rem .9rem !important;
+  color: #536775 !important;
+  font-family: "Inter", sans-serif !important;
+  font-size: .79rem !important;
+  line-height: 1.55 !important;
+}
+
+.home-page .contact-section {
+  order: 6;
+}
+
+@media (max-width: 800px) {
+  .home-page #faq .homepage-faq-list {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+@media (max-width: 700px) {
+  .home-page #faq.homepage-faq-section {
+    padding: 1rem 0 .5rem !important;
+  }
+
+  .home-page #faq .homepage-faq-container {
+    width: min(calc(100% - 24px), 1120px) !important;
+  }
+
+  .home-page #faq .homepage-faq-list summary {
+    min-height: 52px !important;
+    padding: .78rem 2.6rem .78rem .9rem !important;
+  }
+
+  .home-page #faq .homepage-faq-list details p {
+    padding: .7rem .9rem .85rem !important;
+  }
+}

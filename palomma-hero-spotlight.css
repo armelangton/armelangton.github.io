@@ -1,0 +1,127 @@
+@import url("./palomma-layout-fixes.css?v=20260730-1");
+@import url("./palomma-section-order.css?v=20260730-7");
+@import url("./palomma-work-faq-fixes.css?v=20260731-1");
+@import url("./palomma-faq.css?v=20260731-2");
+
+/* Final hero layering: the network sits over the photo, while the photo fades outward like a soft spotlight. */
+
+.palomma-hero .hero-network {
+  z-index: 5;
+  pointer-events: none;
+}
+
+.palomma-hero .hero-shell {
+  z-index: 2;
+}
+
+.palomma-hero .hero-content {
+  position: relative;
+  z-index: 7;
+  isolation: isolate;
+}
+
+/* Keep the headline fully readable while the animation remains visible elsewhere. */
+.palomma-hero .hero-content::before {
+  position: absolute;
+  inset: -12% -16% -13% -10%;
+  z-index: -1;
+  background: radial-gradient(
+    ellipse 94% 88% at 40% 48%,
+    #071c31 0%,
+    rgba(7,28,49,.995) 58%,
+    rgba(7,28,49,.94) 72%,
+    rgba(7,28,49,.58) 88%,
+    transparent 100%
+  );
+  content: "";
+  pointer-events: none;
+}
+
+.palomma-hero .hero-photo {
+  z-index: 3;
+  overflow: visible;
+  isolation: isolate;
+  background: transparent;
+  -webkit-mask-image: none;
+  mask-image: none;
+}
+
+.palomma-hero .hero-photo::before {
+  inset: -14%;
+  z-index: 0;
+  background: url("./assets/groupsitting.png") 52% center / cover no-repeat;
+  filter: blur(34px) saturate(.84) brightness(.58);
+  opacity: .88;
+  transform: scale(1.12);
+  -webkit-mask-image: radial-gradient(
+    ellipse 72% 68% at 56% 50%,
+    #000 0%,
+    #000 40%,
+    rgba(0,0,0,.96) 51%,
+    rgba(0,0,0,.72) 64%,
+    rgba(0,0,0,.34) 78%,
+    transparent 96%
+  );
+  mask-image: radial-gradient(
+    ellipse 72% 68% at 56% 50%,
+    #000 0%,
+    #000 40%,
+    rgba(0,0,0,.96) 51%,
+    rgba(0,0,0,.72) 64%,
+    rgba(0,0,0,.34) 78%,
+    transparent 96%
+  );
+}
+
+.palomma-hero .hero-photo::after {
+  inset: -5%;
+  z-index: 2;
+  background: radial-gradient(
+    ellipse 72% 68% at 56% 50%,
+    transparent 0%,
+    transparent 46%,
+    rgba(11,34,57,.10) 58%,
+    rgba(11,34,57,.42) 72%,
+    rgba(11,34,57,.82) 88%,
+    #0b2239 100%
+  );
+}
+
+.palomma-hero .hero-photo img {
+  z-index: 1;
+  -webkit-mask-image: radial-gradient(
+    ellipse 70% 66% at 56% 50%,
+    #000 0%,
+    #000 44%,
+    rgba(0,0,0,.94) 56%,
+    rgba(0,0,0,.66) 70%,
+    rgba(0,0,0,.24) 84%,
+    transparent 100%
+  );
+  mask-image: radial-gradient(
+    ellipse 70% 66% at 56% 50%,
+    #000 0%,
+    #000 44%,
+    rgba(0,0,0,.94) 56%,
+    rgba(0,0,0,.66) 70%,
+    rgba(0,0,0,.24) 84%,
+    transparent 100%
+  );
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
+}
+
+@media (max-width: 900px) {
+  .palomma-hero .hero-content::before {
+    inset: -9%;
+  }
+
+  .palomma-hero .hero-photo::before,
+  .palomma-hero .hero-photo::after,
+  .palomma-hero .hero-photo img {
+    -webkit-mask-position: center;
+    mask-position: center;
+  }
+}

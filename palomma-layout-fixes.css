@@ -1,0 +1,250 @@
+/* Homepage layout corrections: unified hero chrome, compact process, proof after pricing. */
+
+.home-page .header {
+  background: #f7fbfc !important;
+  border-bottom: 1px solid rgba(45,111,183,.16);
+  box-shadow: 0 1px 0 rgba(7,26,45,.04);
+}
+.home-page .navbar::before { color: #071a2d !important; }
+.home-page .nav-link { color: #2d6fb7 !important; }
+.home-page .nav-link:hover,
+.home-page .nav-link:focus,
+.home-page .nav-link.active { color: #12a5a1 !important; }
+.home-page .navbar-toggler {
+  border-color: rgba(45,111,183,.24);
+  background: #fff;
+}
+.home-page .navbar-toggler-icon {
+  background: linear-gradient(#2d6fb7,#2d6fb7) top/100% 2px no-repeat,
+    linear-gradient(#2d6fb7,#2d6fb7) center/100% 2px no-repeat,
+    linear-gradient(#2d6fb7,#2d6fb7) bottom/100% 2px no-repeat;
+}
+
+.home-page main {
+  display: flex;
+  flex-direction: column;
+}
+
+.home-page .palomma-hero { order: 0; }
+.home-page .platforms-strip { order: 1; }
+.home-page .services-process-section { order: 2; }
+.home-page .pricing-section { order: 3; }
+.home-page .case-studies-section { order: 4; }
+.home-page .contact-section { order: 5; }
+
+.home-page .platforms-strip {
+  padding: .9rem 0 1rem;
+  border-top: 1px solid rgba(45,111,183,.12);
+  border-bottom: 1px solid rgba(45,111,183,.16);
+  background: #ffffff;
+}
+.home-page .platforms-strip-label {
+  margin-bottom: .55rem;
+  color: #1f8f88;
+}
+.home-page .platform-logo {
+  padding: .25rem 1.25rem;
+  color: #153047;
+}
+.home-page .platform-logo img {
+  width: 24px;
+  height: 24px;
+  opacity: 1;
+}
+
+/* Delivery process, packages, and examples share one continuous visual field. */
+.home-page .case-studies-section,
+.home-page .services-process-section,
+.home-page .pricing-section {
+  border: 0;
+  background: #f4fafb;
+}
+
+.home-page .case-studies-section > .container,
+.home-page .services-process-section > .container,
+.home-page .pricing-section > .container {
+  max-width: 1240px;
+}
+
+/* The process begins the package story with no panel, outline, or separate label. */
+.home-page .services-process-section {
+  padding: 1rem 0 .25rem;
+}
+.home-page .services-process-section .container {
+  padding: .45rem .8rem .55rem;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+.home-page .services-process-heading { display: none; }
+.home-page .process-list.process-flow {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 0;
+  margin: 0;
+  padding: 0;
+}
+.home-page .process-list.process-flow li,
+.home-page .process-list.process-flow li + li {
+  min-height: 82px;
+  padding: .15rem .7rem .1rem;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  text-align: center;
+  transform: none;
+}
+.home-page .process-list.process-flow li::before { display: none; }
+.home-page .process-list.process-flow .process-icon {
+  display: inline-flex;
+  width: 40px;
+  height: 40px;
+  margin: 0 auto .35rem;
+  border: 0;
+  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  color: #2d6fb7;
+  box-shadow: 0 8px 20px rgba(7,26,45,.08);
+}
+.home-page .process-list.process-flow .process-icon svg {
+  width: 19px;
+  height: 19px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+}
+.home-page .process-list.process-flow strong {
+  display: block;
+  margin: 0;
+  color: #071a2d;
+  font-family: "Inter", sans-serif;
+  font-size: .76rem;
+  font-weight: 700;
+}
+.home-page .process-list.process-flow strong::after {
+  display: block;
+  margin-top: .16rem;
+  color: #536775;
+  font-family: "Inter", sans-serif;
+  font-size: .58rem;
+  font-weight: 500;
+  line-height: 1.28;
+}
+.home-page .process-list.process-flow li:nth-child(1) strong::after { content: "Understand the need"; }
+.home-page .process-list.process-flow li:nth-child(2) strong::after { content: "Define the approach"; }
+.home-page .process-list.process-flow li:nth-child(3) strong::after { content: "Map the solution"; }
+.home-page .process-list.process-flow li:nth-child(4) strong::after { content: "Configure and test"; }
+.home-page .process-list.process-flow li:nth-child(5) strong::after { content: "Launch and support"; }
+
+/* Pricing follows immediately beneath the process. */
+.home-page .pricing-section {
+  padding-top: .15rem;
+  padding-bottom: 1.25rem;
+}
+.home-page .pricing-section .pricing-shell {
+  overflow: visible;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+.home-page .pricing-heading {
+  padding-top: .75rem;
+}
+.home-page .pricing-heading h2 {
+  font-family: "Inter", sans-serif;
+  font-size: clamp(1.45rem, 2vw, 1.85rem);
+  font-weight: 700;
+  letter-spacing: -.025em;
+}
+.home-page .pricing-heading p,
+.home-page .pricing-card,
+.home-page .pricing-card h3,
+.home-page .pricing-card p,
+.home-page .pricing-card li,
+.home-page .pricing-support {
+  font-family: "Inter", sans-serif;
+}
+
+/* Work examples follow the packages with a single simple heading. */
+.home-page .case-studies-section {
+  padding: 1.25rem 0 1.65rem;
+}
+.home-page .case-studies-section .section-heading {
+  display: block;
+  margin: 0 auto .85rem;
+  padding: 0;
+  text-align: center;
+}
+.home-page .case-studies-section .section-heading h2 {
+  display: block;
+  margin: 0;
+  color: #071a2d;
+  font-family: "Inter", sans-serif;
+  font-size: 0;
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -.025em;
+}
+.home-page .case-studies-section .section-heading h2::after {
+  content: "Examples";
+  font-size: clamp(1.45rem, 2vw, 1.85rem);
+}
+.home-page .case-studies-section .section-heading p { display: none; }
+.home-page .case-study-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0,1fr));
+  gap: .75rem;
+  align-items: stretch;
+}
+.home-page .case-study-card {
+  width: 100%;
+  max-width: none;
+  border: 0;
+  border-radius: 10px;
+  justify-self: stretch;
+  box-shadow: 0 10px 24px rgba(7,26,45,.07);
+}
+.home-page .case-study-card img {
+  aspect-ratio: 16 / 9;
+  height: 105px;
+  max-height: 105px;
+  padding: 5px;
+}
+.home-page .case-study-card div { padding: .65rem .7rem .75rem; }
+.home-page .case-study-card h3 {
+  margin-bottom: .28rem;
+  font-family: "Inter", sans-serif;
+  font-size: .76rem;
+  font-weight: 700;
+}
+.home-page .case-study-card p {
+  margin-bottom: .4rem;
+  font-family: "Inter", sans-serif;
+  font-size: .62rem;
+  line-height: 1.4;
+}
+.home-page .case-study-card div > span {
+  font-family: "Inter", sans-serif;
+  font-size: .61rem;
+}
+
+@media (max-width: 1180px) {
+  .home-page .case-study-grid { grid-template-columns: repeat(3,minmax(0,1fr)); }
+}
+
+@media (max-width: 820px) {
+  .home-page .case-study-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
+  .home-page .process-list.process-flow { grid-template-columns: repeat(5, minmax(118px,1fr)); overflow-x: auto; }
+}
+
+@media (max-width: 560px) {
+  .home-page .case-study-grid { grid-template-columns: 1fr; }
+  .home-page .case-study-card { max-width: 330px; justify-self: center; }
+  .home-page .services-process-section .container { padding-inline: .25rem; }
+  .home-page .process-list.process-flow li,
+  .home-page .process-list.process-flow li + li { min-height: 80px; padding-inline: .55rem; }
+}
