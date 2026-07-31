@@ -60,15 +60,21 @@
   background: #f4fafb;
 }
 
+.home-page .case-studies-section > .container,
+.home-page .services-process-section > .container,
+.home-page .pricing-section > .container {
+  max-width: 1240px;
+}
+
 /* Work examples are one centered five-card row on desktop. */
 .home-page .case-studies-section {
-  padding: clamp(1.5rem, 2.6vw, 2.2rem) 0 1.45rem;
+  padding: 1.65rem 0 1rem;
 }
 .home-page .case-studies-section .section-heading {
   display: block;
   max-width: 900px;
-  margin: 0 auto 1rem;
-  padding: 0 0 .75rem;
+  margin: 0 auto .85rem;
+  padding: 0;
   text-align: center;
 }
 .home-page .case-studies-section .section-heading h2 { display: none; }
@@ -76,11 +82,11 @@
   max-width: 900px;
   margin: 0 auto;
   color: #071a2d;
-  font-family: "Lora", serif;
-  font-size: clamp(1.35rem, 2vw, 1.85rem);
-  font-weight: 600;
-  line-height: 1.16;
-  letter-spacing: -.02em;
+  font-family: "Inter", sans-serif;
+  font-size: clamp(1.45rem, 2vw, 1.85rem);
+  font-weight: 700;
+  line-height: 1.18;
+  letter-spacing: -.025em;
   text-wrap: balance;
 }
 .home-page .case-studies-section .section-heading p::before { content: "Examples of "; }
@@ -93,9 +99,10 @@
 .home-page .case-study-card {
   width: 100%;
   max-width: none;
-  justify-self: stretch;
+  border: 0;
   border-radius: 10px;
-  box-shadow: 0 10px 24px rgba(7,26,45,.06);
+  justify-self: stretch;
+  box-shadow: 0 10px 24px rgba(7,26,45,.07);
 }
 .home-page .case-study-card img {
   aspect-ratio: 16 / 9;
@@ -104,39 +111,35 @@
   padding: 5px;
 }
 .home-page .case-study-card div { padding: .65rem .7rem .75rem; }
-.home-page .case-study-card h3 { margin-bottom: .28rem; font-size: .76rem; }
-.home-page .case-study-card p { margin-bottom: .4rem; font-size: .62rem; line-height: 1.4; }
-.home-page .case-study-card div > span { font-size: .61rem; }
+.home-page .case-study-card h3 {
+  margin-bottom: .28rem;
+  font-family: "Inter", sans-serif;
+  font-size: .76rem;
+  font-weight: 700;
+}
+.home-page .case-study-card p {
+  margin-bottom: .4rem;
+  font-family: "Inter", sans-serif;
+  font-size: .62rem;
+  line-height: 1.4;
+}
+.home-page .case-study-card div > span {
+  font-family: "Inter", sans-serif;
+  font-size: .61rem;
+}
 
-/* Process floats between proof and packages instead of sitting in an outlined box. */
+/* The process floats directly in the shared field with no panel, outline, or separate label. */
 .home-page .services-process-section {
-  padding: .35rem 0 .55rem;
+  padding: .65rem 0 .35rem;
 }
 .home-page .services-process-section .container {
-  max-width: 1180px;
-  padding: .95rem 1.25rem 1rem;
+  padding: .45rem .8rem .55rem;
   border: 0;
-  border-radius: 16px;
-  background: rgba(255,255,255,.96);
-  box-shadow: 0 18px 42px rgba(7,26,45,.10);
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
 }
-.home-page .services-process-heading {
-  display: block;
-  margin: 0 0 .75rem;
-}
-.home-page .services-process-heading h2 {
-  margin: 0;
-  color: #071a2d;
-  font-family: "Inter", sans-serif;
-  font-size: 1rem;
-  font-weight: 700;
-  letter-spacing: 0;
-}
-.home-page .services-process-heading h2::after {
-  content: "How every package is delivered";
-}
-.home-page .services-process-heading h2 { font-size: 0; }
-.home-page .services-process-heading h2::after { font-size: 1rem; }
+.home-page .services-process-heading { display: none; }
 .home-page .process-list.process-flow {
   display: grid;
   grid-template-columns: repeat(5, minmax(0, 1fr));
@@ -146,16 +149,14 @@
 }
 .home-page .process-list.process-flow li,
 .home-page .process-list.process-flow li + li {
-  min-height: 88px;
-  padding: .2rem .7rem .1rem;
+  min-height: 82px;
+  padding: .15rem .7rem .1rem;
   border: 0;
-  border-right: 1px solid rgba(45,111,183,.10);
   border-radius: 0;
   background: transparent;
   text-align: center;
   transform: none;
 }
-.home-page .process-list.process-flow li:last-child { border-right: 0; }
 .home-page .process-list.process-flow li::before { display: none; }
 .home-page .process-list.process-flow .process-icon {
   display: inline-flex;
@@ -166,9 +167,9 @@
   border-radius: 50%;
   align-items: center;
   justify-content: center;
-  background: #eef8fa;
+  background: #fff;
   color: #2d6fb7;
-  box-shadow: 0 7px 16px rgba(7,26,45,.07);
+  box-shadow: 0 8px 20px rgba(7,26,45,.08);
 }
 .home-page .process-list.process-flow .process-icon svg {
   width: 19px;
@@ -189,6 +190,7 @@
   display: block;
   margin-top: .16rem;
   color: #536775;
+  font-family: "Inter", sans-serif;
   font-size: .58rem;
   font-weight: 500;
   line-height: 1.28;
@@ -199,11 +201,33 @@
 .home-page .process-list.process-flow li:nth-child(4) strong::after { content: "Configure and test"; }
 .home-page .process-list.process-flow li:nth-child(5) strong::after { content: "Launch and support"; }
 
+/* Pricing continues the same field instead of appearing as a separate outlined panel. */
 .home-page .pricing-section {
-  padding-top: .55rem;
+  padding-top: .25rem;
 }
 .home-page .pricing-section .pricing-shell {
-  box-shadow: 0 18px 42px rgba(7,26,45,.08);
+  overflow: visible;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+.home-page .pricing-heading {
+  padding-top: 1rem;
+}
+.home-page .pricing-heading h2 {
+  font-family: "Inter", sans-serif;
+  font-size: clamp(1.45rem, 2vw, 1.85rem);
+  font-weight: 700;
+  letter-spacing: -.025em;
+}
+.home-page .pricing-heading p,
+.home-page .pricing-card,
+.home-page .pricing-card h3,
+.home-page .pricing-card p,
+.home-page .pricing-card li,
+.home-page .pricing-support {
+  font-family: "Inter", sans-serif;
 }
 
 @media (max-width: 1180px) {
@@ -218,7 +242,7 @@
 @media (max-width: 560px) {
   .home-page .case-study-grid { grid-template-columns: 1fr; }
   .home-page .case-study-card { max-width: 330px; justify-self: center; }
-  .home-page .services-process-section .container { padding-inline: .75rem; }
+  .home-page .services-process-section .container { padding-inline: .25rem; }
   .home-page .process-list.process-flow li,
-  .home-page .process-list.process-flow li + li { min-height: 84px; padding-inline: .55rem; }
+  .home-page .process-list.process-flow li + li { min-height: 80px; padding-inline: .55rem; }
 }
