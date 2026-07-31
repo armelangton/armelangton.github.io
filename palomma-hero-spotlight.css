@@ -12,7 +12,26 @@
 }
 
 .palomma-hero .hero-content {
+  position: relative;
   z-index: 7;
+  isolation: isolate;
+}
+
+/* A soft navy shield keeps moving network points from competing with the headline. */
+.palomma-hero .hero-content::before {
+  position: absolute;
+  inset: -8% -10% -10% -8%;
+  z-index: -1;
+  background: radial-gradient(
+    ellipse 82% 76% at 42% 46%,
+    rgba(7,28,49,.98) 0%,
+    rgba(7,28,49,.96) 48%,
+    rgba(7,28,49,.82) 68%,
+    rgba(7,28,49,.36) 84%,
+    transparent 100%
+  );
+  content: "";
+  pointer-events: none;
 }
 
 .palomma-hero .hero-photo {
@@ -92,6 +111,10 @@
 }
 
 @media (max-width: 900px) {
+  .palomma-hero .hero-content::before {
+    inset: -6%;
+  }
+
   .palomma-hero .hero-photo::before,
   .palomma-hero .hero-photo::after,
   .palomma-hero .hero-photo img {
