@@ -1,152 +1,113 @@
 /* Final homepage corrections approved during branch review. */
 
 /* Keep the page in the intended sales flow regardless of source order. */
-.home-page main {
-  display: flex;
-  flex-direction: column;
-}
-.home-page .palomma-hero { order: 1; }
-.home-page .platforms-strip { order: 2; }
-.home-page .business-services-section { order: 3; }
-.home-page .pricing-section { order: 4; }
-.home-page .case-studies-section { order: 5; }
-.home-page .homepage-faq-section { order: 6; }
-.home-page .contact-section { order: 7; }
+.home-page main { display:flex; flex-direction:column; }
+.home-page .palomma-hero { order:1; }
+.home-page .platforms-strip { order:2; }
+.home-page .business-services-section { order:3; }
+.home-page .pricing-section { order:4; }
+.home-page .case-studies-section { order:5; }
+.home-page .homepage-faq-section { order:6; }
+.home-page .contact-section { order:7; }
 
 /* Match section-heading scale. */
-.home-page .business-services-heading {
-  margin-bottom: clamp(2rem, 4vw, 3rem) !important;
-}
+.home-page .business-services-heading { margin-bottom:clamp(2rem,4vw,3rem)!important; }
 .home-page .business-services-heading h2 {
-  font-family: "Inter", sans-serif !important;
-  font-size: clamp(2rem, 3.2vw, 3.15rem) !important;
-  font-weight: 700 !important;
-  line-height: 1.08 !important;
-  letter-spacing: -.035em !important;
+  font-family:"Inter",sans-serif!important;
+  font-size:clamp(2rem,3vw,2.75rem)!important;
+  font-weight:700!important;
+  line-height:1.08!important;
+  letter-spacing:-.035em!important;
 }
 
 /* Keep the constellation away from the hero copy. */
-.palomma-hero .hero-content {
-  position: relative;
-  z-index: 4;
-  isolation: isolate;
-}
+.palomma-hero .hero-content { position:relative; z-index:4; isolation:isolate; }
 .palomma-hero .hero-content::before {
-  position: absolute;
-  inset: -2rem -2.5rem -2rem -3rem;
-  z-index: -1;
-  background: radial-gradient(ellipse at 42% 50%, rgba(7,28,49,.98) 0%, rgba(7,28,49,.94) 54%, rgba(7,28,49,.72) 72%, transparent 100%);
-  content: "";
-  pointer-events: none;
+  position:absolute; inset:-2rem -2.5rem -2rem -3rem; z-index:-1;
+  background:radial-gradient(ellipse at 42% 50%,rgba(7,28,49,.98) 0%,rgba(7,28,49,.94) 54%,rgba(7,28,49,.72) 72%,transparent 100%);
+  content:""; pointer-events:none;
 }
-.palomma-hero .hero-network { z-index: 1; }
-.palomma-hero .hero-shell { position: relative; z-index: 2; }
+.palomma-hero .hero-network { z-index:1; }
+.palomma-hero .hero-shell { position:relative; z-index:2; }
 
 /* Restore a center-focused image with every edge dissolving into the hero. */
-.palomma-hero .hero-photo {
-  background: #0b2239;
-}
+.palomma-hero .hero-photo { background:#0b2239; }
 .palomma-hero .hero-photo::before {
-  inset: -18% !important;
-  filter: blur(48px) saturate(.76) brightness(.5) !important;
-  opacity: .98 !important;
-  transform: scale(1.2) !important;
+  inset:-18%!important; filter:blur(48px) saturate(.76) brightness(.5)!important;
+  opacity:.98!important; transform:scale(1.2)!important;
 }
 .palomma-hero .hero-photo::after {
   background:
-    radial-gradient(ellipse 66% 62% at 56% 49%, transparent 24%, rgba(11,34,57,.08) 40%, rgba(11,34,57,.42) 61%, rgba(11,34,57,.82) 79%, #0b2239 100%),
-    linear-gradient(90deg, #0b2239 0%, rgba(11,34,57,.96) 10%, rgba(11,34,57,.55) 26%, transparent 48%),
-    linear-gradient(270deg, #0b2239 0%, rgba(11,34,57,.78) 8%, rgba(11,34,57,.3) 20%, transparent 38%) !important;
+    radial-gradient(ellipse 66% 62% at 56% 49%,transparent 24%,rgba(11,34,57,.08) 40%,rgba(11,34,57,.42) 61%,rgba(11,34,57,.82) 79%,#0b2239 100%),
+    linear-gradient(90deg,#0b2239 0%,rgba(11,34,57,.96) 10%,rgba(11,34,57,.55) 26%,transparent 48%),
+    linear-gradient(270deg,#0b2239 0%,rgba(11,34,57,.78) 8%,rgba(11,34,57,.3) 20%,transparent 38%)!important;
 }
 .palomma-hero .hero-photo img {
-  filter: saturate(.9) contrast(.98) brightness(.84) !important;
-  -webkit-mask-image: radial-gradient(ellipse 66% 61% at 56% 49%, #000 24%, rgba(0,0,0,.97) 39%, rgba(0,0,0,.76) 54%, rgba(0,0,0,.43) 69%, rgba(0,0,0,.15) 83%, transparent 98%) !important;
-  mask-image: radial-gradient(ellipse 66% 61% at 56% 49%, #000 24%, rgba(0,0,0,.97) 39%, rgba(0,0,0,.76) 54%, rgba(0,0,0,.43) 69%, rgba(0,0,0,.15) 83%, transparent 98%) !important;
+  filter:saturate(.9) contrast(.98) brightness(.84)!important;
+  -webkit-mask-image:radial-gradient(ellipse 66% 61% at 56% 49%,#000 24%,rgba(0,0,0,.97) 39%,rgba(0,0,0,.76) 54%,rgba(0,0,0,.43) 69%,rgba(0,0,0,.15) 83%,transparent 98%)!important;
+  mask-image:radial-gradient(ellipse 66% 61% at 56% 49%,#000 24%,rgba(0,0,0,.97) 39%,rgba(0,0,0,.76) 54%,rgba(0,0,0,.43) 69%,rgba(0,0,0,.15) 83%,transparent 98%)!important;
 }
 
-/* Make service cards fill the available width without becoming oversized. */
+/* Use one consistent wide content edge for services, pricing, and projects. */
 .home-page .business-services-section > .container,
-.home-page .case-studies-section > .container,
-.home-page .pricing-section > .container {
-  width: min(100% - 3rem, 1540px);
-  max-width: 1540px;
+.home-page .pricing-section > .container,
+.home-page .case-studies-section > .container {
+  width:min(calc(100% - 2rem),1720px)!important;
+  max-width:1720px!important;
+  margin-inline:auto!important;
 }
-.home-page .business-service-card {
-  min-height: 0 !important;
-}
+.home-page .business-service-card { min-height:0!important; }
 
-/* Compact project cards so content does not float above empty space. */
-.home-page .case-studies-section {
-  background: linear-gradient(180deg, #fff 0%, #f2f8fa 100%);
+/* Pricing cards fill the same horizontal footprint as the projects. */
+.home-page .pricing-shell { width:100%; }
+.home-page .pricing-grid {
+  grid-template-columns:repeat(4,minmax(0,1fr))!important;
+  gap:clamp(1rem,1.6vw,1.5rem)!important;
+  padding-inline:clamp(1rem,1.8vw,1.5rem)!important;
 }
+.home-page .pricing-card { min-height:0!important; }
+.home-page .pricing-support {
+  margin:1rem clamp(1rem,1.8vw,1.5rem) clamp(1rem,1.8vw,1.5rem)!important;
+}
+.home-page .pricing-consultation { margin-top:.25rem!important; }
+
+/* Project cards spread across the same wide content edge with no unused side space. */
+.home-page .case-studies-section { background:linear-gradient(180deg,#fff 0%,#f2f8fa 100%); }
 .home-page .case-study-grid {
-  display: grid;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
-  gap: 1rem !important;
-  align-items: stretch;
+  display:grid;
+  width:100%;
+  grid-template-columns:repeat(5,minmax(0,1fr))!important;
+  gap:clamp(1rem,1.6vw,1.5rem)!important;
+  align-items:stretch;
 }
-.home-page .case-study-card {
-  height: auto !important;
-  min-height: 0 !important;
-  border-radius: 14px !important;
-}
-.home-page .case-study-card > a {
-  display: grid !important;
-  height: 100%;
-  grid-template-rows: 170px auto;
-}
-.home-page .case-study-card img {
-  width: 100%;
-  height: 170px !important;
-  padding: 12px !important;
-  object-fit: contain;
-}
-.home-page .case-study-card div {
-  display: flex;
-  min-height: 0 !important;
-  padding: 1.1rem !important;
-  flex-direction: column;
-}
-.home-page .case-study-card h3 { margin-bottom: .55rem; }
-.home-page .case-study-card p { margin: 0 0 1rem; }
-.home-page .case-study-card div > span { margin-top: auto; }
-
-/* One shared pricing action, with support information after the cards. */
-.home-page .pricing-support { margin-top: 1rem; }
+.home-page .case-study-card { height:auto!important; min-height:0!important; border-radius:14px!important; }
+.home-page .case-study-card > a { display:grid!important; height:100%; grid-template-rows:170px auto; }
+.home-page .case-study-card img { width:100%; height:170px!important; padding:12px!important; object-fit:contain; }
+.home-page .case-study-card div { display:flex; min-height:0!important; padding:1.1rem!important; flex-direction:column; }
+.home-page .case-study-card h3 { margin-bottom:.55rem; }
+.home-page .case-study-card p { margin:0 0 1rem; }
+.home-page .case-study-card div > span { margin-top:auto; }
 
 /* Standardize all contact buttons to the same dimensions and shape. */
-.home-page .contact-links {
-  display: flex !important;
-  flex-wrap: wrap;
-  justify-content: center;
-}
+.home-page .contact-links { display:flex!important; flex-wrap:wrap; justify-content:center; }
 .home-page .contact-links a,
 .home-page .contact-cta-card .button,
 .home-page .contact-cta-card a {
-  box-sizing: border-box;
-  display: inline-flex;
-  width: 194px;
-  min-width: 194px;
-  min-height: 54px;
-  padding: .85rem 1.2rem !important;
-  border-radius: 10px !important;
-  align-items: center;
-  justify-content: center;
-  line-height: 1.2;
-  text-align: center;
+  box-sizing:border-box; display:inline-flex; width:220px; min-width:220px; min-height:54px;
+  padding:.85rem 1.2rem!important; border-radius:10px!important; align-items:center;
+  justify-content:center; line-height:1.2; text-align:center;
 }
 
-@media (max-width: 1100px) {
-  .home-page .case-study-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .home-page .case-study-card:last-child { grid-column: 1 / -1; }
+@media(max-width:1100px){
+  .home-page .pricing-grid,.home-page .case-study-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important;}
+  .home-page .case-study-card:last-child{grid-column:1/-1;}
 }
-
-@media (max-width: 767px) {
-  .palomma-hero .hero-content::before { inset: -1.2rem; }
+@media(max-width:767px){
+  .palomma-hero .hero-content::before{inset:-1.2rem;}
   .home-page .business-services-section > .container,
-  .home-page .case-studies-section > .container,
-  .home-page .pricing-section > .container { width: min(100% - 2rem, 1540px); }
-  .home-page .case-study-grid { grid-template-columns: 1fr; }
-  .home-page .case-study-card:last-child { grid-column: auto; }
-  .home-page .contact-links { flex-direction: column; align-items: center; }
+  .home-page .pricing-section > .container,
+  .home-page .case-studies-section > .container{width:min(calc(100% - 1.25rem),1720px)!important;}
+  .home-page .pricing-grid,.home-page .case-study-grid{grid-template-columns:1fr!important;}
+  .home-page .case-study-card:last-child{grid-column:auto;}
+  .home-page .contact-links{flex-direction:column;align-items:center;}
 }
