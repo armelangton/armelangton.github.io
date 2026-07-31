@@ -1,0 +1,59 @@
+/* Final homepage section flow: packages, projects, then ownership options. */
+
+.home-page main {
+  background: #f4fafb;
+}
+
+/* The process is better suited to the future About page. */
+.home-page .services-process-section {
+  display: none;
+}
+
+/* Let pricing children participate directly in the homepage flow. */
+.home-page .pricing-section,
+.home-page .pricing-section > .container,
+.home-page .pricing-section .pricing-shell {
+  display: contents;
+}
+
+.home-page .pricing-heading {
+  order: 2;
+  width: min(calc(100% - 48px), 1240px);
+  margin: 0 auto;
+  padding: 2rem 0 1rem;
+}
+
+.home-page .pricing-grid {
+  order: 3;
+  width: min(calc(100% - 48px), 1240px);
+  margin: 0 auto;
+}
+
+.home-page .case-studies-section {
+  order: 4;
+  padding: 1.4rem 0 1.25rem;
+}
+
+/* The project cards already explain themselves, so no extra section label is needed. */
+.home-page .case-studies-section .section-heading {
+  display: none;
+}
+
+/* Ownership and management choices belong after the examples. */
+.home-page .pricing-support {
+  order: 5;
+  width: min(calc(100% - 48px), 1240px);
+  margin: .25rem auto 2rem;
+}
+
+.home-page .contact-section {
+  order: 6;
+}
+
+@media (max-width: 700px) {
+  .home-page .pricing-heading,
+  .home-page .pricing-grid,
+  .home-page .pricing-support {
+    width: min(calc(100% - 32px), 1240px);
+  }
+}
