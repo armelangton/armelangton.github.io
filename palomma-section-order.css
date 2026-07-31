@@ -45,7 +45,6 @@
   padding-inline: clamp(1.5rem,4vw,3.5rem);
 }
 
-/* Let pricing children participate directly in the page flow. */
 .home-page .pricing-section,
 .home-page .pricing-section > .container,
 .home-page .pricing-section .pricing-shell {
@@ -93,7 +92,6 @@
   padding-bottom: 1.15rem;
 }
 
-/* Management choices stay attached to pricing. */
 .home-page .pricing-support {
   order: 4;
   display: grid;
@@ -155,7 +153,6 @@
   content: none;
 }
 
-/* All five case studies remain visible in a centered, responsive layout. */
 .home-page .case-studies-section {
   order: 5;
   padding: 1.55rem 0 1rem;
@@ -247,7 +244,6 @@
   font-size: .78rem !important;
 }
 
-/* Contact is a centered card, not a full-width color band. */
 .home-page .contact-section {
   order: 6;
   padding: .75rem 0 1rem;
@@ -336,7 +332,6 @@
   display: none;
 }
 
-/* Footer is no longer another edge-to-edge navy bar. */
 .home-page .footer {
   width: min(calc(100% - 48px), 1240px);
   margin: 0 auto 1rem;
@@ -373,7 +368,7 @@
   }
 
   .home-page .header {
-    inset-top: .75rem;
+    top: .75rem;
     border-radius: 14px;
   }
 
