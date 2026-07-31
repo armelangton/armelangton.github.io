@@ -120,28 +120,33 @@
   padding-inline: 0 !important;
 }
 .home-page .pricing-support { margin-inline: 0 !important; }
+
+/* The contact block below the page already handles the next action. */
 .home-page .pricing-consultation {
-  margin-top: .6rem !important;
-  margin-bottom: 0 !important;
+  display: none !important;
 }
 
-/* FAQ is full-width inside the exact same outer gutter as the sections above. */
+/* FAQ uses the exact same visible left/right guides as Pricing and Selected Work. */
 .home-page #faq.homepage-faq-section {
   box-sizing: border-box !important;
   width: 100% !important;
   padding-top: var(--palomma-section-pad) !important;
-  padding-right: var(--palomma-page-gutter) !important;
+  padding-right: 0 !important;
   padding-bottom: var(--palomma-section-pad) !important;
-  padding-left: var(--palomma-page-gutter) !important;
+  padding-left: 0 !important;
 }
-.home-page #faq .homepage-faq-container {
+.home-page #faq.homepage-faq-section > .homepage-faq-container,
+.home-page #faq.homepage-faq-section > .container.homepage-faq-container {
   position: static !important;
   left: auto !important;
-  width: 100% !important;
-  max-width: var(--palomma-page-max) !important;
-  margin: 0 auto !important;
-  padding: 0 !important;
+  width: min(calc(100vw - (2 * var(--palomma-page-gutter))), var(--palomma-page-max)) !important;
+  max-width: none !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
   transform: none !important;
+  box-sizing: border-box !important;
 }
 .home-page #faq .homepage-faq-heading,
 .home-page #faq .homepage-faq-list {
