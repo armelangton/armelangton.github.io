@@ -6,7 +6,7 @@
   --palomma-section-pad: clamp(2rem, 2.6vw, 2.8rem);
 }
 
-/* Lock the agreed homepage flow even if older JavaScript moves nodes in the DOM. */
+/* Keep the agreed homepage flow. JavaScript also enforces Selected Work before Pricing. */
 .home-page main {
   display: flex !important;
   flex-direction: column !important;
@@ -58,7 +58,6 @@
 .home-page .business-services-section > .container,
 .home-page .pricing-section > .container,
 .home-page .case-studies-section > .container,
-.home-page #faq .homepage-faq-container,
 .home-page .contact-section > .container {
   position: static !important;
   left: auto !important;
@@ -75,8 +74,6 @@
 .home-page .pricing-shell,
 .home-page .pricing-grid,
 .home-page .case-study-grid,
-.home-page #faq .homepage-faq-list,
-.home-page #faq .homepage-faq-heading,
 .home-page .contact-cta-card {
   width: 100% !important;
   max-width: none !important;
@@ -97,10 +94,6 @@
   text-align: center !important;
 }
 .home-page .case-studies-section .section-heading h2 {
-  font-size: 0 !important;
-}
-.home-page .case-studies-section .section-heading h2::after {
-  content: "Selected Work" !important;
   font-family: "Inter", sans-serif !important;
   font-size: clamp(2rem, 3vw, 2.75rem) !important;
   font-weight: 700 !important;
@@ -132,13 +125,35 @@
   margin-bottom: 0 !important;
 }
 
-/* FAQ uses exactly the same frame as Selected Work and Pricing. */
+/* FAQ is full-width inside the exact same outer gutter as the sections above. */
 .home-page #faq.homepage-faq-section {
+  box-sizing: border-box !important;
+  width: 100% !important;
   padding-top: var(--palomma-section-pad) !important;
+  padding-right: var(--palomma-page-gutter) !important;
   padding-bottom: var(--palomma-section-pad) !important;
+  padding-left: var(--palomma-page-gutter) !important;
+}
+.home-page #faq .homepage-faq-container {
+  position: static !important;
+  left: auto !important;
+  width: 100% !important;
+  max-width: var(--palomma-page-max) !important;
+  margin: 0 auto !important;
+  padding: 0 !important;
+  transform: none !important;
+}
+.home-page #faq .homepage-faq-heading,
+.home-page #faq .homepage-faq-list {
+  width: 100% !important;
+  max-width: none !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  box-sizing: border-box !important;
 }
 .home-page #faq .homepage-faq-heading {
-  margin: 0 0 1.6rem !important;
+  margin-top: 0 !important;
+  margin-bottom: 1.6rem !important;
   padding-bottom: 0 !important;
   border-bottom: 0 !important;
 }
