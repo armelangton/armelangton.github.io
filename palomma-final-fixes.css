@@ -1,14 +1,7 @@
 /* Final homepage corrections approved during branch review. */
 
-/* Keep the page in the intended sales flow regardless of source order. */
-.home-page main { display:flex; flex-direction:column; }
-.home-page .palomma-hero { order:1; }
-.home-page .platforms-strip { order:2; }
-.home-page .business-services-section { order:3; }
-.home-page .pricing-section { order:4; }
-.home-page .case-studies-section { order:5; }
-.home-page .homepage-faq-section { order:6; }
-.home-page .contact-section { order:7; }
+/* The document source now owns the page order. Do not use flex ordering here. */
+.home-page main { display:block!important; }
 
 /* Match section-heading scale. */
 .home-page .business-services-heading { margin-bottom:clamp(2rem,4vw,3rem)!important; }
@@ -20,32 +13,63 @@
   letter-spacing:-.035em!important;
 }
 
-/* Keep the constellation away from the hero copy. */
-.palomma-hero .hero-content { position:relative; z-index:4; isolation:isolate; }
+/* Keep the constellation behind the hero copy. */
+.palomma-hero .hero-content { position:relative; z-index:5; isolation:isolate; }
 .palomma-hero .hero-content::before {
-  position:absolute; inset:-2rem -2.5rem -2rem -3rem; z-index:-1;
-  background:radial-gradient(ellipse at 42% 50%,rgba(7,28,49,.98) 0%,rgba(7,28,49,.94) 54%,rgba(7,28,49,.72) 72%,transparent 100%);
-  content:""; pointer-events:none;
+  position:absolute;
+  inset:-2rem -2.5rem -2rem -3rem;
+  z-index:-1;
+  background:radial-gradient(ellipse at 38% 50%,rgba(7,28,49,.995) 0%,rgba(7,28,49,.97) 55%,rgba(7,28,49,.78) 73%,transparent 100%);
+  content:"";
+  pointer-events:none;
 }
-.palomma-hero .hero-network { z-index:1; }
-.palomma-hero .hero-shell { position:relative; z-index:2; }
+.palomma-hero .hero-network { z-index:1!important; }
+.palomma-hero .hero-shell { position:relative; z-index:2; overflow:visible; }
 
-/* Restore a center-focused image with every edge dissolving into the hero. */
-.palomma-hero .hero-photo { background:#0b2239; }
+/*
+  Hero image blend: use the techniques commonly used for editorial hero photography:
+  an oversized image, a blurred duplicate behind it, a broad gradient mask, and a dark edge vignette.
+  This removes the visible vertical rectangle at the left edge of the photo.
+*/
+.palomma-hero .hero-photo {
+  position:relative;
+  z-index:2;
+  width:calc(100% + 10vw)!important;
+  margin-left:-10vw!important;
+  overflow:visible!important;
+  isolation:isolate;
+  background:transparent!important;
+}
 .palomma-hero .hero-photo::before {
-  inset:-18%!important; filter:blur(48px) saturate(.76) brightness(.5)!important;
-  opacity:.98!important; transform:scale(1.2)!important;
+  inset:-12% -8% -12% -20%!important;
+  background:url("./assets/groupsitting.png") 52% center / cover no-repeat!important;
+  filter:blur(52px) saturate(.72) brightness(.46)!important;
+  opacity:.72!important;
+  transform:scale(1.12)!important;
+  -webkit-mask-image:linear-gradient(90deg,transparent 0%,rgba(0,0,0,.16) 12%,rgba(0,0,0,.62) 31%,#000 54%,#000 100%);
+  mask-image:linear-gradient(90deg,transparent 0%,rgba(0,0,0,.16) 12%,rgba(0,0,0,.62) 31%,#000 54%,#000 100%);
 }
 .palomma-hero .hero-photo::after {
+  inset:-2px!important;
   background:
-    radial-gradient(ellipse 66% 62% at 56% 49%,transparent 24%,rgba(11,34,57,.08) 40%,rgba(11,34,57,.42) 61%,rgba(11,34,57,.82) 79%,#0b2239 100%),
-    linear-gradient(90deg,#0b2239 0%,rgba(11,34,57,.96) 10%,rgba(11,34,57,.55) 26%,transparent 48%),
-    linear-gradient(270deg,#0b2239 0%,rgba(11,34,57,.78) 8%,rgba(11,34,57,.3) 20%,transparent 38%)!important;
+    linear-gradient(90deg,#071c31 0%,rgba(7,28,49,.995) 9%,rgba(7,28,49,.94) 18%,rgba(7,28,49,.72) 31%,rgba(7,28,49,.38) 43%,rgba(7,28,49,.10) 55%,transparent 67%),
+    linear-gradient(270deg,rgba(7,28,49,.82) 0%,rgba(7,28,49,.42) 13%,transparent 31%),
+    linear-gradient(180deg,rgba(7,28,49,.48) 0%,transparent 19%,transparent 79%,rgba(7,28,49,.64) 100%)!important;
 }
 .palomma-hero .hero-photo img {
-  filter:saturate(.9) contrast(.98) brightness(.84)!important;
-  -webkit-mask-image:radial-gradient(ellipse 66% 61% at 56% 49%,#000 24%,rgba(0,0,0,.97) 39%,rgba(0,0,0,.76) 54%,rgba(0,0,0,.43) 69%,rgba(0,0,0,.15) 83%,transparent 98%)!important;
-  mask-image:radial-gradient(ellipse 66% 61% at 56% 49%,#000 24%,rgba(0,0,0,.97) 39%,rgba(0,0,0,.76) 54%,rgba(0,0,0,.43) 69%,rgba(0,0,0,.15) 83%,transparent 98%)!important;
+  position:relative;
+  z-index:1;
+  filter:saturate(.88) contrast(.97) brightness(.82)!important;
+  -webkit-mask-image:linear-gradient(90deg,transparent 0%,rgba(0,0,0,.08) 11%,rgba(0,0,0,.38) 24%,rgba(0,0,0,.78) 39%,#000 55%,#000 92%,rgba(0,0,0,.72) 97%,transparent 100%)!important;
+  mask-image:linear-gradient(90deg,transparent 0%,rgba(0,0,0,.08) 11%,rgba(0,0,0,.38) 24%,rgba(0,0,0,.78) 39%,#000 55%,#000 92%,rgba(0,0,0,.72) 97%,transparent 100%)!important;
+}
+
+/* Platform strip belongs directly below the hero and before Designed to Scale. */
+.home-page .platforms-strip {
+  position:relative;
+  z-index:3;
+  width:100%;
+  margin:0;
 }
 
 /* One vertical edge for every major homepage content section. */
@@ -61,7 +85,7 @@
 }
 .home-page .business-service-card { min-height:0!important; }
 
-/* Pricing cards fill the same horizontal footprint as projects. Keep support below the package cards. */
+/* Pricing cards fill the same horizontal footprint as projects. */
 .home-page .pricing-shell { display:flex!important; width:100%; flex-direction:column; }
 .home-page .pricing-heading { order:1; }
 .home-page .pricing-grid {
@@ -77,7 +101,10 @@
   width:auto;
   margin:1rem clamp(1rem,1.8vw,1.5rem) .75rem!important;
 }
-.home-page .pricing-consultation { order:4; margin:.25rem auto 1.5rem!important; }
+.home-page .pricing-consultation {
+  order:4;
+  margin:.25rem auto 1.5rem!important;
+}
 
 /* Project cards spread across the same wide content edge with no unused side space. */
 .home-page .case-studies-section { background:linear-gradient(180deg,#fff 0%,#f2f8fa 100%); }
@@ -96,24 +123,33 @@
 .home-page .case-study-card p { margin:0 0 1rem; }
 .home-page .case-study-card div > span { margin-top:auto; }
 
-/* FAQ fills the same page width and aligns to the same left/right edges. */
-.home-page #faq .homepage-faq-list { width:100%!important; }
+/* FAQ and contact use the same horizontal edge. */
+.home-page #faq .homepage-faq-list,
 .home-page #faq .homepage-faq-heading { width:100%!important; }
-
-/* Contact block aligns with the same edges as pricing, projects, and FAQ. */
 .home-page .contact-cta-card { width:100%!important; box-sizing:border-box; }
 .home-page .contact-links { display:flex!important; flex-wrap:wrap; justify-content:center; }
 .home-page .contact-links a,
 .home-page .contact-cta-card .button,
 .home-page .contact-cta-card a {
-  box-sizing:border-box; display:inline-flex; width:220px; min-width:220px; min-height:54px;
-  padding:.85rem 1.2rem!important; border-radius:10px!important; align-items:center;
-  justify-content:center; line-height:1.2; text-align:center;
+  box-sizing:border-box;
+  display:inline-flex;
+  width:220px;
+  min-width:220px;
+  min-height:54px;
+  padding:.85rem 1.2rem!important;
+  border-radius:10px!important;
+  align-items:center;
+  justify-content:center;
+  line-height:1.2;
+  text-align:center;
 }
 
 @media(max-width:1100px){
   .home-page .pricing-grid,.home-page .case-study-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important;}
   .home-page .case-study-card:last-child{grid-column:1/-1;}
+}
+@media(max-width:900px){
+  .palomma-hero .hero-photo{width:calc(100% + 48px)!important;margin-left:-24px!important;overflow:hidden!important;}
 }
 @media(max-width:767px){
   .palomma-hero .hero-content::before{inset:-1.2rem;}
