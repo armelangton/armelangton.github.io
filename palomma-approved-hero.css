@@ -33,17 +33,18 @@
 .palomma-hero .hero-shell {
   width: 100%;
   max-width: none;
-  min-height: 610px;
+  min-height: 690px;
   margin: 0;
-  padding: 5.25rem 0 2.75rem max(24px, calc((100vw - 1180px) / 2));
-  grid-template-columns: minmax(500px, .95fr) minmax(620px, 1.05fr);
+  padding: 0 0 0 max(24px, calc((100vw - 1180px) / 2));
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   gap: 0;
-  align-items: center;
+  align-items: stretch;
 }
 
 .palomma-hero .hero-content {
   max-width: 620px;
-  padding-right: clamp(1.5rem, 4vw, 4rem);
+  padding: 6.25rem clamp(2rem, 4vw, 4.5rem) 3.25rem 0;
+  align-self: center;
 }
 
 .palomma-hero .hero-content h1 {
@@ -55,10 +56,11 @@
 .palomma-hero .hero-photo {
   position: relative;
   width: 100%;
-  height: 540px;
+  height: 100%;
+  min-height: 690px;
   margin: 0;
   justify-self: stretch;
-  align-self: center;
+  align-self: stretch;
   overflow: hidden;
   isolation: isolate;
   background: #0b2239;
@@ -66,12 +68,12 @@
 
 .palomma-hero .hero-photo::before {
   position: absolute;
-  inset: -12%;
+  inset: -10%;
   z-index: 0;
   background: url("./assets/groupsitting.png") 52% center / cover no-repeat;
   filter: blur(30px) saturate(.82) brightness(.60);
   opacity: .82;
-  transform: scale(1.1);
+  transform: scale(1.08);
   content: "";
   pointer-events: none;
 }
@@ -81,10 +83,10 @@
   inset: 0;
   z-index: 2;
   background:
-    linear-gradient(90deg, #0b2239 0%, rgba(11,34,57,.98) 8%, rgba(11,34,57,.72) 20%, rgba(11,34,57,.28) 36%, transparent 54%),
-    linear-gradient(270deg, #0b2239 0%, rgba(11,34,57,.90) 7%, rgba(11,34,57,.50) 17%, transparent 31%),
-    linear-gradient(180deg, #071c31 0%, rgba(7,28,49,.84) 8%, rgba(7,28,49,.36) 19%, transparent 33%),
-    linear-gradient(0deg, #071c31 0%, rgba(7,28,49,.94) 10%, rgba(7,28,49,.50) 23%, transparent 39%);
+    linear-gradient(90deg, #0b2239 0%, rgba(11,34,57,.96) 7%, rgba(11,34,57,.66) 17%, rgba(11,34,57,.24) 31%, transparent 48%),
+    linear-gradient(270deg, #0b2239 0%, rgba(11,34,57,.82) 5%, rgba(11,34,57,.36) 13%, transparent 24%),
+    linear-gradient(180deg, #071c31 0%, rgba(7,28,49,.64) 5%, rgba(7,28,49,.22) 12%, transparent 24%),
+    linear-gradient(0deg, #071c31 0%, rgba(7,28,49,.72) 6%, rgba(7,28,49,.26) 15%, transparent 28%);
   content: "";
   pointer-events: none;
 }
@@ -95,28 +97,28 @@
   display: block;
   width: 100%;
   height: 100%;
-  min-height: 0;
+  min-height: 690px;
   max-height: none;
   object-fit: cover;
-  object-position: 52% center;
+  object-position: 51% center;
   filter: saturate(.94) contrast(1.02) brightness(.88);
   -webkit-mask-image: radial-gradient(
-    ellipse 72% 66% at 58% 49%,
-    #000 34%,
-    rgba(0,0,0,.98) 44%,
-    rgba(0,0,0,.80) 56%,
-    rgba(0,0,0,.48) 68%,
-    rgba(0,0,0,.18) 80%,
-    transparent 94%
+    ellipse 86% 82% at 54% 50%,
+    #000 40%,
+    rgba(0,0,0,.98) 52%,
+    rgba(0,0,0,.78) 66%,
+    rgba(0,0,0,.42) 80%,
+    rgba(0,0,0,.14) 91%,
+    transparent 100%
   );
   mask-image: radial-gradient(
-    ellipse 72% 66% at 58% 49%,
-    #000 34%,
-    rgba(0,0,0,.98) 44%,
-    rgba(0,0,0,.80) 56%,
-    rgba(0,0,0,.48) 68%,
-    rgba(0,0,0,.18) 80%,
-    transparent 94%
+    ellipse 86% 82% at 54% 50%,
+    #000 40%,
+    rgba(0,0,0,.98) 52%,
+    rgba(0,0,0,.78) 66%,
+    rgba(0,0,0,.42) 80%,
+    rgba(0,0,0,.14) 91%,
+    transparent 100%
   );
   -webkit-mask-repeat: no-repeat;
   mask-repeat: no-repeat;
@@ -147,7 +149,7 @@
 @media (max-width: 1180px) {
   .palomma-hero .hero-shell {
     padding-left: 24px;
-    grid-template-columns: minmax(430px, .95fr) minmax(520px, 1.05fr);
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   }
 }
 
@@ -161,12 +163,13 @@
 
   .palomma-hero .hero-content {
     max-width: 700px;
-    padding-right: 0;
+    padding: 0;
   }
 
   .palomma-hero .hero-photo {
     width: calc(100% + 48px);
     height: clamp(340px, 58vw, 500px);
+    min-height: 0;
     margin-inline: -24px;
   }
 
@@ -179,6 +182,7 @@
   }
 
   .palomma-hero .hero-photo img {
+    min-height: 0;
     -webkit-mask-image: radial-gradient(
       ellipse 78% 70% at 50% 48%,
       #000 34%,
