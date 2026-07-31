@@ -1,6 +1,13 @@
-/* Final homepage section flow: packages, management options, featured work, contact. */
+/* Responsive homepage flow: framed hero, packages, work, ownership, and contact. */
+
+.home-page {
+  background: #f4fafb;
+}
 
 .home-page main {
+  width: 100%;
+  min-width: 0;
+  overflow: clip;
   background: #f4fafb;
 }
 
@@ -8,6 +15,37 @@
   display: none;
 }
 
+/* Header and hero now read as one responsive framed experience rather than full-width color bars. */
+.home-page .header {
+  position: absolute;
+  inset: 1rem 0 auto;
+  z-index: 30;
+  width: min(calc(100% - 48px), 1240px);
+  margin-inline: auto;
+  border: 0;
+  border-radius: 16px;
+  background: rgba(247,251,252,.96) !important;
+  box-shadow: 0 10px 28px rgba(7,26,45,.08);
+}
+
+.home-page .navbar {
+  width: 100%;
+  padding-inline: 1.5rem;
+}
+
+.home-page .palomma-hero {
+  width: min(calc(100% - 48px), 1240px);
+  margin: 1rem auto 0;
+  border-radius: 22px;
+  box-shadow: 0 20px 55px rgba(7,26,45,.12);
+}
+
+.home-page .hero-shell {
+  width: 100%;
+  padding-inline: clamp(1.5rem,4vw,3.5rem);
+}
+
+/* Let pricing children participate directly in the page flow. */
 .home-page .pricing-section,
 .home-page .pricing-section > .container,
 .home-page .pricing-section .pricing-shell {
@@ -18,7 +56,7 @@
   order: 2;
   width: min(calc(100% - 48px), 1240px);
   margin: 0 auto;
-  padding: 2rem 0 1rem;
+  padding: 2.35rem 0 1rem;
   text-align: center;
 }
 
@@ -47,7 +85,6 @@
   margin: 0 auto;
 }
 
-/* Package cards describe the offer directly. Repetitive links suggested detail pages that do not exist. */
 .home-page .pricing-card .pricing-action {
   display: none;
 }
@@ -56,21 +93,21 @@
   padding-bottom: 1.15rem;
 }
 
-/* Keep management choices visually attached to pricing before the work examples begin. */
+/* Management choices stay attached to pricing. */
 .home-page .pricing-support {
   order: 4;
   display: grid;
   grid-template-columns: auto minmax(0, 1fr) auto;
   width: min(calc(100% - 48px), 1240px);
-  margin: .45rem auto .35rem;
+  margin: .65rem auto .45rem;
   padding: .9rem 1.1rem;
   border: 1px solid rgba(18,165,161,.22);
   border-radius: 12px;
+  align-items: center;
+  gap: .9rem;
   background: linear-gradient(90deg, rgba(224,247,247,.78), rgba(238,247,252,.86));
   box-shadow: none;
   text-align: left;
-  align-items: center;
-  gap: .9rem;
 }
 
 .home-page .pricing-support-icon {
@@ -118,16 +155,20 @@
   content: none;
 }
 
-/* All five case studies remain visible, with three larger cards followed by two centered cards. */
+/* All five case studies remain visible in a centered, responsive layout. */
 .home-page .case-studies-section {
   order: 5;
-  padding: 1.25rem 0 1rem;
+  padding: 1.55rem 0 1rem;
+}
+
+.home-page .case-studies-section .container {
+  width: min(calc(100% - 48px), 1240px);
+  max-width: 1240px;
 }
 
 .home-page .case-studies-section .section-heading {
   display: block !important;
   width: 100%;
-  max-width: 1240px;
   margin: 0 auto 1.15rem;
   padding: 0;
   text-align: center !important;
@@ -157,6 +198,7 @@
 
 .home-page .case-study-grid {
   display: flex !important;
+  width: 100%;
   max-width: 1240px;
   margin: 0 auto;
   flex-wrap: wrap;
@@ -171,6 +213,7 @@
 .home-page .case-study-card {
   width: calc((100% - 2rem) / 3);
   max-width: 390px;
+  min-width: 0;
   min-height: 100%;
   flex: 0 1 calc((100% - 2rem) / 3);
   border-radius: 14px;
@@ -204,19 +247,30 @@
   font-size: .78rem !important;
 }
 
+/* Contact is a centered card, not a full-width color band. */
 .home-page .contact-section {
   order: 6;
-  padding: .55rem 0 1.35rem;
+  padding: .75rem 0 1rem;
+  background: transparent !important;
+  color: #fff;
+}
+
+.home-page .contact-section .container {
+  width: min(calc(100% - 48px), 1240px);
 }
 
 .home-page .contact-cta-card {
   display: flex !important;
+  width: 100%;
   min-height: 0;
   padding: 2.4rem 2rem 2.25rem;
+  border-radius: 20px;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 1rem;
+  background: linear-gradient(110deg,#071f35,#0d5268);
+  box-shadow: 0 18px 42px rgba(7,26,45,.14);
   text-align: center;
 }
 
@@ -282,6 +336,17 @@
   display: none;
 }
 
+/* Footer is no longer another edge-to-edge navy bar. */
+.home-page .footer {
+  width: min(calc(100% - 48px), 1240px);
+  margin: 0 auto 1rem;
+  padding: .75rem 1rem;
+  border-radius: 12px;
+  background: transparent;
+  color: #536775;
+  text-align: center;
+}
+
 @media (max-width: 900px) {
   .home-page .case-study-card {
     width: calc((100% - 1rem) / 2);
@@ -296,10 +361,29 @@
 }
 
 @media (max-width: 700px) {
+  .home-page .header,
+  .home-page .palomma-hero,
   .home-page .pricing-heading,
   .home-page .pricing-grid,
-  .home-page .pricing-support {
-    width: min(calc(100% - 32px), 1240px);
+  .home-page .pricing-support,
+  .home-page .case-studies-section .container,
+  .home-page .contact-section .container,
+  .home-page .footer {
+    width: min(calc(100% - 24px), 1240px);
+  }
+
+  .home-page .header {
+    inset-top: .75rem;
+    border-radius: 14px;
+  }
+
+  .home-page .navbar {
+    padding-inline: 1rem;
+  }
+
+  .home-page .palomma-hero {
+    margin-top: .75rem;
+    border-radius: 18px;
   }
 
   .home-page .pricing-support {
