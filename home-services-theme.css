@@ -117,11 +117,9 @@
   object-fit: contain;
 }
 
-/* Keep the approved architecture, but reduce the alternating two-tone effect. */
 .home-services-page .service-section,
 .home-services-page .package-section,
-.home-services-page .homepage-faq-section,
-.home-services-page .cta-section {
+.home-services-page .homepage-faq-section {
   background: #fff;
 }
 .home-services-page .package-section,
@@ -129,10 +127,8 @@
   border-top: 1px solid #e2eaf0;
 }
 
-/* Carry Palomma blue through the page instead of allowing teal to dominate. */
 .home-services-page .section-kicker,
 .home-services-page .package-label,
-.home-services-page .homepage-faq-heading h2,
 .home-services-page .card-action,
 .home-services-page .company-answer-actions a {
   color: var(--home-blue);
@@ -154,39 +150,106 @@
 .home-services-page .card-action {
   border-color: #8db6df;
 }
-.home-services-page .package-list li::before,
-.home-services-page .cta-checks li::before {
+.home-services-page .package-list li::before {
   color: var(--home-blue);
 }
-.home-services-page .button-primary,
-.home-services-page .cta-card .button-primary {
-  background: var(--home-blue);
-}
-.home-services-page .button-primary:hover,
-.home-services-page .button-primary:focus,
-.home-services-page .cta-card .button-primary:hover,
-.home-services-page .cta-card .button-primary:focus {
-  background: var(--home-blue-dark);
-}
-.home-services-page .cta-card {
-  background: var(--home-blue-soft);
-}
-.home-services-page .homepage-faq-list details[open],
-.home-services-page .homepage-faq-list details:hover {
-  border-color: #aac7e4;
-}
 
-/* Restore the approved closing message without changing the Services page source. */
 .home-services-page .cta-copy h2 {
   font-size: 0;
 }
 .home-services-page .cta-copy h2::after {
   content: "Let's build something great.";
   display: block;
-  color: #071a2d;
   font-size: clamp(2.25rem,4vw,3.7rem);
   line-height: 1.04;
   letter-spacing: -.04em;
+}
+
+/* FAQ: one vertical column, matching the original homepage rhythm. */
+.home-services-page .homepage-faq-section {
+  padding: clamp(4rem,6vw,6rem) 0;
+  background: #fbfcfa;
+}
+.home-services-page .homepage-faq-container {
+  display: block !important;
+  width: min(calc(100% - 48px),1180px);
+  margin-inline: auto;
+}
+.home-services-page .homepage-faq-heading {
+  position: static !important;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+.home-services-page .homepage-faq-heading h2 {
+  color: #0b4f43 !important;
+  font-size: clamp(2rem,3.5vw,3rem) !important;
+}
+.home-services-page .homepage-faq-list {
+  display: grid;
+  width: min(100%,960px);
+  margin-inline: auto;
+  gap: .65rem;
+  border-top: 0 !important;
+}
+.home-services-page .homepage-faq-list details {
+  border: 1px solid rgba(17,47,41,.1) !important;
+  border-radius: 8px;
+  background: #fff;
+}
+.home-services-page .homepage-faq-list summary {
+  padding: 1rem 1.15rem !important;
+  color: #0b4f43 !important;
+}
+.home-services-page .homepage-faq-list summary::after {
+  right: 1.15rem !important;
+  top: .85rem !important;
+  color: #148a74 !important;
+}
+.home-services-page .homepage-faq-list p {
+  padding: 0 1.15rem 1.15rem !important;
+}
+
+/* CTA: green and stacked instead of split into two columns. */
+.home-services-page .cta-section {
+  padding: clamp(3.5rem,6vw,5rem) 0;
+  background: #0b4f43 !important;
+  color: #fff;
+}
+.home-services-page .cta-grid {
+  display: block !important;
+  width: min(calc(100% - 48px),1100px);
+  margin-inline: auto;
+  text-align: center;
+}
+.home-services-page .cta-copy h2::after {
+  color: #fff;
+}
+.home-services-page .cta-copy p,
+.home-services-page .cta-copy .section-kicker {
+  color: rgba(255,255,255,.82) !important;
+}
+.home-services-page .cta-copy p {
+  max-width: 680px;
+  margin-inline: auto;
+}
+.home-services-page .cta-card {
+  max-width: 560px;
+  margin: 2rem auto 0;
+  padding: 1.4rem;
+  border: 1px solid rgba(255,255,255,.24);
+  background: rgba(255,255,255,.08) !important;
+}
+.home-services-page .cta-card h3,
+.home-services-page .cta-card p {
+  color: #fff;
+}
+.home-services-page .cta-card .button-primary {
+  background: #9ad8c7 !important;
+  color: #0b4f43 !important;
+}
+.home-services-page .cta-card .button-primary:hover,
+.home-services-page .cta-card .button-primary:focus {
+  background: #b7e5d9 !important;
 }
 
 @keyframes palomma-platform-scroll {
@@ -219,5 +282,9 @@
   .platform-logo img {
     width: 21px;
     height: 21px;
+  }
+  .home-services-page .homepage-faq-container,
+  .home-services-page .cta-grid {
+    width: min(calc(100% - 32px),1180px);
   }
 }
