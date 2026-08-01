@@ -139,26 +139,41 @@
   color: #071a2d;
 }
 .home-services-page .site-footer {
-  padding: 1.65rem 0 2rem;
-  background: #eef7fa;
-  color: #5d7182;
-  text-align: center;
+  padding: 2.5rem 0;
+  background: #071a2d;
+  color: rgba(255,255,255,.72);
+  text-align: left;
 }
 .home-services-page .site-footer .footer-grid {
-  display: block;
-  width: min(calc(100% - 48px), 1760px);
-  max-width: 1760px;
+  display: grid;
+  width: min(calc(100% - 48px), 1180px);
+  max-width: 1180px;
   margin: 0 auto;
+  grid-template-columns: 1.5fr repeat(3, 1fr);
+  gap: 2rem;
 }
-.home-services-page .site-footer .footer-grid > * { display: none; }
-.home-services-page .site-footer .footer-grid::after {
-  content: "© 2026 Amy Melangton";
+.home-services-page .site-footer .footer-grid > * { display: block; }
+.home-services-page .site-footer .footer-grid::after { content: none; }
+.home-services-page .site-footer h4 {
+  margin: 0 0 .65rem;
+  color: #fff;
+  font-size: .78rem;
+}
+.home-services-page .site-footer p {
+  margin: 0;
+  color: rgba(255,255,255,.72);
+  font-size: .82rem;
+}
+.home-services-page .site-footer a {
   display: block;
-  font-size: .85rem;
+  margin: .35rem 0;
+  color: rgba(255,255,255,.72);
+  font-size: .82rem;
 }
 
 @media (max-width: 900px) {
   .home-services-page .homepage-faq-list { grid-template-columns: 1fr; }
+  .home-services-page .site-footer .footer-grid { grid-template-columns: 1fr 1fr; }
 }
 @media (max-width: 767px) {
   .home-services-page .homepage-faq-container,
