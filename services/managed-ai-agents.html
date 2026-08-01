@@ -3,40 +3,20 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="AI assistants from Palomma Consulting help teams answer questions, complete repeatable work, and move revenue-related tasks forward." />
+    <meta name="description" content="AI assistants from Palomma Consulting help teams answer questions, prepare work, and move revenue-related tasks forward with the right human review." />
     <title>AI Assistants | Palomma Consulting</title>
     <link rel="icon" href="../assets/logo.png" sizes="64x64" type="image/png" />
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="../services.css?v=20260801-3" />
-    <style>
-      body{background:#f6fafc;color:#173044}
-      .detail-hero{padding:clamp(5rem,9vw,8rem) 0;background:radial-gradient(circle at 78% 18%,rgba(117,216,210,.18),transparent 26%),linear-gradient(135deg,#071a2d,#0c2944);color:#fff}
-      .detail-grid{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(320px,.8fr);gap:clamp(3rem,7vw,7rem);align-items:center}
-      .detail-kicker{margin:0 0 1rem;color:#75d8d2;font-size:.78rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase}
-      .detail-hero h1{max-width:760px;margin:0 0 1.2rem;font-size:clamp(3rem,6vw,5.8rem);line-height:.98;letter-spacing:-.05em}
-      .detail-hero p{max-width:680px;margin:0;color:#c8d7e2;font-size:clamp(1.05rem,1.5vw,1.22rem);line-height:1.75}
-      .detail-actions{display:flex;gap:1rem;flex-wrap:wrap;margin-top:2rem}
-      .assistant-panel{padding:1.35rem;border:1px solid rgba(255,255,255,.16);border-radius:20px;background:rgba(255,255,255,.08);box-shadow:0 28px 70px rgba(0,0,0,.22);backdrop-filter:blur(14px)}
-      .assistant-panel-header{display:flex;align-items:center;justify-content:space-between;padding:.25rem .15rem 1rem;border-bottom:1px solid rgba(255,255,255,.12)}
-      .assistant-panel-header strong{font-size:1rem}.assistant-panel-header span{color:#75d8d2;font-size:.78rem;font-weight:700}
-      .assistant-task{display:grid;grid-template-columns:34px 1fr;gap:.85rem;padding:1rem 0;border-bottom:1px solid rgba(255,255,255,.1)}
-      .assistant-task:last-child{border-bottom:0}.assistant-task i{display:grid;width:34px;height:34px;border-radius:10px;place-items:center;background:rgba(117,216,210,.16);color:#75d8d2;font-style:normal;font-weight:700}
-      .assistant-task small{display:block;margin-bottom:.2rem;color:#9fb2c2}.assistant-task strong{display:block;font-size:.95rem}
-      .detail-section{padding:clamp(4.5rem,7vw,7rem) 0}.detail-section.alt{background:#fff}
-      .detail-heading{max-width:760px;margin-bottom:2.5rem}.detail-heading h2{margin:0 0 .8rem;color:#071a2d;font-size:clamp(2.25rem,4vw,3.8rem);line-height:1.03;letter-spacing:-.04em}.detail-heading p{margin:0;color:#607586;line-height:1.75}
-      .detail-card-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem}.detail-card{padding:1.5rem;border:1px solid rgba(7,26,45,.12);border-radius:16px;background:#fff;box-shadow:0 16px 40px rgba(7,26,45,.06)}.detail-card h3{margin:.25rem 0 .65rem;color:#071a2d}.detail-card p{margin:0;color:#607586;line-height:1.7}
-      .fit-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1.2rem}.fit-box{padding:1.6rem;border-radius:16px;background:#eef7fa}.fit-box h3{margin:0 0 .8rem;color:#071a2d}.fit-box ul{margin:0;padding-left:1.2rem;color:#536775;line-height:1.8}
-      .detail-cta{padding:clamp(4rem,7vw,6rem) 0;background:#0b2238;color:#fff}.detail-cta-grid{display:flex;gap:2rem;align-items:center;justify-content:space-between}.detail-cta h2{max-width:720px;margin:0;font-size:clamp(2.2rem,4vw,4rem);line-height:1.03;letter-spacing:-.04em}
-      @media(max-width:850px){.detail-grid,.detail-card-grid,.fit-grid{grid-template-columns:1fr}.detail-cta-grid{align-items:flex-start;flex-direction:column}}
-    </style>
   </head>
   <body>
     <header class="site-header">
       <nav class="site-nav container" aria-label="Primary navigation">
         <a class="brand" href="../index.html">Palomma Consulting</a>
         <div class="nav-links">
-          <a href="../services.html">Services</a>
+          <a class="is-active" href="../services.html">Services</a>
+          <a href="../index.html#case-studies">Selected Work</a>
           <a href="../index.html#pricing">Pricing</a>
           <a href="../index.html#faq">FAQ</a>
           <a href="../index.html#contact">Contact</a>
@@ -46,52 +26,117 @@
 
     <main>
       <section class="detail-hero">
-        <div class="container detail-grid">
-          <div>
-            <p class="detail-kicker">AI Assistants</p>
-            <h1>Give your team help with the work that slows revenue down.</h1>
-            <p>Palomma designs AI assistants around the questions, research, follow-through, and repeatable tasks your team handles every day. Each assistant is built around your business context and connected to the right human review points.</p>
-            <div class="detail-actions">
-              <a class="button button-primary" href="../index.html#contact">Start a Conversation</a>
-              <a class="button button-secondary" href="#how-it-helps">See How It Helps</a>
-            </div>
-          </div>
-          <div class="assistant-panel" aria-label="Example AI assistant workflow">
-            <div class="assistant-panel-header"><strong>Revenue support assistant</strong><span>ACTIVE</span></div>
-            <div class="assistant-task"><i>1</i><div><small>Incoming request</small><strong>Summarize the account and recent activity</strong></div></div>
-            <div class="assistant-task"><i>2</i><div><small>Business context</small><strong>Match CRM records, notes, and documents</strong></div></div>
-            <div class="assistant-task"><i>3</i><div><small>AI support</small><strong>Recommend the next best action</strong></div></div>
-            <div class="assistant-task"><i>4</i><div><small>Human review</small><strong>Approve, revise, and move forward</strong></div></div>
-          </div>
-        </div>
-      </section>
-
-      <section id="how-it-helps" class="detail-section alt">
         <div class="container">
-          <div class="detail-heading"><h2>Where AI assistants create value</h2><p>The goal is not to add another tool. It is to make information easier to use, reduce repetitive work, and help people act faster with better context.</p></div>
-          <div class="detail-card-grid">
-            <article class="detail-card"><h3>Answer questions</h3><p>Give employees a reliable place to find answers from approved documents, systems, and business knowledge.</p></article>
-            <article class="detail-card"><h3>Prepare the work</h3><p>Summarize accounts, opportunities, meetings, requests, or documents before a person takes the next step.</p></article>
-            <article class="detail-card"><h3>Move tasks forward</h3><p>Draft responses, recommend actions, organize follow-through, and trigger workflows with human approval where it matters.</p></article>
-          </div>
+          <a class="back-link" href="../services.html">← All services</a>
+          <p class="page-kicker">AI solution</p>
+          <h1>AI Assistants</h1>
+          <p>Give your team a reliable assistant for the questions, preparation, research, and repeatable work that slows revenue down.</p>
         </div>
       </section>
 
-      <section class="detail-section">
+      <section class="quick-answer">
         <div class="container">
-          <div class="detail-heading"><h2>Built around the way your business works</h2><p>Every assistant starts with a defined problem, trusted information, clear permissions, and a practical handoff between AI and people.</p></div>
-          <div class="fit-grid">
-            <div class="fit-box"><h3>Common use cases</h3><ul><li>Sales and account research</li><li>CRM summaries and next-step guidance</li><li>Internal knowledge and policy questions</li><li>Document review and information extraction</li><li>Customer or employee request intake</li></ul></div>
-            <div class="fit-box"><h3>Included in the build</h3><ul><li>Discovery and workflow definition</li><li>Assistant configuration and business context</li><li>Testing and human review rules</li><li>Training and documentation</li><li>30-day post-launch support</li></ul></div>
+          <div class="quick-answer-box">
+            <h2>Quick answer</h2>
+            <p>An AI assistant is built around one clearly defined responsibility. It uses approved business information, follows your rules, and prepares or completes work while keeping people in control of decisions that require judgment.</p>
           </div>
         </div>
       </section>
 
-      <section class="detail-cta">
-        <div class="container detail-cta-grid"><h2>Start with one task your team repeats every week.</h2><a class="button button-primary" href="../index.html#contact">Discuss an AI Assistant</a></div>
+      <section class="detail-main">
+        <div class="container detail-layout">
+          <div class="detail-content">
+            <section class="detail-section">
+              <p class="eyebrow">Why this matters</p>
+              <h2>Make the information your team already has easier to use.</h2>
+              <p>Teams lose time searching across CRM records, documents, notes, inboxes, and shared drives. They also repeat the same research, summaries, and first drafts. A focused assistant brings the right context together, produces a useful starting point, and helps the next action happen faster.</p>
+            </section>
+
+            <section class="detail-section">
+              <h2>What an assistant can do</h2>
+              <div class="detail-card-grid">
+                <article><h3>Answer questions</h3><p>Use approved documents and business knowledge to give employees a consistent place to find reliable answers.</p></article>
+                <article><h3>Prepare the work</h3><p>Summarize accounts, opportunities, meetings, requests, documents, or prior activity before a person takes the next step.</p></article>
+                <article><h3>Recommend next actions</h3><p>Use defined criteria and business context to surface what needs attention and suggest a practical next move.</p></article>
+                <article><h3>Draft and organize</h3><p>Create first drafts, structure follow-through, collect missing information, and prepare records for human review.</p></article>
+              </div>
+            </section>
+
+            <section class="detail-section">
+              <h2>Common use cases</h2>
+              <ul class="bullet-list">
+                <li>Sales and account research before calls, meetings, or proposals</li>
+                <li>CRM summaries, pipeline context, and next-step guidance</li>
+                <li>Internal knowledge, process, product, and policy questions</li>
+                <li>Document review, comparison, and information extraction</li>
+                <li>Customer or employee request intake and routing</li>
+                <li>Meeting preparation, notes, action items, and follow-through</li>
+                <li>Coaching, onboarding, objection handling, and enablement support</li>
+              </ul>
+            </section>
+
+            <section class="detail-section">
+              <h2>How the assistant is designed</h2>
+              <ol class="path-list">
+                <li><span>1</span><div><strong>Define the responsibility</strong><p>Choose one repeatable job, the people it supports, and the outcome it should improve.</p></div></li>
+                <li><span>2</span><div><strong>Connect trusted context</strong><p>Identify the documents, CRM data, systems, instructions, and examples the assistant is allowed to use.</p></div></li>
+                <li><span>3</span><div><strong>Set boundaries and review rules</strong><p>Define permissions, escalation points, required approvals, and the decisions that remain with people.</p></div></li>
+                <li><span>4</span><div><strong>Test with real work</strong><p>Evaluate accuracy, usefulness, edge cases, and handoffs before the assistant is released to the team.</p></div></li>
+                <li><span>5</span><div><strong>Launch and improve</strong><p>Train users, document ownership, monitor performance, and refine the assistant based on actual use.</p></div></li>
+              </ol>
+            </section>
+
+            <section class="detail-section">
+              <h2>What is included</h2>
+              <div class="detail-card-grid">
+                <article><h3>Workflow definition</h3><p>The assistant’s responsibility, users, inputs, outputs, boundaries, and success criteria.</p></article>
+                <article><h3>Business context</h3><p>Configuration around your terminology, approved knowledge, examples, rules, and systems.</p></article>
+                <article><h3>Testing and governance</h3><p>Real-use testing, permissions, human review, escalation logic, and failure handling.</p></article>
+                <article><h3>Launch support</h3><p>Training, documentation, handover, and 30 days of post-launch stabilization support.</p></article>
+              </div>
+            </section>
+
+            <section class="detail-section">
+              <h2>Good fit and poor fit</h2>
+              <div class="detail-card-grid">
+                <article><h3>A strong fit</h3><p>The task repeats often, uses identifiable information, has a clear owner, and produces an output a person can evaluate.</p></article>
+                <article><h3>Needs more definition first</h3><p>The goal changes constantly, the source information is unknown, or the assistant would be expected to make high-risk decisions without review.</p></article>
+              </div>
+            </section>
+
+            <section class="detail-section">
+              <h2>Common questions</h2>
+              <div class="faq-list">
+                <details><summary>Does an AI assistant replace a person?</summary><p>The goal is usually to remove repetitive preparation and make information easier to use. People remain responsible for judgment, relationships, exceptions, and approvals.</p></details>
+                <details><summary>Can it use our existing documents and CRM?</summary><p>Yes, when the systems support appropriate access and the information is suitable for the use case. The design defines what the assistant can retrieve, what it can write, and what requires approval.</p></details>
+                <details><summary>How do you reduce inaccurate answers?</summary><p>The assistant is limited to a defined responsibility, grounded in approved context, tested with real examples, and given clear instructions for uncertainty, escalation, and human review.</p></details>
+                <details><summary>Can we start with one assistant?</summary><p>Yes. Beginning with one valuable, measurable responsibility is often the best way to learn what works before expanding.</p></details>
+              </div>
+            </section>
+
+            <section class="detail-section">
+              <h2>Related services</h2>
+              <div class="related-grid">
+                <a href="./workflow-sprint.html"><strong>Workflow Automation</strong><span>Connect the assistant to the steps, systems, and approvals around the work.</span></a>
+                <a href="./business-applications.html"><strong>Business Applications</strong><span>Give the assistant a purpose-built workspace when existing tools are not enough.</span></a>
+                <a href="./crm-revenue-operations.html"><strong>CRM &amp; Revenue Operations</strong><span>Improve the data, pipeline structure, and operating rhythm the assistant relies on.</span></a>
+                <a href="./ai-operations-assessment.html"><strong>AI &amp; Operations Assessment</strong><span>Identify the best starting point when the opportunity is not yet clearly defined.</span></a>
+              </div>
+            </section>
+          </div>
+
+          <aside class="detail-sidebar">
+            <h3>Solution details</h3>
+            <div class="detail-stat"><span>Starting point</span><strong>One responsibility</strong></div>
+            <div class="detail-stat"><span>Delivery</span><strong>Fixed scope</strong></div>
+            <div class="detail-stat"><span>Support</span><strong>30 days included</strong></div>
+            <a class="button button-primary" href="../index.html#contact">Start a Conversation</a>
+            <a class="button button-secondary" href="../index.html#pricing">View Pricing</a>
+          </aside>
+        </div>
       </section>
     </main>
 
-    <footer class="site-footer"><div class="container footer-grid"><div><h4>Palomma Consulting</h4><p>Practical AI, workflow, and business systems support.</p></div><div><h4>Explore</h4><a href="../services.html">Services</a><a href="../index.html#pricing">Pricing</a></div><div><h4>Company</h4><a href="../index.html#faq">FAQ</a><a href="../index.html#contact">Contact</a></div></div></footer>
+    <footer class="site-footer"><div class="container footer-grid"><div><h4>Palomma Consulting</h4><p>Practical AI, workflow, and business systems support.</p></div><div><h4>Services</h4><a href="../services.html">All services</a><a href="./workflow-sprint.html">Workflow Automation</a><a href="./business-applications.html">Business Applications</a></div><div><h4>Company</h4><a href="../index.html#case-studies">Selected Work</a><a href="../index.html#faq">FAQ</a><a href="../index.html#contact">Contact</a></div><div><h4>Pricing</h4><a href="../index.html#pricing">View starting prices</a><a href="../index.html#contact">Book discovery</a></div></div></footer>
   </body>
 </html>
