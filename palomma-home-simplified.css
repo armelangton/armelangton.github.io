@@ -28,5 +28,43 @@
 .home-page .contact-cta-card{border:1px solid rgba(255,255,255,.18);background:#fff}
 .home-page .palomma-hero .hero-content>p:not(.hero-brand){max-width:610px;margin:1rem 0 0;color:#dbe7ee;font-size:1.05rem;line-height:1.65}
 .home-page .palomma-hero .hero-actions{margin-top:1.5rem}
-@media(max-width:980px){.homepage-solutions .solutions-heading{align-items:flex-start;flex-direction:column;gap:1rem}.homepage-solutions .solutions-grid,.home-selected-work .case-study-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media(max-width:680px){.homepage-solutions .solutions-grid,.home-selected-work .case-study-grid{grid-template-columns:1fr}.homepage-solutions .solution-card{min-height:0}.homepage-solutions .solution-visual{min-height:210px}.home-selected-work .section-heading{align-items:flex-start;flex-direction:column}}
+
+/* Approved homepage hero: Palomma navy, constellation canvas, and workflow animation. */
+.home-page .header{background:#071c31;border-bottom-color:rgba(255,255,255,.1)}
+.home-page .navbar::before{color:#fff}
+.home-page .nav-link{color:rgba(255,255,255,.88)}
+.home-page .nav-link:hover,.home-page .nav-link:focus,.home-page .nav-link.active{color:#75d8d2}
+.home-page .palomma-hero{position:relative;overflow:hidden;background:radial-gradient(circle at 30% 42%,rgba(31,143,136,.18),transparent 38%),linear-gradient(112deg,#071c31 0%,#0b2239 58%,#0e3048 100%)}
+.home-page .palomma-hero .hero-network{z-index:0;opacity:.92}
+.home-page .palomma-hero .hero-shell{position:relative;z-index:1;max-width:1240px;min-height:690px;margin:0 auto;padding:4.5rem 30px 4.75rem;grid-template-columns:minmax(0,1.08fr) minmax(420px,.92fr);gap:clamp(2.5rem,5vw,5.5rem);align-items:center}
+.home-page .palomma-hero .hero-content{max-width:660px;padding:0}
+.home-page .palomma-hero .hero-brand{color:#75d8d2}
+.home-page .palomma-hero .hero-content h1{max-width:650px;margin:0;color:#fff;font-size:clamp(3rem,5vw,5rem);line-height:1.02;letter-spacing:-.055em}
+.home-page .palomma-hero .hero-content>p:not(.hero-brand){max-width:620px;color:#d7e5ec;font-size:1.08rem;line-height:1.65}
+.home-page .palomma-hero .button-primary{background:#12a5a1;color:#fff}
+.home-page .palomma-hero .button-primary:hover,.home-page .palomma-hero .button-primary:focus{background:#0c8e8b}
+.home-page .palomma-hero .button-secondary{border-color:rgba(255,255,255,.48);background:rgba(255,255,255,.04);color:#fff}
+.home-page .palomma-hero .button-secondary:hover,.home-page .palomma-hero .button-secondary:focus{border-color:#75d8d2;background:rgba(117,216,210,.1);color:#fff}
+.home-page .palomma-hero .hero-photo{display:flex;width:100%;height:auto;min-height:0;margin:0;align-items:center;justify-content:center;overflow:visible;background:transparent;isolation:auto}
+.home-page .palomma-hero .hero-photo::before,.home-page .palomma-hero .hero-photo::after{display:none;content:none}
+.home-page .palomma-hero .hero-photo img{content:url("./assets/palomma-workflow-hero.svg");display:block;width:100%;height:auto;min-height:0;max-height:620px;object-fit:contain;filter:none;-webkit-mask-image:none;mask-image:none;animation:workflow-float 6s ease-in-out infinite}
+@keyframes workflow-float{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+@media(prefers-reduced-motion:reduce){.home-page .palomma-hero .hero-photo img{animation:none}}
+
+@media(max-width:980px){
+  .homepage-solutions .solutions-heading{align-items:flex-start;flex-direction:column;gap:1rem}
+  .homepage-solutions .solutions-grid,.home-selected-work .case-study-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .home-page .palomma-hero .hero-shell{min-height:0;padding:4.5rem 24px 3.5rem;grid-template-columns:1fr;gap:2.5rem}
+  .home-page .palomma-hero .hero-content{max-width:760px}
+  .home-page .palomma-hero .hero-photo{width:min(100%,620px);margin:0 auto}
+  .home-page .palomma-hero .hero-photo img{max-height:none}
+}
+@media(max-width:680px){
+  .homepage-solutions .solutions-grid,.home-selected-work .case-study-grid{grid-template-columns:1fr}
+  .homepage-solutions .solution-card{min-height:0}
+  .homepage-solutions .solution-visual{min-height:210px}
+  .home-selected-work .section-heading{align-items:flex-start;flex-direction:column}
+  .home-page .palomma-hero .hero-shell{padding:3.75rem 20px 2.75rem;gap:2rem}
+  .home-page .palomma-hero .hero-content h1{font-size:clamp(2.55rem,12vw,3.65rem)}
+  .home-page .palomma-hero .hero-photo{width:100%;margin:0}
+}
