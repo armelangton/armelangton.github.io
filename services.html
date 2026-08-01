@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="./services.css?v=20260801-3" />
-    <link rel="stylesheet" href="./services-visual.css?v=20260801-1" />
+    <link rel="stylesheet" href="./services-visual.css?v=20260801-4" />
   </head>
   <body>
     <header class="site-header">
@@ -29,7 +29,6 @@
       <section class="page-hero">
         <div class="container hero-layout">
           <div class="page-hero-inner">
-            <p class="page-kicker">AI systems + business operations</p>
             <h1>Practical systems that improve how work gets done.</h1>
             <p class="page-hero-summary">Palomma designs AI assistants, workflow automation, and connected business applications around the systems and decisions your team already manages.</p>
             <div class="hero-actions">
@@ -38,47 +37,48 @@
             </div>
           </div>
 
-          <div class="hero-visual" aria-label="AI operations console showing work moving through connected systems">
-            <span class="hero-orbit one" aria-hidden="true"></span>
-            <span class="hero-orbit two" aria-hidden="true"></span>
-            <div class="hero-console">
-              <div class="console-top">
+          <div class="hero-console" aria-label="Interactive operations workspace">
+            <div class="console-top">
+              <div>
                 <strong>Operations workspace</strong>
-                <span class="console-status">3 workflows active</span>
+                <span class="console-launch">Launching AI operating layer <i></i><i></i><i></i></span>
               </div>
-              <div class="console-flow">
-                <div class="console-stack">
-                  <div class="console-node"><small>Incoming</small><strong>New request captured</strong></div>
-                  <div class="console-node"><small>Context</small><strong>CRM and documents matched</strong></div>
-                </div>
-                <span class="console-arrow" aria-hidden="true">→</span>
-                <div class="console-stack">
-                  <div class="console-node"><small>AI support</small><strong>Summarize and recommend</strong></div>
-                  <div class="console-node"><small>Human review</small><strong>Approve and move forward</strong></div>
-                </div>
-              </div>
-              <div class="console-activity">
-                <div class="activity-card"><small>Workflow</small><strong>Quote preparation</strong></div>
-                <div class="activity-card"><small>Next action</small><strong>Manager approval</strong></div>
-                <div class="activity-card"><small>Status</small><strong>Ready to send</strong></div>
-              </div>
+              <span class="console-status">3 workflows active</span>
             </div>
-          </div>
-        </div>
-      </section>
 
-      <section class="company-answer">
-        <div class="container company-answer-grid">
-          <div>
-            <p class="section-kicker">What Palomma does</p>
-            <h2>Connected business technology built around real operations.</h2>
-          </div>
-          <div class="company-answer-copy">
-            <p>Palomma Consulting helps small and mid-sized businesses improve the systems, workflows, and decisions behind daily operations. We design AI assistants, workflow automations, and connected business applications, then integrate them with the tools teams already use.</p>
-            <p>The result is less repetitive work, cleaner handoffs, better visibility, and stronger support for the people making decisions.</p>
-            <div class="company-answer-actions">
-              <a href="./services/ai-operations-assessment.html">Start with an assessment</a>
-              <a href="./index.html#pricing">View services and pricing</a>
+            <div class="console-options" role="tablist" aria-label="Workflow stages">
+              <button class="console-option is-active" type="button" role="tab" aria-selected="true" data-stage="incoming">
+                <span class="option-icon">↓</span>
+                <span><small>Incoming</small><strong>New request captured</strong></span>
+                <span class="option-chevron">›</span>
+              </button>
+              <button class="console-option" type="button" role="tab" aria-selected="false" data-stage="context">
+                <span class="option-icon">▤</span>
+                <span><small>Context</small><strong>CRM and documents matched</strong></span>
+                <span class="option-chevron">›</span>
+              </button>
+              <button class="console-option" type="button" role="tab" aria-selected="false" data-stage="support">
+                <span class="option-icon">✦</span>
+                <span><small>AI support</small><strong>Summarize and recommend</strong></span>
+                <span class="option-chevron">›</span>
+              </button>
+              <button class="console-option" type="button" role="tab" aria-selected="false" data-stage="review">
+                <span class="option-icon">○</span>
+                <span><small>Human review</small><strong>Approve and move forward</strong></span>
+                <span class="option-chevron">›</span>
+              </button>
+            </div>
+
+            <div class="console-summary" aria-live="polite">
+              <div><small>Workflow</small><strong id="workflow-value">Request intake</strong></div>
+              <div class="is-highlighted"><small>Next action</small><strong id="action-value">Match business context</strong></div>
+              <div><small>Status</small><strong id="status-value">Captured</strong></div>
+            </div>
+
+            <div class="console-terminal">
+              <span>› sync services</span>
+              <strong id="terminal-value">intake received · preparing context</strong>
+              <i></i><i></i><i></i>
             </div>
           </div>
         </div>
@@ -86,48 +86,20 @@
 
       <section class="systems-map-section">
         <div class="container">
-          <div class="systems-map-heading">
-            <p class="section-kicker">How the work connects</p>
-            <h2>Business tools, AI support, human judgment, and measurable outcomes.</h2>
-          </div>
+          <p class="systems-map-title">How the work connects</p>
           <div class="systems-map">
-            <div class="map-panel">
-              <p class="map-title">Your business tools</p>
-              <div class="map-list">
-                <div class="map-item"><span class="map-icon">CRM</span><div><strong>CRM</strong><span>Accounts, opportunities, history</span></div></div>
-                <div class="map-item"><span class="map-icon">@</span><div><strong>Email</strong><span>Requests, conversations, follow-up</span></div></div>
-                <div class="map-item"><span class="map-icon">DOC</span><div><strong>Documents</strong><span>Policies, proposals, knowledge</span></div></div>
-                <div class="map-item"><span class="map-icon">DB</span><div><strong>Data and systems</strong><span>ERP, spreadsheets, databases</span></div></div>
-              </div>
+            <div class="systems-stage tools-stage">
+              <div class="tool-icons"><span>@</span><span>CRM</span><span>CAL</span><span>DOC</span><span>+</span></div>
+              <strong>Your tools</strong>
             </div>
-            <div class="map-connector"><span>→</span></div>
-            <div class="map-panel is-core">
-              <p class="map-title">AI + automation layer</p>
-              <div class="map-list">
-                <div class="map-item"><span class="map-icon">AI</span><div><strong>AI assistants</strong><span>Research, draft, summarize, recommend</span></div></div>
-                <div class="map-item"><span class="map-icon">↗</span><div><strong>Workflow automation</strong><span>Trigger, route, update, notify</span></div></div>
-                <div class="map-item"><span class="map-icon">✓</span><div><strong>Business rules</strong><span>Approvals, decisions, validations</span></div></div>
-              </div>
-            </div>
-            <div class="map-connector"><span>→</span></div>
-            <div class="map-panel">
-              <p class="map-title">Human in the loop</p>
-              <div class="map-list">
-                <div class="map-item"><span class="map-icon">1</span><div><strong>Review</strong><span>Confirm quality and context</span></div></div>
-                <div class="map-item"><span class="map-icon">2</span><div><strong>Approve</strong><span>Keep control where it matters</span></div></div>
-                <div class="map-item"><span class="map-icon">3</span><div><strong>Decide</strong><span>Add judgment and expertise</span></div></div>
-              </div>
-            </div>
-            <div class="map-connector"><span>→</span></div>
-            <div class="map-panel is-impact">
-              <p class="map-title">Business impact</p>
-              <div class="map-list">
-                <div class="map-item"><span class="map-icon">•</span><div><strong>Less manual work</strong></div></div>
-                <div class="map-item"><span class="map-icon">•</span><div><strong>Faster cycle times</strong></div></div>
-                <div class="map-item"><span class="map-icon">•</span><div><strong>Fewer errors</strong></div></div>
-                <div class="map-item"><span class="map-icon">•</span><div><strong>Better visibility</strong></div></div>
-              </div>
-            </div>
+            <span class="flow-arrow">→</span>
+            <div class="systems-stage"><span class="stage-icon core-icon">P</span><strong>AI + automation layer</strong></div>
+            <span class="flow-arrow">→</span>
+            <div class="systems-stage"><span class="stage-icon human-icon">○</span><strong>Human in the loop</strong></div>
+            <span class="flow-arrow">→</span>
+            <div class="systems-stage"><span class="stage-icon outcome-icon">▥</span><strong>Outcomes</strong></div>
+            <span class="flow-arrow">→</span>
+            <div class="systems-stage"><span class="stage-icon impact-icon">↗</span><strong>Impact</strong></div>
           </div>
         </div>
       </section>
@@ -135,28 +107,15 @@
       <section id="core-services" class="section service-section">
         <div class="container">
           <div class="section-head">
-            <div>
-              <p class="section-kicker">Core services</p>
-              <h2>Choose the level of support that matches the work.</h2>
-            </div>
+            <div><p class="section-kicker">Core services</p><h2>Choose the level of support that matches the work.</h2></div>
             <p>Each service opens to a dedicated page with fit, scope, deliverables, pricing, and next steps.</p>
           </div>
-
           <div class="service-grid">
             <a class="service-card" href="./services/ai-operations-assessment.html"><span class="card-icon">◎</span><h3>AI &amp; Operations Assessment</h3><p>Clarify the problem, identify the highest-value opportunities, and decide what should improve first.</p><div class="card-meta"><div><span>Starting from</span><strong>$2,500</strong></div><div><span>Timeline</span><strong>1–2 weeks</strong></div></div><span class="card-action">View details</span></a>
             <a class="service-card" href="./services/workflow-sprint.html"><span class="card-icon">↗</span><h3>Workflow Sprint</h3><p>Redesign and improve one clearly defined workflow using process changes, automation, system configuration, or AI.</p><div class="card-meta"><div><span>Starting from</span><strong>$3,500</strong></div><div><span>Timeline</span><strong>2–4 weeks</strong></div></div><span class="card-action">View details</span></a>
             <a class="service-card" href="./services/managed-ai-agents.html"><span class="card-icon">AI</span><h3>Managed AI Agents</h3><p>Put a focused AI agent to work on one clearly defined responsibility with optional ongoing management.</p><div class="card-meta"><div><span>Starting from</span><strong>$750 setup</strong></div><div><span>Ongoing</span><strong>+$250/month</strong></div></div><span class="card-action">View details</span></a>
             <a class="service-card" href="./services/ai-automation.html"><span class="card-icon">⟲</span><h3>Custom AI &amp; Automation</h3><p>Connect AI, automation, integrations, and business rules when the solution requires multiple capabilities.</p><div class="card-meta"><div><span>Starting from</span><strong>$5,000</strong></div><div><span>Timeline</span><strong>3–6+ weeks</strong></div></div><span class="card-action">View details</span></a>
             <a class="service-card" href="./services/business-applications.html"><span class="card-icon">▦</span><h3>Business Applications</h3><p>Replace spreadsheets, disconnected tools, and manual handoffs with a system designed around how your business operates.</p><div class="card-meta"><div><span>Starting from</span><strong>$8,000</strong></div><div><span>Timeline</span><strong>4–10+ weeks</strong></div></div><span class="card-action">View details</span></a>
-          </div>
-
-          <div class="visual-promise">
-            <div class="visual-promise-grid">
-              <div><span>✓</span><p><strong>Fixed scope</strong><small>Defined before work begins</small></p></div>
-              <div><span>✓</span><p><strong>Practical delivery</strong><small>Built around real workflows</small></p></div>
-              <div><span>✓</span><p><strong>Clear ownership</strong><small>Your data and outputs remain yours</small></p></div>
-              <div><span>✓</span><p><strong>Optional management</strong><small>Ongoing support where useful</small></p></div>
-            </div>
           </div>
         </div>
       </section>
@@ -173,32 +132,48 @@
         </div>
       </section>
 
-      <section class="section">
-        <div class="container">
-          <div class="section-head"><div><p class="section-kicker">Supporting capabilities</p><h2>Connected work often requires more than one discipline.</h2></div><p>These capabilities support the core service rather than becoming separate packages by themselves.</p></div>
-          <div class="foundation-grid">
-            <a class="foundation-card" href="./index.html#contact"><span class="card-icon">CRM</span><h3>CRM &amp; Revenue Operations</h3><p>Improve pipeline visibility, process consistency, reporting, and revenue performance across the customer lifecycle.</p><div class="card-meta"><div><span>Available within</span><strong>Assessments and builds</strong></div></div><span class="card-action">Talk through the need</span></a>
-            <a class="foundation-card" href="./index.html#contact"><span class="card-icon">↔</span><h3>Business Process Improvement</h3><p>Remove bottlenecks, reduce manual work, and redesign workflows to improve efficiency and scalability.</p><div class="card-meta"><div><span>Available within</span><strong>Assessments and sprints</strong></div></div><span class="card-action">Talk through the need</span></a>
-            <a class="foundation-card" href="./index.html#contact"><span class="card-icon">✓</span><h3>Enablement &amp; Adoption</h3><p>Give teams the knowledge, training, tools, and guidance needed to adopt new processes and systems.</p><div class="card-meta"><div><span>Available within</span><strong>Implementation projects</strong></div></div><span class="card-action">Talk through the need</span></a>
-          </div>
-        </div>
-      </section>
-
       <section class="cta-section">
         <div class="container cta-grid">
-          <div class="cta-copy"><p class="section-kicker">Ready to start?</p><h2>Tell us what is slowing the work down.</h2><p>You do not need to know which service or technology fits. Start with the problem and we will help identify the right path.</p><ul class="cta-checks"><li>Review the current challenge</li><li>Identify whether the need is focused or broader</li><li>Confirm the next step, timeline, and expected investment</li></ul></div>
+          <div class="cta-copy"><p class="section-kicker">Ready to start?</p><h2>Tell us what is slowing the work down.</h2><p>Start with the problem and we will help identify the right path.</p></div>
           <div class="cta-card"><h3>Schedule a Discovery Session</h3><p>Book a 15-minute conversation to confirm fit and the right starting point.</p><a class="button button-primary" href="./index.html#contact">Schedule a Discovery Session</a></div>
         </div>
       </section>
     </main>
 
-    <footer class="site-footer">
-      <div class="container footer-grid">
-        <div><h4>Palomma Consulting</h4><p>Practical AI, workflow, and business systems support.</p></div>
-        <div><h4>Services</h4><a href="./services/ai-operations-assessment.html">AI &amp; Operations Assessment</a><a href="./services/managed-ai-agents.html">Managed AI Agents</a><a href="./services/ai-automation.html">AI &amp; Automation</a></div>
-        <div><h4>Company</h4><a href="./index.html#case-studies">Selected Work</a><a href="./index.html#faq">FAQ</a><a href="./index.html#contact">Contact</a></div>
-        <div><h4>Pricing</h4><a href="./index.html#pricing">View starting prices</a><a href="./index.html#contact">Book discovery</a></div>
-      </div>
-    </footer>
+    <footer class="site-footer"><div class="container footer-grid"><div><h4>Palomma Consulting</h4><p>Practical AI, workflow, and business systems support.</p></div><div><h4>Services</h4><a href="./services/ai-operations-assessment.html">AI &amp; Operations Assessment</a><a href="./services/managed-ai-agents.html">Managed AI Agents</a><a href="./services/ai-automation.html">AI &amp; Automation</a></div><div><h4>Company</h4><a href="./index.html#case-studies">Selected Work</a><a href="./index.html#faq">FAQ</a><a href="./index.html#contact">Contact</a></div><div><h4>Pricing</h4><a href="./index.html#pricing">View starting prices</a><a href="./index.html#contact">Book discovery</a></div></div></footer>
+
+    <script>
+      (() => {
+        const states = {
+          incoming: ['Request intake', 'Match business context', 'Captured', 'intake received · preparing context'],
+          context: ['Context assembly', 'Connect CRM and documents', 'Matched', 'records matched · context ready'],
+          support: ['AI assistance', 'Generate summary and recommendation', 'In progress', 'analysis running · recommendation drafted'],
+          review: ['Human approval', 'Review recommendation and approve', 'Ready to send', 'approval complete · workflow moving forward']
+        };
+        const buttons = [...document.querySelectorAll('.console-option')];
+        const workflow = document.getElementById('workflow-value');
+        const action = document.getElementById('action-value');
+        const status = document.getElementById('status-value');
+        const terminal = document.getElementById('terminal-value');
+        let index = 0;
+
+        function select(button) {
+          buttons.forEach(item => {
+            const active = item === button;
+            item.classList.toggle('is-active', active);
+            item.setAttribute('aria-selected', String(active));
+          });
+          const [w, a, s, t] = states[button.dataset.stage];
+          workflow.textContent = w;
+          action.textContent = a;
+          status.textContent = s;
+          terminal.textContent = t;
+          index = buttons.indexOf(button);
+        }
+
+        buttons.forEach(button => button.addEventListener('click', () => select(button)));
+        window.setInterval(() => select(buttons[(index + 1) % buttons.length]), 3200);
+      })();
+    </script>
   </body>
 </html>
