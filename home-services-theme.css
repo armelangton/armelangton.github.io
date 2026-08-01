@@ -1,21 +1,35 @@
 /* Homepage-only Palomma treatment for the approved services architecture. */
+.home-services-page {
+  --home-blue: #2d6fb7;
+  --home-blue-dark: #174f89;
+  --home-blue-soft: #eaf2fb;
+  --home-light: #f8fcfd;
+}
+
 .home-services-page .site-header {
-  border-bottom-color: rgba(255,255,255,.11);
-  background: #071c31;
+  border-bottom-color: #d9e3ea;
+  background: #f8fcfd;
 }
 .home-services-page .brand,
-.home-services-page .nav-links a { color: rgba(255,255,255,.9); }
+.home-services-page .nav-links a {
+  color: #071a2d;
+}
 .home-services-page .nav-links a:hover,
 .home-services-page .nav-links a:focus,
-.home-services-page .nav-links a.is-active { color: #75d8d2; }
-.home-services-page .nav-links a.is-active::after { background: #75d8d2; }
+.home-services-page .nav-links a.is-active {
+  color: var(--home-blue);
+}
+.home-services-page .nav-links a.is-active::after {
+  background: var(--home-blue);
+}
+
 .home-services-page .page-hero {
   position: relative;
   overflow: hidden;
   border-bottom: 0;
   background:
-    radial-gradient(circle at 31% 45%, rgba(31,143,136,.18), transparent 38%),
-    linear-gradient(112deg,#071c31 0%,#0b2239 58%,#0e3048 100%);
+    radial-gradient(circle at 31% 45%, rgba(45,111,183,.22), transparent 40%),
+    linear-gradient(112deg,#071c31 0%,#0b2239 58%,#123b5d 100%);
 }
 .home-services-page .hero-network {
   position: absolute;
@@ -29,8 +43,19 @@
   position: relative;
   z-index: 1;
 }
-.home-services-page .page-hero-inner h1 { color: #fff; }
-.home-services-page .page-hero-summary { color: #d7e5ec; }
+.home-services-page .page-hero-inner h1 {
+  color: #fff;
+}
+.home-services-page .page-hero-summary {
+  color: #d7e5ec;
+}
+.home-services-page .page-hero .button-primary {
+  background: var(--home-blue);
+}
+.home-services-page .page-hero .button-primary:hover,
+.home-services-page .page-hero .button-primary:focus {
+  background: var(--home-blue-dark);
+}
 .home-services-page .page-hero .button-secondary {
   border-color: rgba(255,255,255,.48);
   background: rgba(255,255,255,.04);
@@ -38,19 +63,20 @@
 }
 .home-services-page .page-hero .button-secondary:hover,
 .home-services-page .page-hero .button-secondary:focus {
-  border-color: #75d8d2;
-  background: rgba(117,216,210,.1);
+  border-color: #a8c8f0;
+  background: rgba(168,200,240,.12);
 }
+
 .platforms-strip {
   overflow: hidden;
-  border-top: 1px solid rgba(168,200,240,.16);
-  border-bottom: 1px solid rgba(168,200,240,.16);
-  background: #0b2a45;
+  border-top: 1px solid #d9e3ea;
+  border-bottom: 1px solid #d9e3ea;
+  background: #f8fcfd;
   padding: 1.15rem 0 1.25rem;
 }
 .platforms-strip-label {
   margin: 0 0 .8rem;
-  color: #75d8d2;
+  color: var(--home-blue);
   font-size: .7rem;
   font-weight: 700;
   letter-spacing: .16em;
@@ -70,7 +96,9 @@
   will-change: transform;
 }
 .platforms-marquee:hover .platforms-track,
-.platforms-marquee:focus-within .platforms-track { animation-play-state: paused; }
+.platforms-marquee:focus-within .platforms-track {
+  animation-play-state: paused;
+}
 .platform-logo {
   display: inline-flex;
   flex: 0 0 auto;
@@ -78,7 +106,7 @@
   gap: .55rem;
   min-width: max-content;
   padding: .35rem 1.45rem;
-  color: rgba(255,255,255,.92);
+  color: #173b5d;
   font-size: .92rem;
   font-weight: 600;
   white-space: nowrap;
@@ -88,17 +116,108 @@
   height: 25px;
   object-fit: contain;
 }
+
+/* Keep the approved architecture, but reduce the alternating two-tone effect. */
+.home-services-page .service-section,
+.home-services-page .package-section,
+.home-services-page .homepage-faq-section,
+.home-services-page .cta-section {
+  background: #fff;
+}
+.home-services-page .package-section,
+.home-services-page .homepage-faq-section {
+  border-top: 1px solid #e2eaf0;
+}
+
+/* Carry Palomma blue through the page instead of allowing teal to dominate. */
+.home-services-page .section-kicker,
+.home-services-page .package-label,
+.home-services-page .homepage-faq-heading h2,
+.home-services-page .card-action,
+.home-services-page .company-answer-actions a {
+  color: var(--home-blue);
+}
+.home-services-page .service-card:hover,
+.home-services-page .service-card:focus-visible,
+.home-services-page .package-card.is-featured {
+  border-color: #8db6df;
+}
+.home-services-page .package-card.is-featured {
+  box-shadow: 0 10px 30px rgba(45,111,183,.11);
+}
+.home-services-page .service-card .service-visual {
+  background: linear-gradient(145deg,#f3f7fc,#eaf2fb);
+}
+.home-services-page .service-card .service-visual .accent-fill {
+  fill: #9fc1e5;
+}
+.home-services-page .card-action {
+  border-color: #8db6df;
+}
+.home-services-page .package-list li::before,
+.home-services-page .cta-checks li::before {
+  color: var(--home-blue);
+}
+.home-services-page .button-primary,
+.home-services-page .cta-card .button-primary {
+  background: var(--home-blue);
+}
+.home-services-page .button-primary:hover,
+.home-services-page .button-primary:focus,
+.home-services-page .cta-card .button-primary:hover,
+.home-services-page .cta-card .button-primary:focus {
+  background: var(--home-blue-dark);
+}
+.home-services-page .cta-card {
+  background: var(--home-blue-soft);
+}
+.home-services-page .homepage-faq-list details[open],
+.home-services-page .homepage-faq-list details:hover {
+  border-color: #aac7e4;
+}
+
+/* Restore the approved closing message without changing the Services page source. */
+.home-services-page .cta-copy h2 {
+  font-size: 0;
+}
+.home-services-page .cta-copy h2::after {
+  content: "Let's build something great.";
+  display: block;
+  color: #071a2d;
+  font-size: clamp(2.25rem,4vw,3.7rem);
+  line-height: 1.04;
+  letter-spacing: -.04em;
+}
+
 @keyframes palomma-platform-scroll {
   from { transform: translateX(0); }
   to { transform: translateX(-50%); }
 }
 @media (prefers-reduced-motion: reduce) {
-  .platforms-track { animation: none; flex-wrap: wrap; justify-content: center; width: 100%; }
-  .platforms-track > :nth-child(n+13) { display: none; }
+  .platforms-track {
+    animation: none;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+  }
+  .platforms-track > :nth-child(n+13) {
+    display: none;
+  }
 }
 @media (max-width: 767px) {
-  .platforms-strip { padding-block: .95rem 1rem; }
-  .platforms-strip-label { margin-bottom: .7rem; font-size: .64rem; }
-  .platform-logo { padding-inline: 1rem; font-size: .84rem; }
-  .platform-logo img { width: 21px; height: 21px; }
+  .platforms-strip {
+    padding-block: .95rem 1rem;
+  }
+  .platforms-strip-label {
+    margin-bottom: .7rem;
+    font-size: .64rem;
+  }
+  .platform-logo {
+    padding-inline: 1rem;
+    font-size: .84rem;
+  }
+  .platform-logo img {
+    width: 21px;
+    height: 21px;
+  }
 }
