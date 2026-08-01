@@ -24,10 +24,20 @@
     return true;
   };
 
-  if (applyScreenshotDesign()) return;
+  let quietTimer;
+  const applyAfterSettling = () => {
+    window.clearTimeout(quietTimer);
+    quietTimer = window.setTimeout(applyScreenshotDesign, 75);
+  };
 
-  const observer = new MutationObserver(() => {
-    if (applyScreenshotDesign()) observer.disconnect();
-  });
+  const observer = new MutationObserver(applyAfterSettling);
   observer.observe(document.body, { childList: true, subtree: true });
+
+  applyAfterSettling();
+  window.setTimeout(applyScreenshotDesign, 250);
+  window.setTimeout(applyScreenshotDesign, 750);
+  window.setTimeout(() => {
+    applyScreenshotDesign();
+    observer.disconnect();
+  }, 1500);
 })();
