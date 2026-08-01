@@ -3,124 +3,133 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Palomma Consulting builds AI, automation, and business systems that improve sales execution, increase efficiency, and support revenue growth." />
+    <meta name="description" content="Palomma Consulting builds AI, automation, workflow improvements, and custom business systems that support revenue growth." />
     <title>Palomma Consulting | AI-Powered Business Solutions</title>
     <link rel="icon" href="./assets/logo.png" sizes="64x64" type="image/png" />
     <link rel="preconnect" href="https://fonts.gstatic.com" />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lora:wght@500;600&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="./index.css?v=20260731-4" />
-    <link rel="stylesheet" href="./palomma-refinement.css?v=20260731-4" />
-    <link rel="stylesheet" href="./palomma-approved-hero.css?v=20260731-4" />
-    <link rel="stylesheet" href="./palomma-site-theme.css?v=20260731-4" />
-    <link rel="stylesheet" href="./palomma-integration-fixes.css?v=20260731-4" />
-    <link rel="stylesheet" href="./palomma-final-fixes.css?v=20260731-6" />
-    <link rel="stylesheet" href="./palomma-home-simplified.css?v=20260801-1" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./services.css?v=20260801-3" />
+    <link rel="stylesheet" href="./services-visual.css?v=20260801-7" />
+    <link rel="stylesheet" href="./home-services-theme.css?v=20260801-1" />
+    <style>html.is-loading body{visibility:hidden}</style>
+    <script>document.documentElement.classList.add('is-loading');</script>
   </head>
-  <body class="home-page">
-    <header class="header">
-      <nav class="navbar container" aria-label="Primary navigation">
-        <button class="navbar-toggler" type="button" data-target="#navbarMenu" aria-controls="navbarMenu" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-        <div class="navbar-collapse" id="navbarMenu">
-          <ul class="navbar-nav">
-            <li><a class="nav-link" href="#solutions">Solutions</a></li>
-            <li><a class="nav-link" href="#case-studies">Selected Work</a></li>
-            <li><a class="nav-link" href="#contact">Contact</a></li>
-          </ul>
-        </div>
-      </nav>
-    </header>
+  <body class="home-services-page">
+    <main id="homepage-root" aria-live="polite"></main>
+    <noscript><p style="padding:2rem;font-family:Inter,sans-serif">Please enable JavaScript to view the Palomma Consulting homepage.</p></noscript>
 
-    <main>
-      <section id="home" class="home palomma-hero">
-        <canvas class="hero-network" aria-hidden="true"></canvas>
-        <div class="hero-shell container">
-          <div class="hero-content">
-            <p class="hero-brand">Palomma Consulting</p>
-            <h1>Accelerating revenue operations with AI-powered solutions and automation.</h1>
-            <p>We help businesses streamline operations, improve sales execution, and create AI-powered systems that scale revenue without adding unnecessary complexity.</p>
-            <div class="hero-actions">
-              <a class="button button-primary" href="#contact">Start a Conversation</a>
-              <a class="button button-secondary" href="#solutions">View Solutions</a>
-            </div>
-          </div>
-          <figure class="hero-photo hero-workplace-photo">
-            <img src="./assets/groupsitting.png" alt="Team gathered in a bright conference room while a presenter reviews a revenue operations dashboard" />
-          </figure>
-        </div>
-      </section>
+    <script>
+      (() => {
+        const platforms = [
+          ['Salesforce','salesforce'],['HubSpot','hubspot'],['Zoho','zoho'],
+          ['Microsoft 365','microsoft365'],['Google Workspace','googleworkspace'],
+          ['ChatGPT','openai'],['Claude','anthropic'],['Gemini','googlegemini'],
+          ['Zapier','zapier'],['Slack','slack'],['LinkedIn','linkedin'],['Asana','asana']
+        ];
 
-      <section id="solutions" class="homepage-solutions">
-        <div class="container">
-          <div class="solutions-heading">
-            <h2>Solutions We Build</h2>
-            <p>We build AI, automation, and business systems designed to improve sales execution, increase efficiency, and support revenue growth.</p>
-          </div>
+        function buildPlatforms() {
+          const strip = document.createElement('section');
+          strip.className = 'platforms-strip';
+          strip.setAttribute('aria-labelledby','platforms-strip-title');
+          const label = document.createElement('p');
+          label.id = 'platforms-strip-title';
+          label.className = 'platforms-strip-label';
+          label.textContent = 'PLATFORMS WE WORK WITH';
+          const marquee = document.createElement('div');
+          marquee.className = 'platforms-marquee';
+          const track = document.createElement('div');
+          track.className = 'platforms-track';
+          const addSet = hidden => platforms.forEach(([name,slug]) => {
+            const item = document.createElement('div');
+            item.className = 'platform-logo';
+            if (hidden) item.setAttribute('aria-hidden','true');
+            const image = document.createElement('img');
+            image.src = `https://cdn.simpleicons.org/${slug}`;
+            image.alt = hidden ? '' : `${name} logo`;
+            image.loading = 'lazy';
+            image.decoding = 'async';
+            image.addEventListener('error',() => image.remove());
+            const text = document.createElement('span');
+            text.textContent = name;
+            item.append(image,text);
+            track.appendChild(item);
+          });
+          addSet(false);
+          addSet(true);
+          marquee.appendChild(track);
+          strip.append(label,marquee);
+          return strip;
+        }
 
-          <div class="solutions-grid">
-            <a class="solution-card" href="./services/managed-ai-agents.html">
-              <span class="solution-visual" aria-hidden="true"><svg viewBox="0 0 160 160"><path d="M80 28v16M73 28h14"/><rect class="soft-fill" x="38" y="44" width="84" height="76" rx="26"/><path d="M38 72H28v28h10M122 72h10v28h-10"/><circle class="accent-fill" cx="62" cy="78" r="7"/><circle class="accent-fill" cx="98" cy="78" r="7"/><path d="M60 99h40"/><path d="M52 120v14M108 120v14M52 134h56"/></svg></span>
-              <h3>AI Assistants</h3>
-              <p>Intelligent assistants that answer questions, automate tasks, and support your team.</p>
-            </a>
+        function activateConsole() {
+          const states = {
+            incoming:['Request intake','Match business context','Captured','intake received · preparing context'],
+            context:['Context assembly','Connect CRM and documents','Matched','records matched · context ready'],
+            support:['AI assistance','Generate summary and recommendation','In progress','analysis running · recommendation drafted'],
+            review:['Human approval','Review recommendation and approve','Ready to send','approval complete · workflow moving forward']
+          };
+          const buttons = [...document.querySelectorAll('.console-option')];
+          const workflow = document.getElementById('workflow-value');
+          const action = document.getElementById('action-value');
+          const status = document.getElementById('status-value');
+          const terminal = document.getElementById('terminal-value');
+          if (!buttons.length || !workflow || !action || !status || !terminal) return;
+          let index = 0;
+          function select(button) {
+            buttons.forEach(item => {
+              const active = item === button;
+              item.classList.toggle('is-active',active);
+              item.setAttribute('aria-selected',String(active));
+            });
+            const [w,a,s,t] = states[button.dataset.stage];
+            workflow.textContent = w;
+            action.textContent = a;
+            status.textContent = s;
+            terminal.textContent = t;
+            index = buttons.indexOf(button);
+          }
+          buttons.forEach(button => button.addEventListener('click',() => select(button)));
+          window.setInterval(() => select(buttons[(index + 1) % buttons.length]),3200);
+        }
 
-            <a class="solution-card" href="./services/workflow-sprint.html">
-              <span class="solution-visual" aria-hidden="true"><svg viewBox="0 0 160 160"><rect class="soft-fill" x="58" y="22" width="44" height="32" rx="7"/><rect class="soft-fill" x="22" y="102" width="42" height="32" rx="7"/><rect class="accent-fill" x="96" y="102" width="42" height="32" rx="7"/><path d="M80 54v24M80 78H43v24M80 78h37v24"/><circle cx="80" cy="78" r="4" class="accent-fill"/></svg></span>
-              <h3>Workflow Automation</h3>
-              <p>Eliminate repetitive work by connecting people, systems, and approvals.</p>
-            </a>
+        fetch('./services.html?v=20260801-8')
+          .then(response => {
+            if (!response.ok) throw new Error(`Unable to load homepage architecture (${response.status})`);
+            return response.text();
+          })
+          .then(html => {
+            const parsed = new DOMParser().parseFromString(html,'text/html');
+            const header = parsed.querySelector('.site-header');
+            const main = parsed.querySelector('main');
+            const footer = parsed.querySelector('.site-footer');
+            const root = document.getElementById('homepage-root');
+            if (!header || !main || !footer || !root) throw new Error('Homepage architecture is incomplete.');
 
-            <a class="solution-card" href="./services/business-applications.html">
-              <span class="solution-visual" aria-hidden="true"><svg viewBox="0 0 160 160"><rect class="soft-fill" x="24" y="28" width="112" height="102" rx="10"/><path d="M24 50h112M38 39h2M48 39h2M58 39h2"/><rect class="accent-fill" x="38" y="68" width="34" height="42" rx="5"/><path d="M86 70h34M86 84h27M86 98h30M38 119h82"/></svg></span>
-              <h3>Business Applications</h3>
-              <p>Replace spreadsheets and disconnected tools with purpose-built applications.</p>
-            </a>
+            const hero = main.querySelector('.page-hero');
+            if (hero) {
+              const canvas = document.createElement('canvas');
+              canvas.className = 'hero-network';
+              canvas.setAttribute('aria-hidden','true');
+              hero.prepend(canvas);
+              hero.insertAdjacentElement('afterend',buildPlatforms());
+            }
 
-            <a class="solution-card" href="./services.html">
-              <span class="solution-visual" aria-hidden="true"><svg viewBox="0 0 160 160"><rect class="soft-fill" x="24" y="24" width="112" height="108" rx="10"/><path d="M24 48h112"/><circle class="accent-fill" cx="52" cy="80" r="14"/><path d="M40 112c3-11 8-17 12-17s9 6 12 17M80 104l14-17 12 8 18-25"/><path d="M112 70h12v12"/></svg></span>
-              <h3>Business Systems &amp; Technology</h3>
-              <p>Evaluate, connect, and improve the tools your team relies on across the business.</p>
-            </a>
+            root.replaceWith(main);
+            document.body.prepend(header);
+            document.body.append(footer);
+            activateConsole();
 
-            <a class="solution-card" href="./sales-enablement-platform.html">
-              <span class="solution-visual" aria-hidden="true"><svg viewBox="0 0 160 160"><rect class="soft-fill" x="24" y="34" width="112" height="78" rx="9"/><path d="M64 58l32 15-32 15z"/><path d="M46 112v18M114 112v18M58 130h44"/><circle class="accent-fill" cx="40" cy="48" r="10"/><circle class="accent-fill" cx="120" cy="48" r="10"/></svg></span>
-              <h3>Sales Enablement</h3>
-              <p>Equip teams with the training, tools, content, and guidance they need to perform.</p>
-            </a>
-
-            <a class="solution-card" href="./services/ai-operations-assessment.html">
-              <span class="solution-visual" aria-hidden="true"><svg viewBox="0 0 160 160"><rect class="soft-fill" x="20" y="32" width="42" height="32" rx="7"/><rect class="soft-fill" x="98" y="32" width="42" height="32" rx="7"/><rect class="soft-fill" x="20" y="102" width="42" height="32" rx="7"/><rect class="accent-fill" x="98" y="102" width="42" height="32" rx="7"/><path d="M62 48h36M41 64v38M119 64v38M62 118h36"/><circle class="accent-fill" cx="80" cy="83" r="13"/><path d="m73 83 5 5 10-13"/></svg></span>
-              <h3>Business Process Improvement</h3>
-              <p>Redesign workflows to reduce friction, improve performance, and prepare for automation.</p>
-            </a>
-          </div>
-        </div>
-      </section>
-
-      <section id="case-studies" class="home-selected-work">
-        <div class="container">
-          <div class="section-heading">
-            <h2>Selected Work</h2>
-            <p>Real examples of the systems, workflows, and applications Palomma can design and build.</p>
-          </div>
-          <div class="case-study-grid">
-            <article class="case-study-card"><a href="sales-enablement-platform.html"><img src="./assets/project-screenshots/sales-my-work-current.webp" alt="Sales Enablement Platform organizing prioritized work and account context" /><div><h3>Sales Enablement Platform</h3><p>A connected workspace for priorities, customer context, learning, coaching, and AI guidance.</p><span>View project</span></div></a></article>
-            <article class="case-study-card"><a href="fire-protection-platform.html"><img src="./assets/project-screenshots/fire-workbench-current-check.png" alt="Fire Protection Field Assistant showing an annual sprinkler inspection engagement" /><div><h3>Fire Protection Field Assistant</h3><p>A mobile operational platform that connects preparation, field work, documentation, and follow-through.</p><span>View project</span></div></a></article>
-            <article class="case-study-card"><a href="commercial-lighting-platform.html"><img src="./assets/project-screenshots/lit-sales-workspace-current.webp" alt="Commercial Lighting Intelligence Platform displaying a retrofit quote and bill of materials" /><div><h3>Commercial Lighting Intelligence Platform</h3><p>A quoting workspace for RFQ readiness, supplier pricing, margin visibility, and proposals.</p><span>View project</span></div></a></article>
-          </div>
-        </div>
-      </section>
-
-      <section id="contact" class="section-wrapper contact-section">
-        <div class="container">
-          <div class="contact-cta-card">
-            <div class="contact-copy"><h2>Ready to build what’s next?</h2><p>Tell us what you want to improve, connect, or create.</p></div>
-            <div class="contact-links"><a href="mailto:armelangton@gmail.com">Get in Touch</a><a href="tel:+13179706662">Call or Text 317-970-6662</a></div>
-          </div>
-        </div>
-      </section>
-    </main>
-
-    <footer class="footer"><div class="container"><p>© 2026 Amy Melangton</p></div></footer>
-    <script src="./index.js?v=20260801-1"></script>
+            const themeScript = document.createElement('script');
+            themeScript.src = './home-services-theme.js?v=20260801-1';
+            document.body.appendChild(themeScript);
+            document.documentElement.classList.remove('is-loading');
+          })
+          .catch(error => {
+            const root = document.getElementById('homepage-root');
+            if (root) root.innerHTML = `<section style="padding:4rem 2rem;font-family:Inter,sans-serif"><h1>Palomma Consulting</h1><p>${error.message}</p></section>`;
+            document.documentElement.classList.remove('is-loading');
+          });
+      })();
+    </script>
   </body>
 </html>
