@@ -1,56 +1,56 @@
 .home-services-page .homepage-faq-section {
   width: 100%;
   margin: 0;
-  padding: clamp(3rem, 6vw, 5rem) 0;
+  padding: clamp(3rem, 5vw, 4.5rem) 0 clamp(3.5rem, 6vw, 5rem);
   border: 0;
-  background: #fbfcfa;
+  background: #eef7fa;
 }
 .home-services-page .homepage-faq-container {
   display: block;
-  width: min(calc(100% - 48px), 1100px);
-  max-width: 1100px;
+  width: min(calc(100% - 48px), 1760px);
+  max-width: 1760px;
   margin: 0 auto;
   padding: 0;
 }
 .home-services-page .homepage-faq-heading {
   position: static;
   width: 100%;
-  margin: 0 0 2rem;
+  margin: 0 0 2.25rem;
   text-align: center;
 }
 .home-services-page .homepage-faq-heading h2 {
   margin: 0;
-  color: #112f29;
+  color: #071a2d;
   font-family: "Inter", sans-serif;
-  font-size: clamp(2rem, 3vw, 2.75rem);
+  font-size: clamp(2.35rem, 3.8vw, 3.5rem);
   font-weight: 700;
-  line-height: 1.08;
-  letter-spacing: -.035em;
+  line-height: 1.04;
+  letter-spacing: -.04em;
 }
 .home-services-page .homepage-faq-list {
   display: grid;
   width: 100%;
-  grid-template-columns: 1fr;
-  gap: .65rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: .9rem 1rem;
   border: 0;
 }
 .home-services-page .homepage-faq-list details {
   width: 100%;
   margin: 0;
   padding: 0;
-  border: 1px solid rgba(17,47,41,.1);
-  border-radius: 8px;
+  border: 1px solid #d7e3eb;
+  border-radius: 16px;
   background: #fff;
+  box-shadow: 0 8px 22px rgba(7,26,45,.035);
 }
 .home-services-page .homepage-faq-list summary {
   position: relative;
   display: flex;
-  min-height: 58px;
-  padding: 1rem 3rem 1rem 1.15rem;
+  min-height: 66px;
+  padding: 1rem 3.25rem 1rem 1.25rem;
   align-items: center;
-  justify-content: space-between;
-  color: #0b4f43;
-  font-size: .9rem;
+  color: #071a2d;
+  font-size: 1rem;
   font-weight: 700;
   cursor: pointer;
   list-style: none;
@@ -58,100 +58,113 @@
 .home-services-page .homepage-faq-list summary::-webkit-details-marker { display: none; }
 .home-services-page .homepage-faq-list summary::after {
   position: absolute;
-  right: 1.15rem;
+  right: 1.25rem;
   content: "+";
-  color: #148a74;
-  font-size: 1.2rem;
+  color: #12a5a1;
+  font-size: 1.45rem;
   font-weight: 500;
   line-height: 1;
 }
-.home-services-page .homepage-faq-list details[open] > summary::after { transform: rotate(45deg); }
+.home-services-page .homepage-faq-list details[open] > summary::after { content: "−"; }
 .home-services-page .homepage-faq-list details p {
-  max-width: 860px;
   margin: 0;
-  padding: 0 1.15rem 1.15rem;
-  color: #42635c;
-  font-size: .86rem;
+  padding: 0 1.25rem 1.25rem;
+  color: #5d7182;
+  font-size: .9rem;
   line-height: 1.7;
 }
 
 .home-services-page .contact-section {
   width: 100%;
   margin: 0;
-  padding: clamp(4.75rem, 7vw, 6rem) 0 0;
+  padding: clamp(2.75rem, 4vw, 4rem) 0;
   border: 0;
-  background: #0b594d;
+  background: #eef7fa;
   color: #fff;
 }
 .home-services-page .contact-section > .container {
-  width: min(calc(100% - 48px), 1100px);
-  max-width: 1100px;
+  width: min(calc(100% - 36px), 1760px);
+  max-width: 1760px;
   margin: 0 auto;
-  padding: 0 0 clamp(2.5rem, 4vw, 3.5rem);
+  padding: 0;
 }
 .home-services-page .contact-cta-card {
-  display: grid;
+  display: flex;
   width: 100%;
-  grid-template-columns: minmax(0,1.15fr) minmax(340px,.85fr);
-  gap: clamp(2rem, 5vw, 4rem);
-  padding: clamp(2rem,4vw,3rem);
-  border: 1px solid rgba(255,255,255,.22);
-  border-radius: 12px;
-  background: rgba(255,255,255,.07);
+  min-height: 230px;
+  padding: clamp(2.5rem, 4vw, 3.5rem);
+  border: 1px solid rgba(45,111,183,.2);
+  border-radius: 18px;
+  flex-direction: column;
   align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #071f37 0%, #0f5a6f 100%);
+  box-shadow: 0 18px 42px rgba(7,26,45,.1);
+  text-align: center;
   box-sizing: border-box;
 }
 .home-services-page .contact-copy h2 {
-  max-width: 520px;
-  margin: 0;
+  margin: 0 0 1.35rem;
   color: #fff;
   font-family: "Inter", sans-serif;
-  font-size: clamp(2rem,3.8vw,3.2rem);
+  font-size: clamp(2.25rem, 4vw, 3.25rem);
   line-height: 1.05;
-  letter-spacing: -.035em;
+  letter-spacing: -.04em;
 }
+.home-services-page .contact-copy h2 br { display: none; }
 .home-services-page .contact-links {
-  display: grid;
-  gap: .65rem;
-  justify-items: stretch;
+  display: flex;
+  gap: .85rem;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 .home-services-page .contact-links a {
   display: inline-flex;
-  width: auto;
-  min-width: 0;
-  min-height: 46px;
-  padding: .65rem 1rem;
-  border: 1px solid rgba(255,255,255,.35);
-  border-radius: 6px;
+  width: 265px;
+  min-height: 64px;
+  padding: .85rem 1.2rem;
+  border: 1px solid rgba(255,255,255,.28);
+  border-radius: 12px;
   align-items: center;
   justify-content: center;
   color: #fff;
-  font-size: .78rem;
+  font-size: 1rem;
   font-weight: 700;
   box-sizing: border-box;
 }
 .home-services-page .contact-links a:first-child {
-  border-color: #9ad8c7;
-  background: #9ad8c7;
-  color: #0b4f43;
+  border-color: #12a5a1;
+  background: #12a5a1;
+  color: #071a2d;
 }
 .home-services-page .site-footer {
-  padding: 2.25rem 0 2.5rem;
-  background: #071c31;
-  color: rgba(255,255,255,.8);
+  padding: 1.65rem 0 2rem;
+  background: #eef7fa;
+  color: #5d7182;
+  text-align: center;
 }
 .home-services-page .site-footer .footer-grid {
-  width: min(calc(100% - 48px), 1100px);
-  max-width: 1100px;
+  display: block;
+  width: min(calc(100% - 48px), 1760px);
+  max-width: 1760px;
   margin: 0 auto;
 }
+.home-services-page .site-footer .footer-grid > * { display: none; }
+.home-services-page .site-footer .footer-grid::after {
+  content: "© 2026 Amy Melangton";
+  display: block;
+  font-size: .85rem;
+}
+
 @media (max-width: 900px) {
-  .home-services-page .contact-cta-card { grid-template-columns: 1fr; }
-  .home-services-page .contact-links { grid-template-columns: 1fr; }
+  .home-services-page .homepage-faq-list { grid-template-columns: 1fr; }
 }
 @media (max-width: 767px) {
   .home-services-page .homepage-faq-container,
   .home-services-page .contact-section > .container,
-  .home-services-page .site-footer .footer-grid { width: min(calc(100% - 32px), 1100px); }
-  .home-services-page .contact-cta-card { padding: 1.75rem 1.25rem; border-radius: 10px; }
+  .home-services-page .site-footer .footer-grid { width: min(calc(100% - 24px), 1760px); }
+  .home-services-page .contact-cta-card { min-height: 0; padding: 2.25rem 1.25rem; border-radius: 14px; }
+  .home-services-page .contact-links { flex-direction: column; width: 100%; }
+  .home-services-page .contact-links a { width: min(100%, 320px); }
 }
