@@ -3,142 +3,181 @@
 Status: Working blueprint for review
 Branch: `experiment/pricing-engagements-redesign`
 
-## Page purpose
+## What we are modeling
 
-Introduce Palomma's core services, help visitors recognize where they fit, and direct them to an individual service page or Discovery Session. The page should follow the restrained structure used by Interprogram: concise overview, grouped services, clear next steps, and deeper detail on separate pages.
+Palomma should follow Interprogram's actual page system, not a loose interpretation of it.
 
-## Page structure
+The model has two distinct layers:
 
-### 1. Hero
+1. A **Services overview page** made of clickable service cards.
+2. A separate **detail page for every service** with substantially more information.
 
-**Page title:** Services
+The overview page creates curiosity and helps visitors choose where to go. The individual page does the explaining and selling.
 
-**Purpose:** Explain the range of work without listing every capability or over-labeling the page.
+## Services overview page
 
-**Content length:** One short paragraph.
+### Hero
 
-**Primary action:** Schedule a Discovery Session
+A concise page title, short introduction, and one primary action.
 
-**Secondary action:** View Pricing
+The hero should not try to explain every service.
 
-### 2. Quick answer
+### Clickable service-card grid
 
-A short answer to:
+Each service appears as a compact clickable card, similar to Interprogram's Services page.
 
-> What does Palomma help businesses do?
+Every card should include:
 
-This should explain that Palomma improves workflows, applies AI and automation where useful, and builds connected business systems around real operational needs.
-
-Keep this to two or three sentences.
-
-### 3. Core services
-
-Present these as clean service summaries. Each summary includes:
-
+- Small icon
 - Service name
-- One concise description
-- One action linking to its future detail page
+- Two- or three-line description
+- Starting price or pricing language when approved
+- Typical timeline when useful
+- Clear `View Details` action
+
+The entire card should link to the related detail page, not just the button.
+
+### Core cards
 
 #### AI & Operations Assessment
-
-For broader or interconnected problems where the cause, priority, or best solution is not yet clear.
 
 Future page: `/services/ai-operations-assessment.html`
 
 #### Workflow Sprint
 
-Redesign and improve one clearly defined workflow from beginning to end using process changes, automation, system configuration, or AI where it provides practical value.
-
 Future page: `/services/workflow-sprint.html`
 
 #### Managed AI Agents
-
-Configure, customize, extend, or build a focused AI agent around one clearly defined business responsibility, with optional ongoing management.
 
 Future page: `/services/managed-ai-agents.html`
 
 #### Custom AI & Automation
 
-Combine AI, automation, integrations, and business rules when the solution requires more than one simple workflow or agent.
-
 Future page: `/services/ai-automation.html`
 
 #### Business Applications
 
-Replace spreadsheets, disconnected tools, and manual handoffs with applications designed around how the business operates.
-
 Future page: `/services/business-applications.html`
 
-### 4. Related capabilities
+The final grid arrangement should be based on visual balance and the approved number of services. We should not add extra cards only to fill a row.
 
-Keep this compact. These are supporting capabilities, not separate packages.
+### Supporting services or capabilities
 
-- CRM and revenue operations
-- Business process improvement
-- Revenue enablement and adoption
-- Integrations
-- Knowledge systems
-- Reporting and decision support
+Supporting capabilities can appear as a secondary card group only when they deserve their own detail pages. They should not be added as decorative labels beneath the primary services.
 
-Recovered wording that may be reused:
+Potential supporting pages to review later:
 
-- **CRM & Revenue Operations:** Improve pipeline visibility, process consistency, forecasting, reporting, and revenue performance across the customer lifecycle.
-- **Revenue Enablement:** Give teams the knowledge, training, tools, and guidance they need to adopt new processes and perform more consistently.
-- **Business Process Improvement:** Remove bottlenecks, reduce manual work, and redesign workflows to improve efficiency, ROI, and the ability to scale.
+- CRM and Revenue Operations
+- Revenue Enablement and Adoption
+- Business Process Improvement
+- Ongoing Advisory or Optimization
 
-### 5. How we work
+### Closing section
 
-Reuse the already established Palomma process rather than creating a new methodology:
+After the service grid, include a simple next-step section for visitors who do not know which service fits.
 
-1. Discover
-2. Strategize
-3. Design
-4. Build
-5. Deploy
+Primary action: Schedule a Discovery Session
 
-This section should be brief and link to the future About or Process content if deeper explanation is needed.
+## Individual service-page model
 
-### 6. Closing CTA
+Each service card opens a dedicated page modeled closely on Interprogram's detail-page structure.
 
-**Heading direction:** Tell us what you are trying to solve.
+### 1. Service hero
 
-**Supporting idea:** Visitors do not need to know which service or technology applies before contacting Palomma.
+Include:
 
-**Action:** Schedule a Discovery Session
+- Service name
+- Clear outcome-focused headline
+- Short explanation
+- Primary CTA
 
-## Individual service page pattern
+### 2. Main content and package-details sidebar
 
-Each service page should use one consistent Interprogram-style structure:
+Use a two-column desktop layout.
 
-1. Service hero
-2. Quick answer
-3. Who it is for
-4. What it can include
-5. Typical deliverables
-6. What affects scope
-7. Starting investment or link to Pricing
-8. Related services
-9. FAQ
-10. Closing CTA
+The main column contains the detailed service explanation.
 
-## Items intentionally excluded from this page
+The right column contains a compact, sticky package-details card with items such as:
 
-- Full package details
-- Long feature lists
-- Pricing tables
-- Project proof between every service
-- Testimonials that do not yet exist
-- A new methodology
-- New service names not already approved
-- Technical explanations of agents, RAG, models, or architecture
+- Starting investment
+- Typical timeline
+- Primary booking or scoping CTA
+- Brief fixed-scope note
 
-## Open editorial work
+On mobile, the package-details card stacks naturally within the page.
 
-Before coding the page, recover and review the strongest existing wording for:
+### 3. Who it is for
 
-- Hero paragraph
-- Quick answer
-- Each service summary
-- Closing CTA
+A concise explanation of the type of company, problem, or level of complexity that fits the service.
 
-The structure above is ready. The wording remains subject to recovery and editorial approval.
+### 4. Common examples
+
+Use concrete business examples so visitors can recognize their own situation.
+
+This should be a short list, not an exhaustive feature catalog.
+
+### 5. What we build or deliver
+
+Use a small set of visual blocks similar to Interprogram's four-block treatment.
+
+Possible categories depend on the service. For example, a workflow page may include:
+
+- Workflow map
+- Connected automation
+- AI assist layer
+- Human control layer
+
+The labels must reflect the actual service and should not be reused mechanically across every page.
+
+### 6. Scope or safeguard note
+
+Include a brief highlighted note when needed to explain an important boundary, approval requirement, ownership principle, or fixed-scope condition.
+
+### 7. Typical build path
+
+Show a simple numbered progression, usually three or four steps.
+
+This should use the relevant portion of Palomma's established process rather than inventing a new methodology.
+
+### 8. Related next steps
+
+Use two compact pathways near the end of the main content, similar to Interprogram's related-service choices.
+
+Examples:
+
+- Start with an AI & Operations Assessment
+- Talk through the workflow
+
+### 9. Common questions
+
+A focused FAQ section specific to that service.
+
+Questions should address the concerns that would prevent someone from booking or requesting a scope.
+
+### 10. Closing CTA
+
+End with one clear next action.
+
+## Visual rules
+
+- Use Palomma's existing visual identity, not Interprogram's colors or branding.
+- Copy Interprogram's information architecture and interaction pattern.
+- Keep the overview cards concise.
+- Put substantial detail on the individual service pages.
+- Make cards obviously clickable.
+- Use consistent page templates so visitors quickly learn how the site works.
+- Avoid turning the Services overview into a long narrative page.
+- Avoid placing the complete details for every service on one page.
+
+## Existing wording to recover
+
+Before coding, recover and review the strongest existing wording for:
+
+- Service names
+- Card summaries
+- Approved prices and timelines
+- Individual service descriptions
+- Scope boundaries
+- CTA language
+
+The page structure is now corrected. The next implementation should create the clickable Services overview first, followed by one fully developed service detail page as the template for the rest.
