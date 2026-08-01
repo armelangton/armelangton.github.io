@@ -7,8 +7,8 @@
 }
 .home-services-page .homepage-faq-container {
   display: block;
-  width: min(calc(100% - 48px), 1180px);
-  max-width: 1180px;
+  width: min(calc(100% - 48px), 1100px);
+  max-width: 1100px;
   margin: 0 auto;
   padding: 0;
 }
@@ -64,7 +64,6 @@
   font-size: 1.2rem;
   font-weight: 500;
   line-height: 1;
-  transition: transform 180ms ease;
 }
 .home-services-page .homepage-faq-list details[open] > summary::after { transform: rotate(45deg); }
 .home-services-page .homepage-faq-list details p {
@@ -79,22 +78,22 @@
 .home-services-page .contact-section {
   width: 100%;
   margin: 0;
-  padding: clamp(3rem, 6vw, 5rem) 0 0;
+  padding: clamp(4.75rem, 7vw, 6rem) 0 0;
   border: 0;
-  background: #0b4f43;
+  background: #0b594d;
   color: #fff;
 }
 .home-services-page .contact-section > .container {
-  width: min(calc(100% - 48px), 1180px);
-  max-width: 1180px;
+  width: min(calc(100% - 48px), 1100px);
+  max-width: 1100px;
   margin: 0 auto;
-  padding: 0;
+  padding: 0 0 clamp(2.5rem, 4vw, 3.5rem);
 }
 .home-services-page .contact-cta-card {
   display: grid;
   width: 100%;
-  grid-template-columns: minmax(0,1.25fr) minmax(300px,.75fr);
-  gap: 2rem;
+  grid-template-columns: minmax(0,1.15fr) minmax(340px,.85fr);
+  gap: clamp(2rem, 5vw, 4rem);
   padding: clamp(2rem,4vw,3rem);
   border: 1px solid rgba(255,255,255,.22);
   border-radius: 12px;
@@ -103,7 +102,7 @@
   box-sizing: border-box;
 }
 .home-services-page .contact-copy h2 {
-  max-width: 650px;
+  max-width: 520px;
   margin: 0;
   color: #fff;
   font-family: "Inter", sans-serif;
@@ -136,29 +135,23 @@
   background: #9ad8c7;
   color: #0b4f43;
 }
-.home-services-page .footer {
-  padding: 1.5rem 0;
-  background: #0b4f43;
-  color: rgba(255,255,255,.65);
+.home-services-page .site-footer {
+  padding: 2.25rem 0 2.5rem;
+  background: #071c31;
+  color: rgba(255,255,255,.8);
 }
-.home-services-page .footer .container {
-  width: min(calc(100% - 48px), 1180px);
-  max-width: 1180px;
+.home-services-page .site-footer .footer-grid {
+  width: min(calc(100% - 48px), 1100px);
+  max-width: 1100px;
   margin: 0 auto;
-}
-.home-services-page .footer p {
-  margin: 0;
-  color: inherit;
-  font-size: .72rem;
 }
 @media (max-width: 900px) {
   .home-services-page .contact-cta-card { grid-template-columns: 1fr; }
-  .home-services-page .contact-links { grid-template-columns: repeat(2, 1fr); }
+  .home-services-page .contact-links { grid-template-columns: 1fr; }
 }
 @media (max-width: 767px) {
   .home-services-page .homepage-faq-container,
   .home-services-page .contact-section > .container,
-  .home-services-page .footer .container { width: min(calc(100% - 32px), 1180px); }
+  .home-services-page .site-footer .footer-grid { width: min(calc(100% - 32px), 1100px); }
   .home-services-page .contact-cta-card { padding: 1.75rem 1.25rem; border-radius: 10px; }
-  .home-services-page .contact-links { grid-template-columns: 1fr; }
 }
