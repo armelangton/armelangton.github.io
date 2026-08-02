@@ -77,22 +77,22 @@
 .home-services-page .contact-section {
   width: 100%;
   margin: 0;
-  padding: clamp(2.75rem, 4vw, 4rem) 0;
+  padding: 1.5rem 0;
   border: 0;
   background: #eef7fa;
   color: #fff;
 }
 .home-services-page .contact-section > .container {
-  width: min(calc(100% - 36px), 1760px);
-  max-width: 1760px;
+  width: min(calc(100% - 36px), 1180px);
+  max-width: 1180px;
   margin: 0 auto;
   padding: 0;
 }
 .home-services-page .contact-cta-card {
   display: flex;
   width: 100%;
-  min-height: 230px;
-  padding: clamp(2.5rem, 4vw, 3.5rem);
+  min-height: 0;
+  padding: clamp(1.4rem, 2.5vw, 2rem);
   border: 1px solid rgba(45,111,183,.2);
   border-radius: 18px;
   flex-direction: column;
@@ -258,6 +258,40 @@
 }
 .home-services-page .case-study-card span span { margin-top: 0; }
 
+.home-services-page .contact-form-layout {
+  gap: clamp(1.25rem, 3vw, 2.5rem);
+}
+.home-services-page .contact-copy h2 {
+  margin-bottom: .65rem;
+  font-size: clamp(1.85rem, 3vw, 2.5rem);
+}
+.home-services-page .contact-copy p {
+  font-size: .9rem;
+  line-height: 1.55;
+}
+.home-services-page .contact-direct {
+  margin-top: .85rem;
+  font-size: .86rem;
+  line-height: 1.5;
+}
+.home-services-page .contact-form {
+  gap: .7rem .8rem;
+}
+.home-services-page .contact-field {
+  gap: .3rem;
+}
+.home-services-page .contact-field input,
+.home-services-page .contact-field textarea {
+  padding: .65rem .8rem;
+}
+.home-services-page .contact-field textarea {
+  min-height: 92px;
+}
+.home-services-page .contact-submit {
+  min-height: 44px;
+  padding: .65rem 1.15rem;
+}
+
 @media (max-width: 980px) {
   .home-services-page .case-study-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .home-services-page .case-study-card:last-child { grid-column: 1 / -1; }
@@ -271,7 +305,8 @@
   .home-services-page .contact-section > .container,
   .home-services-page .site-footer .footer-grid,
   .home-services-page .home-selected-work > .container { width: min(calc(100% - 24px), 1180px); }
-  .home-services-page .contact-cta-card { min-height: 0; padding: 2.25rem 1.25rem; border-radius: 14px; }
+  .home-services-page .contact-section { padding: 1rem 0; }
+  .home-services-page .contact-cta-card { min-height: 0; padding: 1.25rem; border-radius: 14px; }
   .home-services-page .contact-links { flex-direction: column; width: 100%; }
   .home-services-page .contact-links a { width: min(100%, 320px); }
   .home-services-page .case-study-grid { grid-template-columns: 1fr; }
