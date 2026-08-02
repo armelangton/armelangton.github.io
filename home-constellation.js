@@ -3,22 +3,27 @@
     if (link.textContent.trim() === 'Pricing') link.remove();
   });
 
-  const selectedWorkLink = [...document.querySelectorAll('.nav-links a')]
-    .find(link => link.textContent.trim() === 'Selected Work');
-  if (selectedWorkLink) {
-    selectedWorkLink.setAttribute('href', '#case-studies');
-    selectedWorkLink.addEventListener('click', event => {
-      const target = document.getElementById('case-studies');
+  function connectSectionLink(label, sectionId) {
+    const link = [...document.querySelectorAll('.nav-links a')]
+      .find(item => item.textContent.trim() === label);
+    if (!link) return;
+    link.setAttribute('href', `#${sectionId}`);
+    link.addEventListener('click', event => {
+      const target = document.getElementById(sectionId);
       if (!target) return;
       event.preventDefault();
       target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      history.replaceState(null, '', '#case-studies');
+      history.replaceState(null, '', `#${sectionId}`);
     });
   }
 
-  if (window.location.hash === '#case-studies') {
+  connectSectionLink('Selected Work', 'case-studies');
+  connectSectionLink('Contact', 'contact');
+
+  if (window.location.hash === '#case-studies' || window.location.hash === '#contact') {
+    const sectionId = window.location.hash.slice(1);
     requestAnimationFrame(() => {
-      document.getElementById('case-studies')?.scrollIntoView({ block: 'start' });
+      document.getElementById(sectionId)?.scrollIntoView({ block: 'start' });
     });
   }
 
