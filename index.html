@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="./services.css?v=20260801-3" />
     <link rel="stylesheet" href="./services-visual.css?v=20260801-7" />
     <link rel="stylesheet" href="./home-services-theme.css?v=20260801-3" />
-    <link rel="stylesheet" href="./home-original-sections.css?v=20260801-4" />
+    <link rel="stylesheet" href="./home-original-sections.css?v=20260802-5" />
     <style>html.is-loading body{visibility:hidden}</style>
     <script>document.documentElement.classList.add('is-loading');</script>
   </head>
@@ -70,6 +70,41 @@
           marquee.appendChild(track);
           strip.append(label,marquee);
           return strip;
+        }
+
+        function buildSelectedWork() {
+          const work = document.createElement('section');
+          work.id = 'case-studies';
+          work.className = 'home-selected-work';
+          work.setAttribute('aria-labelledby','selected-work-title');
+          work.innerHTML = `
+            <div class="container selected-work-container">
+              <div class="selected-work-heading">
+                <h2 id="selected-work-title">Selected Work</h2>
+                <p>Real examples of the systems, workflows, and applications Palomma can design and build.</p>
+              </div>
+              <div class="selected-work-grid">
+                <article class="selected-work-card">
+                  <a href="./sales-enablement-platform.html">
+                    <img src="./assets/project-screenshots/sales-my-work-current.webp" alt="Sales Enablement Platform organizing prioritized work and account context" />
+                    <div><h3>Sales Enablement Platform</h3><p>A connected workspace for priorities, customer context, learning, coaching, and AI guidance.</p><span>View project</span></div>
+                  </a>
+                </article>
+                <article class="selected-work-card">
+                  <a href="./fire-protection-platform.html">
+                    <img src="./assets/project-screenshots/fire-workbench-current-check.png" alt="Fire Protection Field Assistant showing an annual sprinkler inspection engagement" />
+                    <div><h3>Fire Protection Field Assistant</h3><p>A mobile operational platform that connects preparation, field work, documentation, and follow-through.</p><span>View project</span></div>
+                  </a>
+                </article>
+                <article class="selected-work-card">
+                  <a href="./commercial-lighting-platform.html">
+                    <img src="./assets/project-screenshots/lit-sales-workspace-current.webp" alt="Commercial Lighting Intelligence Platform displaying a retrofit quote and bill of materials" />
+                    <div><h3>Commercial Lighting Intelligence Platform</h3><p>A quoting workspace for RFQ readiness, supplier pricing, margin visibility, and proposals.</p><span>View project</span></div>
+                  </a>
+                </article>
+              </div>
+            </div>`;
+          return work;
         }
 
         function buildFaq() {
@@ -156,6 +191,9 @@
               hero.prepend(canvas);
               hero.insertAdjacentElement('afterend',buildPlatforms());
             }
+
+            const servicesSection = main.querySelector('#core-services');
+            if (servicesSection) servicesSection.insertAdjacentElement('afterend',buildSelectedWork());
 
             main.querySelector('#faq')?.remove();
             const oldCta = main.querySelector('.cta-section');
