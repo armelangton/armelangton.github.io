@@ -4,31 +4,7 @@
   });
 
   const footer = document.querySelector('.site-footer');
-  if (footer) {
-    footer.innerHTML = `
-      <div class="container footer-grid" style="grid-template-columns:1.35fr 1.65fr 1fr">
-        <div>
-          <h4>Palomma Consulting</h4>
-          <p>Practical AI, workflow, and business systems support.</p>
-        </div>
-        <div>
-          <h4>Products</h4>
-          <a href="./services/managed-ai-agents.html">Managed AI Agents</a>
-          <a href="./services/workflow-sprint.html">Workflow Automation</a>
-          <a href="./services/business-applications.html">Business Applications</a>
-          <a href="./services/crm-revenue-operations.html">CRM &amp; Revenue Operations</a>
-          <a href="./services/revenue-enablement.html">Sales Enablement</a>
-          <a href="./services/ai-operations-assessment.html">Business Process Improvement</a>
-        </div>
-        <div>
-          <h4>Company</h4>
-          <a href="./index.html#core-services">All Services</a>
-          <a href="./index.html#case-studies">Selected Work</a>
-          <a href="./index.html#faq">FAQ</a>
-          <a href="./index.html#contact">Contact</a>
-        </div>
-      </div>`;
-  }
+  if (footer) footer.innerHTML = '';
 
   const hero = document.querySelector('.page-hero');
   const canvas = hero?.querySelector('.hero-network');
