@@ -77,41 +77,127 @@
 .home-services-page .contact-section {
   width: 100%;
   margin: 0;
-  padding: 1.5rem 0;
+  padding: 1rem 0 !important;
   border: 0;
   background: #eef7fa;
   color: #fff;
 }
 .home-services-page .contact-section > .container {
-  width: min(calc(100% - 36px), 1180px);
-  max-width: 1180px;
+  width: min(calc(100% - 36px), 1040px) !important;
+  max-width: 1040px !important;
   margin: 0 auto;
   padding: 0;
 }
 .home-services-page .contact-cta-card {
   display: flex;
   width: 100%;
-  min-height: 0;
-  padding: clamp(1.4rem, 2.5vw, 2rem);
+  min-height: 0 !important;
+  padding: 1.25rem 1.5rem !important;
   border: 1px solid rgba(45,111,183,.2);
   border-radius: 18px;
   flex-direction: column;
-  align-items: center;
+  align-items: stretch !important;
   justify-content: center;
   background: linear-gradient(135deg, #071f37 0%, #0f5a6f 100%);
   box-shadow: 0 18px 42px rgba(7,26,45,.1);
-  text-align: center;
+  text-align: left !important;
   box-sizing: border-box;
 }
+.home-services-page .contact-form-layout {
+  display: grid !important;
+  grid-template-columns: minmax(220px,.72fr) minmax(0,1.28fr) !important;
+  gap: 1.25rem !important;
+  align-items: start !important;
+  width: 100%;
+}
 .home-services-page .contact-copy h2 {
-  margin: 0 0 1.35rem;
+  margin: 0 0 .45rem !important;
   color: #fff;
   font-family: "Inter", sans-serif;
-  font-size: clamp(2.25rem, 4vw, 3.25rem);
+  font-size: clamp(1.65rem, 2.6vw, 2.15rem) !important;
   line-height: 1.05;
   letter-spacing: -.04em;
 }
 .home-services-page .contact-copy h2 br { display: none; }
+.home-services-page .contact-copy p {
+  max-width: 420px !important;
+  margin: 0 !important;
+  color: rgba(255,255,255,.78);
+  font-size: .82rem !important;
+  line-height: 1.45 !important;
+}
+.home-services-page .contact-direct {
+  margin-top: .65rem !important;
+  color: rgba(255,255,255,.78);
+  font-size: .8rem !important;
+  line-height: 1.4 !important;
+}
+.home-services-page .contact-direct a {
+  color: #fff;
+  font-weight: 700;
+  text-decoration: none;
+}
+.home-services-page .contact-form {
+  display: grid !important;
+  grid-template-columns: repeat(3,minmax(0,1fr)) !important;
+  gap: .55rem .65rem !important;
+}
+.home-services-page .contact-field {
+  display: flex;
+  flex-direction: column;
+  gap: .2rem !important;
+}
+.home-services-page .contact-field.contact-field-wide {
+  grid-column: auto !important;
+}
+.home-services-page .contact-field:last-of-type {
+  grid-column: 1 / -1 !important;
+}
+.home-services-page .contact-field label {
+  color: #fff;
+  font-size: .76rem !important;
+  font-weight: 700;
+}
+.home-services-page .contact-field input,
+.home-services-page .contact-field textarea {
+  width: 100%;
+  min-height: 36px !important;
+  border: 1px solid rgba(255,255,255,.25);
+  border-radius: 8px !important;
+  background: rgba(255,255,255,.08);
+  color: #fff;
+  font: inherit;
+  font-size: .86rem !important;
+  padding: .45rem .65rem !important;
+  box-sizing: border-box;
+}
+.home-services-page .contact-field input::placeholder,
+.home-services-page .contact-field textarea::placeholder { color: rgba(255,255,255,.52); }
+.home-services-page .contact-field input:focus,
+.home-services-page .contact-field textarea:focus {
+  outline: 3px solid rgba(18,165,161,.3);
+  border-color: #5fd3c6;
+}
+.home-services-page .contact-field textarea {
+  min-height: 64px !important;
+  height: 64px !important;
+  resize: vertical;
+}
+.home-services-page .contact-submit {
+  grid-column: 1 / -1 !important;
+  justify-self: start;
+  min-height: 38px !important;
+  padding: .5rem 1rem !important;
+  border: 0;
+  border-radius: 8px !important;
+  background: #12a5a1;
+  color: #071a2d;
+  font: inherit;
+  font-size: .86rem !important;
+  font-weight: 700;
+  cursor: pointer;
+}
+.home-services-page .contact-submit:hover { background: #5fd3c6; }
 .home-services-page .contact-links {
   display: flex;
   gap: .85rem;
@@ -258,40 +344,6 @@
 }
 .home-services-page .case-study-card span span { margin-top: 0; }
 
-.home-services-page .contact-form-layout {
-  gap: clamp(1.25rem, 3vw, 2.5rem);
-}
-.home-services-page .contact-copy h2 {
-  margin-bottom: .65rem;
-  font-size: clamp(1.85rem, 3vw, 2.5rem);
-}
-.home-services-page .contact-copy p {
-  font-size: .9rem;
-  line-height: 1.55;
-}
-.home-services-page .contact-direct {
-  margin-top: .85rem;
-  font-size: .86rem;
-  line-height: 1.5;
-}
-.home-services-page .contact-form {
-  gap: .7rem .8rem;
-}
-.home-services-page .contact-field {
-  gap: .3rem;
-}
-.home-services-page .contact-field input,
-.home-services-page .contact-field textarea {
-  padding: .65rem .8rem;
-}
-.home-services-page .contact-field textarea {
-  min-height: 92px;
-}
-.home-services-page .contact-submit {
-  min-height: 44px;
-  padding: .65rem 1.15rem;
-}
-
 @media (max-width: 980px) {
   .home-services-page .case-study-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .home-services-page .case-study-card:last-child { grid-column: 1 / -1; }
@@ -300,13 +352,21 @@
   .home-services-page .homepage-faq-list { grid-template-columns: 1fr; }
   .home-services-page .site-footer .footer-grid { grid-template-columns: 1fr 1fr; }
 }
+@media (max-width: 800px) {
+  .home-services-page .contact-form-layout { grid-template-columns: 1fr !important; }
+  .home-services-page .contact-form { grid-template-columns: 1fr 1fr !important; }
+  .home-services-page .contact-field:last-of-type { grid-column: 1 / -1 !important; }
+}
 @media (max-width: 767px) {
   .home-services-page .homepage-faq-container,
   .home-services-page .contact-section > .container,
   .home-services-page .site-footer .footer-grid,
   .home-services-page .home-selected-work > .container { width: min(calc(100% - 24px), 1180px); }
-  .home-services-page .contact-section { padding: 1rem 0; }
-  .home-services-page .contact-cta-card { min-height: 0; padding: 1.25rem; border-radius: 14px; }
+  .home-services-page .contact-section { padding: .75rem 0 !important; }
+  .home-services-page .contact-cta-card { min-height: 0 !important; padding: 1rem !important; border-radius: 14px; }
+  .home-services-page .contact-form { grid-template-columns: 1fr !important; }
+  .home-services-page .contact-field:last-of-type,
+  .home-services-page .contact-submit { grid-column: auto !important; }
   .home-services-page .contact-links { flex-direction: column; width: 100%; }
   .home-services-page .contact-links a { width: min(100%, 320px); }
   .home-services-page .case-study-grid { grid-template-columns: 1fr; }
