@@ -1,28 +1,28 @@
 (() => {
-  document.querySelectorAll('.nav-links a[href$="#pricing"]').forEach(link => link.remove());
+  document.querySelectorAll('.nav-links a').forEach(link => {
+    if (link.textContent.trim() === 'Pricing') link.remove();
+  });
 
   const footer = document.querySelector('.site-footer');
   if (footer) {
     footer.innerHTML = `
-      <div class="container footer-grid">
+      <div class="container footer-grid" style="grid-template-columns:1.35fr 1.65fr 1fr">
         <div>
           <h4>Palomma Consulting</h4>
           <p>Practical AI, workflow, and business systems support.</p>
         </div>
         <div>
-          <h4>Services</h4>
+          <h4>Products</h4>
           <a href="./services/managed-ai-agents.html">Managed AI Agents</a>
           <a href="./services/workflow-sprint.html">Workflow Automation</a>
           <a href="./services/business-applications.html">Business Applications</a>
-        </div>
-        <div>
-          <h4>More Services</h4>
           <a href="./services/crm-revenue-operations.html">CRM &amp; Revenue Operations</a>
           <a href="./services/revenue-enablement.html">Sales Enablement</a>
           <a href="./services/ai-operations-assessment.html">Business Process Improvement</a>
         </div>
         <div>
           <h4>Company</h4>
+          <a href="./index.html#core-services">All Services</a>
           <a href="./index.html#case-studies">Selected Work</a>
           <a href="./index.html#faq">FAQ</a>
           <a href="./index.html#contact">Contact</a>
