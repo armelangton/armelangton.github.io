@@ -3,6 +3,25 @@
     if (link.textContent.trim() === 'Pricing') link.remove();
   });
 
+  const selectedWorkLink = [...document.querySelectorAll('.nav-links a')]
+    .find(link => link.textContent.trim() === 'Selected Work');
+  if (selectedWorkLink) {
+    selectedWorkLink.setAttribute('href', '#case-studies');
+    selectedWorkLink.addEventListener('click', event => {
+      const target = document.getElementById('case-studies');
+      if (!target) return;
+      event.preventDefault();
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      history.replaceState(null, '', '#case-studies');
+    });
+  }
+
+  if (window.location.hash === '#case-studies') {
+    requestAnimationFrame(() => {
+      document.getElementById('case-studies')?.scrollIntoView({ block: 'start' });
+    });
+  }
+
   document.querySelector('.site-footer')?.remove();
 
   const hero = document.querySelector('.page-hero');
