@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="./services.css?v=20260801-3" />
     <link rel="stylesheet" href="./services-visual.css?v=20260801-7" />
     <link rel="stylesheet" href="./home-services-theme.css?v=20260801-3" />
-    <link rel="stylesheet" href="./home-original-sections.css?v=20260802-5" />
+    <link rel="stylesheet" href="./home-original-sections.css?v=20260802-6" />
     <style>html.is-loading body{visibility:hidden}</style>
     <script>document.documentElement.classList.add('is-loading');</script>
   </head>
@@ -78,30 +78,16 @@
           work.className = 'home-selected-work';
           work.setAttribute('aria-labelledby','selected-work-title');
           work.innerHTML = `
-            <div class="container selected-work-container">
-              <div class="selected-work-heading">
-                <h2 id="selected-work-title">Selected Work</h2>
-                <p>Real examples of the systems, workflows, and applications Palomma can design and build.</p>
+            <div class="container">
+              <div class="section-heading">
+                <h2 id="selected-work-title">See What Palomma Builds</h2>
               </div>
-              <div class="selected-work-grid">
-                <article class="selected-work-card">
-                  <a href="./sales-enablement-platform.html">
-                    <img src="./assets/project-screenshots/sales-my-work-current.webp" alt="Sales Enablement Platform organizing prioritized work and account context" />
-                    <div><h3>Sales Enablement Platform</h3><p>A connected workspace for priorities, customer context, learning, coaching, and AI guidance.</p><span>View project</span></div>
-                  </a>
-                </article>
-                <article class="selected-work-card">
-                  <a href="./fire-protection-platform.html">
-                    <img src="./assets/project-screenshots/fire-workbench-current-check.png" alt="Fire Protection Field Assistant showing an annual sprinkler inspection engagement" />
-                    <div><h3>Fire Protection Field Assistant</h3><p>A mobile operational platform that connects preparation, field work, documentation, and follow-through.</p><span>View project</span></div>
-                  </a>
-                </article>
-                <article class="selected-work-card">
-                  <a href="./commercial-lighting-platform.html">
-                    <img src="./assets/project-screenshots/lit-sales-workspace-current.webp" alt="Commercial Lighting Intelligence Platform displaying a retrofit quote and bill of materials" />
-                    <div><h3>Commercial Lighting Intelligence Platform</h3><p>A quoting workspace for RFQ readiness, supplier pricing, margin visibility, and proposals.</p><span>View project</span></div>
-                  </a>
-                </article>
+              <div class="case-study-grid">
+                <article class="case-study-card"><a href="./sales-enablement-platform.html"><img src="./assets/project-screenshots/sales-my-work-current.webp" alt="Sales Enablement Platform organizing prioritized work and account context" /><div><h3>Sales Enablement Platform</h3><p>One workspace for priorities, customer context, playbooks, learning, coaching, and AI guidance.</p><span>View case study <span aria-hidden="true">→</span></span></div></a></article>
+                <article class="case-study-card"><a href="./fire-protection-platform.html"><img src="./assets/project-screenshots/fire-workbench-current-check.png" alt="Fire Protection Field Assistant showing an annual sprinkler inspection engagement" /><div><h3>Fire Protection Field Assistant</h3><p>A mobile field workflow for preparation, system checks, documentation, resources, and AI guidance.</p><span>View case study <span aria-hidden="true">→</span></span></div></a></article>
+                <article class="case-study-card"><a href="./commercial-lighting-platform.html"><img src="./assets/project-screenshots/lit-sales-workspace-current.webp" alt="Commercial Lighting Intelligence Platform displaying a retrofit quote and bill of materials" /><div><h3>Commercial Lighting Intelligence Platform</h3><p>A quoting workspace for RFQ readiness, supplier pricing, product decisions, margin visibility, and proposals.</p><span>View case study <span aria-hidden="true">→</span></span></div></a></article>
+                <article class="case-study-card"><a href="./learning-experience-platform.html"><img src="./assets/project-screenshots/lms-card-current.webp" alt="Learning Experience Platform displaying a discovery and qualification playbook" /><div><h3>Learning Experience Platform</h3><p>Structures onboarding, knowledge reinforcement, practice, and progress around the work employees need to perform.</p><span>View case study <span aria-hidden="true">→</span></span></div></a></article>
+                <article class="case-study-card"><a href="./ai-objection-handling-assistant.html"><img src="./assets/project-screenshots/bdr-objection-coach-current.webp" alt="AI Objection Handling Coach with guided live-assist scenarios" /><div><h3>AI Objection Handling Assistant</h3><p>Helps sales representatives practice and respond to objections with context, discovery guidance, and next steps.</p><span>View case study <span aria-hidden="true">→</span></span></div></a></article>
               </div>
             </div>`;
           return work;
