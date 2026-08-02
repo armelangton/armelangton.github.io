@@ -1,4 +1,35 @@
 (() => {
+  document.querySelectorAll('.nav-links a[href$="#pricing"]').forEach(link => link.remove());
+
+  const footer = document.querySelector('.site-footer');
+  if (footer) {
+    footer.innerHTML = `
+      <div class="container footer-grid">
+        <div>
+          <h4>Palomma Consulting</h4>
+          <p>Practical AI, workflow, and business systems support.</p>
+        </div>
+        <div>
+          <h4>Services</h4>
+          <a href="./services/managed-ai-agents.html">Managed AI Agents</a>
+          <a href="./services/workflow-sprint.html">Workflow Automation</a>
+          <a href="./services/business-applications.html">Business Applications</a>
+        </div>
+        <div>
+          <h4>More Services</h4>
+          <a href="./services/crm-revenue-operations.html">CRM &amp; Revenue Operations</a>
+          <a href="./services/revenue-enablement.html">Sales Enablement</a>
+          <a href="./services/ai-operations-assessment.html">Business Process Improvement</a>
+        </div>
+        <div>
+          <h4>Company</h4>
+          <a href="./index.html#case-studies">Selected Work</a>
+          <a href="./index.html#faq">FAQ</a>
+          <a href="./index.html#contact">Contact</a>
+        </div>
+      </div>`;
+  }
+
   const hero = document.querySelector('.page-hero');
   const canvas = hero?.querySelector('.hero-network');
   if (!hero || !canvas) return;
