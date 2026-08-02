@@ -6,6 +6,10 @@
   --home-light: #f8fcfd;
 }
 
+.home-services-page .site-footer {
+  display: none !important;
+}
+
 .home-services-page .site-header {
   border-bottom-color: #d9e3ea;
   background: #f8fcfd;
