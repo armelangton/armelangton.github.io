@@ -1,211 +1,210 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Palomma Consulting builds AI, automation, workflow improvements, and custom business systems that support revenue growth." />
-    <title>Palomma Consulting | AI-Powered Business Solutions</title>
-    <link rel="icon" href="./assets/logo.png" sizes="64x64" type="image/png" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="./services.css?v=20260801-3" />
-    <link rel="stylesheet" href="./services-visual.css?v=20260801-7" />
-    <link rel="stylesheet" href="./home-services-theme.css?v=20260801-3" />
-    <link rel="stylesheet" href="./home-original-sections.css?v=20260802-7" />
-    <style>html.is-loading body{visibility:hidden}</style>
-    <script>document.documentElement.classList.add('is-loading');</script>
-  </head>
-  <body class="home-services-page">
-    <main id="homepage-root" aria-live="polite"></main>
-    <noscript><p style="padding:2rem;font-family:Inter,sans-serif">Please enable JavaScript to view the Palomma Consulting homepage.</p></noscript>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Palomma Consulting builds AI, automation, workflow improvements, and custom business systems that support revenue growth." />
+  <title>Palomma Consulting | AI-Powered Business Solutions</title>
+  <link rel="icon" href="./assets/logo.png" sizes="64x64" type="image/png" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./services.css?v=20260801-3" />
+  <link rel="stylesheet" href="./services-visual.css?v=20260801-7" />
+  <link rel="stylesheet" href="./home-services-theme.css?v=20260801-3" />
+  <link rel="stylesheet" href="./home-original-sections.css?v=20260802-7" />
+  <style>html.is-loading body{visibility:hidden}</style>
+  <script>document.documentElement.classList.add('is-loading');</script>
+</head>
+<body class="home-services-page">
+  <main id="homepage-root" aria-live="polite"></main>
+  <noscript><p style="padding:2rem;font-family:Inter,sans-serif">Please enable JavaScript to view the Palomma Consulting homepage.</p></noscript>
+  <script>
+    (() => {
+      const platforms = [
+        ['Salesforce','salesforce'],['HubSpot','hubspot'],['Zoho','zoho'],
+        ['Microsoft 365','microsoft365'],['Google Workspace','googleworkspace'],
+        ['ChatGPT','openai'],['Claude','anthropic'],['Gemini','googlegemini'],
+        ['Zapier','zapier'],['Slack','slack'],['LinkedIn','linkedin'],['Asana','asana']
+      ];
 
-    <script>
-      (() => {
-        const platforms = [
-          ['Salesforce','salesforce'],['HubSpot','hubspot'],['Zoho','zoho'],
-          ['Microsoft 365','microsoft365'],['Google Workspace','googleworkspace'],
-          ['ChatGPT','openai'],['Claude','anthropic'],['Gemini','googlegemini'],
-          ['Zapier','zapier'],['Slack','slack'],['LinkedIn','linkedin'],['Asana','asana']
-        ];
+      const faqItems = [
+        ['How do I know which service fits my business?', 'Start with the problem you need to solve. Business Process Improvement is for unclear or inefficient processes. Workflow Automation connects repeatable steps and systems. Managed AI Agents handle a defined responsibility. CRM & Revenue Operations improves the revenue process and CRM. Sales Enablement supports seller performance. Business Applications replace disconnected tools with a purpose-built system.'],
+        ['Are your services fixed fee or monthly?', 'Business Process Improvement, Workflow Automation, Business Applications, CRM & Revenue Operations, and Sales Enablement are scoped as fixed-fee projects. Managed AI Agents use a one-time setup fee plus monthly management because the agent requires ongoing hosting, monitoring, maintenance, and improvement. Any optional ongoing support is defined separately before work begins.'],
+        ['What is included in an implementation?', 'The agreed scope includes discovery and design, configuration or development, testing, launch preparation, training, documentation, and 30 days of post-launch stabilization. The proposal confirms the exact deliverables, assumptions, systems involved, timeline, and price before work begins.'],
+        ['Do I need a Business Process Improvement project first?', 'Only when the underlying process is unclear, inconsistent, or still changing. When the workflow and desired outcome are already well defined, Palomma can scope the appropriate implementation directly.'],
+        ['How long does a project take?', 'Business Process Improvement typically takes 1–2 weeks. Managed AI Agents typically take 1–3 weeks to launch. Workflow Automation and Sales Enablement typically take 3–6 weeks. CRM & Revenue Operations typically takes 4–6 weeks, and Business Applications typically take 4–8 weeks. Final timing depends on scope, access, integrations, data, and review speed.'],
+        ['Can Palomma work with the tools we already use?', 'Yes. Solutions can be designed around tools such as Salesforce, HubSpot, Zoho, Microsoft 365, Google Workspace, ChatGPT, Claude, Gemini, Zapier, Slack, LinkedIn, and Asana. Palomma will recommend replacing a tool only when the current system cannot support the required process responsibly.'],
+        ['Who owns the solution and the data?', 'You own your business data, branding, configuration, and outputs. Palomma retains ownership of its reusable frameworks, code, templates, deployment tools, and methods. Your agreement provides the rights needed to use the solution configured for your business.'],
+        ['What happens after launch?', 'Every implementation includes training, documentation, defect correction, and a 30-day stabilization period. After that, your team can manage the solution, or Palomma can provide agreed hosting, monitoring, maintenance, and improvements. Managed AI Agents continue under the monthly management plan.'],
+        ['Will my team be dependent on Palomma?', 'The goal is to deliver a working system your team can understand and use. Training, documentation, ownership guidance, and handover are included so fixed-fee implementations do not require continuous consulting support.']
+      ];
 
-        const faqItems = [
-          ['What is included in the fixed fee?', 'Each package includes discovery, configuration, testing, deployment, training and handover, plus 30 days of post-launch support. The project scope and deliverables are confirmed before work begins.'],
-          ['How do I know which package fits my project?', 'The right package depends on the number of assistants, workflows, integrations, and users involved. We will talk through the business problem first and confirm the appropriate scope before you commit.'],
-          ['What can Palomma build?', 'Palomma builds practical AI assistants, workflow automations, connected business applications, and tools that support sales, operations, enablement, and other repeatable business processes.'],
-          ['How long does an implementation take?', 'Timing depends on complexity, access to systems and information, and the number of integrations involved. A focused solution can move quickly, while connected or custom solutions require more design, testing, and coordination. Your timeline is defined with the project scope.'],
-          ['Who owns the solution and the data?', 'You own your data, branding, business configuration, and outputs. Palomma retains ownership of its reusable framework, code, templates, deployment tools, and methods. Your agreement includes a license to use the solution configured for your business.'],
-          ['What happens after launch?', 'The implementation includes training, handover, defect correction, and a 30-day stabilization period. After that, ongoing hosting, monitoring, maintenance, and agreed improvements can be managed by Palomma or handled by your team.'],
-          ['Will my team be dependent on Palomma?', 'No. The goal is to deliver a working solution your team can understand and use. Documentation and training are included so the solution does not depend on continuous consulting support.']
-        ];
+      function buildPlatforms() {
+        const strip = document.createElement('section');
+        strip.className = 'platforms-strip';
+        strip.setAttribute('aria-labelledby','platforms-strip-title');
+        const label = document.createElement('p');
+        label.id = 'platforms-strip-title';
+        label.className = 'platforms-strip-label';
+        label.textContent = 'PLATFORMS WE WORK WITH';
+        const marquee = document.createElement('div');
+        marquee.className = 'platforms-marquee';
+        const track = document.createElement('div');
+        track.className = 'platforms-track';
+        const addSet = hidden => platforms.forEach(([name,slug]) => {
+          const item = document.createElement('div');
+          item.className = 'platform-logo';
+          if (hidden) item.setAttribute('aria-hidden','true');
+          const image = document.createElement('img');
+          image.src = `https://cdn.simpleicons.org/${slug}`;
+          image.alt = hidden ? '' : `${name} logo`;
+          image.loading = 'lazy';
+          image.decoding = 'async';
+          image.addEventListener('error',() => image.remove());
+          const text = document.createElement('span');
+          text.textContent = name;
+          item.append(image,text);
+          track.appendChild(item);
+        });
+        addSet(false);
+        addSet(true);
+        marquee.appendChild(track);
+        strip.append(label,marquee);
+        return strip;
+      }
 
-        function buildPlatforms() {
-          const strip = document.createElement('section');
-          strip.className = 'platforms-strip';
-          strip.setAttribute('aria-labelledby','platforms-strip-title');
-          const label = document.createElement('p');
-          label.id = 'platforms-strip-title';
-          label.className = 'platforms-strip-label';
-          label.textContent = 'PLATFORMS WE WORK WITH';
-          const marquee = document.createElement('div');
-          marquee.className = 'platforms-marquee';
-          const track = document.createElement('div');
-          track.className = 'platforms-track';
-          const addSet = hidden => platforms.forEach(([name,slug]) => {
-            const item = document.createElement('div');
-            item.className = 'platform-logo';
-            if (hidden) item.setAttribute('aria-hidden','true');
-            const image = document.createElement('img');
-            image.src = `https://cdn.simpleicons.org/${slug}`;
-            image.alt = hidden ? '' : `${name} logo`;
-            image.loading = 'lazy';
-            image.decoding = 'async';
-            image.addEventListener('error',() => image.remove());
-            const text = document.createElement('span');
-            text.textContent = name;
-            item.append(image,text);
-            track.appendChild(item);
+      function buildSelectedWork() {
+        const work = document.createElement('section');
+        work.id = 'case-studies';
+        work.className = 'home-selected-work';
+        work.setAttribute('aria-labelledby','selected-work-title');
+        work.innerHTML = `
+          <div class="container">
+            <div class="section-heading"><h2 id="selected-work-title">See What Palomma Builds</h2></div>
+            <div class="case-study-grid">
+              <article class="case-study-card"><a href="./sales-enablement-platform.html"><img src="./assets/project-screenshots/sales-my-work-current.webp" alt="Sales Enablement Platform organizing prioritized work and account context" /><div><h3>Sales Enablement Platform</h3><p>One workspace for priorities, customer context, playbooks, learning, coaching, and AI guidance.</p><span>View case study <span aria-hidden="true">→</span></span></div></a></article>
+              <article class="case-study-card"><a href="./fire-protection-platform.html"><img src="./assets/project-screenshots/fire-workbench-current-check.png" alt="Fire Protection Field Assistant showing an annual sprinkler inspection engagement" /><div><h3>Fire Protection Field Assistant</h3><p>A mobile field workflow for preparation, system checks, documentation, resources, and AI guidance.</p><span>View case study <span aria-hidden="true">→</span></span></div></a></article>
+              <article class="case-study-card"><a href="./commercial-lighting-platform.html"><img src="./assets/project-screenshots/lit-sales-workspace-current.webp" alt="Commercial Lighting Intelligence Platform displaying a retrofit quote and bill of materials" /><div><h3>Commercial Lighting Intelligence Platform</h3><p>A quoting workspace for RFQ readiness, supplier pricing, product decisions, margin visibility, and proposals.</p><span>View case study <span aria-hidden="true">→</span></span></div></a></article>
+              <article class="case-study-card"><a href="./learning-experience-platform.html"><img src="./assets/project-screenshots/lms-card-current.webp" alt="Learning Experience Platform displaying a discovery and qualification playbook" /><div><h3>Learning Experience Platform</h3><p>Structures onboarding, knowledge reinforcement, practice, and progress around the work employees need to perform.</p><span>View case study <span aria-hidden="true">→</span></span></div></a></article>
+              <article class="case-study-card"><a href="./ai-objection-handling-assistant.html"><img src="./assets/project-screenshots/bdr-objection-coach-current.webp" alt="AI Objection Handling Coach with guided live-assist scenarios" /><div><h3>AI Objection Handling Assistant</h3><p>Helps sales representatives practice and respond to objections with context, discovery guidance, and next steps.</p><span>View case study <span aria-hidden="true">→</span></span></div></a></article>
+            </div>
+          </div>`;
+        return work;
+      }
+
+      function buildFaq() {
+        const faq = document.createElement('section');
+        faq.id = 'faq';
+        faq.className = 'section-wrapper homepage-faq-section';
+        faq.setAttribute('aria-labelledby','faq-title');
+        faq.innerHTML = `
+          <div class="container homepage-faq-container">
+            <div class="homepage-faq-heading"><h2 id="faq-title">Frequently Asked Questions</h2></div>
+            <div class="homepage-faq-list">
+              ${faqItems.map(([question,answer]) => `<details><summary>${question}</summary><p>${answer}</p></details>`).join('')}
+            </div>
+          </div>`;
+        return faq;
+      }
+
+      function buildContact() {
+        const contact = document.createElement('section');
+        contact.id = 'contact';
+        contact.className = 'section-wrapper contact-section';
+        contact.innerHTML = `
+          <div class="container">
+            <div class="contact-cta-card">
+              <div class="contact-copy"><h2>Let's Build Something Great.</h2></div>
+              <div class="contact-links">
+                <a href="mailto:armelangton@gmail.com">Get in Touch</a>
+                <a href="tel:+13179706662">Call or Text 317-970-6662</a>
+              </div>
+            </div>
+          </div>`;
+        return contact;
+      }
+
+      function activateConsole() {
+        const states = {
+          incoming:['Request intake','Match business context','Captured','intake received · preparing context'],
+          context:['Context assembly','Connect CRM and documents','Matched','records matched · context ready'],
+          support:['AI assistance','Generate summary and recommendation','In progress','analysis running · recommendation drafted'],
+          review:['Human approval','Review recommendation and approve','Ready to send','approval complete · workflow moving forward']
+        };
+        const buttons = [...document.querySelectorAll('.console-option')];
+        const workflow = document.getElementById('workflow-value');
+        const action = document.getElementById('action-value');
+        const status = document.getElementById('status-value');
+        const terminal = document.getElementById('terminal-value');
+        if (!buttons.length || !workflow || !action || !status || !terminal) return;
+        let index = 0;
+        function select(button) {
+          buttons.forEach(item => {
+            const active = item === button;
+            item.classList.toggle('is-active',active);
+            item.setAttribute('aria-selected',String(active));
           });
-          addSet(false);
-          addSet(true);
-          marquee.appendChild(track);
-          strip.append(label,marquee);
-          return strip;
+          const [w,a,s,t] = states[button.dataset.stage];
+          workflow.textContent = w;
+          action.textContent = a;
+          status.textContent = s;
+          terminal.textContent = t;
+          index = buttons.indexOf(button);
         }
+        buttons.forEach(button => button.addEventListener('click',() => select(button)));
+        window.setInterval(() => select(buttons[(index + 1) % buttons.length]),3200);
+      }
 
-        function buildSelectedWork() {
-          const work = document.createElement('section');
-          work.id = 'case-studies';
-          work.className = 'home-selected-work';
-          work.setAttribute('aria-labelledby','selected-work-title');
-          work.innerHTML = `
-            <div class="container">
-              <div class="section-heading">
-                <h2 id="selected-work-title">See What Palomma Builds</h2>
-              </div>
-              <div class="case-study-grid">
-                <article class="case-study-card"><a href="./sales-enablement-platform.html"><img src="./assets/project-screenshots/sales-my-work-current.webp" alt="Sales Enablement Platform organizing prioritized work and account context" /><div><h3>Sales Enablement Platform</h3><p>One workspace for priorities, customer context, playbooks, learning, coaching, and AI guidance.</p><span>View case study <span aria-hidden="true">→</span></span></div></a></article>
-                <article class="case-study-card"><a href="./fire-protection-platform.html"><img src="./assets/project-screenshots/fire-workbench-current-check.png" alt="Fire Protection Field Assistant showing an annual sprinkler inspection engagement" /><div><h3>Fire Protection Field Assistant</h3><p>A mobile field workflow for preparation, system checks, documentation, resources, and AI guidance.</p><span>View case study <span aria-hidden="true">→</span></span></div></a></article>
-                <article class="case-study-card"><a href="./commercial-lighting-platform.html"><img src="./assets/project-screenshots/lit-sales-workspace-current.webp" alt="Commercial Lighting Intelligence Platform displaying a retrofit quote and bill of materials" /><div><h3>Commercial Lighting Intelligence Platform</h3><p>A quoting workspace for RFQ readiness, supplier pricing, product decisions, margin visibility, and proposals.</p><span>View case study <span aria-hidden="true">→</span></span></div></a></article>
-                <article class="case-study-card"><a href="./learning-experience-platform.html"><img src="./assets/project-screenshots/lms-card-current.webp" alt="Learning Experience Platform displaying a discovery and qualification playbook" /><div><h3>Learning Experience Platform</h3><p>Structures onboarding, knowledge reinforcement, practice, and progress around the work employees need to perform.</p><span>View case study <span aria-hidden="true">→</span></span></div></a></article>
-                <article class="case-study-card"><a href="./ai-objection-handling-assistant.html"><img src="./assets/project-screenshots/bdr-objection-coach-current.webp" alt="AI Objection Handling Coach with guided live-assist scenarios" /><div><h3>AI Objection Handling Assistant</h3><p>Helps sales representatives practice and respond to objections with context, discovery guidance, and next steps.</p><span>View case study <span aria-hidden="true">→</span></span></div></a></article>
-              </div>
-            </div>`;
-          return work;
-        }
+      fetch('./services.html?v=20260802-10')
+        .then(response => {
+          if (!response.ok) throw new Error(`Unable to load homepage architecture (${response.status})`);
+          return response.text();
+        })
+        .then(html => {
+          const parsed = new DOMParser().parseFromString(html,'text/html');
+          const header = parsed.querySelector('.site-header');
+          const main = parsed.querySelector('main');
+          const footer = parsed.querySelector('.site-footer');
+          const root = document.getElementById('homepage-root');
+          if (!header || !main || !footer || !root) throw new Error('Homepage architecture is incomplete.');
 
-        function buildFaq() {
-          const faq = document.createElement('section');
-          faq.id = 'faq';
-          faq.className = 'section-wrapper homepage-faq-section';
-          faq.setAttribute('aria-labelledby','faq-title');
-          faq.innerHTML = `
-            <div class="container homepage-faq-container">
-              <div class="homepage-faq-heading"><h2 id="faq-title">Frequently Asked Questions</h2></div>
-              <div class="homepage-faq-list">
-                ${faqItems.map(([question,answer]) => `<details><summary>${question}</summary><p>${answer}</p></details>`).join('')}
-              </div>
-            </div>`;
-          return faq;
-        }
-
-        function buildContact() {
-          const contact = document.createElement('section');
-          contact.id = 'contact';
-          contact.className = 'section-wrapper contact-section';
-          contact.innerHTML = `
-            <div class="container">
-              <div class="contact-cta-card">
-                <div class="contact-copy"><h2>Let's Build Something Great.</h2></div>
-                <div class="contact-links">
-                  <a href="mailto:armelangton@gmail.com">Get in Touch</a>
-                  <a href="tel:+13179706662">Call or Text 317-970-6662</a>
-                </div>
-              </div>
-            </div>`;
-          return contact;
-        }
-
-        function activateConsole() {
-          const states = {
-            incoming:['Request intake','Match business context','Captured','intake received · preparing context'],
-            context:['Context assembly','Connect CRM and documents','Matched','records matched · context ready'],
-            support:['AI assistance','Generate summary and recommendation','In progress','analysis running · recommendation drafted'],
-            review:['Human approval','Review recommendation and approve','Ready to send','approval complete · workflow moving forward']
-          };
-          const buttons = [...document.querySelectorAll('.console-option')];
-          const workflow = document.getElementById('workflow-value');
-          const action = document.getElementById('action-value');
-          const status = document.getElementById('status-value');
-          const terminal = document.getElementById('terminal-value');
-          if (!buttons.length || !workflow || !action || !status || !terminal) return;
-          let index = 0;
-          function select(button) {
-            buttons.forEach(item => {
-              const active = item === button;
-              item.classList.toggle('is-active',active);
-              item.setAttribute('aria-selected',String(active));
-            });
-            const [w,a,s,t] = states[button.dataset.stage];
-            workflow.textContent = w;
-            action.textContent = a;
-            status.textContent = s;
-            terminal.textContent = t;
-            index = buttons.indexOf(button);
+          const hero = main.querySelector('.page-hero');
+          if (hero) {
+            const canvas = document.createElement('canvas');
+            canvas.className = 'hero-network';
+            canvas.setAttribute('aria-hidden','true');
+            hero.prepend(canvas);
+            hero.insertAdjacentElement('afterend',buildPlatforms());
           }
-          buttons.forEach(button => button.addEventListener('click',() => select(button)));
-          window.setInterval(() => select(buttons[(index + 1) % buttons.length]),3200);
-        }
 
-        fetch('./services.html?v=20260802-10')
-          .then(response => {
-            if (!response.ok) throw new Error(`Unable to load homepage architecture (${response.status})`);
-            return response.text();
-          })
-          .then(html => {
-            const parsed = new DOMParser().parseFromString(html,'text/html');
-            const header = parsed.querySelector('.site-header');
-            const main = parsed.querySelector('main');
-            const footer = parsed.querySelector('.site-footer');
-            const root = document.getElementById('homepage-root');
-            if (!header || !main || !footer || !root) throw new Error('Homepage architecture is incomplete.');
+          const servicesSection = main.querySelector('#core-services');
+          if (servicesSection) servicesSection.insertAdjacentElement('afterend',buildSelectedWork());
 
-            const hero = main.querySelector('.page-hero');
-            if (hero) {
-              const canvas = document.createElement('canvas');
-              canvas.className = 'hero-network';
-              canvas.setAttribute('aria-hidden','true');
-              hero.prepend(canvas);
-              hero.insertAdjacentElement('afterend',buildPlatforms());
-            }
+          main.querySelector('#faq')?.remove();
+          const oldCta = main.querySelector('.cta-section');
+          if (oldCta) {
+            oldCta.insertAdjacentElement('beforebegin',buildFaq());
+            oldCta.replaceWith(buildContact());
+          } else {
+            main.append(buildFaq(),buildContact());
+          }
 
-            const servicesSection = main.querySelector('#core-services');
-            if (servicesSection) servicesSection.insertAdjacentElement('afterend',buildSelectedWork());
+          root.replaceWith(main);
+          document.body.prepend(header);
+          document.body.append(footer);
+          activateConsole();
 
-            main.querySelector('#faq')?.remove();
-            const oldCta = main.querySelector('.cta-section');
-            if (oldCta) {
-              oldCta.insertAdjacentElement('beforebegin',buildFaq());
-              oldCta.replaceWith(buildContact());
-            } else {
-              main.append(buildFaq(),buildContact());
-            }
-
-            root.replaceWith(main);
-            document.body.prepend(header);
-            document.body.append(footer);
-            activateConsole();
-
-            const constellationScript = document.createElement('script');
-            constellationScript.src = './home-constellation.js?v=20260801-1';
-            document.body.appendChild(constellationScript);
-            document.documentElement.classList.remove('is-loading');
-          })
-          .catch(error => {
-            const root = document.getElementById('homepage-root');
-            if (root) root.innerHTML = `<section style="padding:4rem 2rem;font-family:Inter,sans-serif"><h1>Palomma Consulting</h1><p>${error.message}</p></section>`;
-            document.documentElement.classList.remove('is-loading');
-          });
-      })();
-    </script>
-  </body>
+          const constellationScript = document.createElement('script');
+          constellationScript.src = './home-constellation.js?v=20260801-1';
+          document.body.appendChild(constellationScript);
+          document.documentElement.classList.remove('is-loading');
+        })
+        .catch(error => {
+          const root = document.getElementById('homepage-root');
+          if (root) root.innerHTML = `<section style="padding:4rem 2rem;font-family:Inter,sans-serif"><h1>Palomma Consulting</h1><p>${error.message}</p></section>`;
+          document.documentElement.classList.remove('is-loading');
+        });
+    })();
+  </script>
+</body>
 </html>
