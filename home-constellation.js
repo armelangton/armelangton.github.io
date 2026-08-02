@@ -3,8 +3,7 @@
     if (link.textContent.trim() === 'Pricing') link.remove();
   });
 
-  const footer = document.querySelector('.site-footer');
-  if (footer) footer.innerHTML = '';
+  document.querySelector('.site-footer')?.remove();
 
   const hero = document.querySelector('.page-hero');
   const canvas = hero?.querySelector('.hero-network');
