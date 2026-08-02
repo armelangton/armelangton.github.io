@@ -12,7 +12,26 @@
   <link rel="stylesheet" href="./services-visual.css?v=20260801-7" />
   <link rel="stylesheet" href="./home-services-theme.css?v=20260801-3" />
   <link rel="stylesheet" href="./home-original-sections.css?v=20260802-7" />
-  <style>html.is-loading body{visibility:hidden}</style>
+  <style>
+    html.is-loading body{visibility:hidden}
+    .home-services-page .contact-cta-card{align-items:stretch;text-align:left}
+    .home-services-page .contact-form-layout{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(2rem,5vw,5rem);align-items:start;width:100%}
+    .home-services-page .contact-copy h2{margin-bottom:1rem}
+    .home-services-page .contact-copy p{max-width:520px;margin:0;color:rgba(255,255,255,.78);font-size:1rem;line-height:1.7}
+    .home-services-page .contact-direct{margin-top:1.5rem;color:rgba(255,255,255,.78);font-size:.92rem;line-height:1.7}
+    .home-services-page .contact-direct a{color:#fff;font-weight:700;text-decoration:none}
+    .home-services-page .contact-form{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem}
+    .home-services-page .contact-field{display:flex;flex-direction:column;gap:.45rem}
+    .home-services-page .contact-field.contact-field-wide{grid-column:1/-1}
+    .home-services-page .contact-field label{color:#fff;font-size:.88rem;font-weight:700}
+    .home-services-page .contact-field input,.home-services-page .contact-field textarea{width:100%;border:1px solid rgba(255,255,255,.25);border-radius:10px;background:rgba(255,255,255,.08);color:#fff;font:inherit;padding:.85rem .95rem;box-sizing:border-box}
+    .home-services-page .contact-field input::placeholder,.home-services-page .contact-field textarea::placeholder{color:rgba(255,255,255,.52)}
+    .home-services-page .contact-field input:focus,.home-services-page .contact-field textarea:focus{outline:3px solid rgba(18,165,161,.3);border-color:#5fd3c6}
+    .home-services-page .contact-field textarea{min-height:150px;resize:vertical}
+    .home-services-page .contact-submit{grid-column:1/-1;justify-self:start;min-height:54px;padding:.85rem 1.4rem;border:0;border-radius:10px;background:#12a5a1;color:#071a2d;font:inherit;font-weight:700;cursor:pointer}
+    .home-services-page .contact-submit:hover{background:#5fd3c6}
+    @media(max-width:800px){.home-services-page .contact-form-layout{grid-template-columns:1fr}.home-services-page .contact-form{grid-template-columns:1fr}.home-services-page .contact-field.contact-field-wide,.home-services-page .contact-submit{grid-column:auto}}
+  </style>
   <script>document.documentElement.classList.add('is-loading');</script>
 </head>
 <body class="home-services-page">
@@ -110,13 +129,36 @@
         const contact = document.createElement('section');
         contact.id = 'contact';
         contact.className = 'section-wrapper contact-section';
+        contact.setAttribute('aria-labelledby','contact-title');
         contact.innerHTML = `
           <div class="container">
             <div class="contact-cta-card">
-              <div class="contact-copy"><h2>Let's Build Something Great.</h2></div>
-              <div class="contact-links">
-                <a href="mailto:armelangton@gmail.com">Get in Touch</a>
-                <a href="tel:+13179706662">Call or Text 317-970-6662</a>
+              <div class="contact-form-layout">
+                <div class="contact-copy">
+                  <h2 id="contact-title">Let's Build Something Great.</h2>
+                  <p>Tell us what is not working, what you want to improve, or what you are ready to build. We will start by understanding the need and determining the right next step.</p>
+                  <p class="contact-direct">Prefer to talk directly?<br><a href="tel:+13179706662">Call or text 317-970-6662</a></p>
+                </div>
+                <form class="contact-form" action="https://formspree.io/f/xbjqdzlz" method="POST">
+                  <input type="hidden" name="_subject" value="New Palomma website inquiry" />
+                  <div class="contact-field">
+                    <label for="contact-name">Name</label>
+                    <input id="contact-name" name="name" type="text" autocomplete="name" required />
+                  </div>
+                  <div class="contact-field">
+                    <label for="contact-email">Email</label>
+                    <input id="contact-email" name="email" type="email" autocomplete="email" required />
+                  </div>
+                  <div class="contact-field contact-field-wide">
+                    <label for="contact-company">Company</label>
+                    <input id="contact-company" name="company" type="text" autocomplete="organization" />
+                  </div>
+                  <div class="contact-field contact-field-wide">
+                    <label for="contact-message">How can we help?</label>
+                    <textarea id="contact-message" name="message" required></textarea>
+                  </div>
+                  <button class="contact-submit" type="submit">Send Message</button>
+                </form>
               </div>
             </div>
           </div>`;
@@ -194,7 +236,7 @@
           activateConsole();
 
           const constellationScript = document.createElement('script');
-          constellationScript.src = './home-constellation.js?v=20260801-1';
+          constellationScript.src = './home-constellation.js?v=20260802-2';
           document.body.appendChild(constellationScript);
           document.documentElement.classList.remove('is-loading');
         })
