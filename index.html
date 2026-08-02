@@ -7,12 +7,15 @@
   <title>Palomma Consulting | AI-Powered Business Solutions</title>
   <link rel="icon" href="./assets/logo.png" sizes="64x64" type="image/png" />
   <link rel="preconnect" href="https://fonts.gstatic.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lora:wght@500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="./services.css?v=20260801-3" />
   <link rel="stylesheet" href="./services-visual.css?v=20260801-7" />
   <link rel="stylesheet" href="./home-services-theme.css?v=20260801-3" />
   <link rel="stylesheet" href="./home-original-sections.css?v=20260802-7" />
-  <style>html.is-loading body{visibility:hidden}</style>
+  <style>
+    html.is-loading body{visibility:hidden}
+    .home-services-page .page-hero-inner h1{font-family:Lora,Georgia,serif;font-weight:600;letter-spacing:-.035em}
+  </style>
   <script>document.documentElement.classList.add('is-loading');</script>
 </head>
 <body class="home-services-page">
@@ -169,6 +172,10 @@
 
           const hero = main.querySelector('.page-hero');
           if (hero) {
+            const heroTitle = hero.querySelector('h1');
+            const heroSummary = hero.querySelector('.page-hero-summary');
+            if (heroTitle) heroTitle.textContent = 'Accelerating revenue operations with AI-powered solutions and automation.';
+            if (heroSummary) heroSummary.textContent = 'We help businesses streamline operations, improve sales execution, and create AI-powered systems that scale revenue without adding unnecessary complexity.';
             const canvas = document.createElement('canvas');
             canvas.className = 'hero-network';
             canvas.setAttribute('aria-hidden','true');
