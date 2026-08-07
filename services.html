@@ -3,22 +3,23 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Explore Palomma Consulting services for AI, automation, workflow improvement, and custom business systems." />
-    <title>Services | Palomma Consulting</title>
+    <meta name="description" content="Explore practical AI solutions from Palomma, from focused AI Quick Wins to complete workflows, custom AI solutions, and optional ongoing AI support." />
+    <title>AI Solutions & Services | Palomma Consulting</title>
     <link rel="icon" href="./assets/logo.png" sizes="64x64" type="image/png" />
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="./services.css?v=20260801-3" />
     <link rel="stylesheet" href="./services-visual.css?v=20260801-7" />
+    <link rel="stylesheet" href="./current-model-merchandising.css?v=20260807-1" />
   </head>
-  <body>
+  <body class="current-model-page">
     <header class="site-header">
       <nav class="site-nav container" aria-label="Primary navigation">
         <a class="brand" href="./index.html">Palomma Consulting</a>
         <div class="nav-links">
           <a class="is-active" href="./services.html">Services</a>
           <a href="./index.html#case-studies">Selected Work</a>
-          <a href="./index.html#pricing">Pricing</a>
+          <a href="#pricing">Pricing</a>
           <a href="./index.html#faq">FAQ</a>
           <a href="./index.html#contact">Contact</a>
         </div>
@@ -29,46 +30,140 @@
       <section class="page-hero">
         <div class="container hero-layout">
           <div class="page-hero-inner">
-            <h1>Choose the level of support that matches the work.</h1>
-            <p class="page-hero-summary">We help you find the right combination of strategy, automation, AI, systems, and support to improve how work gets done.</p>
+            <h1>Practical AI for work that still takes too much manual effort.</h1>
+            <p class="page-hero-summary">Palomma builds AI solutions around real business jobs — using the systems and information you already have wherever that makes sense.</p>
             <div class="hero-actions">
-              <a class="button button-primary" href="./index.html#contact">Start a Conversation</a>
-              <a class="button button-secondary" href="#core-services">View Services</a>
+              <a class="button button-primary" href="./index.html#contact">Book Free Discovery</a>
+              <a class="button button-secondary" href="#solutions">Explore Solutions</a>
             </div>
           </div>
           <div class="hero-console" aria-label="Interactive operations workspace">
-            <div class="console-top"><div><strong>Operations workspace</strong><span class="console-launch">Launching AI operating layer <i></i><i></i><i></i></span></div><span class="console-status">3 workflows active</span></div>
+            <div class="console-top"><div><strong>Business workflow</strong><span class="console-launch">Applying practical AI <i></i><i></i><i></i></span></div><span class="console-status">work in context</span></div>
             <div class="console-options" role="tablist" aria-label="Workflow stages">
-              <button class="console-option is-active" type="button" role="tab" aria-selected="true" data-stage="incoming"><span class="option-icon">↓</span><span><small>Incoming</small><strong>New request captured</strong></span><span class="option-chevron">›</span></button>
-              <button class="console-option" type="button" role="tab" aria-selected="false" data-stage="context"><span class="option-icon">▤</span><span><small>Context</small><strong>CRM and documents matched</strong></span><span class="option-chevron">›</span></button>
-              <button class="console-option" type="button" role="tab" aria-selected="false" data-stage="support"><span class="option-icon">✦</span><span><small>AI support</small><strong>Summarize and recommend</strong></span><span class="option-chevron">›</span></button>
-              <button class="console-option" type="button" role="tab" aria-selected="false" data-stage="review"><span class="option-icon">○</span><span><small>Human review</small><strong>Approve and move forward</strong></span><span class="option-chevron">›</span></button>
+              <button class="console-option is-active" type="button" role="tab" aria-selected="true" data-stage="incoming"><span class="option-icon">↓</span><span><small>Incoming</small><strong>Information arrives</strong></span><span class="option-chevron">›</span></button>
+              <button class="console-option" type="button" role="tab" aria-selected="false" data-stage="context"><span class="option-icon">▤</span><span><small>Context</small><strong>Relevant business information found</strong></span><span class="option-chevron">›</span></button>
+              <button class="console-option" type="button" role="tab" aria-selected="false" data-stage="support"><span class="option-icon">✦</span><span><small>AI work</small><strong>Compare, validate, prepare</strong></span><span class="option-chevron">›</span></button>
+              <button class="console-option" type="button" role="tab" aria-selected="false" data-stage="review"><span class="option-icon">○</span><span><small>Next step</small><strong>Review or move work forward</strong></span><span class="option-chevron">›</span></button>
             </div>
-            <div class="console-summary" aria-live="polite"><div><small>Workflow</small><strong id="workflow-value">Request intake</strong></div><div class="is-highlighted"><small>Next action</small><strong id="action-value">Match business context</strong></div><div><small>Status</small><strong id="status-value">Captured</strong></div></div>
-            <div class="console-terminal"><span>› sync services</span><strong id="terminal-value">intake received · preparing context</strong><i></i><i></i><i></i></div>
+            <div class="console-summary" aria-live="polite"><div><small>Workflow</small><strong id="workflow-value">Information intake</strong></div><div class="is-highlighted"><small>AI task</small><strong id="action-value">Find relevant context</strong></div><div><small>Status</small><strong id="status-value">Ready</strong></div></div>
+            <div class="console-terminal"><span>› practical ai</span><strong id="terminal-value">information received · gathering context</strong><i></i><i></i><i></i></div>
           </div>
         </div>
       </section>
 
-      <section id="core-services" class="section service-section">
+      <section id="solutions" class="solution-section">
         <div class="container">
-          <div class="section-head"><div><h2>Solutions We Build</h2></div><p>We build AI, automation, and business systems designed to improve sales execution, increase efficiency, and support revenue growth.</p></div>
-          <div class="service-grid">
-            <a class="service-card" href="./services/managed-ai-agents.html"><span class="service-visual" aria-hidden="true"><svg viewBox="0 0 160 160"><path d="M80 28v16M73 28h14"/><rect class="soft-fill" x="38" y="44" width="84" height="76" rx="26"/><path d="M38 72H28v28h10M122 72h10v28h-10"/><circle class="accent-fill" cx="62" cy="78" r="7"/><circle class="accent-fill" cx="98" cy="78" r="7"/><path d="M60 99h40"/><path d="M52 120v14M108 120v14M52 134h56"/></svg></span><h3>AI Assistants</h3><p>Intelligent assistants that answer questions, automate tasks, and support your team.</p></a>
-            <a class="service-card" href="./services/workflow-sprint.html"><span class="service-visual" aria-hidden="true"><svg viewBox="0 0 160 160"><rect class="soft-fill" x="58" y="22" width="44" height="32" rx="7"/><rect class="soft-fill" x="22" y="102" width="42" height="32" rx="7"/><rect class="accent-fill" x="96" y="102" width="42" height="32" rx="7"/><path d="M80 54v24M80 78H43v24M80 78h37v24"/><circle cx="80" cy="78" r="4" class="accent-fill"/></svg></span><h3>Workflow Automation</h3><p>Eliminate repetitive work by connecting people, systems, and approvals.</p></a>
-            <a class="service-card" href="./services/business-applications.html"><span class="service-visual" aria-hidden="true"><svg viewBox="0 0 160 160"><rect class="soft-fill" x="24" y="28" width="112" height="102" rx="10"/><path d="M24 50h112M38 39h2M48 39h2M58 39h2"/><rect class="accent-fill" x="38" y="68" width="34" height="42" rx="5"/><path d="M86 70h34M86 84h27M86 98h30M38 119h82"/></svg></span><h3>Business Applications</h3><p>Replace spreadsheets and disconnected tools with purpose-built applications.</p></a>
-            <a class="service-card" href="./services/crm-revenue-operations.html"><span class="service-visual" aria-hidden="true"><svg viewBox="0 0 160 160"><rect class="soft-fill" x="24" y="24" width="112" height="108" rx="10"/><path d="M24 48h112"/><circle class="accent-fill" cx="52" cy="80" r="14"/><path d="M40 112c3-11 8-17 12-17s9 6 12 17M80 104l14-17 12 8 18-25"/><path d="M112 70h12v12"/></svg></span><h3>CRM &amp; Revenue Operations</h3><p>Improve pipeline visibility, forecasting, reporting, and sales execution.</p></a>
-            <a class="service-card" href="./services/revenue-enablement.html"><span class="service-visual" aria-hidden="true"><svg viewBox="0 0 160 160"><rect class="soft-fill" x="24" y="34" width="112" height="78" rx="9"/><path d="M64 58l32 15-32 15z"/><path d="M46 112v18M114 112v18M58 130h44"/><circle class="accent-fill" cx="40" cy="48" r="10"/><circle class="accent-fill" cx="120" cy="48" r="10"/></svg></span><h3>Sales Enablement</h3><p>Equip sales teams with the training, tools, and resources they need to perform.</p></a>
-            <a class="service-card" href="./services/ai-operations-assessment.html"><span class="service-visual" aria-hidden="true"><svg viewBox="0 0 160 160"><rect class="soft-fill" x="20" y="32" width="42" height="32" rx="7"/><rect class="soft-fill" x="98" y="32" width="42" height="32" rx="7"/><rect class="soft-fill" x="20" y="102" width="42" height="32" rx="7"/><rect class="accent-fill" x="98" y="102" width="42" height="32" rx="7"/><path d="M62 48h36M41 64v38M119 64v38M62 118h36"/><circle class="accent-fill" cx="80" cy="83" r="13"/><path d="m73 83 5 5 10-13"/></svg></span><h3>Business Process Improvement</h3><p>Redesign workflows to reduce friction and prepare for automation.</p></a>
+          <div class="solution-intro">
+            <div><p class="section-kicker">Solutions</p><h2>Start with a business problem you recognize.</h2></div>
+            <p>These are focused AI solutions Palomma is developing around recurring business work. They are starting points, not the limits of what we can build.</p>
+          </div>
+
+          <div class="solution-stack">
+            <article class="solution-row">
+              <div class="solution-copy">
+                <p class="solution-kicker">Commercial decisions</p>
+                <h3>Commercial Comparison</h3>
+                <p class="solution-promise">Compare your options before you buy, source, or quote.</p>
+                <p class="solution-description">Bring together supplier, product, cost, availability, lead-time, historical, and system information so your team can evaluate viable commercial choices without manually reconciling everything first.</p>
+                <a class="solution-link" href="./services/commercial-comparison.html">Explore the solution</a>
+              </div>
+              <div class="solution-flow" aria-label="Commercial Comparison workflow example">
+                <p class="flow-label">Example flow</p>
+                <div class="flow-nodes"><span class="flow-node">Supplier email<br>PDFs · ERP history</span><span class="flow-arrow">→</span><span class="flow-node is-ai">AI gathers<br>reconciles · compares</span><span class="flow-arrow">→</span><span class="flow-node">Viable choices<br>differences · gaps</span></div>
+              </div>
+            </article>
+
+            <article class="solution-row">
+              <div class="solution-copy">
+                <p class="solution-kicker">Customer orders</p>
+                <h3>AI Order Processing</h3>
+                <p class="solution-promise">Understand, validate, and prepare incoming customer orders.</p>
+                <p class="solution-description">Work through purchase orders, email, spreadsheets, and customer documents; identify customer and product context; surface missing or inconsistent information; and prepare clean information for the systems you already use.</p>
+                <a class="solution-link" href="./services/ai-order-processing.html">Explore the solution</a>
+              </div>
+              <div class="solution-flow" aria-label="AI Order Processing workflow example">
+                <p class="flow-label">Example flow</p>
+                <div class="flow-nodes"><span class="flow-node">PO · email<br>spreadsheet</span><span class="flow-arrow">→</span><span class="flow-node is-ai">AI understands<br>validates · checks</span><span class="flow-arrow">→</span><span class="flow-node">Prepared order<br>exceptions surfaced</span></div>
+              </div>
+            </article>
+
+            <article class="solution-row">
+              <div class="solution-copy">
+                <p class="solution-kicker">Supplier follow-through</p>
+                <h3>Supplier Order Review</h3>
+                <p class="solution-promise">Catch important supplier changes before they become problems.</p>
+                <p class="solution-description">Compare supplier acknowledgments, confirmations, or updates with what the business expected and surface meaningful changes in price, quantity, product, substitutions, availability, lead time, or delivery.</p>
+                <a class="solution-link" href="./services/supplier-order-review.html">Explore the solution</a>
+              </div>
+              <div class="solution-flow" aria-label="Supplier Order Review workflow example">
+                <p class="flow-label">Example flow</p>
+                <div class="flow-nodes"><span class="flow-node">Original PO<br>expectation</span><span class="flow-arrow">→</span><span class="flow-node is-ai">AI compares<br>meaningful differences</span><span class="flow-arrow">→</span><span class="flow-node">Price · quantity<br>delivery changes</span></div>
+              </div>
+            </article>
+          </div>
+
+          <div class="solution-alt">
+            <div><h3>Have a different problem?</h3><p>If important work still depends on people finding information, interpreting it, checking it, comparing it, or moving it between systems, there may be a useful AI solution.</p></div>
+            <a class="button button-secondary" href="./index.html#contact">Tell us about it</a>
           </div>
         </div>
       </section>
 
-      <section class="cta-section"><div class="container cta-grid"><div class="cta-copy"><p class="section-kicker">Ready to start?</p><h2>Tell us what is slowing the work down.</h2><p>Start with the problem and we will help identify the right path.</p></div><div class="cta-card"><h3>Schedule a Discovery Session</h3><p>Book a 15-minute conversation to confirm fit and the right starting point.</p><a class="button button-primary" href="./index.html#contact">Schedule a Discovery Session</a></div></div></section>
+      <section id="pricing" class="scope-section">
+        <div class="container">
+          <div class="scope-head">
+            <div><p class="section-kicker">Ways to build</p><h2>Choose the scope that fits the work.</h2></div>
+            <p>The solution tells us what problem to solve. The engagement scope reflects how much needs to be built. Starting prices are entry points, not universal fixed quotes.</p>
+          </div>
+          <div class="scope-grid">
+            <article class="scope-card is-featured">
+              <p class="scope-label">Start focused</p><h3>AI Quick Win</h3><p class="scope-price">$1,500+<small>starting price</small></p><p>One focused AI solution for a clearly bounded business job.</p><p class="scope-fit"><strong>Best fit:</strong> one recognizable problem, limited scope, and a useful result that does not require rebuilding a complete process.</p><a class="solution-link" href="./services/ai-quick-win.html">See the engagement</a>
+            </article>
+            <article class="scope-card">
+              <p class="scope-label">One complete process</p><h3>AI Workflow</h3><p class="scope-price">$2,500+<small>starting price</small></p><p>AI and automation across one complete workflow involving several steps, people, systems, approvals, or handoffs.</p><p class="scope-fit"><strong>Best fit:</strong> information has to move, decisions trigger additional work, or several steps need to work together.</p><a class="solution-link" href="./services/ai-workflow.html">See the engagement</a>
+            </article>
+            <article class="scope-card">
+              <p class="scope-label">Larger or more complex</p><h3>Custom AI Solution</h3><p class="scope-price">$5,000+<small>starting price</small></p><p>A larger AI implementation designed around your business when one focused solution or workflow is not enough.</p><p class="scope-fit"><strong>Best fit:</strong> multiple workflows, systems, teams, significant company-specific logic, or a custom workspace/application.</p><a class="solution-link" href="./services/custom-ai-solution.html">See the engagement</a>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="system-section">
+        <div class="container">
+          <div class="system-head">
+            <div><p class="section-kicker">Work with what already works</p><h2>Your software does not have to be the problem.</h2></div>
+            <p>Useful business systems can stay useful. Palomma can add AI around the work that still happens in email, documents, spreadsheets, historical records, and the gaps between applications.</p>
+          </div>
+          <div class="system-map" aria-label="How Palomma AI works with existing business information and systems">
+            <div class="system-group"><h3>Business information</h3><div class="system-chips"><span>Email</span><span>PDFs</span><span>Spreadsheets</span><span>Documents</span><span>Historical records</span></div></div>
+            <div class="system-arrow">→</div>
+            <div class="system-ai"><h3>Practical AI</h3><p>Understand, find context, reconcile, compare, validate, identify exceptions, and prepare the next action.</p></div>
+            <div class="system-arrow">→</div>
+            <div class="system-output"><h3>Existing systems + people</h3><p>Prepare work for CRM, ERP, accounting, operational software, approvals, or human decisions where appropriate.</p></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="ongoing-section">
+        <div class="container">
+          <div class="ongoing-head">
+            <div><p class="section-kicker">After launch</p><h2>Choose how much help you want afterward.</h2></div>
+            <p>Ongoing service is optional. We can hand off what we build, or Palomma can continue helping operate and improve it.</p>
+          </div>
+          <div class="ongoing-grid">
+            <article class="ongoing-card"><h3>AI Care</h3><p class="ongoing-promise">Keep it working.</p><p class="ongoing-price">$250+/month</p><p>Monitoring, troubleshooting, and appropriate updates as integrations, providers, sources, and business rules change.</p><a class="solution-link" href="./services/ai-care.html">Learn about AI Care</a></article>
+            <article class="ongoing-card"><h3>AI Optimize</h3><p class="ongoing-promise">Keep it working and make it better.</p><p class="ongoing-price">$500+/month</p><p>Care plus regular review, tuning, usage/cost optimization, small improvements, and continued refinement.</p><a class="solution-link" href="./services/ai-optimize.html">Learn about AI Optimize</a></article>
+            <article class="ongoing-card"><h3>Managed AI</h3><p class="ongoing-promise">Let Palomma take greater ongoing responsibility.</p><p class="ongoing-price">$750+/month</p><p>More active monitoring, exception review, integration support, recurring optimization, reporting, and ongoing improvement.</p><a class="solution-link" href="./services/managed-ai.html">Learn about Managed AI</a></article>
+          </div>
+        </div>
+      </section>
+
+      <section class="cta-section"><div class="container cta-grid"><div class="cta-copy"><p class="section-kicker">Free Discovery</p><h2>Tell us what is taking too much work.</h2><p>You do not need to diagnose the solution yourself. We will use a free conversation to understand the problem and determine the simplest useful starting point.</p></div><div class="cta-card"><h3>Book Free Discovery</h3><p>A short fit conversation. No mandatory paid assessment and no obligation to buy every stage.</p><a class="button button-primary" href="./index.html#contact">Start with a conversation</a></div></div></section>
     </main>
 
-    <footer class="site-footer"><div class="container footer-grid"><div><h4>Palomma Consulting</h4><p>Practical AI, workflow, and business systems support.</p></div><div><h4>Services</h4><a href="./services/ai-operations-assessment.html">AI &amp; Operations Assessment</a><a href="./services/managed-ai-agents.html">AI Assistants</a><a href="./services/workflow-sprint.html">Workflow Automation</a></div><div><h4>Company</h4><a href="./index.html#case-studies">Selected Work</a><a href="./index.html#faq">FAQ</a><a href="./index.html#contact">Contact</a></div><div><h4>Pricing</h4><a href="./index.html#pricing">View starting prices</a><a href="./index.html#contact">Book discovery</a></div></div></footer>
+    <footer class="site-footer"><div class="container footer-grid"><div><h4>Palomma Consulting</h4><p>Practical AI for real business work.</p></div><div><h4>Solutions</h4><a href="./services/commercial-comparison.html">Commercial Comparison</a><a href="./services/ai-order-processing.html">AI Order Processing</a><a href="./services/supplier-order-review.html">Supplier Order Review</a></div><div><h4>Company</h4><a href="./index.html#case-studies">Selected Work</a><a href="./index.html#faq">FAQ</a><a href="./index.html#contact">Contact</a></div><div><h4>Pricing</h4><a href="#pricing">View starting prices</a><a href="./index.html#contact">Book Free Discovery</a></div></div></footer>
 
-    <script>(()=>{const states={incoming:['Request intake','Match business context','Captured','intake received · preparing context'],context:['Context assembly','Connect CRM and documents','Matched','records matched · context ready'],support:['AI assistance','Generate summary and recommendation','In progress','analysis running · recommendation drafted'],review:['Human approval','Review recommendation and approve','Ready to send','approval complete · workflow moving forward']};const buttons=[...document.querySelectorAll('.console-option')],workflow=document.getElementById('workflow-value'),action=document.getElementById('action-value'),status=document.getElementById('status-value'),terminal=document.getElementById('terminal-value');let index=0;function select(button){buttons.forEach(item=>{const active=item===button;item.classList.toggle('is-active',active);item.setAttribute('aria-selected',String(active))});const[w,a,s,t]=states[button.dataset.stage];workflow.textContent=w;action.textContent=a;status.textContent=s;terminal.textContent=t;index=buttons.indexOf(button)}buttons.forEach(button=>button.addEventListener('click',()=>select(button)));window.setInterval(()=>select(buttons[(index+1)%buttons.length]),3200)})();</script>
+    <script>(()=>{const states={incoming:['Information intake','Find relevant business context','Ready','information received · gathering context'],context:['Context assembly','Match records and sources','Matched','business context matched · ready to work'],support:['AI-supported work','Compare, validate, and prepare','In progress','analysis running · useful output prepared'],review:['Next step','Review or move work forward','Ready','output ready · human authority preserved where needed']};const buttons=[...document.querySelectorAll('.console-option')],workflow=document.getElementById('workflow-value'),action=document.getElementById('action-value'),status=document.getElementById('status-value'),terminal=document.getElementById('terminal-value');let index=0;function select(button){buttons.forEach(item=>{const active=item===button;item.classList.toggle('is-active',active);item.setAttribute('aria-selected',String(active))});const[w,a,s,t]=states[button.dataset.stage];workflow.textContent=w;action.textContent=a;status.textContent=s;terminal.textContent=t;index=buttons.indexOf(button)}buttons.forEach(button=>button.addEventListener('click',()=>select(button)));window.setInterval(()=>select(buttons[(index+1)%buttons.length]),3200)})();</script>
   </body>
 </html>
