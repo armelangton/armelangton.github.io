@@ -1,8 +1,4 @@
 (() => {
-  document.querySelectorAll('.nav-links a').forEach(link => {
-    if (link.textContent.trim() === 'Pricing') link.remove();
-  });
-
   function connectSectionLink(label, sectionId) {
     const link = [...document.querySelectorAll('.nav-links a')]
       .find(item => item.textContent.trim() === label);
@@ -18,16 +14,15 @@
   }
 
   connectSectionLink('Selected Work', 'case-studies');
+  connectSectionLink('Pricing', 'pricing');
   connectSectionLink('Contact', 'contact');
 
-  if (window.location.hash === '#case-studies' || window.location.hash === '#contact') {
+  if (['#case-studies','#pricing','#contact'].includes(window.location.hash)) {
     const sectionId = window.location.hash.slice(1);
     requestAnimationFrame(() => {
       document.getElementById(sectionId)?.scrollIntoView({ block: 'start' });
     });
   }
-
-  document.querySelector('.site-footer')?.remove();
 
   const hero = document.querySelector('.page-hero');
   const canvas = hero?.querySelector('.hero-network');
