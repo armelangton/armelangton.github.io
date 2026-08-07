@@ -3,13 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Palomma Consulting builds AI, automation, workflow improvements, and custom business systems that support revenue growth." />
-  <title>Palomma Consulting | AI-Powered Business Solutions</title>
+  <meta name="description" content="Palomma builds practical AI solutions for real business work, from focused AI Quick Wins to complete workflows and custom AI solutions." />
+  <title>Palomma Consulting | Practical AI for Real Business Work</title>
   <link rel="icon" href="./assets/logo.png" sizes="64x64" type="image/png" />
   <link rel="preconnect" href="https://fonts.gstatic.com" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lora:wght@500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="./services.css?v=20260801-3" />
   <link rel="stylesheet" href="./services-visual.css?v=20260801-7" />
+  <link rel="stylesheet" href="./current-model-merchandising.css?v=20260807-1" />
   <link rel="stylesheet" href="./home-services-theme.css?v=20260801-3" />
   <link rel="stylesheet" href="./home-original-sections.css?v=20260802-7" />
   <style>
@@ -18,7 +19,7 @@
   </style>
   <script>document.documentElement.classList.add('is-loading');</script>
 </head>
-<body class="home-services-page">
+<body class="home-services-page current-model-page">
   <main id="homepage-root" aria-live="polite"></main>
   <noscript><p style="padding:2rem;font-family:Inter,sans-serif">Please enable JavaScript to view the Palomma Consulting homepage.</p></noscript>
   <script>
@@ -31,14 +32,14 @@
       ];
 
       const faqItems = [
-        ['How do I know which service is right for my business?', 'You do not need to identify the solution before contacting Palomma. Start with the business problem, where work is slowing down, or what your team needs to improve. We will help determine whether the right next step is process improvement, workflow automation, a business application, CRM and revenue operations work, sales enablement, or a managed AI agent.'],
-        ['Can Palomma work with the systems we already use?', 'Yes. Palomma designs around the tools your business already relies on whenever practical, including CRM platforms, Microsoft 365, Google Workspace, email, forms, spreadsheets, project tools, and other business systems. Any required replacement or additional technology will be discussed before the project begins.'],
-        ['Do we need to know exactly what solution we want before contacting you?', 'No. Many businesses know what is creating delays, lost revenue, inconsistent work, or extra effort but are not sure what the right solution should be. Palomma helps define the problem, understand the current process, and recommend the most practical approach.'],
-        ['What will our team need to contribute during the project?', 'We will need access to the people who understand the process, the systems and information involved, and the business outcome you want to improve. Your team will review key decisions, provide feedback, and participate in testing and training. The exact time commitment will be defined with the project scope.'],
-        ['How long does a typical project take?', 'Business Process Improvement typically takes 1–2 weeks. Managed AI Agents typically take 1–3 weeks to launch. Workflow Automation and Sales Enablement typically take 3–6 weeks. CRM & Revenue Operations typically takes 4–6 weeks, and Business Applications typically take 4–8 weeks. Final timing depends on scope, access, integrations, data, and review speed.'],
-        ['How do you keep AI-supported work accurate and under human control?', 'AI-supported work is built around approved business information, defined rules, testing, review points, and clear fallback paths. When an action requires judgment, approval, or carries business risk, a person remains responsible for reviewing the recommendation or approving the next step.'],
-        ['What happens after launch?', 'Every implementation includes testing, training, documentation, defect correction, and a 30-day stabilization period. After that, your team can manage the delivered solution, or Palomma can provide agreed hosting, monitoring, maintenance, and improvements. Managed AI Agents continue under the monthly management plan.'],
-        ['Can our team manage the solution after launch?', 'That depends on the service and how the solution is deployed. Fixed-fee projects include training, documentation, and a clear handover so your team can operate the delivered process or system. Managed AI Agents include ongoing Palomma hosting, monitoring, maintenance, and improvement. For every engagement, we will define what your team manages, what Palomma manages, and any ongoing costs before work begins.']
+        ['How do I know where to start?', 'You do not need to choose an engagement before contacting Palomma. Start with the business problem. Free Discovery is used to understand the work and determine whether the simplest useful starting point is a focused AI Quick Win, a complete AI Workflow, or a larger Custom AI Solution.'],
+        ['Can Palomma work with the systems we already use?', 'Yes. Palomma can work with the CRM, ERP, accounting, email, document, spreadsheet, and other business systems you already rely on when that is the practical approach. The goal is not to replace useful software unnecessarily.'],
+        ['What kinds of problems can Palomma solve?', 'Palomma focuses on practical business work where people still spend too much time finding information, interpreting it, comparing it, checking it, handling exceptions, or preparing the next action. Commercial Comparison, AI Order Processing, and Supplier Order Review are initial solution examples, not the limits of what we can build.'],
+        ['Do I have to buy an assessment first?', 'No. Free Discovery is the public first step. A customer can move directly into an appropriately scoped implementation when the problem is clear enough.'],
+        ['What is the difference between a Quick Win, Workflow, and Custom AI Solution?', 'They describe implementation scope. A Quick Win solves one focused job. An AI Workflow improves one complete multi-step workflow. A Custom AI Solution is for larger or more complex implementations involving several workflows, systems, teams, or substantial company-specific logic.'],
+        ['What happens after launch?', 'Ongoing service is optional. Palomma can hand off what we build, or continue helping through AI Care, AI Optimize, or Managed AI depending on how much ongoing responsibility you want Palomma to take.'],
+        ['How do you keep AI-supported work under control?', 'Solutions are designed around approved business information, clear rules, testing, review points, exception paths, and human authority where judgment or approval is appropriate.'],
+        ['Are the prices fixed?', 'Public prices are starting points. Final scope and price depend on the work involved, systems, information sources, business rules, integrations, and operating responsibility.']
       ];
 
       function buildPlatforms() {
@@ -48,7 +49,7 @@
         const label = document.createElement('p');
         label.id = 'platforms-strip-title';
         label.className = 'platforms-strip-label';
-        label.textContent = 'PLATFORMS WE WORK WITH';
+        label.textContent = 'PLATFORMS WE CAN WORK WITH';
         const marquee = document.createElement('div');
         marquee.className = 'platforms-marquee';
         const track = document.createElement('div');
@@ -86,7 +87,7 @@
             <div class="case-study-grid">
               <article class="case-study-card"><a href="./sales-enablement-platform.html"><img src="./assets/project-screenshots/sales-my-work-current.webp" alt="Sales Enablement Platform organizing prioritized work and account context" /><div><h3>Sales Enablement Platform</h3><p>One workspace for priorities, customer context, playbooks, learning, coaching, and AI guidance.</p><span>View case study <span aria-hidden="true">→</span></span></div></a></article>
               <article class="case-study-card"><a href="./fire-protection-platform.html"><img src="./assets/project-screenshots/fire-workbench-current-check.png" alt="Fire Protection Field Assistant showing an annual sprinkler inspection engagement" /><div><h3>Fire Protection Field Assistant</h3><p>A mobile field workflow for preparation, system checks, documentation, resources, and AI guidance.</p><span>View case study <span aria-hidden="true">→</span></span></div></a></article>
-              <article class="case-study-card"><a href="./commercial-lighting-platform.html"><img src="./assets/project-screenshots/lit-sales-workspace-current.webp" alt="Commercial Lighting Intelligence Platform displaying a retrofit quote and bill of materials" /><div><h3>Commercial Lighting Intelligence Platform</h3><p>A quoting workspace for RFQ readiness, supplier pricing, product decisions, margin visibility, and proposals.</p><span>View case study <span aria-hidden="true">→</span></span></div></a></article>
+              <article class="case-study-card"><a href="./commercial-lighting-platform.html"><img src="./assets/project-screenshots/lit-sales-workspace-current.webp" alt="Commercial Lighting Intelligence Platform showing a commercial review workspace" /><div><h3>Commercial Lighting Intelligence Platform</h3><p>A working prototype exploring supplier information, commercial review, product decisions, and margin visibility.</p><span>View case study <span aria-hidden="true">→</span></span></div></a></article>
               <article class="case-study-card"><a href="./learning-experience-platform.html"><img src="./assets/project-screenshots/lms-card-current.webp" alt="Learning Experience Platform displaying a discovery and qualification playbook" /><div><h3>Learning Experience Platform</h3><p>Structures onboarding, knowledge reinforcement, practice, and progress around the work employees need to perform.</p><span>View case study <span aria-hidden="true">→</span></span></div></a></article>
               <article class="case-study-card"><a href="./ai-objection-handling-assistant.html"><img src="./assets/project-screenshots/bdr-objection-coach-current.webp" alt="AI Objection Handling Coach with guided live-assist scenarios" /><div><h3>AI Objection Handling Assistant</h3><p>Helps sales representatives practice and respond to objections with context, discovery guidance, and next steps.</p><span>View case study <span aria-hidden="true">→</span></span></div></a></article>
             </div>
@@ -116,9 +117,9 @@
         contact.innerHTML = `
           <div class="container">
             <div class="contact-cta-card">
-              <div class="contact-copy"><h2>Let's Build Something Great.</h2></div>
+              <div class="contact-copy"><h2>Start with a conversation.</h2></div>
               <div class="contact-links">
-                <a href="mailto:armelangton@gmail.com">Get in Touch</a>
+                <a href="mailto:armelangton@gmail.com">Book Free Discovery</a>
                 <a href="tel:+13179706662">Call or Text 317-970-6662</a>
               </div>
             </div>
@@ -128,10 +129,10 @@
 
       function activateConsole() {
         const states = {
-          incoming:['Request intake','Match business context','Captured','intake received · preparing context'],
-          context:['Context assembly','Connect CRM and documents','Matched','records matched · context ready'],
-          support:['AI assistance','Generate summary and recommendation','In progress','analysis running · recommendation drafted'],
-          review:['Human approval','Review recommendation and approve','Ready to send','approval complete · workflow moving forward']
+          incoming:['Information intake','Find relevant business context','Ready','information received · gathering context'],
+          context:['Context assembly','Match records and sources','Matched','business context matched · ready to work'],
+          support:['AI-supported work','Compare, validate, and prepare','In progress','analysis running · useful output prepared'],
+          review:['Next step','Review or move work forward','Ready','output ready · human authority preserved where needed']
         };
         const buttons = [...document.querySelectorAll('.console-option')];
         const workflow = document.getElementById('workflow-value');
@@ -157,7 +158,7 @@
         window.setInterval(() => select(buttons[(index + 1) % buttons.length]),3200);
       }
 
-      fetch('./services.html?v=20260802-10')
+      fetch('./services.html?v=20260807-current-model')
         .then(response => {
           if (!response.ok) throw new Error(`Unable to load homepage architecture (${response.status})`);
           return response.text();
@@ -174,8 +175,8 @@
           if (hero) {
             const heroTitle = hero.querySelector('h1');
             const heroSummary = hero.querySelector('.page-hero-summary');
-            if (heroTitle) heroTitle.textContent = 'Accelerating revenue operations with AI-powered solutions and automation.';
-            if (heroSummary) heroSummary.textContent = 'We help businesses streamline operations, improve sales execution, and create AI-powered systems that scale revenue without adding unnecessary complexity.';
+            if (heroTitle) heroTitle.textContent = 'Practical AI that gets real work done.';
+            if (heroSummary) heroSummary.textContent = 'Palomma builds practical AI solutions that help businesses get real work done with less manual effort — without replacing useful systems just for the sake of AI.';
             const canvas = document.createElement('canvas');
             canvas.className = 'hero-network';
             canvas.setAttribute('aria-hidden','true');
@@ -183,8 +184,8 @@
             hero.insertAdjacentElement('afterend',buildPlatforms());
           }
 
-          const servicesSection = main.querySelector('#core-services');
-          if (servicesSection) servicesSection.insertAdjacentElement('afterend',buildSelectedWork());
+          const scopeSection = main.querySelector('#pricing');
+          if (scopeSection) scopeSection.insertAdjacentElement('afterend',buildSelectedWork());
 
           main.querySelector('#faq')?.remove();
           const oldCta = main.querySelector('.cta-section');
@@ -201,7 +202,7 @@
           activateConsole();
 
           const constellationScript = document.createElement('script');
-          constellationScript.src = './home-constellation.js?v=20260802-2';
+          constellationScript.src = './home-constellation.js?v=20260807-current-model';
           document.body.appendChild(constellationScript);
           document.documentElement.classList.remove('is-loading');
         })
