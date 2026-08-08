@@ -10,7 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="./services.css?v=20260801-3" />
     <link rel="stylesheet" href="./services-visual.css?v=20260801-7" />
-    <link rel="stylesheet" href="./offers-grouping.css?v=20260807-2" />
+    <link rel="stylesheet" href="./offers-grouping.css?v=20260807-3" />
   </head>
   <body>
     <header class="site-header">
@@ -51,27 +51,45 @@
         </div>
       </section>
 
-      <section id="core-services" class="section service-section">
+      <section id="core-services" class="section service-section offer-grid-only">
         <div class="container">
-          <div class="section-head"><div><h2>Ways to Work With Palomma</h2></div></div>
-
-          <div id="build-options" class="offer-group priced-group">
-            <h3 class="offer-group-title">Build Your AI</h3>
-            <div class="price-option-grid">
-              <a class="price-option" href="./index.html#contact"><span class="price-visual" aria-hidden="true"><svg viewBox="0 0 100 100"><circle class="soft-fill" cx="50" cy="50" r="30"/><circle class="accent-fill" cx="50" cy="50" r="11"/><path d="M50 17v14M50 69v14M17 50h14M69 50h14"/></svg></span><span class="price-copy"><h3>AI Quick Win</h3><p>One focused AI solution for one specific business problem.</p><strong>Starting at $1,500</strong></span></a>
-              <a class="price-option" href="./index.html#contact"><span class="price-visual" aria-hidden="true"><svg viewBox="0 0 100 100"><rect class="soft-fill" x="12" y="24" width="22" height="18" rx="4"/><rect class="soft-fill" x="39" y="41" width="22" height="18" rx="4"/><rect class="accent-fill" x="66" y="58" width="22" height="18" rx="4"/><path d="M34 33h12v8M61 50h12v8"/></svg></span><span class="price-copy"><h3>AI Workflow</h3><p>AI across one complete workflow with multiple steps, handoffs, people, or systems.</p><strong>Starting at $2,500</strong></span></a>
-              <a class="price-option" href="./index.html#contact"><span class="price-visual" aria-hidden="true"><svg viewBox="0 0 100 100"><circle class="accent-fill" cx="50" cy="50" r="9"/><circle class="soft-fill" cx="22" cy="26" r="10"/><circle class="soft-fill" cx="78" cy="26" r="10"/><circle class="soft-fill" cx="22" cy="74" r="10"/><circle class="soft-fill" cx="78" cy="74" r="10"/><path d="M29 32 43 44M71 32 57 44M29 68 43 56M71 68 57 56"/></svg></span><span class="price-copy"><h3>Custom AI Solution</h3><p>Larger AI work spanning multiple workflows, systems, teams, or significant custom logic.</p><strong>Starting at $5,000</strong></span></a>
-            </div>
-            <p class="solution-examples">Focused solutions can include Commercial Comparison, AI Order Processing, Supplier Order Review, or another clearly bounded business problem.</p>
-          </div>
-
-          <div class="offer-group priced-group ongoing-group">
-            <h3 class="offer-group-title">Ongoing Support</h3>
-            <div class="price-option-grid">
-              <a class="price-option" href="./index.html#contact"><span class="price-visual" aria-hidden="true"><svg viewBox="0 0 100 100"><rect class="soft-fill" x="18" y="24" width="64" height="48" rx="7"/><path d="M27 56h14l7-12 10 18 7-10h10"/><circle class="accent-fill" cx="73" cy="69" r="10"/><path d="m68 69 4 4 7-9"/></svg></span><span class="price-copy"><h3>AI Care</h3><p>Monitoring, troubleshooting, and updates to help keep your AI solution working.</p><strong>Starting at $250/month</strong></span></a>
-              <a class="price-option" href="./index.html#contact"><span class="price-visual" aria-hidden="true"><svg viewBox="0 0 100 100"><path d="M18 76h64M24 67 42 50l13 8 20-29"/><path d="M64 29h11v11"/><rect class="soft-fill" x="25" y="63" width="10" height="13" rx="2"/><rect class="soft-fill" x="45" y="55" width="10" height="21" rx="2"/><rect class="accent-fill" x="65" y="45" width="10" height="31" rx="2"/></svg></span><span class="price-copy"><h3>AI Optimize</h3><p>Ongoing care plus tuning, optimization, small improvements, and continued refinement.</p><strong>Starting at $500/month</strong></span></a>
-              <a class="price-option" href="./index.html#contact"><span class="price-visual" aria-hidden="true"><svg viewBox="0 0 100 100"><circle class="accent-fill" cx="50" cy="39" r="11"/><circle class="soft-fill" cx="27" cy="56" r="8"/><circle class="soft-fill" cx="73" cy="56" r="8"/><path d="M33 54 42 45M67 54 58 45M24 69h52M50 50v19"/></svg></span><span class="price-copy"><h3>Managed AI</h3><p>Greater ongoing responsibility for monitoring, exceptions, optimization, and improvement.</p><strong>Starting at $750/month</strong></span></a>
-            </div>
+          <div class="service-grid">
+            <a class="service-card priced-service-card" href="./index.html#contact">
+              <span class="service-visual" aria-hidden="true"><svg viewBox="0 0 160 160"><circle class="soft-fill" cx="80" cy="80" r="42"/><circle class="accent-fill" cx="80" cy="80" r="15"/><path d="M80 30v22M80 108v22M30 80h22M108 80h22"/></svg></span>
+              <h3>AI Quick Win</h3>
+              <p>One focused AI solution for one specific business problem.</p>
+              <strong class="offer-price">Starting at $1,500</strong>
+            </a>
+            <a class="service-card priced-service-card" href="./index.html#contact">
+              <span class="service-visual" aria-hidden="true"><svg viewBox="0 0 160 160"><rect class="soft-fill" x="26" y="34" width="38" height="30" rx="6"/><rect class="soft-fill" x="61" y="66" width="38" height="30" rx="6"/><rect class="accent-fill" x="96" y="98" width="38" height="30" rx="6"/><path d="M64 49h17v17M99 81h17v17"/></svg></span>
+              <h3>AI Workflow</h3>
+              <p>AI across one complete workflow with multiple steps, handoffs, people, or systems.</p>
+              <strong class="offer-price">Starting at $2,500</strong>
+            </a>
+            <a class="service-card priced-service-card" href="./index.html#contact">
+              <span class="service-visual" aria-hidden="true"><svg viewBox="0 0 160 160"><circle class="accent-fill" cx="80" cy="80" r="13"/><circle class="soft-fill" cx="40" cy="45" r="15"/><circle class="soft-fill" cx="120" cy="45" r="15"/><circle class="soft-fill" cx="40" cy="115" r="15"/><circle class="soft-fill" cx="120" cy="115" r="15"/><path d="M50 56 68 71M110 56 92 71M50 104 68 89M110 104 92 89"/></svg></span>
+              <h3>Custom AI Solution</h3>
+              <p>Larger AI work spanning multiple workflows, systems, teams, or significant custom logic.</p>
+              <strong class="offer-price">Starting at $5,000</strong>
+            </a>
+            <a class="service-card priced-service-card" href="./index.html#contact">
+              <span class="service-visual" aria-hidden="true"><svg viewBox="0 0 160 160"><rect class="soft-fill" x="32" y="38" width="96" height="72" rx="10"/><path d="M46 84h20l10-18 16 27 11-16h16"/><circle class="accent-fill" cx="117" cy="108" r="15"/><path d="m109 108 6 6 11-14"/><path d="M64 122h32"/></svg></span>
+              <h3>AI Care</h3>
+              <p>Monitoring, troubleshooting, and updates to help keep your AI solution working.</p>
+              <strong class="offer-price">Starting at $250/month</strong>
+            </a>
+            <a class="service-card priced-service-card" href="./index.html#contact">
+              <span class="service-visual" aria-hidden="true"><svg viewBox="0 0 160 160"><path d="M28 122h104M38 106 66 78l20 12 32-45"/><path d="M100 45h18v18"/><rect class="soft-fill" x="40" y="99" width="16" height="23" rx="3"/><rect class="soft-fill" x="72" y="86" width="16" height="36" rx="3"/><rect class="accent-fill" x="104" y="70" width="16" height="52" rx="3"/></svg></span>
+              <h3>AI Optimize</h3>
+              <p>Ongoing care plus tuning, optimization, small improvements, and continued refinement.</p>
+              <strong class="offer-price">Starting at $500/month</strong>
+            </a>
+            <a class="service-card priced-service-card" href="./index.html#contact">
+              <span class="service-visual" aria-hidden="true"><svg viewBox="0 0 160 160"><circle class="accent-fill" cx="80" cy="62" r="18"/><circle class="soft-fill" cx="45" cy="88" r="13"/><circle class="soft-fill" cx="115" cy="88" r="13"/><path d="M55 86 68 72M105 86 92 72M40 111h80M80 80v31"/></svg></span>
+              <h3>Managed AI</h3>
+              <p>Greater ongoing responsibility for monitoring, exceptions, optimization, and improvement.</p>
+              <strong class="offer-price">Starting at $750/month</strong>
+            </a>
           </div>
         </div>
       </section>
