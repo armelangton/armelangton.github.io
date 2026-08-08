@@ -258,7 +258,7 @@
 }
 
 .home-services-page .home-selected-work {
-  padding: clamp(3.5rem, 6vw, 5.5rem) 0;
+  padding: clamp(2.8rem, 4vw, 4rem) 0;
   background: linear-gradient(180deg, #fff 0%, #f2f8fa 100%);
 }
 .home-services-page .home-selected-work > .container {
@@ -269,50 +269,50 @@
 }
 .home-services-page .home-selected-work .section-heading {
   max-width: 760px;
-  margin: 0 auto clamp(2rem, 4vw, 3rem);
+  margin: 0 auto 1.6rem;
   text-align: center;
 }
 .home-services-page .home-selected-work .section-heading h2 {
   margin: 0;
   color: #071a2d;
-  font-size: clamp(2.25rem, 3.8vw, 3.35rem);
+  font-size: clamp(2rem, 3vw, 2.8rem);
   line-height: 1.05;
   letter-spacing: -.04em;
 }
 .home-services-page .case-study-grid {
   display: grid;
   width: 100%;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 1rem;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: .75rem;
   align-items: stretch;
 }
 .home-services-page .case-study-card {
   overflow: hidden;
   min-width: 0;
-  min-height: 292px;
+  min-height: 0;
   border: 1px solid #d7e3eb;
-  border-radius: 12px;
+  border-radius: 10px;
   background: #fff;
-  box-shadow: 0 10px 26px rgba(7,26,45,.055);
+  box-shadow: 0 7px 18px rgba(7,26,45,.045);
   transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
 }
 .home-services-page .case-study-card:hover {
   border-color: #8db6df;
-  box-shadow: 0 16px 34px rgba(7,26,45,.09);
-  transform: translateY(-3px);
+  box-shadow: 0 12px 26px rgba(7,26,45,.08);
+  transform: translateY(-2px);
 }
 .home-services-page .case-study-card > a {
   display: grid;
   height: 100%;
-  grid-template-rows: 148px 1fr;
+  grid-template-rows: 105px 1fr;
   color: inherit;
   text-decoration: none;
 }
 .home-services-page .case-study-card img {
   display: block;
   width: 100%;
-  height: 148px;
-  padding: 12px;
+  height: 105px;
+  padding: 8px;
   border-bottom: 1px solid #e3ebf0;
   background: linear-gradient(145deg,#f3f7fc,#eaf2fb);
   object-fit: contain;
@@ -320,39 +320,37 @@
 }
 .home-services-page .case-study-card > a > div {
   display: flex;
-  min-height: 144px;
-  padding: 1.25rem;
+  min-height: 118px;
+  padding: .85rem;
   flex-direction: column;
 }
 .home-services-page .case-study-card h3 {
-  margin: 0 0 .6rem;
+  margin: 0 0 .35rem;
   color: #071a2d;
-  font-size: 1.08rem;
-  line-height: 1.25;
+  font-size: .88rem;
+  line-height: 1.22;
 }
 .home-services-page .case-study-card p {
-  margin: 0 0 .9rem;
+  margin: 0 0 .6rem;
   color: #5d7182;
-  font-size: .9rem;
-  line-height: 1.55;
+  font-size: .74rem;
+  line-height: 1.42;
 }
 .home-services-page .case-study-card span {
   margin-top: auto;
   color: #2d6fb7;
-  font-size: .84rem;
+  font-size: .72rem;
   font-weight: 700;
 }
 .home-services-page .case-study-card span span { margin-top: 0; }
 
-@media (max-width: 980px) {
-  .home-services-page .case-study-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .home-services-page .case-study-card:last-child { grid-column: 1 / -1; }
-}
-@media (max-width: 900px) {
-  .home-services-page .homepage-faq-list { grid-template-columns: 1fr; }
-  .home-services-page .site-footer .footer-grid { grid-template-columns: 1fr 1fr; }
+@media (max-width: 1100px) {
+  .home-services-page .case-study-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 }
 @media (max-width: 800px) {
+  .home-services-page .case-study-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .home-services-page .homepage-faq-list { grid-template-columns: 1fr; }
+  .home-services-page .site-footer .footer-grid { grid-template-columns: 1fr 1fr; }
   .home-services-page .contact-form-layout { grid-template-columns: 1fr !important; }
   .home-services-page .contact-form { grid-template-columns: 1fr 1fr !important; }
   .home-services-page .contact-field:last-of-type { grid-column: 1 / -1 !important; }
@@ -369,9 +367,10 @@
   .home-services-page .contact-submit { grid-column: auto !important; }
   .home-services-page .contact-links { flex-direction: column; width: 100%; }
   .home-services-page .contact-links a { width: min(100%, 320px); }
+}
+@media (max-width: 560px) {
   .home-services-page .case-study-grid { grid-template-columns: 1fr; }
-  .home-services-page .case-study-card:last-child { grid-column: auto; }
-  .home-services-page .case-study-card { min-height: 0; }
-  .home-services-page .case-study-card > a { grid-template-rows: 170px auto; }
-  .home-services-page .case-study-card img { height: 170px; }
+  .home-services-page .case-study-card > a { grid-template-columns: 105px 1fr; grid-template-rows: auto; }
+  .home-services-page .case-study-card img { width: 105px; height: 100%; min-height: 120px; border-right: 1px solid #e3ebf0; border-bottom: 0; }
+  .home-services-page .case-study-card > a > div { min-height: 120px; }
 }
