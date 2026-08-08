@@ -10,6 +10,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lora:wght@500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="./services.css?v=20260801-3" />
   <link rel="stylesheet" href="./services-visual.css?v=20260801-7" />
+  <link rel="stylesheet" href="./offers-grouping.css?v=20260807-3" />
   <link rel="stylesheet" href="./home-services-theme.css?v=20260801-3" />
   <link rel="stylesheet" href="./home-original-sections.css?v=20260802-7" />
   <style>
@@ -157,7 +158,7 @@
         window.setInterval(() => select(buttons[(index + 1) % buttons.length]),3200);
       }
 
-      fetch('./services.html?v=20260802-10')
+      fetch('./services.html?v=20260807-offers-3')
         .then(response => {
           if (!response.ok) throw new Error(`Unable to load homepage architecture (${response.status})`);
           return response.text();
