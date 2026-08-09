@@ -29,6 +29,89 @@
 
   document.querySelector('.site-footer')?.remove();
 
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // Restore motion and interaction to the example workflow panel.
+  const workflowOptions = [...document.querySelectorAll('.console-option')];
+  const workflowValue = document.getElementById('workflow-value');
+  const actionValue = document.getElementById('action-value');
+  const statusValue = document.getElementById('status-value');
+  const terminalValue = document.getElementById('terminal-value');
+
+  const workflowStages = {
+    incoming: {
+      workflow: 'Request intake',
+      action: 'Gather customer and project details',
+      status: 'Received',
+      terminal: 'gathering the information needed for the next step'
+    },
+    context: {
+      workflow: 'Information gathering',
+      action: 'Find details, documents, and history',
+      status: 'In progress',
+      terminal: 'customer details and documents found'
+    },
+    support: {
+      workflow: 'AI support',
+      action: 'Summarize findings and recommend next steps',
+      status: 'AI working',
+      terminal: 'preparing a concise summary and recommendation'
+    },
+    review: {
+      workflow: 'Human review',
+      action: 'Review, approve, and move the work forward',
+      status: 'Ready to review',
+      terminal: 'ready for a human decision'
+    }
+  };
+
+  let workflowIndex = 0;
+  let workflowTimer = null;
+
+  function showWorkflowStage(index, userInitiated = false) {
+    if (!workflowOptions.length) return;
+    workflowIndex = (index + workflowOptions.length) % workflowOptions.length;
+    const active = workflowOptions[workflowIndex];
+    const stage = workflowStages[active.dataset.stage];
+    if (!stage) return;
+
+    workflowOptions.forEach((option, optionIndex) => {
+      const selected = optionIndex === workflowIndex;
+      option.classList.toggle('is-active', selected);
+      option.setAttribute('aria-selected', selected ? 'true' : 'false');
+    });
+
+    const fields = [workflowValue, actionValue, statusValue, terminalValue].filter(Boolean);
+    fields.forEach(field => field.classList.remove('workflow-pulse'));
+    void active.offsetWidth;
+
+    if (workflowValue) workflowValue.textContent = stage.workflow;
+    if (actionValue) actionValue.textContent = stage.action;
+    if (statusValue) statusValue.textContent = stage.status;
+    if (terminalValue) terminalValue.textContent = stage.terminal;
+    fields.forEach(field => field.classList.add('workflow-pulse'));
+
+    if (userInitiated && workflowTimer) {
+      clearInterval(workflowTimer);
+      workflowTimer = null;
+      if (!reduceMotion) startWorkflowMotion();
+    }
+  }
+
+  function startWorkflowMotion() {
+    if (reduceMotion || workflowOptions.length < 2 || workflowTimer) return;
+    workflowTimer = setInterval(() => showWorkflowStage(workflowIndex + 1), 2600);
+  }
+
+  workflowOptions.forEach((option, index) => {
+    option.addEventListener('click', () => showWorkflowStage(index, true));
+  });
+
+  if (workflowOptions.length) {
+    showWorkflowStage(workflowOptions.findIndex(option => option.classList.contains('is-active')) || 0);
+    startWorkflowMotion();
+  }
+
   const hero = document.querySelector('.page-hero');
   const canvas = hero?.querySelector('.hero-network');
   if (!hero || !canvas) return;
@@ -36,7 +119,6 @@
   const context = canvas.getContext('2d');
   if (!context) return;
 
-  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const pointer = { x: -1000, y: -1000, active: false };
   let width = 0;
   let height = 0;
@@ -130,6 +212,7 @@
   window.addEventListener('resize', resize);
   window.addEventListener('pagehide', () => {
     if (frame) cancelAnimationFrame(frame);
+    if (workflowTimer) clearInterval(workflowTimer);
   }, { once: true });
 
   resize();
