@@ -29,6 +29,46 @@
 
   document.querySelector('.site-footer')?.remove();
 
+  // Replace third-party icon-CDN images with brand assets served by the product owners.
+  const platformAssets = {
+    'Salesforce': { src: 'https://www.salesforce.com/news/wp-content/uploads/sites/3/2021/05/Salesforce-logo.jpg?w=1024', wordmark: true },
+    'HubSpot': { src: 'https://www.hubspot.com/favicon.ico' },
+    'Zoho': { src: 'https://www.zohowebstatic.com/sites/zweb/images/commonroot/zoho-logo-web.svg', wordmark: true },
+    'Microsoft 365': { src: 'https://learn.microsoft.com/en-us/entra/identity-platform/media/howto-add-branding-in-apps/ms-symbollockup_mssymbol_19.svg' },
+    'Google Workspace': { src: 'https://knowledge.workspace.google.com/static/images/admin/google-workspace-logo-dark-gray.png', wordmark: true },
+    'ChatGPT': { src: 'https://chatgpt.com/favicon.ico' },
+    'Claude': { src: 'https://claude.ai/favicon.ico' },
+    'Gemini': { src: 'https://www.gstatic.com/lamda/images/gemini_sparkle_v002_d4735304ff2c1526032e.svg' },
+    'Zapier': { src: 'https://zapier.com/_next/image?q=80&url=https%3A%2F%2Fimages.ctfassets.net%2F27w7hkots21d%2F4uzr8DBARNtnqgY1fAMrsI%2Fb1c30673d991739d920e934fc5c6ff70%2Fimage.png&w=3840', wordmark: true },
+    'Slack': { src: 'https://a.slack-edge.com/80588/marketing/img/icons/icon_slack_hash_colored.png' },
+    'Asana': { src: 'https://assets.asana.biz/transform/34b29128-409a-42d0-b86d-7dd377c5b492/logo-primary-bright?format=webp&io=transform%3Afill%2Cwidth%3A2560', wordmark: true }
+  };
+
+  document.querySelectorAll('.platform-logo').forEach(item => {
+    const label = item.querySelector('span')?.textContent.trim();
+    const image = item.querySelector('img');
+    if (!label || !image) return;
+
+    // LinkedIn's corporate logo requires separate trademark permission for this use,
+    // so keep the product name visible without displaying an unauthorized logo.
+    if (label === 'LinkedIn') {
+      image.remove();
+      item.classList.add('platform-logo-text-only');
+      return;
+    }
+
+    const asset = platformAssets[label];
+    if (!asset) return;
+    image.src = asset.src;
+    image.removeAttribute('width');
+    image.removeAttribute('height');
+    image.classList.toggle('is-wordmark', Boolean(asset.wordmark));
+    image.addEventListener('error', () => {
+      image.remove();
+      item.classList.add('platform-logo-text-only');
+    }, { once: true });
+  });
+
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   // Restore motion and interaction to the example workflow panel.
