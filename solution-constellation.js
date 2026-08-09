@@ -8,7 +8,13 @@
     const pointer = { x: -1000, y: -1000, active: false };
     let width = 0, height = 0, scale = 1, frame = null;
     let points = [];
-    const palette = ['rgba(95,211,198,.95)','rgba(168,200,240,.9)','rgba(31,143,136,.9)','rgba(255,255,255,.9)'];
+    const palette = [
+      'rgba(95,211,198,.95)',
+      'rgba(168,200,240,.9)',
+      'rgba(31,143,136,.9)',
+      'rgba(216,154,106,.88)',
+      'rgba(255,255,255,.9)'
+    ];
     function makePoints(){
       const count = Math.max(30, Math.min(54, Math.round(width / 28)));
       points = Array.from({length:count},(_,i)=>({x:Math.random()*width,y:Math.random()*height,vx:(Math.random()-.5)*.24,vy:(Math.random()-.5)*.24,radius:1.2+Math.random()*2,color:palette[i%palette.length]}));
