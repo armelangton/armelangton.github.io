@@ -10,60 +10,45 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lora:wght@500;600&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="../services.css?v=20260801-3"/>
   <style>
-    .quote-page{--ink:#071a2d;--slate:#334155;--muted:#64748b;--border:#d9e3ea;--blue:#2d6fb7;--blue-dark:#174f89;--blue-soft:#eaf2fb;--light:#f8fcfd;--navy:#0b2f4d;background:#fff;color:var(--ink)}
+    .quote-page{--ink:#071a2d;--slate:#334155;--border:#d9e3ea;--blue:#2d6fb7;--blue-dark:#174f89;--blue-soft:#eaf2fb;--light:#f8fcfd;background:#fff;color:var(--ink)}
     .quote-page .site-header{background:var(--light);border-color:var(--border)}
     .quote-page .nav-links a,.quote-page .brand{color:var(--ink)}
     .quote-page .nav-links .is-active{color:var(--blue)}
     .quote-page .nav-links .is-active::after{background:var(--blue)}
 
-    .quote-intro{position:relative;overflow:hidden;padding:4.8rem 0 4.5rem;background:linear-gradient(180deg,#f8fcfd 0%,#ffffff 100%)}
-    .quote-intro-copy{position:relative;z-index:1;max-width:850px;padding-left:1.35rem}
-    .quote-intro-copy:before{position:absolute;left:0;top:3.05rem;width:4px;height:118px;border-radius:999px;background:var(--blue);content:""}
+    .quote-intro{padding:4.9rem 0 3.8rem;background:linear-gradient(180deg,#f8fcfd 0%,#fff 100%)}
+    .quote-intro-copy{max-width:780px}
     .quote-back{display:inline-flex;margin-bottom:1.45rem;color:var(--blue);font-size:.76rem;font-weight:700}
-    .quote-kicker{display:block;margin-bottom:.72rem;color:var(--blue);font-size:.7rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase}
-    .quote-intro h1{max-width:760px;margin:0;color:var(--ink);font-family:Lora,Georgia,serif;font-size:clamp(2.55rem,4vw,3.65rem);font-weight:600;line-height:1.05;letter-spacing:-.03em}
+    .quote-intro h1{max-width:760px;margin:0;color:var(--ink);font-family:Lora,Georgia,serif;font-size:clamp(2.65rem,4vw,3.75rem);font-weight:600;line-height:1.04;letter-spacing:-.03em}
     .quote-intro p{max-width:690px;margin:1rem 0 0;color:var(--slate);font-size:1rem;line-height:1.68}
 
-    .quote-content{padding:4.8rem 0 5rem;background:#fff}
+    .quote-content{padding:1.6rem 0 5.2rem;background:#fff}
     .quote-container{width:min(calc(100% - 48px),1180px);margin-inline:auto}
-    .quote-section-head{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(280px,.75fr);gap:3rem;align-items:start;margin-bottom:2.2rem}
-    .quote-section-head h2,.quote-connect h2{max-width:650px;margin:0;color:var(--ink);font-family:Lora,Georgia,serif;font-size:clamp(1.9rem,3vw,2.65rem);font-weight:600;line-height:1.12;letter-spacing:-.025em}
-    .quote-section-head p,.quote-connect-intro{max-width:410px;margin:.12rem 0 0;color:var(--slate);font-size:.9rem;line-height:1.62}
-
+    .quote-context{max-width:760px;margin:0 0 2rem;color:var(--slate);font-size:.92rem;line-height:1.65}
     .quote-use-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1.1rem}
-    .quote-use-card{position:relative;min-height:215px;padding:1.5rem;border:1px solid #dfe8ef;border-radius:16px;background:#fff;box-shadow:0 12px 28px rgba(45,111,183,.06)}
-    .quote-use-card:before{position:absolute;left:1.5rem;right:1.5rem;top:0;height:3px;border-radius:0 0 999px 999px;background:var(--blue);content:"";opacity:.78}
-    .quote-use-icon{display:grid;width:42px;height:42px;margin-bottom:1.45rem;border:1px solid #c8dcef;border-radius:11px;place-items:center;background:var(--blue-soft);color:var(--blue)}
+    .quote-use-card{display:flex;min-height:300px;padding:1.55rem;border:1px solid #dfe8ef;border-radius:16px;flex-direction:column;background:#fff;box-shadow:0 12px 28px rgba(45,111,183,.055)}
+    .quote-use-icon{display:grid;width:42px;height:42px;margin-bottom:1.4rem;border:1px solid #c8dcef;border-radius:11px;place-items:center;background:var(--blue-soft);color:var(--blue)}
     .quote-use-icon svg{width:21px;height:21px;fill:none;stroke:currentColor;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
-    .quote-use-card h3{margin:0 0 .48rem;color:var(--ink);font-size:1rem;font-weight:700}
+    .quote-use-card h2{margin:0 0 .5rem;color:var(--ink);font-family:Inter,Arial,sans-serif;font-size:1rem;font-weight:700;line-height:1.3}
     .quote-use-card p{margin:0;color:#334155;font-size:.84rem;line-height:1.58}
+    .quote-use-meta{margin-top:auto;padding-top:1.35rem}
+    .quote-use-meta span{display:block;margin-bottom:.45rem;color:var(--blue);font-size:.66rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase}
+    .quote-use-meta strong{display:block;color:var(--ink);font-size:.78rem;font-weight:600;line-height:1.45}
 
-    .quote-connect{margin-top:4.4rem;padding:3.25rem;border-radius:24px;background:#f8fcfd;box-shadow:inset 0 0 0 1px #e3ebf1}
-    .quote-connect-head{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(280px,.8fr);gap:3rem;align-items:start;margin-bottom:2.2rem}
-    .quote-connect-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.8rem 2rem}
-    .quote-connect-item{display:grid;grid-template-columns:34px 1fr;gap:.8rem;align-items:center;min-height:58px;padding:.55rem 0;color:var(--ink);font-size:.84rem;font-weight:600;line-height:1.45}
-    .quote-connect-mark{display:grid;width:32px;height:32px;border:1px solid #c8dcef;border-radius:10px;place-items:center;background:#fff;color:var(--blue);box-shadow:0 5px 14px rgba(45,111,183,.06);font-size:.68rem;font-weight:800}
-
-    .quote-close{padding:3.9rem 0 4.2rem;background:#fff}
+    .quote-close{padding:0 0 4.4rem;background:#fff}
     .quote-close-inner{display:flex;align-items:center;justify-content:space-between;gap:2.5rem;padding:2.5rem 2.7rem;border-radius:22px;background:linear-gradient(112deg,#071c31 0%,#0b2239 58%,#123b5d 100%);color:#fff;box-shadow:0 18px 40px rgba(7,28,49,.14)}
     .quote-close h2{margin:0 0 .5rem;color:#fff;font-family:Lora,Georgia,serif;font-size:clamp(1.8rem,2.8vw,2.45rem);font-weight:600;letter-spacing:-.02em}
     .quote-close p{max-width:720px;margin:0;color:#d7e5ec;font-size:.9rem;line-height:1.62}
     .quote-close .button{min-width:160px;flex:0 0 auto;background:var(--blue);color:#fff;box-shadow:none}
     .quote-close .button:hover{background:var(--blue-dark)}
 
-    @media(max-width:1050px){
-      .quote-use-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
-      .quote-section-head,.quote-connect-head{grid-template-columns:1fr;gap:.8rem}
-      .quote-connect-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
-    }
+    @media(max-width:1050px){.quote-use-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
     @media(max-width:700px){
       .quote-container{width:min(calc(100% - 32px),1180px)}
-      .quote-intro{padding:3.5rem 0 3.2rem}
-      .quote-intro-copy{padding-left:1rem}
-      .quote-intro-copy:before{top:2.9rem;height:105px}
+      .quote-intro{padding:3.5rem 0 3rem}
       .quote-intro h1{font-size:clamp(2.3rem,10vw,3rem)}
-      .quote-use-grid,.quote-connect-grid{grid-template-columns:1fr}
-      .quote-connect{padding:2rem 1.3rem;border-radius:18px}
+      .quote-use-grid{grid-template-columns:1fr}
+      .quote-use-card{min-height:0}
       .quote-close-inner{align-items:flex-start;flex-direction:column;padding:2rem 1.4rem}
       .quote-close .button{width:100%}
     }
@@ -82,7 +67,6 @@
       <div class="container">
         <div class="quote-intro-copy">
           <a class="quote-back" href="../services.html">← Services</a>
-          <span class="quote-kicker">Custom AI Solution</span>
           <h1>Quoting &amp; Commercial Response</h1>
           <p>Turn an incoming request into an organized, review-ready response without forcing people to chase information across emails, documents, pricing sources, and systems.</p>
         </div>
@@ -91,31 +75,33 @@
 
     <section class="quote-content">
       <div class="quote-container">
-        <div class="quote-section-head">
-          <h2>Where quoting work usually breaks down</h2>
-          <p>The problem is rarely one isolated step. It is the friction between incoming requests, scattered information, preparation work, and final review.</p>
-        </div>
+        <p class="quote-context">Quoting usually slows down where requests, information, business rules, and approvals have to come together. A custom solution can reduce that friction without forcing the business into a generic quoting process.</p>
 
         <div class="quote-use-grid">
-          <article class="quote-use-card"><div class="quote-use-icon"><svg viewBox="0 0 24 24"><path d="M4 5h16v14H4z"/><path d="M8 9h8M8 13h5"/></svg></div><h3>RFQ intake</h3><p>Capture requests and surface missing information before someone starts building the response.</p></article>
-          <article class="quote-use-card"><div class="quote-use-icon"><svg viewBox="0 0 24 24"><path d="M4 7h16M6 4h12v16H6z"/><path d="M9 11h6M9 15h4"/></svg></div><h3>Quote preparation</h3><p>Bring customer, product, service, availability, and pricing information into one working view.</p></article>
-          <article class="quote-use-card"><div class="quote-use-icon"><svg viewBox="0 0 24 24"><path d="M5 4h14v16H5z"/><path d="M8 8h8M8 12h8M8 16h5"/></svg></div><h3>Proposal drafting</h3><p>Use approved information, templates, and rules to prepare a consistent first draft.</p></article>
-          <article class="quote-use-card"><div class="quote-use-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="m8 12 2.5 2.5L16 9"/></svg></div><h3>Review &amp; approval</h3><p>Route pricing decisions, exceptions, and final output to the right person before release.</p></article>
-        </div>
-
-        <div class="quote-connect">
-          <div class="quote-connect-head">
-            <h2>What the solution can connect</h2>
-            <p class="quote-connect-intro">The implementation is built around the systems, information, rules, and approval points already involved in the quoting process.</p>
-          </div>
-          <div class="quote-connect-grid">
-            <div class="quote-connect-item"><span class="quote-connect-mark">01</span><span>Email, forms, files &amp; CRM intake</span></div>
-            <div class="quote-connect-item"><span class="quote-connect-mark">02</span><span>Requirement extraction &amp; gap checks</span></div>
-            <div class="quote-connect-item"><span class="quote-connect-mark">03</span><span>Product, supplier &amp; pricing lookups</span></div>
-            <div class="quote-connect-item"><span class="quote-connect-mark">04</span><span>Calculations &amp; business rules</span></div>
-            <div class="quote-connect-item"><span class="quote-connect-mark">05</span><span>Quote or proposal generation</span></div>
-            <div class="quote-connect-item"><span class="quote-connect-mark">06</span><span>Approvals, updates &amp; status tracking</span></div>
-          </div>
+          <article class="quote-use-card">
+            <div class="quote-use-icon"><svg viewBox="0 0 24 24"><path d="M4 5h16v14H4z"/><path d="M8 9h8M8 13h5"/></svg></div>
+            <h2>RFQ intake</h2>
+            <p>Capture incoming requests and surface missing information before someone starts building the response.</p>
+            <div class="quote-use-meta"><span>Can connect</span><strong>Email, forms, files and CRM intake</strong></div>
+          </article>
+          <article class="quote-use-card">
+            <div class="quote-use-icon"><svg viewBox="0 0 24 24"><path d="M4 7h16M6 4h12v16H6z"/><path d="M9 11h6M9 15h4"/></svg></div>
+            <h2>Quote preparation</h2>
+            <p>Bring customer, product, service, availability, and pricing information into one working view.</p>
+            <div class="quote-use-meta"><span>Can connect</span><strong>Product, supplier and pricing lookups</strong></div>
+          </article>
+          <article class="quote-use-card">
+            <div class="quote-use-icon"><svg viewBox="0 0 24 24"><path d="M5 4h14v16H5z"/><path d="M8 8h8M8 12h8M8 16h5"/></svg></div>
+            <h2>Proposal drafting</h2>
+            <p>Use approved information, templates, calculations, and rules to prepare a consistent first draft.</p>
+            <div class="quote-use-meta"><span>Can connect</span><strong>Business rules, calculations and response generation</strong></div>
+          </article>
+          <article class="quote-use-card">
+            <div class="quote-use-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="m8 12 2.5 2.5L16 9"/></svg></div>
+            <h2>Review &amp; approval</h2>
+            <p>Route pricing decisions, exceptions, and final output to the right person before release.</p>
+            <div class="quote-use-meta"><span>Can connect</span><strong>Approvals, updates and status tracking</strong></div>
+          </article>
         </div>
       </div>
     </section>
