@@ -3,33 +3,32 @@
     if (link.textContent.trim() === 'Pricing') link.remove();
   });
 
-  // Keep the existing homepage card layout, but align its content and links to
-  // Palomma's current service architecture. This avoids redesigning the home
-  // page while removing superseded offer names and starting prices.
+  // Preserve the established homepage card design while using the cards as
+  // buyer entry paths into Palomma's current problem-led service architecture.
   const homepageServiceUpdates = [
     {
       match: 'managed-ai-agents.html',
       href: './services/quoting-proposals.html',
-      title: 'Quoting & Proposals',
-      description: 'Use AI to help gather requirements, organize pricing and product information, prepare quotes, and move proposals through review faster.'
+      title: 'Quoting & Commercial Response',
+      description: 'For RFQs, quotes, proposals, pricing inputs, approvals, and commercial response work that still depends on manual coordination.'
     },
     {
       match: 'workflow-sprint.html',
       href: './services/intake-document-processing.html',
-      title: 'Intake & Document Processing',
-      description: 'Turn incoming emails, forms, files, and requests into organized information that can be reviewed, routed, and entered into the right systems.'
+      title: 'Intake & Document Operations',
+      description: 'For emails, forms, files, documents, and requests that must be read, organized, checked, routed, and moved into the right workflow.'
     },
     {
       match: 'ai-operations-assessment.html',
       href: './services/orders-back-office.html',
       title: 'Orders & Back-Office Workflows',
-      description: 'Reduce repetitive administrative work by connecting the steps, information, approvals, and systems behind recurring operational processes.'
+      description: 'For repetitive processing, lookups, approvals, handoffs, system updates, and other administrative work behind recurring operations.'
     },
     {
       match: 'business-applications.html',
       href: './services/sales-operations-crm.html',
-      title: 'Sales Operations & CRM Workflows',
-      description: 'Improve the work around your CRM by helping teams research, prepare, update records, organize information, and move sales work forward.'
+      title: 'Sales & Commercial Workflows',
+      description: 'For CRM-adjacent work, account preparation, information gathering, record updates, sales coordination, and commercial execution.'
     }
   ];
 
@@ -44,6 +43,9 @@
     if (description) description.textContent = update.description;
     card.querySelector('.service-starting-price')?.remove();
   });
+
+  const serviceHeading = document.querySelector('#core-services .solution-heading h2');
+  if (serviceHeading) serviceHeading.textContent = 'What needs to run better?';
 
   function connectSectionLink(label, sectionId) {
     const link = [...document.querySelectorAll('.nav-links a')]
@@ -71,7 +73,6 @@
 
   document.querySelector('.site-footer')?.remove();
 
-  // Replace third-party icon-CDN images with brand assets served by the product owners.
   const platformAssets = {
     'Salesforce': { src: 'https://www.salesforce.com/news/wp-content/uploads/sites/3/2021/05/Salesforce-logo.jpg?w=1024', wordmark: true },
     'HubSpot': { src: 'https://www.hubspot.com/favicon.ico' },
@@ -91,8 +92,6 @@
     const image = item.querySelector('img');
     if (!label || !image) return;
 
-    // LinkedIn's corporate logo requires separate trademark permission for this use,
-    // so keep the product name visible without displaying an unauthorized logo.
     if (label === 'LinkedIn') {
       image.remove();
       item.classList.add('platform-logo-text-only');
@@ -112,8 +111,6 @@
   });
 
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-  // Restore motion and interaction to the example workflow panel.
   const workflowOptions = [...document.querySelectorAll('.console-option')];
   const workflowValue = document.getElementById('workflow-value');
   const actionValue = document.getElementById('action-value');
