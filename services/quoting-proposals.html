@@ -10,13 +10,13 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lora:wght@500;600&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="../services.css?v=20260801-3"/>
   <style>
-    .quote-page{--ink:#071a2d;--slate:#334155;--muted:#64748b;--border:#d9e3ea;--blue:#2d6fb7;--blue-dark:#174f89;--blue-soft:#eaf2fb;--light:#f8fcfd;background:#fff;color:var(--ink)}
+    .quote-page{--ink:#071a2d;--slate:#334155;--muted:#64748b;--border:#d9e3ea;--blue:#2d6fb7;--blue-dark:#174f89;--blue-soft:#eaf2fb;--light:#f8fcfd;--navy:#0b2f4d;background:#fff;color:var(--ink)}
     .quote-page .site-header{background:var(--light);border-color:var(--border)}
     .quote-page .nav-links a,.quote-page .brand{color:var(--ink)}
     .quote-page .nav-links .is-active{color:var(--blue)}
     .quote-page .nav-links .is-active::after{background:var(--blue)}
 
-    .quote-intro{position:relative;overflow:hidden;padding:4.8rem 0 4.5rem;background:radial-gradient(circle at 84% 20%,rgba(45,111,183,.11),transparent 30%),linear-gradient(130deg,#f8fcfd 0%,#f3f7fc 58%,#f8fcfd 100%)}
+    .quote-intro{position:relative;overflow:hidden;padding:4.8rem 0 4.5rem;background:linear-gradient(180deg,#f8fcfd 0%,#ffffff 100%)}
     .quote-intro-copy{position:relative;z-index:1;max-width:850px;padding-left:1.35rem}
     .quote-intro-copy:before{position:absolute;left:0;top:3.05rem;width:4px;height:118px;border-radius:999px;background:var(--blue);content:""}
     .quote-back{display:inline-flex;margin-bottom:1.45rem;color:var(--blue);font-size:.76rem;font-weight:700}
@@ -38,18 +38,18 @@
     .quote-use-card h3{margin:0 0 .48rem;color:var(--ink);font-size:1rem;font-weight:700}
     .quote-use-card p{margin:0;color:#334155;font-size:.84rem;line-height:1.58}
 
-    .quote-connect{margin-top:4.4rem;padding:3.25rem;border-radius:24px;background:linear-gradient(145deg,#f8fcfd,#eaf2fb)}
+    .quote-connect{margin-top:4.4rem;padding:3.25rem;border-radius:24px;background:#f8fcfd;box-shadow:inset 0 0 0 1px #e3ebf1}
     .quote-connect-head{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(280px,.8fr);gap:3rem;align-items:start;margin-bottom:2.2rem}
     .quote-connect-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.8rem 2rem}
     .quote-connect-item{display:grid;grid-template-columns:34px 1fr;gap:.8rem;align-items:center;min-height:58px;padding:.55rem 0;color:var(--ink);font-size:.84rem;font-weight:600;line-height:1.45}
     .quote-connect-mark{display:grid;width:32px;height:32px;border:1px solid #c8dcef;border-radius:10px;place-items:center;background:#fff;color:var(--blue);box-shadow:0 5px 14px rgba(45,111,183,.06);font-size:.68rem;font-weight:800}
 
     .quote-close{padding:3.9rem 0 4.2rem;background:#fff}
-    .quote-close-inner{display:flex;align-items:center;justify-content:space-between;gap:2.5rem;padding:2.5rem 2.7rem;border-radius:22px;background:#0b4f43;color:#fff;box-shadow:0 18px 40px rgba(11,79,67,.12)}
+    .quote-close-inner{display:flex;align-items:center;justify-content:space-between;gap:2.5rem;padding:2.5rem 2.7rem;border-radius:22px;background:linear-gradient(112deg,#071c31 0%,#0b2239 58%,#123b5d 100%);color:#fff;box-shadow:0 18px 40px rgba(7,28,49,.14)}
     .quote-close h2{margin:0 0 .5rem;color:#fff;font-family:Lora,Georgia,serif;font-size:clamp(1.8rem,2.8vw,2.45rem);font-weight:600;letter-spacing:-.02em}
-    .quote-close p{max-width:720px;margin:0;color:rgba(255,255,255,.82);font-size:.9rem;line-height:1.62}
-    .quote-close .button{min-width:160px;flex:0 0 auto;background:#9ad8c7;color:#0b4f43;box-shadow:none}
-    .quote-close .button:hover{background:#b7e5d9}
+    .quote-close p{max-width:720px;margin:0;color:#d7e5ec;font-size:.9rem;line-height:1.62}
+    .quote-close .button{min-width:160px;flex:0 0 auto;background:var(--blue);color:#fff;box-shadow:none}
+    .quote-close .button:hover{background:var(--blue-dark)}
 
     @media(max-width:1050px){
       .quote-use-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
