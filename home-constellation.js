@@ -1,6 +1,6 @@
 (() => {
   const core = document.createElement('script');
-  core.src = './home-constellation-core.js?v=20260817-agent';
+  core.src = './home-constellation-core.js?v=20260817-buyer-paths';
   core.defer = true;
   document.head.appendChild(core);
 
