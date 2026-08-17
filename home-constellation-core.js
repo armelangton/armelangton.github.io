@@ -61,10 +61,11 @@
     });
   }
 
+  connectSectionLink('Services', 'core-services');
   connectSectionLink('Selected Work', 'case-studies');
   connectSectionLink('Contact', 'contact');
 
-  if (window.location.hash === '#case-studies' || window.location.hash === '#contact') {
+  if (window.location.hash === '#core-services' || window.location.hash === '#case-studies' || window.location.hash === '#contact') {
     const sectionId = window.location.hash.slice(1);
     requestAnimationFrame(() => {
       document.getElementById(sectionId)?.scrollIntoView({ block: 'start' });
