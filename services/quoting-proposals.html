@@ -10,179 +10,131 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lora:wght@500;600&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="../services.css?v=20260801-3"/>
   <style>
-    .quote-page{--quote-ink:#071a2d;--quote-slate:#334155;--quote-muted:#64748b;--quote-border:#d7e3eb;--quote-soft:#f8fcfd;--quote-blue:#2d6fb7;--quote-blue-dark:#174f89;--quote-teal:#12a5a1;--quote-teal-soft:#dff5f2;background:#fff;color:var(--quote-ink)}
-    .quote-page .site-header{background:#f8fcfd;border-color:var(--quote-border)}
-    .quote-page .nav-links a,.quote-page .brand{color:var(--quote-ink)}
-    .quote-page .nav-links .is-active{color:var(--quote-blue)}
-    .quote-page .nav-links .is-active::after{background:var(--quote-blue)}
+    .quote-page{--ink:#071a2d;--slate:#334155;--muted:#64748b;--border:#d7e3eb;--soft:#f8fcfd;--blue:#2d6fb7;--blue-dark:#174f89;--teal:#12a5a1;--teal-soft:#dff5f2;background:#fff;color:var(--ink)}
+    .quote-page .site-header{background:#f8fcfd;border-color:var(--border)}
+    .quote-page .nav-links a,.quote-page .brand{color:var(--ink)}
+    .quote-page .nav-links .is-active{color:var(--blue)}
+    .quote-page .nav-links .is-active::after{background:var(--blue)}
 
-    .quote-hero{position:relative;overflow:hidden;padding:5rem 0 4.6rem;border-bottom:0;background:radial-gradient(circle at 30% 45%,rgba(45,111,183,.24),transparent 38%),linear-gradient(112deg,#071c31 0%,#0b2239 58%,#123b5d 100%)}
-    .quote-network{position:absolute;inset:0;z-index:0;width:100%;height:100%;pointer-events:none;opacity:.7}
-    .quote-hero:before{position:absolute;right:-130px;top:-170px;width:460px;height:460px;border:1px solid rgba(95,211,198,.18);border-radius:50%;content:"";box-shadow:0 0 0 72px rgba(95,211,198,.035),0 0 0 142px rgba(168,200,240,.025)}
-    .quote-hero-grid{position:relative;z-index:1;display:grid;grid-template-columns:minmax(0,.9fr) minmax(520px,1.1fr);gap:4rem;align-items:end}
-    .quote-hero-copy{display:flex;min-height:100%;flex-direction:column;justify-content:flex-end;padding-bottom:.2rem}
+    .quote-hero{padding:5rem 0 4.6rem;background:linear-gradient(112deg,#071c31 0%,#0b2239 58%,#123b5d 100%)}
+    .quote-hero-grid{display:grid;grid-template-columns:minmax(0,.92fr) minmax(520px,1.08fr);gap:4rem;align-items:center}
     .quote-back{display:inline-flex;width:max-content;margin-bottom:1.7rem;padding:.42rem .7rem;border:1px solid rgba(95,211,198,.28);border-radius:999px;background:rgba(18,165,161,.12);color:#8be0d8;font-size:.72rem;font-weight:700}
     .quote-hero h1{max-width:650px;margin:0;color:#fff;font-family:Lora,Georgia,serif;font-size:clamp(2.65rem,4vw,3.75rem);font-weight:600;line-height:1.04;letter-spacing:-.035em}
     .quote-hero p{max-width:590px;margin:1.15rem 0 0;color:#d7e5ec;font-size:1rem;line-height:1.68}
     .quote-hero-actions{display:flex;gap:.75rem;margin-top:1.55rem;flex-wrap:wrap}
-    .quote-page .button-primary{background:var(--quote-blue);color:#fff;box-shadow:0 10px 24px rgba(23,79,137,.22)}
-    .quote-page .button-primary:hover{background:var(--quote-blue-dark)}
+    .quote-page .button-primary{background:var(--blue);color:#fff;box-shadow:0 10px 24px rgba(23,79,137,.22)}
+    .quote-page .button-primary:hover{background:var(--blue-dark)}
     .quote-page .button-secondary{border:1px solid rgba(255,255,255,.46);background:rgba(255,255,255,.04);color:#fff}
     .quote-page .button-secondary:hover{border-color:#a8c8f0;background:rgba(168,200,240,.12)}
 
-    .quote-visual{position:relative;min-height:390px;padding:1.4rem;border:1px solid rgba(255,255,255,.14);border-radius:22px;background:rgba(7,26,45,.54);box-shadow:0 24px 58px rgba(0,0,0,.18);backdrop-filter:blur(10px);color:#fff}
-    .quote-visual:before{position:absolute;inset:12% 14%;border-radius:50%;background:radial-gradient(circle,rgba(18,165,161,.2),transparent 68%);filter:blur(28px);content:"";pointer-events:none}
-    .quote-visual-head,.quote-lane{position:relative;z-index:1}
-    .quote-visual-head{display:flex;align-items:center;justify-content:space-between;gap:1rem;margin-bottom:1.2rem}
-    .quote-visual-head span{font-size:.68rem;font-weight:700;letter-spacing:.11em;text-transform:uppercase;color:#a7f3e8}
-    .quote-status{display:inline-flex;gap:.42rem;align-items:center;font-size:.7rem;color:#dbeafe}
-    .quote-status:before{width:7px;height:7px;border-radius:50%;background:#5fd3c6;content:"";box-shadow:0 0 0 5px rgba(95,211,198,.12)}
-    .quote-lane{display:grid;grid-template-columns:1fr 48px 1.18fr 48px 1fr;align-items:center;gap:.35rem;min-height:290px}
-    .quote-node{padding:1rem;border:1px solid rgba(255,255,255,.17);border-radius:15px;background:rgba(30,41,59,.78)}
-    .quote-node.is-engine{padding:1.15rem;border-color:rgba(95,211,198,.5);background:linear-gradient(145deg,rgba(18,165,161,.24),rgba(30,41,59,.86))}
-    .quote-node.is-output{background:rgba(30,41,59,.88)}
-    .quote-node-icon{display:grid;width:42px;height:42px;margin-bottom:.8rem;border:1px solid rgba(95,211,198,.34);border-radius:12px;place-items:center;background:rgba(18,165,161,.14);color:#a7f3e8}
-    .quote-node-icon svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
-    .quote-node small{display:block;margin-bottom:.35rem;color:#a7f3e8;font-size:.62rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase}
-    .quote-node strong{display:block;color:#fff;font-size:.92rem;line-height:1.36}
-    .quote-node p{margin:.45rem 0 0;color:#cbd5e1;font-size:.7rem;line-height:1.5}
-    .quote-arrow{position:relative;height:1px;background:linear-gradient(90deg,rgba(95,211,198,.25),#8be0d8)}
-    .quote-arrow:after{position:absolute;right:-1px;top:50%;width:8px;height:8px;border-top:1.5px solid #8be0d8;border-right:1.5px solid #8be0d8;content:"";transform:translateY(-50%) rotate(45deg)}
-    .quote-source-pills{display:flex;gap:.35rem;flex-wrap:wrap;margin-top:.7rem}
-    .quote-source-pills span{padding:.28rem .42rem;border:1px solid rgba(255,255,255,.19);border-radius:6px;background:rgba(255,255,255,.08);font-size:.58rem;color:#e2e8f0}
-    .quote-human{display:flex;gap:.45rem;align-items:center;margin-top:.7rem;color:#e2e8f0;font-size:.64rem}
-    .quote-human:before{display:grid;width:22px;height:22px;border-radius:50%;place-items:center;background:#5fd3c6;color:#071a2d;content:"✓";font-weight:800}
+    .quote-workspace{padding:1.15rem;border:1px solid rgba(255,255,255,.16);border-radius:20px;background:rgba(248,252,253,.96);box-shadow:0 24px 58px rgba(0,0,0,.2)}
+    .workspace-bar{display:flex;justify-content:space-between;align-items:center;padding:.2rem .2rem .85rem;color:#475569;font-size:.68rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase}
+    .workspace-status{display:inline-flex;align-items:center;gap:.4rem;color:#0f766e;text-transform:none;letter-spacing:0}
+    .workspace-status:before{width:7px;height:7px;border-radius:50%;background:#14b8a6;content:""}
+    .workspace-grid{display:grid;grid-template-columns:.86fr 1.14fr;gap:.85rem}
+    .source-stack{display:grid;gap:.65rem}
+    .source-card,.output-card{border:1px solid #dbe5ec;border-radius:12px;background:#fff;box-shadow:0 5px 14px rgba(7,26,45,.055)}
+    .source-card{padding:.85rem}
+    .source-card small,.output-card small{display:block;margin-bottom:.35rem;color:#64748b;font-size:.6rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+    .source-card strong{display:block;color:#0f172a;font-size:.78rem;line-height:1.35}
+    .source-card p{margin:.35rem 0 0;color:#475569;font-size:.67rem;line-height:1.45}
+    .source-tags{display:flex;gap:.35rem;flex-wrap:wrap;margin-top:.55rem}
+    .source-tags span{padding:.23rem .38rem;border-radius:6px;background:#eef6fb;color:#315f88;font-size:.57rem;font-weight:700}
+    .output-card{position:relative;overflow:hidden;padding:1rem}
+    .output-card:before{position:absolute;top:0;right:0;left:0;height:5px;background:linear-gradient(90deg,var(--blue),var(--teal));content:""}
+    .output-header{display:flex;justify-content:space-between;gap:1rem;padding-bottom:.75rem;border-bottom:1px solid #e2e8f0}
+    .output-header strong{display:block;color:#0f172a;font-size:.9rem}
+    .output-id{color:#64748b;font-size:.62rem}
+    .output-row{display:grid;grid-template-columns:1fr auto;gap:.75rem;padding:.7rem 0;border-bottom:1px solid #edf2f6;color:#334155;font-size:.67rem}
+    .output-row strong{color:#0f172a}
+    .output-total{display:flex;justify-content:space-between;gap:1rem;padding-top:.85rem;color:#0f172a;font-size:.76rem;font-weight:700}
+    .review-badge{display:inline-flex;margin-top:.85rem;padding:.36rem .55rem;border:1px solid rgba(18,165,161,.22);border-radius:999px;background:var(--teal-soft);color:#0b7f7b;font-size:.6rem;font-weight:700}
 
     .quote-lower-container{width:min(calc(100% - 48px),1180px);margin-inline:auto}
     .quote-use-cases{padding:4.4rem 0;background:#fff}
-    .quote-section-head{display:grid;margin-bottom:1.8rem;grid-template-columns:minmax(0,1.25fr) minmax(280px,.75fr);gap:3rem;align-items:start}
-    .quote-section-head h2{max-width:650px;margin:0;color:var(--quote-ink);font-family:Lora,Georgia,serif;font-size:clamp(1.9rem,3vw,2.65rem);font-weight:600;line-height:1.12;letter-spacing:-.025em}
-    .quote-section-head p{max-width:390px;margin:.1rem 0 0;color:var(--quote-slate);font-size:.9rem;line-height:1.6}
+    .quote-section-head,.quote-capability-copy{display:grid;margin-bottom:1.8rem;grid-template-columns:minmax(0,1.25fr) minmax(280px,.75fr);gap:3rem;align-items:start}
+    .quote-section-head h2,.quote-capability-copy h2{max-width:650px;margin:0;color:var(--ink);font-family:Lora,Georgia,serif;font-size:clamp(1.9rem,3vw,2.65rem);font-weight:600;line-height:1.12;letter-spacing:-.025em}
+    .quote-section-head p,.quote-capability-copy p{max-width:390px;margin:.1rem 0 0;color:var(--slate);font-size:.9rem;line-height:1.6}
     .quote-use-grid,.quote-chip-grid{display:grid;gap:1rem}
     .quote-use-grid{grid-template-columns:repeat(4,minmax(0,1fr))}
     .quote-chip-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
-    .quote-use-card,.quote-chip{position:relative;min-height:150px;padding:1.35rem;border:1px solid var(--quote-border);border-radius:14px;background:#fff;box-shadow:0 8px 22px rgba(7,26,45,.055)}
+    .quote-use-card,.quote-chip{position:relative;padding:1.35rem;border:1px solid var(--border);border-radius:14px;background:#fff;box-shadow:0 8px 22px rgba(7,26,45,.055)}
     .quote-use-card{overflow:hidden;min-height:230px}
     .quote-use-card:after{position:absolute;right:-24px;bottom:-24px;width:88px;height:88px;border-radius:50%;background:rgba(45,111,183,.04);content:""}
-    .quote-use-icon,.quote-chip span{display:grid;width:46px;height:46px;border:1px solid rgba(18,165,161,.22);border-radius:12px;place-items:center;background:var(--quote-teal-soft);color:#0b7f7b}
+    .quote-use-icon,.quote-chip span{display:grid;width:46px;height:46px;border:1px solid rgba(18,165,161,.22);border-radius:12px;place-items:center;background:var(--teal-soft);color:#0b7f7b}
     .quote-use-icon{margin-bottom:1.8rem}
     .quote-use-icon svg{width:23px;height:23px;fill:none;stroke:currentColor;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
-    .quote-use-card h3{margin:0 0 .5rem;color:var(--quote-ink);font-size:1rem;font-weight:700}
+    .quote-use-card h3{margin:0 0 .5rem;color:var(--ink);font-size:1rem;font-weight:700}
     .quote-use-card p{margin:0;color:#334155;font-size:.84rem;line-height:1.58}
 
-    .quote-capabilities{padding:4.4rem 0;background:var(--quote-soft);border-top:1px solid var(--quote-border);border-bottom:1px solid var(--quote-border)}
+    .quote-capabilities{padding:4.4rem 0;background:var(--soft);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
     .quote-capability-panel{display:block}
-    .quote-capability-copy{display:grid;margin-bottom:1.8rem;grid-template-columns:minmax(0,1.25fr) minmax(280px,.75fr);gap:3rem;align-items:start}
-    .quote-capability-copy h2{max-width:650px;margin:0;color:var(--quote-ink);font-family:Lora,Georgia,serif;font-size:clamp(1.9rem,2.8vw,2.55rem);font-weight:600;line-height:1.12;letter-spacing:-.02em}
-    .quote-capability-copy p{max-width:390px;margin:.1rem 0 0;color:var(--quote-slate);font-size:.9rem;line-height:1.62}
-    .quote-chip{display:flex;min-height:126px;align-items:flex-start;gap:.9rem;color:var(--quote-ink);font-size:.82rem;font-weight:600;line-height:1.45}
+    .quote-chip{display:flex;min-height:126px;align-items:flex-start;gap:.9rem;color:var(--ink);font-size:.82rem;font-weight:600;line-height:1.45}
     .quote-chip span{flex:0 0 46px;font-size:.74rem;font-weight:800}
 
     .quote-finish{padding:4.2rem 0;background:#fff}
     .quote-finish-card{display:grid;grid-template-columns:1fr auto;gap:2rem;padding:2.1rem;border-radius:18px;align-items:center;background:linear-gradient(135deg,#071f37,#0f5a6f);box-shadow:0 20px 45px rgba(7,26,45,.14);color:#fff}
     .quote-finish h2{margin:0 0 .5rem;color:#fff;font-family:Lora,Georgia,serif;font-size:clamp(1.85rem,2.8vw,2.5rem);font-weight:600;letter-spacing:-.02em}
     .quote-finish p{max-width:720px;margin:0;color:rgba(255,255,255,.78);font-size:.9rem;line-height:1.62}
-    .quote-finish .button{min-width:170px;background:var(--quote-blue);color:#fff;box-shadow:none}
-    .quote-finish .button:hover{background:var(--quote-blue-dark)}
+    .quote-finish .button{min-width:170px;background:var(--blue);color:#fff}
 
-    @media(max-width:1050px){.quote-hero-grid{grid-template-columns:1fr;gap:2.8rem;align-items:start}.quote-hero-copy{padding-bottom:0}.quote-visual{max-width:760px}.quote-use-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.quote-chip-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.quote-section-head,.quote-capability-copy{grid-template-columns:1fr;gap:.8rem}}
-    @media(max-width:700px){.quote-lower-container{width:min(calc(100% - 32px),1180px)}.quote-hero{padding:3.8rem 0 3rem}.quote-hero h1{font-size:clamp(2.35rem,10.5vw,3.1rem)}.quote-visual{min-height:0}.quote-lane{grid-template-columns:1fr;gap:.7rem}.quote-arrow{width:1px;height:28px;margin:0 auto;background:linear-gradient(180deg,rgba(95,211,198,.25),#8be0d8)}.quote-arrow:after{right:50%;top:auto;bottom:-1px;transform:translateX(50%) rotate(135deg)}.quote-use-grid,.quote-chip-grid{grid-template-columns:1fr}.quote-finish-card{grid-template-columns:1fr}.quote-finish .button{width:100%}}
+    @media(max-width:1050px){.quote-hero-grid{grid-template-columns:1fr;gap:2.8rem}.quote-workspace{max-width:760px}.quote-use-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.quote-chip-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.quote-section-head,.quote-capability-copy{grid-template-columns:1fr;gap:.8rem}}
+    @media(max-width:700px){.quote-lower-container{width:min(calc(100% - 32px),1180px)}.quote-hero{padding:3.8rem 0 3rem}.quote-hero h1{font-size:clamp(2.35rem,10.5vw,3.1rem)}.workspace-grid,.quote-use-grid,.quote-chip-grid{grid-template-columns:1fr}.quote-finish-card{grid-template-columns:1fr}.quote-finish .button{width:100%}}
   </style>
 </head>
 <body class="quote-page">
   <header class="site-header">
     <nav class="site-nav container" aria-label="Primary navigation">
       <a class="brand" href="../index.html">Palomma Consulting</a>
-      <div class="nav-links">
-        <a href="../index.html">Home</a>
-        <a class="is-active" href="../services.html">Services</a>
-        <a href="../case-studies.html">Case Studies</a>
-        <a href="../about.html">About</a>
-      </div>
+      <div class="nav-links"><a href="../index.html">Home</a><a class="is-active" href="../services.html">Services</a><a href="../case-studies.html">Case Studies</a><a href="../about.html">About</a></div>
     </nav>
   </header>
 
   <main>
     <section class="quote-hero">
-      <canvas class="quote-network" aria-hidden="true"></canvas>
       <div class="container quote-hero-grid">
-        <div class="quote-hero-copy">
+        <div>
           <a class="quote-back" href="../services.html">← Services</a>
           <h1>Quoting &amp; Commercial Response</h1>
           <p>Turn an incoming request into an organized, review-ready response without forcing people to chase information across emails, documents, pricing sources, and systems.</p>
-          <div class="quote-hero-actions">
-            <a class="button button-primary" href="../index.html#contact">Contact</a>
-            <a class="button button-secondary" href="../services.html">View Services</a>
-          </div>
+          <div class="quote-hero-actions"><a class="button button-primary" href="../index.html#contact">Contact</a><a class="button button-secondary" href="../services.html">View Services</a></div>
         </div>
 
-        <div class="quote-visual" aria-label="Example quoting and commercial response workflow">
-          <div class="quote-visual-head"><span>Example workflow</span><div class="quote-status">Human review stays in control</div></div>
-          <div class="quote-lane">
-            <div class="quote-node">
-              <div class="quote-node-icon"><svg viewBox="0 0 24 24"><path d="M4 6h16v12H4z"/><path d="m4 7 8 6 8-6"/></svg></div>
-              <small>Request arrives</small>
-              <strong>RFQ, email, form, or CRM request</strong>
-              <div class="quote-source-pills"><span>Customer</span><span>Product</span><span>Pricing</span><span>Docs</span></div>
+        <div class="quote-workspace" aria-label="Example quoting workspace">
+          <div class="workspace-bar"><span>Example quoting workspace</span><span class="workspace-status">Ready for review</span></div>
+          <div class="workspace-grid">
+            <div class="source-stack">
+              <div class="source-card"><small>Incoming request</small><strong>Replacement lighting package</strong><p>Customer request received by email with an attached specification sheet.</p><div class="source-tags"><span>Email</span><span>Attachment</span><span>Customer</span></div></div>
+              <div class="source-card"><small>Information gathered</small><strong>Products, availability, pricing</strong><p>Relevant product and account information is brought into the same working view.</p><div class="source-tags"><span>CRM</span><span>Catalog</span><span>Pricing</span></div></div>
+              <div class="source-card"><small>Needs attention</small><strong>1 approval required</strong><p>A pricing exception is surfaced instead of being hidden inside the preparation work.</p></div>
             </div>
-            <div class="quote-arrow" aria-hidden="true"></div>
-            <div class="quote-node is-engine">
-              <div class="quote-node-icon"><svg viewBox="0 0 24 24"><path d="M12 3v4M12 17v4M3 12h4M17 12h4"/><circle cx="12" cy="12" r="5"/><path d="m10 12 1.5 1.5L15 10"/></svg></div>
-              <small>Work gets assembled</small>
-              <strong>Gather context → check requirements → apply rules → prepare response</strong>
-              <p>AI handles flexible information work. Rules handle calculations and required steps.</p>
-            </div>
-            <div class="quote-arrow" aria-hidden="true"></div>
-            <div class="quote-node is-output">
-              <div class="quote-node-icon"><svg viewBox="0 0 24 24"><path d="M6 3h9l3 3v15H6z"/><path d="M15 3v4h4M9 11h6M9 15h6"/></svg></div>
-              <small>Reviewed response</small>
-              <strong>Quote or proposal ready to move forward</strong>
-              <div class="quote-human">Material decisions stay visible</div>
+            <div class="output-card">
+              <small>Prepared response</small>
+              <div class="output-header"><div><strong>Quote #Q-1047</strong><span class="output-id">Northfield Properties</span></div><span class="output-id">Draft</span></div>
+              <div class="output-row"><span>LED retrofit fixtures</span><strong>24 units</strong></div>
+              <div class="output-row"><span>Controls package</span><strong>Included</strong></div>
+              <div class="output-row"><span>Lead-time check</span><strong>Complete</strong></div>
+              <div class="output-row"><span>Pricing exception</span><strong>Review</strong></div>
+              <div class="output-total"><span>Response status</span><span>Ready for approval</span></div>
+              <span class="review-badge">Human review before release</span>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="quote-use-cases">
-      <div class="quote-lower-container">
-        <div class="quote-section-head">
-          <h2>Where the workflow usually breaks down</h2>
-          <p>These are common places where manual quoting work becomes slow, inconsistent, or hard to hand off.</p>
-        </div>
-        <div class="quote-use-grid">
-          <article class="quote-use-card"><div class="quote-use-icon"><svg viewBox="0 0 24 24"><path d="M4 5h16v14H4z"/><path d="M8 9h8M8 13h5"/></svg></div><h3>RFQ intake</h3><p>Capture requests and surface missing information before someone starts building the response.</p></article>
-          <article class="quote-use-card"><div class="quote-use-icon"><svg viewBox="0 0 24 24"><path d="M4 7h16M6 4h12v16H6z"/><path d="M9 11h6M9 15h4"/></svg></div><h3>Quote preparation</h3><p>Bring customer, product, service, availability, and pricing information into one working view.</p></article>
-          <article class="quote-use-card"><div class="quote-use-icon"><svg viewBox="0 0 24 24"><path d="M5 4h14v16H5z"/><path d="M8 8h8M8 12h8M8 16h5"/></svg></div><h3>Proposal drafting</h3><p>Use approved information, templates, and rules to prepare a consistent first draft.</p></article>
-          <article class="quote-use-card"><div class="quote-use-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="m8 12 2.5 2.5L16 9"/></svg></div><h3>Review &amp; approval</h3><p>Route pricing decisions, exceptions, and final output to the right person before release.</p></article>
-        </div>
-      </div>
-    </section>
+    <section class="quote-use-cases"><div class="quote-lower-container"><div class="quote-section-head"><h2>Where the workflow usually breaks down</h2><p>These are common places where manual quoting work becomes slow, inconsistent, or hard to hand off.</p></div><div class="quote-use-grid">
+      <article class="quote-use-card"><div class="quote-use-icon"><svg viewBox="0 0 24 24"><path d="M4 5h16v14H4z"/><path d="M8 9h8M8 13h5"/></svg></div><h3>RFQ intake</h3><p>Capture requests and surface missing information before someone starts building the response.</p></article>
+      <article class="quote-use-card"><div class="quote-use-icon"><svg viewBox="0 0 24 24"><path d="M4 7h16M6 4h12v16H6z"/><path d="M9 11h6M9 15h4"/></svg></div><h3>Quote preparation</h3><p>Bring customer, product, service, availability, and pricing information into one working view.</p></article>
+      <article class="quote-use-card"><div class="quote-use-icon"><svg viewBox="0 0 24 24"><path d="M5 4h14v16H5z"/><path d="M8 8h8M8 12h8M8 16h5"/></svg></div><h3>Proposal drafting</h3><p>Use approved information, templates, and rules to prepare a consistent first draft.</p></article>
+      <article class="quote-use-card"><div class="quote-use-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="m8 12 2.5 2.5L16 9"/></svg></div><h3>Review &amp; approval</h3><p>Route pricing decisions, exceptions, and final output to the right person before release.</p></article>
+    </div></div></section>
 
-    <section class="quote-capabilities">
-      <div class="quote-lower-container quote-capability-panel">
-        <div class="quote-capability-copy"><h2>One workflow can connect the pieces already in the business.</h2><p>The solution is built around the systems, rules, information, and approval points involved in the actual quoting process.</p></div>
-        <div class="quote-chip-grid">
-          <div class="quote-chip"><span>01</span>Email, forms, files &amp; CRM intake</div><div class="quote-chip"><span>02</span>Requirement extraction &amp; gap checks</div><div class="quote-chip"><span>03</span>Product, supplier &amp; pricing lookups</div><div class="quote-chip"><span>04</span>Calculations &amp; business rules</div><div class="quote-chip"><span>05</span>Quote or proposal generation</div><div class="quote-chip"><span>06</span>Approvals, updates &amp; status tracking</div>
-        </div>
-      </div>
-    </section>
+    <section class="quote-capabilities"><div class="quote-lower-container quote-capability-panel"><div class="quote-capability-copy"><h2>One workflow can connect the pieces already in the business.</h2><p>The solution is built around the systems, rules, information, and approval points involved in the actual quoting process.</p></div><div class="quote-chip-grid">
+      <div class="quote-chip"><span>01</span>Email, forms, files &amp; CRM intake</div><div class="quote-chip"><span>02</span>Requirement extraction &amp; gap checks</div><div class="quote-chip"><span>03</span>Product, supplier &amp; pricing lookups</div><div class="quote-chip"><span>04</span>Calculations &amp; business rules</div><div class="quote-chip"><span>05</span>Quote or proposal generation</div><div class="quote-chip"><span>06</span>Approvals, updates &amp; status tracking</div>
+    </div></div></section>
 
     <section class="quote-finish"><div class="container"><div class="quote-finish-card"><div><h2>The goal is a working production workflow.</h2><p>Connected systems, defined controls, tested behavior, documentation, handoff, and a clear human decision point where it matters.</p></div><a class="button" href="../index.html#contact">Contact</a></div></div></section>
   </main>
-
-  <script>
-    (() => {
-      const hero = document.querySelector('.quote-hero');
-      const canvas = hero?.querySelector('.quote-network');
-      const ctx = canvas?.getContext('2d');
-      if (!hero || !canvas || !ctx) return;
-      const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-      let width=0,height=0,ratio=1,points=[],frame=null;
-      function resize(){const r=hero.getBoundingClientRect();width=r.width;height=r.height;ratio=Math.min(window.devicePixelRatio||1,2);canvas.width=Math.round(width*ratio);canvas.height=Math.round(height*ratio);canvas.style.width=`${width}px`;canvas.style.height=`${height}px`;ctx.setTransform(ratio,0,0,ratio,0,0);points=Array.from({length:Math.max(28,Math.min(52,Math.round(width/28)))},()=>({x:Math.random()*width,y:Math.random()*height,vx:(Math.random()-.5)*.2,vy:(Math.random()-.5)*.2,r:1.2+Math.random()*1.8}));}
-      function draw(){ctx.clearRect(0,0,width,height);for(let i=0;i<points.length;i++){const p=points[i];if(!reduce){p.x+=p.vx;p.y+=p.vy}if(p.x<0||p.x>width)p.vx*=-1;if(p.y<0||p.y>height)p.vy*=-1;for(let j=i+1;j<points.length;j++){const q=points[j],d=Math.hypot(p.x-q.x,p.y-q.y);if(d<130){ctx.strokeStyle=`rgba(168,200,240,${(1-d/130)*.16})`;ctx.beginPath();ctx.moveTo(p.x,p.y);ctx.lineTo(q.x,q.y);ctx.stroke();}}ctx.fillStyle='rgba(95,211,198,.66)';ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,Math.PI*2);ctx.fill();}if(!reduce)frame=requestAnimationFrame(draw);}
-      window.addEventListener('resize',resize);window.addEventListener('pagehide',()=>{if(frame)cancelAnimationFrame(frame)},{once:true});resize();draw();
-    })();
-  </script>
 </body>
 </html>
