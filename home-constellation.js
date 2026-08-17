@@ -3,6 +3,48 @@
     if (link.textContent.trim() === 'Pricing') link.remove();
   });
 
+  // Keep the existing homepage card layout, but align its content and links to
+  // Palomma's current service architecture. This avoids redesigning the home
+  // page while removing superseded offer names and starting prices.
+  const homepageServiceUpdates = [
+    {
+      match: 'managed-ai-agents.html',
+      href: './services/quoting-proposals.html',
+      title: 'Quoting & Proposals',
+      description: 'Use AI to help gather requirements, organize pricing and product information, prepare quotes, and move proposals through review faster.'
+    },
+    {
+      match: 'workflow-sprint.html',
+      href: './services/intake-document-processing.html',
+      title: 'Intake & Document Processing',
+      description: 'Turn incoming emails, forms, files, and requests into organized information that can be reviewed, routed, and entered into the right systems.'
+    },
+    {
+      match: 'ai-operations-assessment.html',
+      href: './services/orders-back-office.html',
+      title: 'Orders & Back-Office Workflows',
+      description: 'Reduce repetitive administrative work by connecting the steps, information, approvals, and systems behind recurring operational processes.'
+    },
+    {
+      match: 'business-applications.html',
+      href: './services/sales-operations-crm.html',
+      title: 'Sales Operations & CRM Workflows',
+      description: 'Improve the work around your CRM by helping teams research, prepare, update records, organize information, and move sales work forward.'
+    }
+  ];
+
+  homepageServiceUpdates.forEach(update => {
+    const card = [...document.querySelectorAll('#core-services .service-card')]
+      .find(item => item.getAttribute('href')?.includes(update.match));
+    if (!card) return;
+    card.setAttribute('href', update.href);
+    const title = card.querySelector('h3');
+    const description = card.querySelector('p');
+    if (title) title.textContent = update.title;
+    if (description) description.textContent = update.description;
+    card.querySelector('.service-starting-price')?.remove();
+  });
+
   function connectSectionLink(label, sectionId) {
     const link = [...document.querySelectorAll('.nav-links a')]
       .find(item => item.textContent.trim() === label);
