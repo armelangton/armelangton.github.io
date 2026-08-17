@@ -10,7 +10,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lora:wght@500;600&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="../services.css?v=20260801-3"/>
   <style>
-    .quote-page{--quote-ink:#071a2d;--quote-slate:#475569;--quote-muted:#64748b;--quote-border:#d9e3ea;--quote-soft:#f8fcfd;--quote-blue:#2d6fb7;--quote-blue-dark:#174f89;--quote-teal:#12a5a1;--quote-teal-soft:#dff5f2;background:#fff;color:var(--quote-ink)}
+    .quote-page{--quote-ink:#071a2d;--quote-slate:#334155;--quote-muted:#64748b;--quote-border:#d7e3eb;--quote-soft:#f8fcfd;--quote-blue:#2d6fb7;--quote-blue-dark:#174f89;--quote-teal:#12a5a1;--quote-teal-soft:#dff5f2;background:#fff;color:var(--quote-ink)}
     .quote-page .site-header{background:#f8fcfd;border-color:var(--quote-border)}
     .quote-page .nav-links a,.quote-page .brand{color:var(--quote-ink)}
     .quote-page .nav-links .is-active{color:var(--quote-blue)}
@@ -53,25 +53,30 @@
     .quote-human{display:flex;gap:.45rem;align-items:center;margin-top:.7rem;color:#e2e8f0;font-size:.64rem}
     .quote-human:before{display:grid;width:22px;height:22px;border-radius:50%;place-items:center;background:#5fd3c6;color:#071a2d;content:"✓";font-weight:800}
 
+    .quote-lower-container{width:min(calc(100% - 48px),1180px);margin-inline:auto}
     .quote-use-cases{padding:4.4rem 0;background:#fff}
     .quote-section-head{display:grid;margin-bottom:1.8rem;grid-template-columns:minmax(0,1.25fr) minmax(280px,.75fr);gap:3rem;align-items:start}
     .quote-section-head h2{max-width:650px;margin:0;color:var(--quote-ink);font-family:Lora,Georgia,serif;font-size:clamp(1.9rem,3vw,2.65rem);font-weight:600;line-height:1.12;letter-spacing:-.025em}
     .quote-section-head p{max-width:390px;margin:.1rem 0 0;color:var(--quote-slate);font-size:.9rem;line-height:1.6}
-    .quote-use-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1rem}
-    .quote-use-card{position:relative;overflow:hidden;min-height:230px;padding:1.35rem;border:1px solid #d7e3eb;border-radius:14px;background:#fff;box-shadow:0 8px 22px rgba(7,26,45,.055)}
+    .quote-use-grid,.quote-chip-grid{display:grid;gap:1rem}
+    .quote-use-grid{grid-template-columns:repeat(4,minmax(0,1fr))}
+    .quote-chip-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+    .quote-use-card,.quote-chip{position:relative;min-height:150px;padding:1.35rem;border:1px solid var(--quote-border);border-radius:14px;background:#fff;box-shadow:0 8px 22px rgba(7,26,45,.055)}
+    .quote-use-card{overflow:hidden;min-height:230px}
     .quote-use-card:after{position:absolute;right:-24px;bottom:-24px;width:88px;height:88px;border-radius:50%;background:rgba(45,111,183,.04);content:""}
-    .quote-use-icon{display:grid;width:46px;height:46px;margin-bottom:1.8rem;border:1px solid rgba(18,165,161,.22);border-radius:12px;place-items:center;background:var(--quote-teal-soft);color:#0b7f7b}
+    .quote-use-icon,.quote-chip span{display:grid;width:46px;height:46px;border:1px solid rgba(18,165,161,.22);border-radius:12px;place-items:center;background:var(--quote-teal-soft);color:#0b7f7b}
+    .quote-use-icon{margin-bottom:1.8rem}
     .quote-use-icon svg{width:23px;height:23px;fill:none;stroke:currentColor;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
     .quote-use-card h3{margin:0 0 .5rem;color:var(--quote-ink);font-size:1rem;font-weight:700}
-    .quote-use-card p{margin:0;color:#475569;font-size:.82rem;line-height:1.55}
+    .quote-use-card p{margin:0;color:#334155;font-size:.84rem;line-height:1.58}
 
-    .quote-capabilities{padding:3.8rem 0;background:var(--quote-soft);border-top:1px solid var(--quote-border);border-bottom:1px solid var(--quote-border)}
-    .quote-capability-panel{display:grid;grid-template-columns:.8fr 1.2fr;gap:3rem;align-items:start}
-    .quote-capability-copy h2{margin:0;color:var(--quote-ink);font-family:Lora,Georgia,serif;font-size:clamp(1.9rem,2.8vw,2.55rem);font-weight:600;line-height:1.12;letter-spacing:-.02em}
-    .quote-capability-copy p{max-width:480px;margin:.85rem 0 0;color:var(--quote-slate);font-size:.9rem;line-height:1.62}
-    .quote-chip-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.7rem}
-    .quote-chip{display:flex;min-height:66px;padding:.9rem 1rem;border:1px solid var(--quote-border);border-radius:11px;align-items:center;gap:.75rem;background:#fff;box-shadow:0 3px 12px rgba(7,26,45,.035);color:var(--quote-ink);font-size:.8rem;font-weight:600}
-    .quote-chip span{display:grid;width:30px;height:30px;flex:0 0 30px;border:1px solid rgba(18,165,161,.2);border-radius:8px;place-items:center;background:var(--quote-teal-soft);color:#0b7f7b;font-size:.72rem;font-weight:800}
+    .quote-capabilities{padding:4.4rem 0;background:var(--quote-soft);border-top:1px solid var(--quote-border);border-bottom:1px solid var(--quote-border)}
+    .quote-capability-panel{display:block}
+    .quote-capability-copy{display:grid;margin-bottom:1.8rem;grid-template-columns:minmax(0,1.25fr) minmax(280px,.75fr);gap:3rem;align-items:start}
+    .quote-capability-copy h2{max-width:650px;margin:0;color:var(--quote-ink);font-family:Lora,Georgia,serif;font-size:clamp(1.9rem,2.8vw,2.55rem);font-weight:600;line-height:1.12;letter-spacing:-.02em}
+    .quote-capability-copy p{max-width:390px;margin:.1rem 0 0;color:var(--quote-slate);font-size:.9rem;line-height:1.62}
+    .quote-chip{display:flex;min-height:126px;align-items:flex-start;gap:.9rem;color:var(--quote-ink);font-size:.82rem;font-weight:600;line-height:1.45}
+    .quote-chip span{flex:0 0 46px;font-size:.74rem;font-weight:800}
 
     .quote-finish{padding:4.2rem 0;background:#fff}
     .quote-finish-card{display:grid;grid-template-columns:1fr auto;gap:2rem;padding:2.1rem;border-radius:18px;align-items:center;background:linear-gradient(135deg,#071f37,#0f5a6f);box-shadow:0 20px 45px rgba(7,26,45,.14);color:#fff}
@@ -80,8 +85,8 @@
     .quote-finish .button{min-width:170px;background:var(--quote-blue);color:#fff;box-shadow:none}
     .quote-finish .button:hover{background:var(--quote-blue-dark)}
 
-    @media(max-width:1050px){.quote-hero-grid{grid-template-columns:1fr;gap:2.8rem;align-items:start}.quote-hero-copy{padding-bottom:0}.quote-visual{max-width:760px}.quote-use-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.quote-capability-panel{grid-template-columns:1fr}.quote-section-head{grid-template-columns:1fr;gap:.8rem}}
-    @media(max-width:700px){.quote-hero{padding:3.8rem 0 3rem}.quote-hero h1{font-size:clamp(2.35rem,10.5vw,3.1rem)}.quote-visual{min-height:0}.quote-lane{grid-template-columns:1fr;gap:.7rem}.quote-arrow{width:1px;height:28px;margin:0 auto;background:linear-gradient(180deg,rgba(95,211,198,.25),#8be0d8)}.quote-arrow:after{right:50%;top:auto;bottom:-1px;transform:translateX(50%) rotate(135deg)}.quote-use-grid,.quote-chip-grid{grid-template-columns:1fr}.quote-finish-card{grid-template-columns:1fr}.quote-finish .button{width:100%}}
+    @media(max-width:1050px){.quote-hero-grid{grid-template-columns:1fr;gap:2.8rem;align-items:start}.quote-hero-copy{padding-bottom:0}.quote-visual{max-width:760px}.quote-use-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.quote-chip-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.quote-section-head,.quote-capability-copy{grid-template-columns:1fr;gap:.8rem}}
+    @media(max-width:700px){.quote-lower-container{width:min(calc(100% - 32px),1180px)}.quote-hero{padding:3.8rem 0 3rem}.quote-hero h1{font-size:clamp(2.35rem,10.5vw,3.1rem)}.quote-visual{min-height:0}.quote-lane{grid-template-columns:1fr;gap:.7rem}.quote-arrow{width:1px;height:28px;margin:0 auto;background:linear-gradient(180deg,rgba(95,211,198,.25),#8be0d8)}.quote-arrow:after{right:50%;top:auto;bottom:-1px;transform:translateX(50%) rotate(135deg)}.quote-use-grid,.quote-chip-grid{grid-template-columns:1fr}.quote-finish-card{grid-template-columns:1fr}.quote-finish .button{width:100%}}
   </style>
 </head>
 <body class="quote-page">
@@ -140,7 +145,7 @@
     </section>
 
     <section class="quote-use-cases">
-      <div class="container">
+      <div class="quote-lower-container">
         <div class="quote-section-head">
           <h2>Where the workflow usually breaks down</h2>
           <p>These are common places where manual quoting work becomes slow, inconsistent, or hard to hand off.</p>
@@ -155,7 +160,7 @@
     </section>
 
     <section class="quote-capabilities">
-      <div class="container quote-capability-panel">
+      <div class="quote-lower-container quote-capability-panel">
         <div class="quote-capability-copy"><h2>One workflow can connect the pieces already in the business.</h2><p>The solution is built around the systems, rules, information, and approval points involved in the actual quoting process.</p></div>
         <div class="quote-chip-grid">
           <div class="quote-chip"><span>01</span>Email, forms, files &amp; CRM intake</div><div class="quote-chip"><span>02</span>Requirement extraction &amp; gap checks</div><div class="quote-chip"><span>03</span>Product, supplier &amp; pricing lookups</div><div class="quote-chip"><span>04</span>Calculations &amp; business rules</div><div class="quote-chip"><span>05</span>Quote or proposal generation</div><div class="quote-chip"><span>06</span>Approvals, updates &amp; status tracking</div>
