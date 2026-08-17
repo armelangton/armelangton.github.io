@@ -17,7 +17,7 @@
     .quote-page .nav-links .is-active::after{background:var(--blue)}
 
     .quote-hero{padding:5rem 0 4.6rem;background:linear-gradient(112deg,#071c31 0%,#0b2239 58%,#123b5d 100%)}
-    .quote-hero-grid{display:grid;grid-template-columns:minmax(0,.92fr) minmax(520px,1.08fr);gap:4rem;align-items:center}
+    .quote-hero-copy{max-width:760px}
     .quote-back{display:inline-flex;width:max-content;margin-bottom:1.7rem;padding:.42rem .7rem;border:1px solid rgba(95,211,198,.28);border-radius:999px;background:rgba(18,165,161,.12);color:#8be0d8;font-size:.72rem;font-weight:700}
     .quote-hero h1{max-width:650px;margin:0;color:#fff;font-family:Lora,Georgia,serif;font-size:clamp(2.65rem,4vw,3.75rem);font-weight:600;line-height:1.04;letter-spacing:-.035em}
     .quote-hero p{max-width:590px;margin:1.15rem 0 0;color:#d7e5ec;font-size:1rem;line-height:1.68}
@@ -26,29 +26,6 @@
     .quote-page .button-primary:hover{background:var(--blue-dark)}
     .quote-page .button-secondary{border:1px solid rgba(255,255,255,.46);background:rgba(255,255,255,.04);color:#fff}
     .quote-page .button-secondary:hover{border-color:#a8c8f0;background:rgba(168,200,240,.12)}
-
-    .quote-workspace{padding:1.15rem;border:1px solid rgba(255,255,255,.16);border-radius:20px;background:rgba(248,252,253,.96);box-shadow:0 24px 58px rgba(0,0,0,.2)}
-    .workspace-bar{display:flex;justify-content:space-between;align-items:center;padding:.2rem .2rem .85rem;color:#475569;font-size:.68rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase}
-    .workspace-status{display:inline-flex;align-items:center;gap:.4rem;color:#0f766e;text-transform:none;letter-spacing:0}
-    .workspace-status:before{width:7px;height:7px;border-radius:50%;background:#14b8a6;content:""}
-    .workspace-grid{display:grid;grid-template-columns:.86fr 1.14fr;gap:.85rem}
-    .source-stack{display:grid;gap:.65rem}
-    .source-card,.output-card{border:1px solid #dbe5ec;border-radius:12px;background:#fff;box-shadow:0 5px 14px rgba(7,26,45,.055)}
-    .source-card{padding:.85rem}
-    .source-card small,.output-card small{display:block;margin-bottom:.35rem;color:#64748b;font-size:.6rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
-    .source-card strong{display:block;color:#0f172a;font-size:.78rem;line-height:1.35}
-    .source-card p{margin:.35rem 0 0;color:#475569;font-size:.67rem;line-height:1.45}
-    .source-tags{display:flex;gap:.35rem;flex-wrap:wrap;margin-top:.55rem}
-    .source-tags span{padding:.23rem .38rem;border-radius:6px;background:#eef6fb;color:#315f88;font-size:.57rem;font-weight:700}
-    .output-card{position:relative;overflow:hidden;padding:1rem}
-    .output-card:before{position:absolute;top:0;right:0;left:0;height:5px;background:linear-gradient(90deg,var(--blue),var(--teal));content:""}
-    .output-header{display:flex;justify-content:space-between;gap:1rem;padding-bottom:.75rem;border-bottom:1px solid #e2e8f0}
-    .output-header strong{display:block;color:#0f172a;font-size:.9rem}
-    .output-id{color:#64748b;font-size:.62rem}
-    .output-row{display:grid;grid-template-columns:1fr auto;gap:.75rem;padding:.7rem 0;border-bottom:1px solid #edf2f6;color:#334155;font-size:.67rem}
-    .output-row strong{color:#0f172a}
-    .output-total{display:flex;justify-content:space-between;gap:1rem;padding-top:.85rem;color:#0f172a;font-size:.76rem;font-weight:700}
-    .review-badge{display:inline-flex;margin-top:.85rem;padding:.36rem .55rem;border:1px solid rgba(18,165,161,.22);border-radius:999px;background:var(--teal-soft);color:#0b7f7b;font-size:.6rem;font-weight:700}
 
     .quote-lower-container{width:min(calc(100% - 48px),1180px);margin-inline:auto}
     .quote-use-cases{padding:4.4rem 0;background:#fff}
@@ -78,8 +55,8 @@
     .quote-finish p{max-width:720px;margin:0;color:rgba(255,255,255,.78);font-size:.9rem;line-height:1.62}
     .quote-finish .button{min-width:170px;background:var(--blue);color:#fff}
 
-    @media(max-width:1050px){.quote-hero-grid{grid-template-columns:1fr;gap:2.8rem}.quote-workspace{max-width:760px}.quote-use-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.quote-chip-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.quote-section-head,.quote-capability-copy{grid-template-columns:1fr;gap:.8rem}}
-    @media(max-width:700px){.quote-lower-container{width:min(calc(100% - 32px),1180px)}.quote-hero{padding:3.8rem 0 3rem}.quote-hero h1{font-size:clamp(2.35rem,10.5vw,3.1rem)}.workspace-grid,.quote-use-grid,.quote-chip-grid{grid-template-columns:1fr}.quote-finish-card{grid-template-columns:1fr}.quote-finish .button{width:100%}}
+    @media(max-width:1050px){.quote-use-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.quote-chip-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.quote-section-head,.quote-capability-copy{grid-template-columns:1fr;gap:.8rem}}
+    @media(max-width:700px){.quote-lower-container{width:min(calc(100% - 32px),1180px)}.quote-hero{padding:3.8rem 0 3rem}.quote-hero h1{font-size:clamp(2.35rem,10.5vw,3.1rem)}.quote-use-grid,.quote-chip-grid{grid-template-columns:1fr}.quote-finish-card{grid-template-columns:1fr}.quote-finish .button{width:100%}}
   </style>
 </head>
 <body class="quote-page">
@@ -92,33 +69,12 @@
 
   <main>
     <section class="quote-hero">
-      <div class="container quote-hero-grid">
-        <div>
+      <div class="container">
+        <div class="quote-hero-copy">
           <a class="quote-back" href="../services.html">← Services</a>
           <h1>Quoting &amp; Commercial Response</h1>
           <p>Turn an incoming request into an organized, review-ready response without forcing people to chase information across emails, documents, pricing sources, and systems.</p>
           <div class="quote-hero-actions"><a class="button button-primary" href="../index.html#contact">Contact</a><a class="button button-secondary" href="../services.html">View Services</a></div>
-        </div>
-
-        <div class="quote-workspace" aria-label="Example quoting workspace">
-          <div class="workspace-bar"><span>Example quoting workspace</span><span class="workspace-status">Ready for review</span></div>
-          <div class="workspace-grid">
-            <div class="source-stack">
-              <div class="source-card"><small>Incoming request</small><strong>Replacement lighting package</strong><p>Customer request received by email with an attached specification sheet.</p><div class="source-tags"><span>Email</span><span>Attachment</span><span>Customer</span></div></div>
-              <div class="source-card"><small>Information gathered</small><strong>Products, availability, pricing</strong><p>Relevant product and account information is brought into the same working view.</p><div class="source-tags"><span>CRM</span><span>Catalog</span><span>Pricing</span></div></div>
-              <div class="source-card"><small>Needs attention</small><strong>1 approval required</strong><p>A pricing exception is surfaced instead of being hidden inside the preparation work.</p></div>
-            </div>
-            <div class="output-card">
-              <small>Prepared response</small>
-              <div class="output-header"><div><strong>Quote #Q-1047</strong><span class="output-id">Northfield Properties</span></div><span class="output-id">Draft</span></div>
-              <div class="output-row"><span>LED retrofit fixtures</span><strong>24 units</strong></div>
-              <div class="output-row"><span>Controls package</span><strong>Included</strong></div>
-              <div class="output-row"><span>Lead-time check</span><strong>Complete</strong></div>
-              <div class="output-row"><span>Pricing exception</span><strong>Review</strong></div>
-              <div class="output-total"><span>Response status</span><span>Ready for approval</span></div>
-              <span class="review-badge">Human review before release</span>
-            </div>
-          </div>
         </div>
       </div>
     </section>
