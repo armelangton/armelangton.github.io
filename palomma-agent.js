@@ -1,5 +1,5 @@
 (() => {
-  const ASSISTANT_URL = 'https://ai-solution-platform-gamma.vercel.app/#assistant';
+  const ASSISTANT_URL = 'https://ai-solution-platform-gamma.vercel.app/embed/palomma';
   if (document.querySelector('.palomma-agent-launcher')) return;
 
   const launcher = document.createElement('button');
