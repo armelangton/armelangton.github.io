@@ -1,11 +1,182 @@
 <!doctype html>
-<html lang="en"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="description" content="Palomma builds custom AI solutions for quoting and proposal workflows."/><title>Quoting & Proposals | Palomma Consulting</title><link rel="icon" href="../assets/logo.png" sizes="64x64" type="image/png"/><link rel="preconnect" href="https://fonts.gstatic.com"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/><link rel="stylesheet" href="../services.css?v=20260801-3"/></head>
-<body><header class="site-header"><nav class="site-nav container" aria-label="Primary navigation"><a class="brand" href="../index.html">Palomma Consulting</a><div class="nav-links"><a href="../index.html">Home</a><a class="is-active" href="../services.html">Services</a><a href="../case-studies.html">Case Studies</a><a href="../about.html">About</a></div></nav></header>
-<main><section class="detail-hero"><div class="container"><a class="back-link" href="../services.html">← Services</a><h1>Quoting &amp; Proposals</h1><p>Improve the work between an incoming request and a reviewed quote or proposal.</p></div></section>
-<section class="detail-main"><div class="container detail-layout"><div class="detail-content">
-<section class="detail-section"><h2>What this solves</h2><p>Quoting often depends on information spread across emails, documents, product data, pricing sources, CRM records, and individual experience. Palomma can build a connected workflow that gathers the right inputs, helps interpret requirements, prepares the work, and keeps human review where it matters.</p></section>
-<section class="detail-section"><h2>Common examples</h2><div class="detail-card-grid"><article><h3>RFQ intake</h3><p>Capture requests, identify missing information, and organize requirements before work begins.</p></article><article><h3>Quote preparation</h3><p>Bring together product, service, pricing, availability, and customer information for review.</p></article><article><h3>Proposal drafting</h3><p>Prepare consistent first drafts using approved information, templates, and business rules.</p></article><article><h3>Review and approval</h3><p>Route exceptions, pricing decisions, and final documents to the right person before release.</p></article></div></section>
-<section class="detail-section"><h2>How the workflow can work</h2><ol class="path-list"><li><span>1</span><div><strong>Request received</strong><p>Email, form, file, CRM record, or other request enters the workflow.</p></div></li><li><span>2</span><div><strong>Information gathered</strong><p>Relevant customer, product, pricing, document, and system context is assembled.</p></div></li><li><span>3</span><div><strong>Requirements interpreted</strong><p>AI can extract, compare, summarize, or prepare the information needed for the next step.</p></div></li><li><span>4</span><div><strong>Quote or proposal prepared</strong><p>Rules, calculations, templates, and approved content shape the draft.</p></div></li><li><span>5</span><div><strong>Human review</strong><p>The right person reviews material decisions, exceptions, and final output.</p></div></li></ol></section>
-<section class="detail-section"><h2>What can be included</h2><ul class="bullet-list"><li>Email, form, document, or CRM intake</li><li>Requirement extraction and missing-information checks</li><li>Product, service, supplier, or pricing lookups</li><li>Calculations and deterministic business rules</li><li>Proposal or quote document generation</li><li>CRM or quoting-system updates</li><li>Approval and exception routing</li><li>Notifications, tasks, and status tracking</li></ul></section>
-<section class="detail-section"><h2>What a finished implementation looks like</h2><p>A working production workflow with the agreed integrations, controls, acceptance criteria, testing, documentation, handoff, and a bounded stabilization period. The exact solution depends on the systems, data, rules, and decisions involved in your quoting process.</p></section>
-</div><aside class="detail-sidebar"><h3>Quoting &amp; Proposals</h3><div class="detail-stat"><span>Type</span><strong>Custom AI solution</strong></div><div class="detail-stat"><span>Delivery</span><strong>Fixed project scope</strong></div><a class="button button-primary" href="../about.html#contact">Contact</a></aside></div></section></main></body></html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Palomma builds custom AI solutions for quoting and commercial response workflows."/>
+  <title>Quoting & Commercial Response | Palomma Consulting</title>
+  <link rel="icon" href="../assets/logo.png" sizes="64x64" type="image/png"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lora:wght@500;600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="../services.css?v=20260801-3"/>
+  <style>
+    .quote-detail .detail-hero h1{font-family:Lora,Georgia,serif}
+    .quote-detail .detail-main{padding-top:2.5rem}
+    .quote-detail .detail-section{padding:2rem 0}
+    .quote-detail .detail-section:first-child{padding-top:0}
+    .quote-detail .section-intro{max-width:690px;margin:0 0 1.15rem;color:var(--muted);font-size:.92rem}
+
+    .quote-system-map{display:grid;grid-template-columns:1fr 74px 1fr 74px 1fr;gap:.65rem;align-items:center;margin:1.4rem 0 .35rem}
+    .quote-map-column{min-height:154px;padding:1rem;border:1px solid var(--line);border-radius:14px;background:var(--soft-2)}
+    .quote-map-column.is-core{border-color:rgba(18,165,161,.45);background:linear-gradient(145deg,#eaf9f7,#f8fcfd)}
+    .quote-map-column.is-output{background:#fff;box-shadow:var(--shadow)}
+    .quote-map-label{display:block;margin-bottom:.75rem;color:var(--teal-dark);font-size:.68rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase}
+    .quote-map-items{display:flex;gap:.45rem;flex-wrap:wrap}
+    .quote-map-items span{display:inline-flex;min-height:31px;padding:.35rem .55rem;border:1px solid var(--line);border-radius:8px;align-items:center;background:#fff;color:var(--navy);font-size:.74rem;font-weight:600}
+    .quote-map-column strong{display:block;color:var(--navy);font-size:.98rem;line-height:1.35}
+    .quote-map-column p{margin:.45rem 0 0;color:var(--muted);font-size:.78rem;line-height:1.45}
+    .quote-map-arrow{position:relative;height:2px;background:linear-gradient(90deg,var(--line-strong),var(--teal))}
+    .quote-map-arrow:after{position:absolute;top:50%;right:-1px;width:9px;height:9px;border-top:2px solid var(--teal);border-right:2px solid var(--teal);content:"";transform:translateY(-50%) rotate(45deg)}
+
+    .quote-example-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:.8rem}
+    .quote-example{min-height:178px;padding:1rem;border:1px solid var(--line);border-radius:13px;background:#fff}
+    .quote-example-icon{display:grid;width:38px;height:38px;margin-bottom:.85rem;border-radius:10px;place-items:center;background:#e9f7f6;color:var(--teal-dark);font-size:1rem;font-weight:800}
+    .quote-example h3{margin:0 0 .4rem;color:var(--navy);font-size:.9rem}
+    .quote-example p{margin:0;color:var(--muted);font-size:.78rem;line-height:1.48}
+
+    .quote-flow{position:relative;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:.72rem;margin-top:1.35rem}
+    .quote-flow:before{position:absolute;top:25px;right:7%;left:7%;height:2px;background:linear-gradient(90deg,#b8d8db,#12a5a1);content:""}
+    .quote-flow-step{position:relative;z-index:1;min-width:0;text-align:center}
+    .quote-flow-number{display:grid;width:50px;height:50px;margin:0 auto .72rem;border:5px solid #fff;border-radius:50%;place-items:center;background:var(--teal);box-shadow:0 0 0 1px #b9dfe0;color:#fff;font-size:.82rem;font-weight:800}
+    .quote-flow-step:last-child .quote-flow-number{background:var(--navy)}
+    .quote-flow-step strong{display:block;color:var(--navy);font-size:.82rem;line-height:1.3}
+    .quote-flow-step p{margin:.32rem 0 0;color:var(--muted);font-size:.7rem;line-height:1.42}
+
+    .quote-capability-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:.65rem;margin-top:1rem}
+    .quote-capability{display:flex;min-height:86px;padding:.8rem;border:1px solid var(--line);border-radius:11px;align-items:flex-start;gap:.65rem;background:var(--soft-2)}
+    .quote-capability span{display:grid;width:28px;height:28px;flex:0 0 28px;border-radius:8px;place-items:center;background:#dff5f2;color:var(--teal-dark);font-size:.75rem;font-weight:800}
+    .quote-capability strong{display:block;color:var(--navy);font-size:.76rem;line-height:1.35}
+
+    .quote-outcome-strip{display:grid;grid-template-columns:1.35fr repeat(4,minmax(0,.8fr));gap:.7rem;padding:1.1rem;border:1px solid var(--line);border-radius:14px;background:linear-gradient(135deg,#071f37,#0f5a6f);color:#fff}
+    .quote-outcome-copy h2{margin:0 0 .4rem;color:#fff;font-size:1.05rem}
+    .quote-outcome-copy p{margin:0;color:rgba(255,255,255,.75);font-size:.76rem;line-height:1.45}
+    .quote-outcome-item{display:flex;min-height:82px;padding:.7rem;border:1px solid rgba(255,255,255,.18);border-radius:10px;align-items:center;justify-content:center;text-align:center;background:rgba(255,255,255,.06);font-size:.72rem;font-weight:700;line-height:1.35}
+
+    .quote-detail .detail-sidebar{top:88px}
+    .quote-detail .detail-sidebar .button{margin-top:1rem}
+
+    @media(max-width:1050px){
+      .quote-example-grid,.quote-capability-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+      .quote-outcome-strip{grid-template-columns:1fr 1fr 1fr}
+      .quote-outcome-copy{grid-column:1/-1}
+    }
+    @media(max-width:760px){
+      .quote-system-map{grid-template-columns:1fr}
+      .quote-map-arrow{width:2px;height:28px;margin:0 auto;background:linear-gradient(180deg,var(--line-strong),var(--teal))}
+      .quote-map-arrow:after{top:auto;right:50%;bottom:-1px;transform:translateX(50%) rotate(135deg)}
+      .quote-flow{grid-template-columns:1fr;gap:.55rem}
+      .quote-flow:before{top:5%;bottom:5%;left:25px;width:2px;height:auto;right:auto}
+      .quote-flow-step{display:grid;grid-template-columns:52px 1fr;text-align:left;column-gap:.7rem;align-items:start}
+      .quote-flow-number{grid-row:1/3;margin:0}
+      .quote-flow-step strong{padding-top:.25rem}
+      .quote-flow-step p{margin-top:.12rem}
+      .quote-example-grid,.quote-capability-grid,.quote-outcome-strip{grid-template-columns:1fr}
+      .quote-outcome-copy{grid-column:auto}
+    }
+  </style>
+</head>
+<body class="quote-detail">
+  <header class="site-header">
+    <nav class="site-nav container" aria-label="Primary navigation">
+      <a class="brand" href="../index.html">Palomma Consulting</a>
+      <div class="nav-links">
+        <a href="../index.html">Home</a>
+        <a class="is-active" href="../services.html">Services</a>
+        <a href="../case-studies.html">Case Studies</a>
+        <a href="../about.html">About</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="detail-hero">
+      <div class="container">
+        <a class="back-link" href="../services.html">← Services</a>
+        <h1>Quoting &amp; Commercial Response</h1>
+        <p>Connect the information, decisions, and systems between an incoming request and a reviewed quote or proposal.</p>
+      </div>
+    </section>
+
+    <section class="detail-main">
+      <div class="container detail-layout">
+        <div class="detail-content">
+          <section class="detail-section">
+            <h2>Turn scattered inputs into a controlled response workflow</h2>
+            <p class="section-intro">Quoting often depends on information spread across emails, documents, product data, pricing sources, CRM records, and individual experience. The workflow can bring those inputs together while keeping rules and human review where they matter.</p>
+            <div class="quote-system-map" aria-label="Example quoting workflow architecture">
+              <div class="quote-map-column">
+                <span class="quote-map-label">Inputs</span>
+                <div class="quote-map-items"><span>Email</span><span>RFQ</span><span>CRM</span><span>Product data</span><span>Pricing</span></div>
+              </div>
+              <div class="quote-map-arrow" aria-hidden="true"></div>
+              <div class="quote-map-column is-core">
+                <span class="quote-map-label">Connected workflow</span>
+                <strong>Gather → interpret → apply rules → prepare</strong>
+                <p>AI supports flexible information work; deterministic logic controls calculations and required steps.</p>
+              </div>
+              <div class="quote-map-arrow" aria-hidden="true"></div>
+              <div class="quote-map-column is-output">
+                <span class="quote-map-label">Reviewed output</span>
+                <strong>Quote or proposal ready for the right human decision</strong>
+                <p>Exceptions and material decisions stay visible before release.</p>
+              </div>
+            </div>
+          </section>
+
+          <section class="detail-section">
+            <h2>Common places to improve the work</h2>
+            <div class="quote-example-grid">
+              <article class="quote-example"><div class="quote-example-icon">↓</div><h3>RFQ intake</h3><p>Capture requests, identify missing information, and organize requirements before work begins.</p></article>
+              <article class="quote-example"><div class="quote-example-icon">≡</div><h3>Quote preparation</h3><p>Bring together product, service, pricing, availability, and customer information for review.</p></article>
+              <article class="quote-example"><div class="quote-example-icon">✦</div><h3>Proposal drafting</h3><p>Prepare consistent first drafts using approved information, templates, and business rules.</p></article>
+              <article class="quote-example"><div class="quote-example-icon">✓</div><h3>Review &amp; approval</h3><p>Route exceptions, pricing decisions, and final documents to the right person before release.</p></article>
+            </div>
+          </section>
+
+          <section class="detail-section">
+            <h2>How the workflow can move</h2>
+            <div class="quote-flow" aria-label="Five-step quoting workflow">
+              <div class="quote-flow-step"><span class="quote-flow-number">1</span><strong>Request received</strong><p>Email, form, file, or CRM record.</p></div>
+              <div class="quote-flow-step"><span class="quote-flow-number">2</span><strong>Information gathered</strong><p>Customer, product, pricing, and context.</p></div>
+              <div class="quote-flow-step"><span class="quote-flow-number">3</span><strong>Requirements interpreted</strong><p>Extract, compare, summarize, or flag gaps.</p></div>
+              <div class="quote-flow-step"><span class="quote-flow-number">4</span><strong>Response prepared</strong><p>Rules, calculations, templates, approved content.</p></div>
+              <div class="quote-flow-step"><span class="quote-flow-number">5</span><strong>Human review</strong><p>Approve decisions, exceptions, and final output.</p></div>
+            </div>
+          </section>
+
+          <section class="detail-section">
+            <h2>What the solution can connect</h2>
+            <div class="quote-capability-grid">
+              <div class="quote-capability"><span>01</span><strong>Email, form, document, or CRM intake</strong></div>
+              <div class="quote-capability"><span>02</span><strong>Requirement extraction and gap checks</strong></div>
+              <div class="quote-capability"><span>03</span><strong>Product, supplier, service, or pricing lookups</strong></div>
+              <div class="quote-capability"><span>04</span><strong>Calculations and deterministic business rules</strong></div>
+              <div class="quote-capability"><span>05</span><strong>Quote or proposal document generation</strong></div>
+              <div class="quote-capability"><span>06</span><strong>CRM or quoting-system updates</strong></div>
+              <div class="quote-capability"><span>07</span><strong>Approval and exception routing</strong></div>
+              <div class="quote-capability"><span>08</span><strong>Notifications, tasks, and status tracking</strong></div>
+            </div>
+          </section>
+
+          <section class="detail-section">
+            <div class="quote-outcome-strip">
+              <div class="quote-outcome-copy"><h2>What a finished implementation looks like</h2><p>A working production workflow built around the systems, data, rules, and decisions in the quoting process.</p></div>
+              <div class="quote-outcome-item">Connected systems &amp; data</div>
+              <div class="quote-outcome-item">Defined controls &amp; approvals</div>
+              <div class="quote-outcome-item">Tested acceptance criteria</div>
+              <div class="quote-outcome-item">Documentation &amp; handoff</div>
+            </div>
+          </section>
+        </div>
+
+        <aside class="detail-sidebar">
+          <h3>Quoting &amp; Commercial Response</h3>
+          <div class="detail-stat"><span>Type</span><strong>Custom AI solution</strong></div>
+          <div class="detail-stat"><span>Delivery</span><strong>Fixed project scope</strong></div>
+          <a class="button button-primary" href="../index.html#contact">Contact</a>
+        </aside>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
