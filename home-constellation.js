@@ -3,6 +3,22 @@
     if (link.textContent.trim() === 'Pricing') link.remove();
   });
 
+  document.querySelectorAll('.service-starting-price').forEach(item => item.remove());
+
+  if (!document.querySelector('link[href*="palomma-agent.css"]')) {
+    const style = document.createElement('link');
+    style.rel = 'stylesheet';
+    style.href = './palomma-agent.css?v=20260818-live';
+    document.head.appendChild(style);
+  }
+
+  if (!document.querySelector('script[src*="palomma-agent.js"]')) {
+    const agent = document.createElement('script');
+    agent.src = './palomma-agent.js?v=20260818-live';
+    agent.defer = true;
+    document.head.appendChild(agent);
+  }
+
   function connectSectionLink(label, sectionId) {
     const link = [...document.querySelectorAll('.nav-links a')]
       .find(item => item.textContent.trim() === label);
