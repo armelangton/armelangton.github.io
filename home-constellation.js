@@ -8,13 +8,13 @@
   if (!document.querySelector('link[href*="palomma-agent.css"]')) {
     const style = document.createElement('link');
     style.rel = 'stylesheet';
-    style.href = './palomma-agent.css?v=20260818-brand-refresh';
+    style.href = './palomma-agent.css?v=20260818-assistant-blue';
     document.head.appendChild(style);
   }
 
   if (!document.querySelector('script[src*="palomma-agent.js"]')) {
     const agent = document.createElement('script');
-    agent.src = './palomma-agent.js?v=20260818-brand-refresh';
+    agent.src = './palomma-agent.js?v=20260818-assistant-blue';
     agent.defer = true;
     document.head.appendChild(agent);
   }
@@ -45,7 +45,6 @@
 
   document.querySelector('.site-footer')?.remove();
 
-  // Replace third-party icon-CDN images with brand assets served by the product owners.
   const platformAssets = {
     'Salesforce': { src: 'https://www.salesforce.com/news/wp-content/uploads/sites/3/2021/05/Salesforce-logo.jpg?w=1024', wordmark: true },
     'HubSpot': { src: 'https://www.hubspot.com/favicon.ico' },
@@ -65,8 +64,6 @@
     const image = item.querySelector('img');
     if (!label || !image) return;
 
-    // LinkedIn's corporate logo requires separate trademark permission for this use,
-    // so keep the product name visible without displaying an unauthorized logo.
     if (label === 'LinkedIn') {
       image.remove();
       item.classList.add('platform-logo-text-only');
@@ -86,8 +83,6 @@
   });
 
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-  // Restore motion and interaction to the example workflow panel.
   const workflowOptions = [...document.querySelectorAll('.console-option')];
   const workflowValue = document.getElementById('workflow-value');
   const actionValue = document.getElementById('action-value');
