@@ -4,6 +4,11 @@
   core.defer = true;
   document.head.appendChild(core);
 
+  const commercialProcess = document.createElement('script');
+  commercialProcess.src = './home-commercial-process.js?v=20260817-commercial-process';
+  commercialProcess.defer = true;
+  document.head.appendChild(commercialProcess);
+
   if (!document.querySelector('link[href*="palomma-agent.css"]')) {
     const style = document.createElement('link');
     style.rel = 'stylesheet';
