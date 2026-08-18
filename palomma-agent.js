@@ -7,12 +7,11 @@
   launcher.className = 'palomma-agent-launcher';
   launcher.setAttribute('aria-haspopup', 'dialog');
   launcher.setAttribute('aria-expanded', 'false');
-  launcher.setAttribute('aria-label', 'Open the Palomma Guide');
+  launcher.setAttribute('aria-label', 'Ask a question about Palomma');
   launcher.innerHTML = `
-    <span class="palomma-agent-launcher-mark" aria-hidden="true"></span>
     <span class="palomma-agent-launcher-copy">
-      <span class="palomma-agent-launcher-label">Palomma Guide</span>
-      <span class="palomma-agent-launcher-note">Questions about Palomma?</span>
+      <span class="palomma-agent-launcher-label">Questions?</span>
+      <span class="palomma-agent-launcher-note">Ask Palomma</span>
     </span>
     <span class="palomma-agent-launcher-arrow" aria-hidden="true">→</span>
   `;
