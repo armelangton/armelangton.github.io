@@ -1,4 +1,10 @@
 (() => {
+  document.querySelectorAll('.summary-price').forEach(item => item.remove());
+  document.querySelectorAll('.detail-item').forEach(item => {
+    const label = item.querySelector('strong')?.textContent.trim();
+    if (label === 'Investment') item.remove();
+  });
+
   document.querySelectorAll('.assistant-hero').forEach(hero => {
     const canvas = hero.querySelector('.solution-network');
     if (!canvas) return;
