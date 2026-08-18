@@ -9,10 +9,7 @@
   launcher.setAttribute('aria-expanded', 'false');
   launcher.setAttribute('aria-label', 'Ask a question about Palomma');
   launcher.innerHTML = `
-    <span class="palomma-agent-launcher-copy">
-      <span class="palomma-agent-launcher-label">Questions?</span>
-      <span class="palomma-agent-launcher-note">Ask Palomma</span>
-    </span>
+    <span class="palomma-agent-launcher-label">Ask a question</span>
     <span class="palomma-agent-launcher-arrow" aria-hidden="true">→</span>
   `;
 
