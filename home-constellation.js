@@ -8,13 +8,13 @@
   if (!document.querySelector('link[href*="palomma-agent.css"]')) {
     const style = document.createElement('link');
     style.rel = 'stylesheet';
-    style.href = './palomma-agent.css?v=20260818-assistant-blue';
+    style.href = './palomma-agent.css?v=20260818-ask-question';
     document.head.appendChild(style);
   }
 
   if (!document.querySelector('script[src*="palomma-agent.js"]')) {
     const agent = document.createElement('script');
-    agent.src = './palomma-agent.js?v=20260818-assistant-blue';
+    agent.src = './palomma-agent.js?v=20260818-ask-question';
     agent.defer = true;
     document.head.appendChild(agent);
   }
