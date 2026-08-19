@@ -14,7 +14,7 @@
 
   if (!document.querySelector('script[src*="palomma-agent.js"]')) {
     const agent = document.createElement('script');
-    agent.src = './palomma-agent.js?v=20260818-ask-question';
+    agent.src = './palomma-agent.js?v=20260819-simplified-header';
     agent.defer = true;
     document.head.appendChild(agent);
   }
