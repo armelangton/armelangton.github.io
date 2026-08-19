@@ -28,9 +28,7 @@
     <div class="palomma-agent-identity">
       <span class="palomma-agent-brand-mark" aria-hidden="true"></span>
       <div>
-        <p class="palomma-agent-eyebrow">PALOMMA GUIDE</p>
         <h2>What can we help you find?</h2>
-        <p>Answers are grounded in approved Palomma information.</p>
       </div>
     </div>
   `;
