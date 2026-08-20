@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 258 308" role="img" aria-labelledby="title desc">
+  <title id="title">Palomma symbol</title>
+  <desc id="desc">Turquoise Palomma hexagonal mark divided by white internal lines into exactly seven segments.</desc>
+  <defs>
+    <clipPath id="palomma-clip">
+      <polygon points="129,8 250,79 250,229 129,300 8,229 8,79"/>
+    </clipPath>
+  </defs>
+  <polygon fill="#12c7c4" points="129,8 250,79 250,229 129,300 8,229 8,79"/>
+  <g clip-path="url(#palomma-clip)" fill="none" stroke="#fff" stroke-width="10" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M129 8 L156 92"/>
+    <path d="M156 92 L250 86"/>
+    <path d="M156 92 L66 151"/>
+    <path d="M156 92 L185 199"/>
+    <path d="M66 151 L8 86"/>
+    <path d="M66 151 L8 221"/>
+    <path d="M66 151 L185 199"/>
+    <path d="M185 199 L250 218"/>
+    <path d="M185 199 L129 300"/>
+  </g>
+  <g fill="#fff">
+    <circle cx="66" cy="151" r="15"/>
+    <circle cx="156" cy="92" r="15"/>
+    <circle cx="185" cy="199" r="15"/>
+  </g>
+</svg>
