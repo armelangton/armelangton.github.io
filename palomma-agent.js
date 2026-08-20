@@ -3,6 +3,7 @@
   if (staticWorkflow) {
     staticWorkflow.outerHTML = `<div class="hero-console" aria-label="Example business workflow"><div class="console-top"><div><strong>Example workflow</strong><span class="console-launch">See how a request moves through the work <i></i><i></i><i></i></span></div><span class="console-status">4 steps</span></div><div class="console-options" role="tablist" aria-label="Workflow stages"><button class="console-option is-active" type="button" role="tab" aria-selected="true" data-stage="incoming"><span class="option-icon">↓</span><span><small>Incoming</small><strong>New request received</strong></span><span class="option-chevron">›</span></button><button class="console-option" type="button" role="tab" aria-selected="false" data-stage="context"><span class="option-icon">▤</span><span><small>Gather information</small><strong>Customer details and documents found</strong></span><span class="option-chevron">›</span></button><button class="console-option" type="button" role="tab" aria-selected="false" data-stage="support"><span class="option-icon">✦</span><span><small>AI support</small><strong>Summarize and recommend</strong></span><span class="option-chevron">›</span></button><button class="console-option" type="button" role="tab" aria-selected="false" data-stage="review"><span class="option-icon">○</span><span><small>Human review</small><strong>Approve and move forward</strong></span><span class="option-chevron">›</span></button></div><div class="console-summary" aria-live="polite"><div><small>Workflow</small><strong id="workflow-value">Request intake</strong></div><div class="is-highlighted"><small>Next action</small><strong id="action-value">Gather customer and project details</strong></div><div><small>Status</small><strong id="status-value">Received</strong></div></div><div class="console-terminal"><span>› request received</span><strong id="terminal-value">gathering the information needed for the next step</strong><i></i><i></i><i></i></div></div>`;
 
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     const stages = {
       incoming: ['Request intake', 'Gather customer and project details', 'Received', 'gathering the information needed for the next step'],
       context: ['Information gathering', 'Find details, documents, and history', 'In progress', 'customer details and documents found'],
@@ -28,7 +29,7 @@
     };
     const restart = () => {
       window.clearInterval(timer);
-      timer = window.setInterval(() => showStage(index + 1), 2600);
+      if (!reduceMotion) timer = window.setInterval(() => showStage(index + 1), 2600);
     };
     options.forEach((option, optionIndex) => option.addEventListener('click', () => {
       showStage(optionIndex);
