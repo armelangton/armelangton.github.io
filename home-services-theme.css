@@ -17,3 +17,14 @@
 /* Keep the platform strip and following section visually continuous. */
 .home-services-page .platforms-strip{border:0!important;border-bottom:0!important;outline:0!important;box-shadow:none!important}
 .home-services-page .platforms-strip + #core-services{border-top:0!important;box-shadow:none!important}
+
+/* Rebalance the hero so the message and workflow carry equal visual weight. */
+.home-services-page .page-hero{padding:2.8rem 0 2.9rem}
+.home-services-page .hero-layout{grid-template-columns:minmax(0,.98fr) minmax(430px,.82fr);gap:clamp(2.25rem,3.5vw,3.25rem)}
+.home-services-page .page-hero-inner{max-width:610px}
+.home-services-page .page-hero-inner h1{max-width:590px;font-size:clamp(2.75rem,3.65vw,3.75rem);line-height:1.04;letter-spacing:-.04em}
+.home-services-page .page-hero-inner h1:after{max-width:535px;margin-top:1rem;font-size:1.02rem;line-height:1.58}
+.home-services-page .hero-actions{margin-top:1.3rem}
+.home-services-page .hero-console{width:92%;max-width:470px}
+@media(max-width:1100px){.home-services-page .hero-layout{grid-template-columns:1fr}.home-services-page .page-hero-inner{max-width:720px}.home-services-page .page-hero-inner h1{max-width:680px}.home-services-page .page-hero-inner h1:after{max-width:600px}.home-services-page .hero-console{width:min(100%,680px);max-width:680px}}
+@media(max-width:760px){.home-services-page .page-hero{padding:2.25rem 0 1.8rem}.home-services-page .page-hero-inner h1{font-size:clamp(2.25rem,10vw,3rem)}.home-services-page .hero-actions{margin-top:1.05rem}}
