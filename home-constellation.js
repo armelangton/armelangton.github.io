@@ -8,7 +8,7 @@
   if (!document.querySelector('link[href*="palomma-agent.css"]')) {
     const style = document.createElement('link');
     style.rel = 'stylesheet';
-    style.href = './palomma-agent.css?v=20260818-ask-question';
+    style.href = './palomma-agent.css?v=20260819-seven-segment-logo';
     document.head.appendChild(style);
   }
 
