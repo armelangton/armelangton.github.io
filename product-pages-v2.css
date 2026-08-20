@@ -1,3 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lora:wght@500;600&display=swap');
+
+/* Current Palomma typography: Lora for major headings, Inter for body/UI. */
+.ai-agent-product{font-family:"Inter",Arial,sans-serif}
+.ai-agent-product .assistant-intro h1,.ai-agent-product .examples-section h2,.ai-agent-product .buyer-section h2{font-family:"Lora",Georgia,serif!important;font-weight:600!important}
+.ai-agent-product h3,.ai-agent-product p,.ai-agent-product a,.ai-agent-product span,.ai-agent-product strong{font-family:"Inter",Arial,sans-serif}
+
 .ai-agent-product .assistant-hero{padding:4.2rem 0 2.8rem!important;border-bottom:1px solid rgba(95,211,198,.22)}
 .ai-agent-product .assistant-hero-grid{display:block!important}
 .ai-agent-product .assistant-intro{max-width:900px!important}
