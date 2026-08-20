@@ -1,28 +1,19 @@
 /* Project pages: current Palomma visual system.
    Lora = major headings; Inter = body, navigation, labels, and utility text. */
 
-:root{--project-navy:#071a2d;--project-teal:#12c7c4;--project-teal-dark:#0b7f7b;--project-blue:#2d6fb7;--project-soft:#eef7fa;--project-soft-2:#f8fcfd;--project-text:#172b3f;--project-muted:#607387;--project-line:#d9e3ea;--project-white:#fff}
+:root{--project-navy:#071a2d;--project-teal:#12c7c4;--project-blue:#2d6fb7;--project-soft:#eef7fa;--project-soft-2:#f8fcfd;--project-text:#172b3f;--project-muted:#607387;--project-line:#d9e3ea;--project-white:#fff}
 
-body{margin:0!important;background:var(--project-white)!important;color:var(--project-text)!important;font-family:"Inter",Arial,sans-serif!important;font-size:16px!important;line-height:1.65!important}
+body{margin:0!important;background:#fff!important;color:var(--project-text)!important;font-family:"Inter",Arial,sans-serif!important;font-size:16px!important;line-height:1.65!important}
 body h1,body h2{font-family:"Lora",Georgia,serif!important;font-weight:600!important;color:var(--project-navy)!important}
 body h3,body p,body li,body a,body figcaption{font-family:"Inter",Arial,sans-serif!important}
 
-/* Match the current homepage header without rewriting each legacy project template. */
-.header{position:sticky!important;top:0!important;z-index:30!important;background:var(--project-soft-2)!important;border-bottom:1px solid var(--project-line)!important}
-.navbar{display:flex!important;min-height:66px!important;align-items:center!important;justify-content:space-between!important;gap:2rem!important}
-.navbar::before{display:flex!important;min-height:40px!important;padding-left:42px!important;align-items:center!important;background:url('./assets/palomma-symbol.svg?v=20260819-seven-segment') left center/30px 30px no-repeat!important;color:var(--project-navy)!important;content:'Palomma Consulting'!important;font-family:"Inter",Arial,sans-serif!important;font-size:1rem!important;font-weight:700!important;letter-spacing:-.02em!important;white-space:nowrap!important}
-.navbar-toggler{display:none!important}.navbar-collapse{display:flex!important}.navbar-nav{display:flex!important;gap:1.7rem!important;margin:0!important;padding:0!important;align-items:center!important;list-style:none!important}
-.navbar-nav li:nth-child(1),.navbar-nav li:nth-child(3),.navbar-nav li:nth-child(5){display:none!important}
-.nav-link{display:inline-flex!important;min-height:44px!important;align-items:center!important;color:var(--project-navy)!important;font-size:.88rem!important;font-weight:600!important}
-.nav-link:hover,.nav-link:focus,.nav-link.active{color:var(--project-blue)!important}
-
-.project-page{padding:clamp(3rem,5vw,4.75rem) 0 4.5rem!important;background:linear-gradient(180deg,var(--project-soft-2) 0,rgba(248,252,253,0) 230px),var(--project-white)!important}
+.project-page{padding:clamp(3rem,5vw,4.75rem) 0 4.5rem!important;background:#fff!important}
 .project-page>.container{width:min(calc(100% - 48px),1080px)!important}
 .project-intro{max-width:900px!important;margin:0 auto!important;text-align:center!important}
 .project-intro h1{max-width:900px!important;margin:0 auto 2rem!important;font-size:clamp(2.5rem,4.4vw,4rem)!important;line-height:1.06!important;letter-spacing:-.035em!important}
 .project-figure-main{max-width:760px!important;margin:0 auto!important}
-.project-figure-main a{display:block!important;padding:10px!important;border:1px solid var(--project-line)!important;border-radius:14px!important;background:var(--project-white)!important;box-shadow:0 16px 40px rgba(7,26,45,.07)!important}
-.project-figure-main img{display:block!important;width:100%!important;height:auto!important;max-height:none!important;border-radius:8px!important;background:var(--project-soft-2)!important;object-fit:contain!important}
+.project-figure-main a{display:block!important;padding:10px!important;border:1px solid var(--project-line)!important;border-radius:14px!important;background:#fff!important;box-shadow:0 16px 40px rgba(7,26,45,.07)!important}
+.project-figure-main img{display:block!important;width:100%!important;height:auto!important;max-height:none!important;border-radius:8px!important;background:#fff!important;object-fit:contain!important}
 
 .project-copy{max-width:820px!important;margin:3rem auto 0!important}
 .project-section{margin:0!important;padding:1.8rem 0!important;border-top:1px solid var(--project-line)!important}
@@ -32,11 +23,12 @@ body h3,body p,body li,body a,body figcaption{font-family:"Inter",Arial,sans-ser
 .project-section p{margin:.35rem 0 .85rem!important}.project-list{margin:.7rem 0 0!important;padding-left:1.25rem!important}.project-list li{margin:.42rem 0!important}
 
 .project-gallery{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:1.35rem!important;margin:2.3rem auto!important;max-width:820px!important}
+.project-gallery:has(.project-figure:only-child){grid-template-columns:1fr!important}
 .project-gallery .project-figure,.project-gallery .project-figure.project-figure-portrait{display:flex!important;width:100%!important;max-width:none!important;margin:0!important;flex-direction:column!important}
-.project-gallery .project-figure a{display:block!important;width:100%!important;padding:8px!important;border:1px solid var(--project-line)!important;border-radius:12px!important;background:var(--project-white)!important;overflow:hidden!important;box-shadow:0 10px 28px rgba(7,26,45,.05)!important}
-.project-gallery .project-figure img,.project-gallery .project-figure.project-figure-portrait img{display:block!important;width:100%!important;height:auto!important;max-height:none!important;border:0!important;border-radius:7px!important;background:var(--project-soft-2)!important;object-fit:contain!important}
+.project-gallery .project-figure a{display:block!important;width:100%!important;padding:8px!important;border:1px solid var(--project-line)!important;border-radius:12px!important;background:#fff!important;overflow:hidden!important;box-shadow:0 10px 28px rgba(7,26,45,.05)!important}
+.project-gallery .project-figure img,.project-gallery .project-figure.project-figure-portrait img{display:block!important;width:100%!important;height:auto!important;max-height:none!important;border:0!important;border-radius:7px!important;background:#fff!important;object-fit:contain!important}
 .project-figure figcaption{margin-top:.65rem!important;color:var(--project-muted)!important;font-size:.82rem!important;line-height:1.5!important}
-.back-link{margin-top:2.25rem!important}.back-link a{color:var(--project-teal-dark)!important;font-size:.88rem!important;font-weight:700!important}.back-link a:hover,.back-link a:focus{color:var(--project-blue)!important}
+.back-link{margin-top:2.25rem!important}.back-link a{color:var(--project-blue)!important;font-size:.88rem!important;font-weight:700!important}.back-link a:hover,.back-link a:focus{color:var(--project-navy)!important}
 .footer{padding:1.4rem 0!important;background:var(--project-navy)!important;color:rgba(255,255,255,.72)!important}.footer p{margin:0!important;color:inherit!important;font-size:.8rem!important}
 
-@media(max-width:767px){.project-page>.container{width:min(calc(100% - 28px),1080px)!important}.project-page{padding-top:2.5rem!important}.project-intro h1{font-size:clamp(2.15rem,10vw,3rem)!important;margin-bottom:1.5rem!important}.project-copy{margin-top:2.2rem!important}.project-gallery{grid-template-columns:1fr!important}.navbar{min-height:60px!important}.navbar::before{font-size:.92rem!important;padding-left:36px!important;background-size:27px 27px!important}.navbar-nav{gap:.9rem!important}.nav-link{font-size:.78rem!important}.project-section p,.project-section li{font-size:.96rem!important}}
+@media(max-width:767px){.project-page>.container{width:min(calc(100% - 28px),1080px)!important}.project-page{padding-top:2.5rem!important}.project-intro h1{font-size:clamp(2.15rem,10vw,3rem)!important;margin-bottom:1.5rem!important}.project-copy{margin-top:2.2rem!important}.project-gallery{grid-template-columns:1fr!important}.project-section p,.project-section li{font-size:.96rem!important}}
