@@ -1,4 +1,23 @@
 (() => {
+  const visualSizing = document.createElement('style');
+  visualSizing.textContent = `
+    .home-services-page .case-study-card a[href="./commercial-lighting-platform.html"]{grid-template-rows:240px 1fr!important}
+    .home-services-page .case-study-card a[href="./commercial-lighting-platform.html"]::before{height:240px!important;aspect-ratio:auto!important;background-size:contain!important;background-position:center!important}
+    @media(max-width:1100px){
+      .home-services-page .case-study-card a[href="./commercial-lighting-platform.html"]{grid-template-rows:210px 1fr!important}
+      .home-services-page .case-study-card a[href="./commercial-lighting-platform.html"]::before{height:210px!important}
+    }
+    @media(max-width:800px){
+      .home-services-page .case-study-card a[href="./commercial-lighting-platform.html"]{grid-template-rows:260px 1fr!important}
+      .home-services-page .case-study-card a[href="./commercial-lighting-platform.html"]::before{height:260px!important}
+    }
+    @media(max-width:560px){
+      .home-services-page .case-study-card a[href="./commercial-lighting-platform.html"]{grid-template-rows:220px auto!important}
+      .home-services-page .case-study-card a[href="./commercial-lighting-platform.html"]::before{height:220px!important}
+    }
+  `;
+  document.head.appendChild(visualSizing);
+
   const base = document.createElement('script');
   base.src = './home-constellation-base.js?v=20260820-workflow-base';
   base.defer = true;
