@@ -3,6 +3,13 @@
   visualSizing.textContent = `
     .home-services-page .case-study-card a[href="./commercial-lighting-platform.html"]{grid-template-rows:240px 1fr!important}
     .home-services-page .case-study-card a[href="./commercial-lighting-platform.html"]::before{height:240px!important;aspect-ratio:auto!important;background-size:contain!important;background-position:center!important}
+    .home-services-page .case-study-card a[href="./fire-protection-platform.html"] img,
+    .home-services-page .case-study-card a[href="./learning-experience-platform.html"] img{
+      padding:12px!important;
+      object-fit:contain!important;
+      object-position:center!important;
+      background:linear-gradient(145deg,#f3f7fc,#eaf2fb)!important;
+    }
     @media(max-width:1100px){
       .home-services-page .case-study-card a[href="./commercial-lighting-platform.html"]{grid-template-rows:210px 1fr!important}
       .home-services-page .case-study-card a[href="./commercial-lighting-platform.html"]::before{height:210px!important}
@@ -14,6 +21,12 @@
     @media(max-width:560px){
       .home-services-page .case-study-card a[href="./commercial-lighting-platform.html"]{grid-template-rows:220px auto!important}
       .home-services-page .case-study-card a[href="./commercial-lighting-platform.html"]::before{height:220px!important}
+      .home-services-page .case-study-card a[href="./fire-protection-platform.html"] img,
+      .home-services-page .case-study-card a[href="./learning-experience-platform.html"] img{
+        padding:10px!important;
+        object-fit:contain!important;
+        object-position:center!important;
+      }
     }
   `;
   document.head.appendChild(visualSizing);
@@ -23,6 +36,19 @@
   base.defer = true;
 
   base.addEventListener('load', () => {
+    const selectedWorkTitle = document.getElementById('selected-work-title');
+    if (selectedWorkTitle) selectedWorkTitle.textContent = 'See What We Build';
+
+    const salesImage = document.querySelector('.case-study-card a[href="./sales-enablement-platform.html"] img');
+    if (salesImage) salesImage.src = './assets/project-screenshots/sales-my-work-hq.svg?v=20260821-home-hq';
+
+    document.querySelectorAll('.implementation-home p').forEach(paragraph => {
+      paragraph.textContent = paragraph.textContent
+        .replace('Palomma standardizes how the work is scoped, implemented, tested, and handed over', 'We standardize how the work is scoped, implemented, tested, and handed over')
+        .replace('Palomma may recommend a separate paid discovery or design phase', 'we may recommend a separate paid discovery or design phase')
+        .replace('Palomma does not require an ongoing support contract to complete an implementation', 'We do not require an ongoing support contract to complete an implementation');
+    });
+
     const options = [...document.querySelectorAll('.hero-console .console-option')];
     if (options.length !== 4) return;
 
