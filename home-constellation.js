@@ -19,7 +19,7 @@
   document.head.appendChild(visualSizing);
 
   const base = document.createElement('script');
-  base.src = './home-constellation-base.js?v=20260820-workflow-base';
+  base.src = './home-constellation-base.js?v=20260821-constellation-restore';
   base.defer = true;
 
   base.addEventListener('load', () => {
