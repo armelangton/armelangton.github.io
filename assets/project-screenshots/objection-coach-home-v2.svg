@@ -9,13 +9,13 @@
   <path d="M34 0h1132a34 34 0 0 1 34 34v90H0V34A34 34 0 0 1 34 0Z" fill="#071a2d"/>
   <text x="44" y="78" fill="#ffffff" font-family="Inter, Arial, sans-serif" font-size="42" font-weight="700">Objection Handling Coach</text>
   <rect x="168" y="164" width="968" height="108" rx="32" fill="#dceaff"/>
-  <text x="652" y="230" text-anchor="middle" fill="#071a2d" font-family="Inter, Arial, sans-serif" font-size="31" font-weight="700">We have a company and we’re happy.</text>
+  <text x="652" y="230" text-anchor="middle" fill="#071a2d" font-family="Inter, Arial, sans-serif" font-size="31" font-weight="700">We have a managed IT provider.</text>
   <rect x="88" y="324" width="1024" height="410" rx="30" fill="#ffffff" stroke="#a7e5e3" stroke-width="2" filter="url(#shadow)"/>
   <text x="132" y="410" fill="#12a5a1" font-family="Inter, Arial, sans-serif" font-size="31" font-weight="700">Respond:</text>
   <text x="132" y="490" fill="#17324d" font-family="Inter, Arial, sans-serif" font-size="31" font-weight="500">
-    <tspan x="132" dy="0">“I’m glad you’re happy with your current provider.</tspan>
-    <tspan x="132" dy="52">I’m curious, when was the last time you did a review</tspan>
-    <tspan x="132" dy="52">of your services?”</tspan>
+    <tspan x="132" dy="0">“Oh, ok, I understand. Is that someone who works in</tspan>
+    <tspan x="132" dy="52">your company or do they work for an outside IT</tspan>
+    <tspan x="132" dy="52">provider?”</tspan>
   </text>
   <rect x="88" y="774" width="1024" height="84" rx="24" fill="#ffffff" stroke="#d7e3eb" stroke-width="2"/>
   <text x="126" y="827" fill="#8da1b2" font-family="Inter, Arial, sans-serif" font-size="29">Type your follow-up…</text>
