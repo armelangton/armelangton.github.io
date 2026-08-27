@@ -23,3 +23,44 @@ h1,h2{font-family:"Lora",Georgia,serif!important}body,button,input,textarea,sele
 .platforms-strip .platforms-track{gap:3rem!important}
 .platforms-strip .platform-logo{min-width:0!important;padding:0!important;gap:.6rem!important}
 @media(max-width:767px){.platforms-strip .platforms-track{gap:2rem!important}.platforms-strip .platform-logo{min-width:0!important;padding:0!important}}
+
+/* Optical sizing: normalize perceived size, not raw SVG box size. */
+.platforms-strip .platform-logo{height:44px!important;align-items:center!important}
+.platforms-strip .platform-logo img{height:auto!important;max-height:32px!important;max-width:none!important;flex:0 0 auto!important}
+.platforms-strip .platform-logo[data-platform="hubspot"] img{width:104px!important;max-height:28px!important}
+.platforms-strip .platform-logo[data-platform="zoho"] img{width:82px!important;max-height:27px!important}
+.platforms-strip .platform-logo[data-platform="gemini"] img{width:102px!important;max-height:30px!important}
+.platforms-strip .platform-logo[data-platform="zapier"] img{width:92px!important;max-height:27px!important}
+.platforms-strip .platform-logo[data-platform="linkedin"] img{width:102px!important;max-height:26px!important}
+.platforms-strip .platform-logo[data-platform="asana"] img{width:94px!important;max-height:27px!important}
+.platforms-strip .platform-logo[data-platform="salesforce"] img{width:74px!important;max-height:34px!important}
+.platforms-strip .platform-logo[data-platform="microsoft365"] img,
+.platforms-strip .platform-logo[data-platform="googleworkspace"] img,
+.platforms-strip .platform-logo[data-platform="chatgpt"] img,
+.platforms-strip .platform-logo[data-platform="claude"] img,
+.platforms-strip .platform-logo[data-platform="slack"] img,
+.platforms-strip .platform-logo[data-platform="make"] img,
+.platforms-strip .platform-logo[data-platform="n8n"] img,
+.platforms-strip .platform-logo[data-platform="powerautomate"] img{width:30px!important;height:30px!important;max-width:30px!important;max-height:30px!important}
+.platforms-strip .platform-logo span{font-size:.9rem!important;line-height:1!important}
+.platforms-strip .platforms-track{gap:2.6rem!important}
+@media(max-width:767px){
+  .platforms-strip .platform-logo{height:40px!important}
+  .platforms-strip .platforms-track{gap:1.8rem!important}
+  .platforms-strip .platform-logo[data-platform="hubspot"] img{width:94px!important}
+  .platforms-strip .platform-logo[data-platform="zoho"] img{width:74px!important}
+  .platforms-strip .platform-logo[data-platform="gemini"] img{width:92px!important}
+  .platforms-strip .platform-logo[data-platform="zapier"] img{width:84px!important}
+  .platforms-strip .platform-logo[data-platform="linkedin"] img{width:92px!important}
+  .platforms-strip .platform-logo[data-platform="asana"] img{width:86px!important}
+  .platforms-strip .platform-logo[data-platform="salesforce"] img{width:68px!important}
+  .platforms-strip .platform-logo[data-platform="microsoft365"] img,
+  .platforms-strip .platform-logo[data-platform="googleworkspace"] img,
+  .platforms-strip .platform-logo[data-platform="chatgpt"] img,
+  .platforms-strip .platform-logo[data-platform="claude"] img,
+  .platforms-strip .platform-logo[data-platform="slack"] img,
+  .platforms-strip .platform-logo[data-platform="make"] img,
+  .platforms-strip .platform-logo[data-platform="n8n"] img,
+  .platforms-strip .platform-logo[data-platform="powerautomate"] img{width:27px!important;height:27px!important;max-width:27px!important;max-height:27px!important}
+  .platforms-strip .platform-logo span{font-size:.84rem!important}
+}
