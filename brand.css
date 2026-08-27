@@ -18,3 +18,8 @@ h1,h2{font-family:"Lora",Georgia,serif!important}body,button,input,textarea,sele
 .platforms-strip .platform-logo:nth-child(11) img,.platforms-strip .platform-logo:nth-child(23) img{content:url('https://raw.githubusercontent.com/gilbarbara/logos/main/logos/asana.svg')}
 .platforms-strip .platform-logo:nth-child(12) img,.platforms-strip .platform-logo:nth-child(24) img{content:url('https://raw.githubusercontent.com/gilbarbara/logos/main/logos/salesforce.svg')}
 .platforms-strip .platform-logo:nth-child(1) span,.platforms-strip .platform-logo:nth-child(2) span,.platforms-strip .platform-logo:nth-child(7) span,.platforms-strip .platform-logo:nth-child(8) span,.platforms-strip .platform-logo:nth-child(10) span,.platforms-strip .platform-logo:nth-child(11) span,.platforms-strip .platform-logo:nth-child(12) span,.platforms-strip .platform-logo:nth-child(13) span,.platforms-strip .platform-logo:nth-child(14) span,.platforms-strip .platform-logo:nth-child(19) span,.platforms-strip .platform-logo:nth-child(20) span,.platforms-strip .platform-logo:nth-child(22) span,.platforms-strip .platform-logo:nth-child(23) span,.platforms-strip .platform-logo:nth-child(24) span{display:none!important}
+
+/* Use a fixed inter-brand gap instead of fixed-width logo cells. */
+.platforms-strip .platforms-track{gap:3rem!important}
+.platforms-strip .platform-logo{min-width:0!important;padding:0!important;gap:.6rem!important}
+@media(max-width:767px){.platforms-strip .platforms-track{gap:2rem!important}.platforms-strip .platform-logo{min-width:0!important;padding:0!important}}
