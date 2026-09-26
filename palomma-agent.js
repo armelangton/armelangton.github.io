@@ -41,6 +41,17 @@
   document.querySelector('.hero-network')?.classList.add('has-restored-motion');
 
   const ASSISTANT_URL = 'https://ai-solution-platform-gamma.vercel.app/embed/palomma';
+  const ASSISTANT_ORIGIN = new URL(ASSISTANT_URL).origin;
+  const ASSISTANT_EVENTS = new Set(['assistant_question_submitted', 'assistant_answered', 'assistant_unsupported']);
+
+  function trackAssistantEvent(name) {
+    if (typeof window.gtag === 'function') {
+      window.gtag('event', name, { event_category: 'website_assistant' });
+      return;
+    }
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({ event: name, event_category: 'website_assistant' });
+  }
   if (document.querySelector('.palomma-agent-launcher')) return;
 
   const launcher = document.createElement('button');
@@ -96,6 +107,7 @@
 
   function openAssistant() {
     if (!frame.src) frame.src = ASSISTANT_URL;
+    trackAssistantEvent('assistant_open');
     shell.classList.add('is-open');
     launcher.setAttribute('aria-expanded', 'true');
     document.body.style.overflow = 'hidden';
@@ -108,6 +120,13 @@
     document.body.style.overflow = '';
     launcher.focus();
   }
+
+  window.addEventListener('message', event => {
+    if (event.origin !== ASSISTANT_ORIGIN) return;
+    const data = event.data;
+    if (!data || data.source !== 'palomma-assistant' || !ASSISTANT_EVENTS.has(data.event)) return;
+    trackAssistantEvent(data.event);
+  });
 
   launcher.addEventListener('click', openAssistant);
   close.addEventListener('click', closeAssistant);
